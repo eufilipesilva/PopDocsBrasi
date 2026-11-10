@@ -13,3 +13,8 @@ Canal de documentários no YouTube, estilo dossiê, sem rosto. Um vídeo por sem
 - A chave da ElevenLabs fica só em `~/.popdocs/elevenlabs.txt`. Nunca pedir, mostrar ou copiar a chave.
 - Narração gasta créditos: só mudar o texto `n` de uma cena quando for preciso.
 - Orçamento do canal: R$200 por mês.
+
+## Sincronização
+
+- Este repositório no GitHub é a fonte comum entre o Claude na nuvem e o Claude Code no computador. Antes de trabalhar, `git pull`; ao terminar, commit e `git push`.
+- Os vídeos finais (`saidas/*.mp4`), o histórico e a chave não vão para o Git (ver `.gitignore`).
