@@ -1,0 +1,6 @@
+{
+  "name": "popdocs-motor",
+  "private": true,
+  "description": "Motor de vídeos do PopDocsBrasil",
+  "dependencies": { "playwright": "1.48.2" }
+}

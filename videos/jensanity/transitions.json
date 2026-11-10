@@ -1,0 +1,411 @@
+[
+ {
+  "dur": 1.7,
+  "kind": "terminal",
+  "params": {},
+  "from": 0,
+  "to": 1
+ },
+ {
+  "kind": "redact",
+  "params": {},
+  "from": 1,
+  "to": 2
+ },
+ {
+  "kind": "glitch",
+  "params": {},
+  "from": 2,
+  "to": 3
+ },
+ {
+  "kind": "folder",
+  "params": {
+   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
+   "tab": "ARQUIVO Nº 002",
+   "title": "CAPÍTULO 01"
+  },
+  "from": 3,
+  "to": 4
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 4,
+  "to": 5
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 5,
+  "to": 6
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 6,
+  "to": 7
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 7,
+  "to": 8
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 8,
+  "to": 9
+ },
+ {
+  "kind": "vhs",
+  "params": {
+   "a": "REW",
+   "b": "PLAY",
+   "label": "FITA"
+  },
+  "from": 9,
+  "to": 10,
+  "dur": 0.8
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 10,
+  "to": 11
+ },
+ {
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/jensen_huang",
+    "> abrir capitulo_02.dossie"
+   ],
+   "ok": "CAPÍTULO 02 ENCONTRADO"
+  },
+  "from": 11,
+  "to": 12
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 12,
+  "to": 13
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 13,
+  "to": 14
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 14,
+  "to": 15
+ },
+ {
+  "kind": "static",
+  "params": {
+   "label": "ERRO DE PROJETO",
+   "sub": "NV1 · 1995"
+  },
+  "from": 15,
+  "to": 16,
+  "dur": 0.6
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 16,
+  "to": 17
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 17,
+  "to": 18
+ },
+ {
+  "kind": "folder",
+  "params": {
+   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
+   "tab": "ARQUIVO Nº 002",
+   "title": "CAPÍTULO 03"
+  },
+  "from": 18,
+  "to": 19
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 19,
+  "to": 20
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 20,
+  "to": 21
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 21,
+  "to": 22
+ },
+ {
+  "kind": "enhance",
+  "params": {
+   "label": "GTX 580",
+   "sub": "MELHORANDO IMAGEM"
+  },
+  "from": 22,
+  "to": 23,
+  "dur": 1.0
+ },
+ {
+  "kind": "paper",
+  "params": {},
+  "from": 23,
+  "to": 24
+ },
+ {
+  "kind": "paper",
+  "params": {},
+  "from": 24,
+  "to": 25
+ },
+ {
+  "kind": "flash",
+  "params": {},
+  "from": 25,
+  "to": 26
+ },
+ {
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/jensen_huang",
+    "> abrir capitulo_04.dossie"
+   ],
+   "ok": "CAPÍTULO 04 ENCONTRADO"
+  },
+  "from": 26,
+  "to": 27
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 27,
+  "to": 28
+ },
+ {
+  "kind": "paper",
+  "params": {},
+  "from": 28,
+  "to": 29
+ },
+ {
+  "kind": "flash",
+  "params": {},
+  "from": 29,
+  "to": 30
+ },
+ {
+  "kind": "cctv",
+  "params": {
+   "cam": "CAM 01 · TAIPEI",
+   "cx": 1000,
+   "cy": 470,
+   "date": "31.05.2016",
+   "h": 420,
+   "label": "IDENTIFICADO: JENSEN HUANG",
+   "w": 360
+  },
+  "from": 30,
+  "to": 31
+ },
+ {
+  "kind": "folder",
+  "params": {
+   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
+   "tab": "ARQUIVO Nº 002",
+   "title": "CAPÍTULO 05"
+  },
+  "from": 31,
+  "to": 32
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 32,
+  "to": 33
+ },
+ {
+  "kind": "decrypt",
+  "params": {
+   "sub": "EXPORTAÇÕES · EUA → CHINA"
+  },
+  "from": 33,
+  "to": 34
+ },
+ {
+  "kind": "cctv",
+  "params": {
+   "cam": "CAM 03 · PEQUIM",
+   "cx": 830,
+   "cy": 560,
+   "date": "13.05.2026",
+   "h": 300,
+   "label": "IDENTIFICADO: JENSEN HUANG",
+   "w": 260
+  },
+  "from": 34,
+  "to": 35
+ },
+ {
+  "kind": "search",
+  "params": {
+   "db": "ARQUIVO POPDOCS · CHINA",
+   "query": "pequim nvidia chips h20",
+   "result": "PEQUIM · ORIENTAÇÃO OFICIAL",
+   "ok": "1 RESULTADO RELEVANTE"
+  },
+  "from": 35,
+  "to": 36,
+  "dur": 1.6
+ },
+ {
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/jensen_huang",
+    "> abrir capitulo_06.dossie"
+   ],
+   "ok": "CAPÍTULO 06 ENCONTRADO"
+  },
+  "from": 36,
+  "to": 37
+ },
+ {
+  "kind": "stamp",
+  "params": {
+   "sub": "CASO HUANG · NOV 2026",
+   "text": "CONFIDENCIAL"
+  },
+  "from": 37,
+  "to": 38
+ },
+ {
+  "kind": "decrypt",
+  "params": {
+   "sub": "FONTES ANÔNIMAS",
+   "text": "IDENTIFICANDO"
+  },
+  "from": 38,
+  "to": 39
+ },
+ {
+  "kind": "redact",
+  "params": {
+   "label": "[ O QUE SE SABE ]",
+   "sub": "E O QUE AINDA É ALEGAÇÃO"
+  },
+  "from": 39,
+  "to": 40
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 40,
+  "to": 41
+ },
+ {
+  "kind": "folder",
+  "params": {
+   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
+   "tab": "ARQUIVO Nº 002",
+   "title": "CAPÍTULO 07"
+  },
+  "from": 41,
+  "to": 42
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 42,
+  "to": 43
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 43,
+  "to": 44
+ },
+ {
+  "kind": "glitch",
+  "params": {},
+  "from": 44,
+  "to": 45
+ },
+ {
+  "kind": "radar",
+  "params": {
+   "title": "REAÇÃO INTERNACIONAL",
+   "label": "PEQUIM",
+   "sub": "CHANCELARIA"
+  },
+  "from": 45,
+  "to": 46,
+  "dur": 1.2
+ },
+ {
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/jensen_huang",
+    "> abrir capitulo_08.dossie"
+   ],
+   "ok": "CAPÍTULO 08 ENCONTRADO"
+  },
+  "from": 46,
+  "to": 47
+ },
+ {
+  "kind": "scan",
+  "params": {},
+  "from": 47,
+  "to": 48
+ },
+ {
+  "kind": "map",
+  "params": {
+   "title": "PRÓXIMO DESTINO",
+   "place": "SHENZHEN, CHINA",
+   "coord": "22.5431° N · 114.0579° E"
+  },
+  "from": 48,
+  "to": 49,
+  "dur": 1.6
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 49,
+  "to": 50
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 50,
+  "to": 51
+ },
+ {
+  "kind": "dissolve",
+  "params": {},
+  "from": 51,
+  "to": 52
+ }
+]

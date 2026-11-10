@@ -1,0 +1,203 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+*{box-sizing:border-box}:root{--bg:#0B0B0B;--fg:#EDEDED;--ac:#EDEDED;--paper:#EDEDED}html,body{margin:0;background:transparent}
+#f{width:1920px;height:1080px;position:relative;overflow:hidden;font-family:'IBM Plex Mono',monospace;color:var(--fg)}
+.abs{position:absolute}
+.bar{position:absolute;background:color-mix(in srgb,var(--bg) 45%,#000);border-top:2px solid #262626;border-bottom:2px solid #000}
+.lab{font-size:26px;letter-spacing:8px;color:color-mix(in srgb,var(--fg) 50%,var(--bg));white-space:nowrap}
+.stamp{font-family:'Oswald';font-weight:700;letter-spacing:10px;color:var(--ac);border:12px solid var(--ac);outline:4px solid var(--ac);outline-offset:10px;padding:6px 44px 14px;line-height:1;filter:url(#grunge)}
+.term{position:absolute;inset:0;background:color-mix(in srgb,var(--bg) 30%,#000)}
+.term .l{font-size:44px;line-height:1.6;white-space:pre;color:color-mix(in srgb,var(--fg) 92%,var(--bg))}
+.dim{color:color-mix(in srgb,var(--fg) 48%,var(--bg))}
+.cur{display:inline-block;width:20px;height:40px;background:var(--ac);vertical-align:-6px;margin-left:4px}
+.grid{position:absolute;inset:0;font-size:26px;line-height:34px;white-space:pre;color:color-mix(in srgb,var(--ac) 60%,var(--bg));letter-spacing:6px;padding:20px 30px}
+.br{position:absolute;width:90px;height:90px;border-color:var(--ac);border-style:solid;border-width:0}
+.scan{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.28) 0 2px,rgba(0,0,0,0) 2px 5px)}
+.folder{position:absolute;left:-40px;top:0;width:2000px;height:1120px;background:color-mix(in srgb,var(--paper) 78%,#000);filter:url(#paper);box-shadow:0 -30px 80px rgba(0,0,0,.6)}
+.tab{position:absolute;left:120px;top:-70px;width:520px;height:90px;background:color-mix(in srgb,var(--paper) 78%,#000);border-radius:18px 18px 0 0;filter:url(#paper);font-size:30px;letter-spacing:6px;color:#2B2B2B;padding:24px 34px}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="grunge"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.2 1.5" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter>
+<filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" seed="3" result="n"/><feColorMatrix in="n" type="matrix" values="0.18 0 0 0 0.8  0.18 0 0 0 0.8  0.18 0 0 0 0.8  0 0 0 0 1" result="g"/><feBlend in="SourceGraphic" in2="g" mode="multiply" result="b"/><feComposite in="b" in2="SourceGraphic" operator="in"/></filter>
+</defs></svg>
+<div id="f"></div>
+<script>
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const E=t=>t*t*(3-2*t);
+const ramp=(p,a,b)=>cl((p-a)/(b-a));
+function rnd(seed){let s=seed>>>0;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
+const MIXJS=(a,p,b='var(--bg)')=>`color-mix(in srgb,${a} ${p}%,${b})`;
+const typed=(s,q)=>s.slice(0,Math.round(s.length*cl(q)));
+window.theme=C=>{C=C||{};const r=document.documentElement.style;r.setProperty('--bg',C.fundo||'#0B0B0B');r.setProperty('--fg',C.texto||'#EDEDED');r.setProperty('--ac',C.destaque||C.texto||'#EDEDED');r.setProperty('--paper',C.papel||'#EDEDED');};
+window.ov=(k,p,P,fi)=>{
+ const f=document.getElementById('f'); let h='';
+ if(k==='redact'){
+  const n=8, bh=1080/n;
+  for(let r=0;r<n;r++){
+   const d=r*0.025; let x0=0,x1=0;
+   if(p<.5){x1=E(ramp(p,d,d+.3))*1940}else{x0=E(ramp(p,.52+d,.82+d))*1940;x1=1940}
+   if(x1>x0) h+=`<div class="bar" style="left:${x0-10}px;width:${x1-x0+10}px;top:${r*bh-1}px;height:${bh+3}px"></div>`;
+  }
+  const o=Math.min(ramp(p,.3,.42),1-ramp(p,.55,.66));
+  h+=`<div class="abs lab" style="left:0;right:0;text-align:center;top:${3*bh+bh/2-18}px;opacity:${o}">${P.label||'[ TRECHO CENSURADO ]'}</div>`;
+  h+=`<div class="abs lab" style="left:0;right:0;text-align:center;top:${4*bh+bh/2-18}px;opacity:${o*0.6};font-size:20px">${P.sub||'DOCUMENTO SOB SIGILO'}</div>`;
+ }
+ else if(k==='stamp'){
+  const a=ramp(p,.18,.3), out=1-ramp(p,.8,1);
+  const sc=1+0.9*(1-E(a)); const scrim=0.55*Math.min(ramp(p,.1,.3),out);
+  h+=`<div class="abs" style="inset:0;background:rgba(0,0,0,${scrim})"></div>`;
+  h+=`<div class="abs" style="left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;opacity:${a>0?Math.min(1,a*3)*out:0}">
+   <div style="transform:rotate(-7deg) scale(${sc});text-align:center"><div class="stamp" style="font-size:${P.size||170}px">${P.text||'CONFIDENCIAL'}</div>
+   <div style="margin-top:34px;font-size:28px;letter-spacing:10px;color:color-mix(in srgb,var(--fg) 85%,var(--bg))">${P.sub||''}</div></div></div>`;
+ }
+ else if(k==='terminal'){
+  const bg=Math.min(ramp(p,0,.1),1-ramp(p,.9,1));
+  const L=P.lines||['> acessar /arquivos/popdocs','> abrir dossie.txt'];
+  const tA=.1,tB=.62, per=(tB-tA)/L.length; let lines='';
+  L.forEach((s,i)=>{const q=ramp(p,tA+i*per,tA+(i+.8)*per); if(q>0) lines+=`<div class="l">${typed(s,q)}${(q<1&&q>0)?'<span class="cur"></span>':''}</div>`;});
+  const pq=ramp(p,.62,.8); if(pq>0){const n=24,k2=Math.round(n*E(pq)); lines+=`<div class="l dim">BUSCANDO  [${'█'.repeat(k2)}${'░'.repeat(n-k2)}] ${String(Math.round(100*E(pq))).padStart(3,' ')}%</div>`;}
+  if(p>.8){const blink=Math.floor(fi/4)%2===0; lines+=`<div class="l" style="margin-top:20px;font-weight:600;letter-spacing:6px;color:var(--ac)">${P.ok||'ARQUIVO ENCONTRADO'}${blink?'<span class="cur"></span>':''}</div>`;}
+  h+=`<div class="term" style="opacity:${bg}"><div class="abs dim" style="left:160px;top:110px;font-size:24px;letter-spacing:6px">POPDOCSBRASIL · TERMINAL DE ARQUIVO</div><div class="abs" style="left:160px;top:260px">${lines}</div><div class="scan"></div></div>`;
+ }
+ else if(k==='decrypt'){
+  const env=Math.sin(Math.PI*p), R=rnd(fi*7919+13), ch='ABCDEF0123456789#$%&*@<>/\\|=+';
+  let g=''; for(let r=0;r<31;r++){let row='';for(let c=0;c<84;c++){row+=R()<0.55*env?ch[Math.floor(R()*ch.length)]:' '}g+=row+'\n'}
+  h+=`<div class="abs" style="inset:0;background:rgba(0,0,0,${0.88*Math.min(1,env*1.6)})"></div><div class="grid" style="opacity:${env}">${g}</div>`;
+  const pct=Math.round(100*E(cl(p))); const o=Math.min(1,env*2);
+  h+=`<div class="abs" style="left:50%;top:50%;transform:translate(-50%,-50%);background:color-mix(in srgb,var(--bg) 45%,#000);border:2px solid color-mix(in srgb,var(--ac) 60%,var(--bg));padding:30px 60px;text-align:center;opacity:${o}"><div style="font-size:40px;letter-spacing:10px;font-weight:600">${P.text||'DESCRIPTOGRAFANDO'}</div><div style="font-size:26px;color:color-mix(in srgb,var(--fg) 60%,var(--bg));margin-top:12px;letter-spacing:6px">${P.sub||'CHAVE 0x5E1A'} · ${pct}%</div></div>`;
+ }
+ else if(k==='cctv'){
+  const o=Math.min(ramp(p,0,.08),1-ramp(p,.82,1));
+  const ins=70, bw=6;
+  [['left','top','border-left-width','border-top-width'],['right','top','border-right-width','border-top-width'],['left','bottom','border-left-width','border-bottom-width'],['right','bottom','border-right-width','border-bottom-width']].forEach(c=>{h+=`<div class="br" style="${c[0]}:${ins}px;${c[1]}:${ins}px;${c[2]}:${bw}px;${c[3]}:${bw}px"></div>`});
+  const blink=Math.floor(fi/8)%2===0;
+  const sec=7+Math.floor(fi/30), ff=String(fi%30).padStart(2,'0');
+  h+=`<div class="abs" style="left:110px;top:236px;font-size:34px;font-weight:600;letter-spacing:4px"><span style="color:#E23B3B;opacity:${blink?1:0}">●</span> REC</div>`;
+  h+=`<div class="abs" style="right:110px;top:240px;font-size:28px;letter-spacing:3px">${P.cam||'CAM 07'} · ${P.date||'09.11.2026'} · 23:14:${String(sec).padStart(2,'0')}:${ff}</div>`;
+  const q=E(ramp(p,.12,.62)); const cx=(P.cx||960), cy=(P.cy||540);
+  const x=cx+(1-q)*(-380), y=cy+(1-q)*160, w=760-(760-(P.w||300))*q, hh=520-(520-(P.h||300))*q;
+  const lock=p>.62;
+  h+=`<div class="abs" style="left:${x-w/2}px;top:${y-hh/2}px;width:${w}px;height:${hh}px;border:3px solid ${lock?'var(--ac)':'color-mix(in srgb,var(--ac) 70%,transparent)'}"></div>`;
+  h+=`<div class="abs" style="left:${x-40}px;top:${y-1}px;width:80px;height:2px;background:var(--ac)"></div><div class="abs" style="left:${x-1}px;top:${y-40}px;width:2px;height:80px;background:var(--ac)"></div>`;
+  if(lock) h+=`<div class="abs" style="left:${x-w/2}px;top:${y+hh/2+16}px;font-size:26px;letter-spacing:5px;background:var(--ac);color:var(--bg);padding:4px 12px;font-weight:600">${P.label||'ALVO IDENTIFICADO'}</div>`;
+  h+=`<div class="scan"></div>`;
+  h=`<div style="position:absolute;inset:0;opacity:${o}">${h}</div>`;
+ }
+ else if(k==='folder'){
+  const up=E(ramp(p,0,.38)), open=E(ramp(p,.55,.92));
+  const ty=(1-up)*1200;
+  h+=`<div class="abs" style="inset:0;perspective:2200px"><div style="position:absolute;inset:0;transform-origin:50% -60px;transform:translateY(${ty}px) rotateX(${open*-105}deg);opacity:${1-ramp(p,.85,.95)}">
+   <div class="folder"></div><div class="tab">${P.tab||'ARQUIVO Nº 002'}</div>
+   <div class="abs" style="left:0;right:0;top:330px;text-align:center;color:#1E1E1E">
+    <div style="font-size:30px;letter-spacing:12px">${P.kick||'POPDOCSBRASIL · DOSSIÊ'}</div>
+    <div style="font-family:Oswald;font-weight:700;font-size:150px;line-height:1.1;margin-top:20px">${P.title||'JENSEN HUANG'}</div>
+    <div style="display:inline-block;margin-top:34px;transform:rotate(-4deg)"><div class="stamp" style="font-size:60px;color:#2A2A2A;border-color:#2A2A2A;outline-color:#2A2A2A;letter-spacing:8px;border-width:7px;outline-width:3px">${P.stamp||'CONFIDENCIAL'}</div></div>
+   </div></div></div>`;
+ }
+ else if(k==='static'){
+  const o=Math.min(ramp(p,.26,.36),1-ramp(p,.64,.74));
+  h+=`<div class="abs" style="left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;opacity:${o}"><div style="background:var(--bg);border:3px solid var(--ac);padding:22px 56px;font-size:54px;font-weight:600;letter-spacing:12px;color:var(--ac);white-space:nowrap">${P.label||'SINAL PERDIDO'}</div><div style="margin-top:18px;font-size:26px;letter-spacing:8px;color:var(--fg);text-shadow:0 2px 8px #000">${P.sub||'RECONECTANDO…'}</div></div>`;
+ }
+ else if(k==='enhance'){
+  const cx=1920*(parseFloat(P.x)||50)/100, cy=1080*(parseFloat(P.y)||50)/100;
+  const o=Math.min(ramp(p,0,.08),1-ramp(p,.86,1));
+  if(p<.55){
+   const q=E(ramp(p,.15,.55)), z=1+3*q, w=480*z, hh=270*z, blink=p<.15&&Math.floor(fi/3)%2===0;
+   h+=`<div class="abs" style="left:${cx-w/2}px;top:${cy-hh/2}px;width:${w}px;height:${hh}px;border:3px solid var(--ac);opacity:${blink?.4:1}"></div>`;
+   h+=`<div class="abs" style="left:${cx-w/2}px;top:${cy-hh/2-46}px;font-size:26px;letter-spacing:5px;background:var(--ac);color:var(--bg);padding:3px 12px;font-weight:600">${P.label||'AMPLIAR'} ${Math.round(z*100)}%</div>`;
+  } else {
+   const q=ramp(p,.55,.85), n=24, k2=Math.round(n*E(q));
+   h+=`<div class="abs" style="left:110px;bottom:200px;font-size:30px;letter-spacing:5px;background:${MIXJS('var(--bg)',80,'transparent')};padding:12px 20px">${P.sub||'MELHORANDO IMAGEM'}  [${'█'.repeat(k2)}${'░'.repeat(n-k2)}] ${String(Math.round(100*E(q))).padStart(3,' ')}%</div>`;
+  }
+  [['left','top'],['right','top'],['left','bottom'],['right','bottom']].forEach(c=>{h+=`<div class="br" style="${c[0]}:70px;${c[1]}:70px;border-${c[0]}-width:5px;border-${c[1]}-width:5px;opacity:.8"></div>`});
+  h=`<div style="position:absolute;inset:0;opacity:${o}">${h}<div class="scan" style="opacity:.6"></div></div>`;
+ }
+ else if(k==='vhs'){
+  const o=Math.min(ramp(p,0,.08),1-ramp(p,.9,1)); const rew=p<.5;
+  const sec=14+Math.floor(fi/30), ff=String(fi%30).padStart(2,'0');
+  h+=`<div class="abs" style="left:120px;top:110px;font-size:64px;font-weight:600;letter-spacing:6px;color:#F4F4F4;text-shadow:4px 0 0 rgba(255,0,80,.55),-4px 0 0 rgba(0,200,255,.55)">${rew?'◀◀ '+(P.a||'REW'):'▶ '+(P.b||'PLAY')}</div>`;
+  h+=`<div class="abs" style="right:120px;bottom:140px;font-size:44px;letter-spacing:4px;color:#F4F4F4;text-shadow:3px 0 0 rgba(255,0,80,.5),-3px 0 0 rgba(0,200,255,.5)">${P.label||'SP'} 0:${String(sec).padStart(2,'0')}:${ff}</div>`;
+  h=`<div style="position:absolute;inset:0;opacity:${o}">${h}</div>`;
+ }
+ else if(k==='radar'){
+  const env=Math.min(ramp(p,0,.2),1-ramp(p,.8,1)); const R0=400, cx=960, cy=540, ang=(p*720)%360;
+  h+=`<div class="abs" style="inset:0;background:${MIXJS('var(--bg)',88,'transparent')}"></div>`;
+  let g=''; for(let i=1;i<=4;i++) g+=`<div class="abs" style="left:${cx-R0*i/4}px;top:${cy-R0*i/4}px;width:${R0*i/2}px;height:${R0*i/2}px;border-radius:50%;border:2px solid ${MIXJS('var(--ac)',35,'transparent')}"></div>`;
+  g+=`<div class="abs" style="left:${cx-R0}px;top:${cy-1}px;width:${2*R0}px;height:2px;background:${MIXJS('var(--ac)',30,'transparent')}"></div><div class="abs" style="left:${cx-1}px;top:${cy-R0}px;width:2px;height:${2*R0}px;background:${MIXJS('var(--ac)',30,'transparent')}"></div>`;
+  g+=`<div class="abs" style="left:${cx-R0}px;top:${cy-R0}px;width:${2*R0}px;height:${2*R0}px;border-radius:50%;background:conic-gradient(from ${ang-70}deg,transparent 0deg,${MIXJS('var(--ac)',55,'transparent')} 70deg,transparent 70.5deg)"></div>`;
+  const B=[[38,.55],[122,.8],[205,.35],[290,.7],[330,.5]]; const tgt=P.n?parseInt(P.n):2;
+  B.forEach(([a,r],i)=>{const since=((ang-a)%360+360)%360; const swept=p*720>=a; const b=swept?Math.exp(-since/90):0; const lock=i===tgt&&p>.55;
+   const x=cx+Math.sin(a*Math.PI/180)*R0*r, y=cy-Math.cos(a*Math.PI/180)*R0*r;
+   g+=`<div class="abs" style="left:${x-9}px;top:${y-9}px;width:18px;height:18px;border-radius:50%;background:var(--ac);opacity:${lock?1:b}"></div>`;
+   if(lock) g+=`<div class="abs" style="left:${x-34}px;top:${y-34}px;width:68px;height:68px;border:3px solid var(--ac)"></div><div class="abs" style="left:${x+48}px;top:${y-20}px;font-size:24px;letter-spacing:4px;background:var(--ac);color:var(--bg);padding:3px 10px;font-weight:600;white-space:nowrap">${P.label||'SINAL DETECTADO'}</div>`;});
+  h+=g+`<div class="abs lab" style="left:120px;top:110px">${P.title||'VARREDURA ATIVA'}</div><div class="abs lab" style="right:120px;bottom:110px;font-size:22px">${P.sub||'RAIO 400 KM'} · ${String(Math.round(ang)).padStart(3,'0')}°</div>`;
+  h=`<div style="position:absolute;inset:0;opacity:${env}">${h}</div>`;
+ }
+ else if(k==='map'){
+  const bg=Math.min(ramp(p,0,.14),1-ramp(p,.86,1)); const R=rnd(4242); let g='';
+  for(let x=0;x<=1920;x+=80) g+=`<div class="abs" style="left:${x}px;top:0;width:1px;height:1080px;background:${MIXJS('var(--fg)',8,'transparent')}"></div>`;
+  for(let y=0;y<=1080;y+=80) g+=`<div class="abs" style="left:0;top:${y}px;width:1920px;height:1px;background:${MIXJS('var(--fg)',8,'transparent')}"></div>`;
+  let roads=''; for(let i=0;i<26;i++){let x=R()*1920,y=R()*1080,d=`M${x} ${y}`;for(let j=0;j<6;j++){x+=(R()-.5)*360;y+=(R()-.5)*240;d+=` L${x} ${y}`}roads+=`<path d="${d}" stroke="currentColor" stroke-width="${1+R()*2}" fill="none" opacity=".18"/>`}
+  for(let i=0;i<140;i++){const s=2+R()*5;g+=`<div class="abs" style="left:${R()*1920}px;top:${R()*1080}px;width:${s}px;height:${s}px;border-radius:50%;background:${MIXJS('var(--fg)',30,'transparent')}"></div>`}
+  const q=E(ramp(p,.18,.68)); const S=[380,800], C=[720,220], T=[1300,420];
+  const bx=(1-q)*(1-q)*S[0]+2*(1-q)*q*C[0]+q*q*T[0], by=(1-q)*(1-q)*S[1]+2*(1-q)*q*C[1]+q*q*T[1];
+  const route=`<svg class="abs" style="left:0;top:0;color:var(--fg)" width="1920" height="1080">${roads}<path d="M${S} Q${C} ${T}" pathLength="1" stroke="var(--ac)" stroke-width="5" fill="none" stroke-dasharray="1" stroke-dashoffset="${1-q}"/></svg>`;
+  const arrived=p>.68, pulse=arrived?((fi%20)/20):0;
+  let pin=`<div class="abs" style="left:${bx-12}px;top:${by-12}px;width:24px;height:24px;border-radius:50%;background:var(--ac)"></div>`;
+  if(arrived) pin+=`<div class="abs" style="left:${T[0]-12-40*pulse}px;top:${T[1]-12-40*pulse}px;width:${24+80*pulse}px;height:${24+80*pulse}px;border-radius:50%;border:3px solid var(--ac);opacity:${1-pulse}"></div><div class="abs" style="right:120px;top:${T[1]+50}px;max-width:1100px;background:var(--ac);color:var(--bg);font-size:30px;letter-spacing:5px;font-weight:600;padding:6px 16px;white-space:nowrap">${P.place||'ALVO LOCALIZADO'}</div>`;
+  const coord=P.coord||'37.3541° N · 121.9552° W'; const RR=rnd(fi*31+7); const shown=arrived?coord:coord.replace(/[0-9]/g,()=>String(Math.floor(RR()*10)));
+  h+=`<div class="abs" style="inset:0;background:${MIXJS('var(--bg)',70,'#000')};opacity:${bg}">${g}${route}${pin}<div class="abs lab" style="left:120px;top:110px">${P.title||'RASTREAMENTO · SATÉLITE'}</div><div class="abs" style="left:120px;bottom:110px;font-size:34px;letter-spacing:4px;color:var(--fg)">${shown}</div><div class="scan" style="opacity:.5"></div></div>`;
+ }
+ else if(k==='fingerprint'){
+  const env=Math.min(ramp(p,0,.15),1-ramp(p,.85,1)); const sc=E(ramp(p,.12,.6)); const fx=640, fy=540;
+  let el=''; const R=rnd(77);
+  for(let i=0;i<17;i++){const rx=18+i*15, ry=rx*1.32; const c=2*Math.PI*Math.sqrt((rx*rx+ry*ry)/2); let da=''; let t=0; while(t<c){const a=40+R()*160, b=6+R()*22; da+=`${a} ${b} `; t+=a+b}
+   el+=`<ellipse cx="${fx}" cy="${fy+ (i*1.6)}" rx="${rx}" ry="${ry}" fill="none" stroke-width="5" stroke-linecap="round" stroke-dasharray="${da}" transform="rotate(${(R()-.5)*8} ${fx} ${fy})"/>`;}
+  const top=fy-360, hgt=720, yline=top+hgt*sc;
+  h+=`<div class="abs" style="inset:0;background:${MIXJS('var(--bg)',88,'transparent')}"></div>`;
+  h+=`<svg class="abs" style="left:0;top:0" width="1920" height="1080"><defs><clipPath id="cp"><rect x="0" y="${top}" width="1920" height="${hgt*sc}"/></clipPath></defs><g stroke="${MIXJS('var(--fg)',22,'transparent')}">${el}</g><g stroke="var(--ac)" clip-path="url(#cp)">${el}</g></svg>`;
+  if(p>.1&&p<.62) h+=`<div class="abs" style="left:${fx-330}px;top:${yline-2}px;width:660px;height:4px;background:var(--ac);box-shadow:0 0 24px 6px ${MIXJS('var(--ac)',60,'transparent')}"></div>`;
+  const pts=Math.round(47*sc), pct=(98.7*sc).toFixed(1).replace('.',',');
+  h+=`<div class="abs" style="left:1060px;top:300px;width:760px"><div class="lab" style="color:var(--fg)">${P.title||'VERIFICAÇÃO BIOMÉTRICA'}</div><div style="margin-top:40px;font-size:30px;line-height:1.9;color:${MIXJS('var(--fg)',80)}">PONTOS ANALISADOS  ${String(pts).padStart(2,'0')}/47<br>CORRESPONDÊNCIA    ${pct}%</div>`;
+  if(p>.62) h+=`<div style="margin-top:40px;display:inline-block;background:var(--ac);color:var(--bg);font-size:36px;font-weight:600;letter-spacing:6px;padding:10px 22px">${P.label||'IDENTIDADE CONFIRMADA'}</div>${P.name?`<div style="margin-top:20px;font-size:30px;letter-spacing:4px">${P.name}</div>`:''}`;
+  h+=`</div>`;
+  h=`<div style="position:absolute;inset:0;opacity:${env}">${h}</div>`;
+ }
+ else if(k==='access'){
+  const bg=Math.min(ramp(p,0,.1),1-ramp(p,.9,1));
+  const user=P.user||'agente.popdocs'; const uq=ramp(p,.12,.34), pq=ramp(p,.36,.52);
+  const pw='•'.repeat(Math.round(12*pq)); const ver=p>=.54&&p<.7, ok=p>=.7;
+  const dots='.'.repeat(1+Math.floor(fi/5)%3);
+  const field=(lab,val,act)=>`<div style="margin-top:30px;font-size:24px;letter-spacing:5px;color:${MIXJS('var(--fg)',55)}">${lab}</div><div style="margin-top:10px;border:2px solid ${act?'var(--ac)':MIXJS('var(--fg)',25)};padding:14px 20px;font-size:38px;height:76px;color:var(--fg)">${val}${act?'<span class="cur"></span>':''}</div>`;
+  let w=`<div style="border-bottom:2px solid ${MIXJS('var(--fg)',20)};padding-bottom:22px;font-size:26px;letter-spacing:8px;color:var(--fg)">${P.system||'SISTEMA RESTRITO'}</div>`;
+  w+=field('USUÁRIO',typed(user,uq),uq>0&&uq<1)+field('SENHA',pw,uq>=1&&!ver&&!ok);
+  w+=`<div style="margin-top:40px;height:84px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:600;letter-spacing:8px;${ok?'background:var(--ac);color:var(--bg)':'border:2px solid '+MIXJS('var(--fg)',25)+';color:'+MIXJS('var(--fg)',60)}">${ok?(P.ok||'ACESSO CONCEDIDO'):ver?'VERIFICANDO'+dots:'ENTRAR'}</div>`;
+  h+=`<div class="term" style="opacity:${bg}"><div class="abs" style="left:510px;top:170px;width:900px;padding:44px 56px;border:2px solid ${MIXJS('var(--fg)',30)};background:${MIXJS('var(--bg)',85,'#000')}">${w}</div><div class="scan"></div></div>`;
+ }
+ else if(k==='search'){
+  const bg=Math.min(ramp(p,0,.1),1-ramp(p,.9,1));
+  const qq=P.query||'jensen huang'; const tq=ramp(p,.1,.32); const R=rnd(911); const hit=3; const found=p>.62;
+  let rows='';
+  for(let i=0;i<7;i++){const a=ramp(p,.34+i*.035,.38+i*.035); if(a<=0) continue; const id='REG-'+String(Math.floor(R()*900000+100000)); const bw=200+R()*520; const yr=1993+Math.floor(R()*33);
+   const sel=found&&i===hit;
+   rows+=`<div style="display:flex;gap:40px;align-items:center;padding:16px 24px;font-size:30px;opacity:${a*(found&&!sel?.35:1)};${sel?'background:var(--ac);color:var(--bg);font-weight:600':'border-bottom:1px solid '+MIXJS('var(--fg)',15)}"><span style="width:240px">${id}</span>${sel?`<span style="flex:1">${P.result||'REGISTRO ENCONTRADO'}</span>`:`<span style="flex:1"><span style="display:inline-block;width:${bw}px;height:26px;background:${MIXJS('var(--fg)',35)};vertical-align:middle"></span></span>`}<span>${yr}</span></div>`;}
+  h+=`<div class="term" style="opacity:${bg}"><div class="abs lab" style="left:160px;top:110px">${P.db||'BANCO DE DADOS · ARQUIVO POPDOCS'}</div>
+   <div class="abs" style="left:160px;right:160px;top:180px;border:2px solid var(--ac);padding:18px 26px;font-size:40px;color:var(--fg)">⌕  ${typed(qq,tq)}${tq<1?'<span class="cur"></span>':''}</div>
+   <div class="abs" style="left:160px;right:160px;top:320px">${rows}</div>
+   ${found?`<div class="abs" style="left:160px;bottom:110px;font-size:28px;letter-spacing:6px;color:var(--ac)">${P.ok||'1 RESULTADO RELEVANTE'}</div>`:''}<div class="scan"></div></div>`;
+ }
+ else if(k==='wiretap'){
+  const env=Math.min(ramp(p,0,.15),1-ramp(p,.85,1)); const R=rnd(fi*13+5); const n=90; let bars='';
+  for(let i=0;i<n;i++){const ph=Math.sin(i*0.21+fi*0.35)*0.5+0.5; const sp=Math.abs(Math.sin(i*0.07+fi*0.11)); const hh=10+ (R()*0.6+0.4)*ph*sp*300;
+   bars+=`<div style="width:10px;height:${hh}px;background:var(--ac);opacity:${.55+.45*ph}"></div>`;}
+  const blink=Math.floor(fi/8)%2===0, sec=String(3+Math.floor(fi/30)).padStart(2,'0'), ff=String(fi%30).padStart(2,'0');
+  h+=`<div class="abs" style="inset:0;background:${MIXJS('var(--bg)',86,'transparent')}"></div>`;
+  h+=`<div class="abs lab" style="left:210px;top:280px;color:var(--fg)"><span style="color:#E23B3B;opacity:${blink?1:0}">●</span> ${P.title||'INTERCEPTAÇÃO · LINHA 02'}</div>`;
+  h+=`<div class="abs" style="left:210px;right:210px;top:340px;height:400px;display:flex;align-items:center;justify-content:space-between">${bars}</div>`;
+  h+=`<div class="abs" style="left:210px;top:770px;font-size:30px;letter-spacing:5px;color:${MIXJS('var(--fg)',70)}">${P.label||'GRAVAÇÃO 07'} · 00:${sec}:${ff}</div>`;
+  h=`<div style="position:absolute;inset:0;opacity:${env}">${h}</div>`;
+ }
+ f.innerHTML=h;
+};
+</script></body></html>

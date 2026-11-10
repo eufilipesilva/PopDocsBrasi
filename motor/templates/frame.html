@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@700&display=swap">
+<style>
+*{box-sizing:border-box}:root{--bg:#0B0B0B;--fg:#F2F2F2;--ac:#F2F2F2;--paper:#EDEDED}body{margin:0;background:var(--bg)}
+#f{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--bg);color:var(--fg);font-family:'IBM Plex Mono',monospace}
+.brand{position:absolute;left:120px;top:64px;font-size:22px;letter-spacing:6px;color:color-mix(in srgb,var(--fg) 40%,var(--bg))}
+.src{position:absolute;left:120px;bottom:56px;font-size:22px;color:color-mix(in srgb,var(--fg) 46%,var(--bg));max-width:1680px}
+.grain{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,255,255,.04),rgba(0,0,0,.55) 75%);pointer-events:none}
+.c{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 160px}
+.kick{font-size:28px;letter-spacing:6px;color:color-mix(in srgb,var(--ac) 55%,var(--bg))}
+.big{font-family:'Oswald',sans-serif;font-weight:700;line-height:1;text-transform:uppercase;margin:28px 0}
+.sub{font-size:36px;line-height:1.45;color:color-mix(in srgb,var(--fg) 78%,var(--bg));max-width:1400px}
+.q{font-family:'Oswald',sans-serif;font-weight:500;font-size:76px;line-height:1.2;max-width:1500px}
+.qm{font-family:'Oswald';font-size:220px;line-height:.6;color:color-mix(in srgb,var(--ac) 20%,var(--bg));height:110px}
+.who{margin-top:44px;font-size:30px;letter-spacing:4px;color:var(--fg)}
+.who2{margin-top:10px;font-size:24px;color:color-mix(in srgb,var(--fg) 56%,var(--bg))}
+.paper{width:1440px;background:var(--paper);padding:60px 70px;transform:rotate(-1deg);box-shadow:0 30px 60px rgba(0,0,0,.6);color:#111;align-self:center}
+.paper .o{font-size:26px;color:#4D4D4D}
+.paper .h{font-family:'Source Serif 4',serif;font-weight:700;font-size:70px;line-height:1.12;margin:26px 0}
+.paper .h span{background:var(--mark)}
+.paper .u{border-top:2px solid #BDBDBD;padding-top:16px;font-size:22px;color:#737373}
+.chap{font-family:'Oswald';font-weight:700;font-size:300px;color:color-mix(in srgb,var(--ac) 12%,var(--bg));line-height:1}
+.line{position:absolute;left:0;top:200px;height:3px;background:color-mix(in srgb,var(--fg) 20%,var(--bg));width:100%}
+.tl{position:relative;height:420px;width:1640px;margin-top:70px}
+.tl .g{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);gap:24px}
+.tl .d{height:150px;display:flex;align-items:flex-end;font-family:'Oswald';font-weight:700;font-size:50px}
+.tl .dot{width:34px;height:34px;border-radius:50%;border:3px solid;margin:18px 0}
+.tl .t{font-size:28px;line-height:1.35}
+.row{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid color-mix(in srgb,var(--fg) 13%,var(--bg));padding:30px 0;font-size:38px}
+.row b{font-family:'Oswald';font-weight:500;letter-spacing:2px;border:3px solid var(--ac);color:var(--ac);padding:6px 18px;font-size:32px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.col{border-top:6px solid var(--ac);padding-top:30px}
+.col .k{font-family:'Oswald';font-weight:700;font-size:72px}
+.col .v{font-size:34px;color:color-mix(in srgb,var(--fg) 78%,var(--bg));margin-top:16px;line-height:1.4}
+.subt{position:absolute;left:50%;transform:translateX(-50%);bottom:96px;max-width:1500px;text-align:center;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:36px;line-height:1.35;color:var(--fg);background:color-mix(in srgb,var(--bg) 78%,transparent);padding:10px 22px;white-space:pre-line}
+.hid{opacity:0}
+</style></head><body><div id="f"></div>
+<script>
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+window.sub=(t)=>{document.body.style.background='transparent';const f=document.getElementById('f');f.style.background='transparent';f.innerHTML=`<div class="subt">${esc(t)}</div>`;};
+window.META={};
+const MIX=(a,p,b='var(--bg)')=>`color-mix(in srgb,${a} ${p}%,${b})`;
+function theme(C){C=C||{};const r=document.documentElement.style;r.setProperty('--bg',C.fundo||'#0B0B0B');r.setProperty('--fg',C.texto||'#F2F2F2');r.setProperty('--ac',C.destaque||C.texto||'#F2F2F2');r.setProperty('--paper',C.papel||'#EDEDED');r.setProperty('--mark','color-mix(in srgb,var(--ac) 40%,#A8A8A8)');}
+theme();
+window.draw=(s,st)=>{
+ const M=window.META; theme(M.cores);
+ const tr=!!s.bg; document.body.style.background=tr?'transparent':'var(--bg)'; const f=document.getElementById('f'); f.style.background=tr?'transparent':'var(--bg)';
+ const V=k=>k<=st?'':' hid'; let h='';
+ const brand=`<div class="brand">${esc(M.brand)}</div>`;
+ const src=s.src?`<div class="src">Fonte: ${esc(s.src)}</div>`:'';
+ if(s.t==='clip'){const B=[260,140,1400,788];h=`<div style="position:absolute;left:${B[0]}px;top:${B[1]}px;width:${B[2]}px;height:${B[3]}px;box-shadow:0 0 0 4000px var(--bg);outline:3px solid ${MIX('var(--fg)',40)}"></div><div style="position:absolute;left:${B[0]}px;top:58px;background:var(--ac);color:var(--bg);font-size:22px;letter-spacing:4px;padding:8px 16px">${esc(s.tag||'CITAÇÃO · TRECHO ORIGINAL')}</div><div style="position:absolute;right:${1920-B[0]-B[2]}px;top:64px;font-size:24px;color:${MIX('var(--fg)',67)}">${esc(s.date||'')}</div><div style="position:absolute;left:${B[0]}px;right:${1920-B[0]-B[2]}px;top:${B[1]+B[3]+22}px;display:flex;justify-content:space-between;gap:40px;font-size:24px"><span style="color:var(--fg)">${esc(s.cap||'')}</span><span style="color:${MIX('var(--fg)',60)};text-align:right">${esc(s.credit||'')}</span></div>`; f.innerHTML=h; return;}
+ if(s.t==='photo'){h=`<div style="position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(to bottom,${MIX('var(--bg)',85,'transparent')},transparent)"></div><div style="position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to top,${MIX('var(--bg)',80,'transparent')},transparent)"></div><div style="position:absolute;left:120px;top:60px;background:var(--ac);color:var(--bg);font-size:22px;letter-spacing:4px;padding:8px 16px">${esc(M.photoTag||'IMAGEM DE ARQUIVO')}</div><div style="position:absolute;right:120px;top:64px;font-size:26px;color:var(--fg)">${esc(s.date)}</div><div style="position:absolute;left:120px;right:420px;top:124px;font-family:'Oswald';font-weight:500;font-size:40px;line-height:1.2;color:var(--fg)">${esc(s.cap)}</div><div style="position:absolute;left:120px;bottom:30px;font-size:20px;color:${MIX('var(--fg)',67)}">${esc(s.credit)}</div>`; f.innerHTML=h; return;}
+ if(s.t==='title'){h=`<div class="c" style="align-items:flex-start"><div class="kick">${esc(M.titleKick)}</div><div class="big" style="font-size:230px;margin:30px 0 10px">${esc(M.title)}</div><div style="height:4px;width:600px;background:var(--ac);margin:10px 0 36px"></div><div class="sub" style="font-size:46px;color:var(--fg)">${esc(M.subtitle)}</div></div>`;}
+ else if(s.t==='end'){h=`<div class="c" style="align-items:center;text-align:center"><div class="kick">POPDOCSBRASIL</div><div class="big" style="font-size:120px">${esc(M.endTitle)}</div><div class="sub">${esc(M.endNote)}</div><div class="sub" style="font-size:24px;color:${MIX('var(--fg)',46)};margin-top:40px">${esc(M.endCredits)}</div></div>`;}
+ else if(s.t==='chapter'){h=brand+`<div class="c"><div class="chap">${s.num}</div><div class="kick" style="margin-top:20px">CAPÍTULO ${s.num}</div><div class="big" style="font-size:110px;max-width:1500px">${esc(s.name)}</div></div>`;}
+ else if(s.t==='fact'){const L=s.big.length; const fs=L<=6?260:L<=12?190:L<=18?140:110; h=brand+`<div class="c"><div class="kick">${esc(s.kicker)}</div><div class="big" style="font-size:${fs}px">${esc(s.big)}</div><div class="sub${V(1)}">${esc(s.sub)}</div></div>`+src;}
+ else if(s.t==='quote'){const fs=s.q.length>90?62:s.q.length>50?76:96; h=brand+`<div class="c"><div class="qm">“</div><div class="q" style="font-size:${fs}px">${esc(s.q)}</div><div class="who">${esc(s.who)}</div><div class="who2">${esc(s.src)}</div></div>`;}
+ else if(s.t==='headline'){const i=s.head.indexOf(s.mark); const hh=i<0?esc(s.head):esc(s.head.slice(0,i))+`<span style="background:${st>=1?'var(--mark)':'transparent'}">`+esc(s.mark)+'</span>'+esc(s.head.slice(i+s.mark.length)); h=brand+`<div class="c" style="align-items:center"><div class="kick" style="margin-bottom:40px">O QUE A IMPRENSA PUBLICOU</div><div class="paper"><div class="o">${esc(s.outlet)}</div><div class="h">${hh}</div><div class="u">${esc(s.url)}</div></div></div><div class="src">Recorte recriado, título original em inglês</div>`;}
+ else if(s.t==='timeline'){const items=s.ev.map((e,i)=>{const c=i===s.cur?'var(--ac)':MIX('var(--fg)',34);return `<div><div class="d" style="color:${c}">${esc(e[0])}</div><div class="dot" style="border-color:${c};background:${i===s.cur?'var(--ac)':'var(--bg)'}"></div><div class="t" style="color:${c}">${esc(e[1])}</div></div>`}).join(''); h=brand+`<div class="c"><div class="kick">${esc(s.kicker)}</div><div class="tl"><div class="line"></div><div class="g">${items}</div></div></div>`+src;}
+ else if(s.t==='name'){h=brand+`<div class="c"><div class="kick">QUEM É</div><div style="border-left:10px solid var(--ac);padding-left:40px;margin-top:30px"><div class="big" style="font-size:110px;margin:0 0 20px">${esc(s.name)}</div><div class="sub${V(1)}">${esc(s.role)}</div></div></div>`+src;}
+ else if(s.t==='status'){h=brand+`<div class="c" style="padding-bottom:120px"><div class="kick" style="margin-bottom:30px">O QUE SE SABE ATÉ 09/11/2026</div>${s.rows.map((r,i)=>`<div class="row${V(Math.max(0,i-1))}"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></div>`).join('')}</div>`+src;}
+ else if(s.t==='cols'){h=brand+`<div class="c"><div class="kick">TRÊS OLHARES SOBRE O MESMO CASO</div><div class="cols">${s.cols.map((c,i)=>`<div class="col${V(i)}"><div class="k">${esc(c[0])}</div><div class="v">${esc(c[1])}</div></div>`).join('')}</div></div>`+src;}
+ f.innerHTML=h+'<div class="grain"></div>';
+ if(s.bg&&s.t!=='title'&&s.t!=='photo'){const ov=['headline','timeline','cols'].includes(s.t)?'background:'+MIX('var(--bg)',70,'transparent'):'background:linear-gradient(to right,'+MIX('var(--bg)',94,'transparent')+' 30%,'+MIX('var(--bg)',62,'transparent')+' 70%,'+MIX('var(--bg)',45,'transparent')+')'; f.innerHTML=`<div style="position:absolute;inset:0;${ov}"></div>`+h+'<div class="grain"></div>'+`<div style="position:absolute;right:120px;top:64px;font-size:18px;color:${MIX('var(--fg)',62)};text-align:right;max-width:900px;line-height:1.4">${esc(s.cap||'')}<br><span style="color:${MIX('var(--fg)',42)}">${esc(s.credit||'')}</span></div>`;}
+ if(s.bg&&s.t==='title'){f.innerHTML=`<div style="position:absolute;inset:0;background:linear-gradient(to right,${MIX('var(--bg)',92,'transparent')} 35%,${MIX('var(--bg)',45,'transparent')})"></div>`+h+`<div class="src" style="color:${MIX('var(--fg)',56)}">${esc(s.credit)}</div>`;}
+};
+</script></body></html>

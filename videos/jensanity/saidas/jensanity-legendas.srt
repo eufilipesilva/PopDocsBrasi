@@ -1,0 +1,850 @@
+1
+00:00:00,400 --> 00:00:03,690
+Domingo, 8 de novembro de 2026.
+
+2
+00:00:03,690 --> 00:00:08,580
+O homem que comanda a empresa de chips
+mais importante do planeta manda um
+
+3
+00:00:08,580 --> 00:00:10,160
+e-mail aos funcionários.
+
+4
+00:00:10,160 --> 00:00:11,820
+São poucas linhas.
+
+5
+00:00:12,820 --> 00:00:14,770
+Eu fui infiel à minha esposa.
+
+6
+00:00:14,770 --> 00:00:17,630
+Minhas ações feriram ela e nossos filhos.
+
+7
+00:00:17,630 --> 00:00:19,830
+Não há desculpa para o que eu fiz.
+
+8
+00:00:20,830 --> 00:00:22,290
+Uma confissão pessoal.
+
+9
+00:00:22,290 --> 00:00:27,350
+Só que, dias antes, o New York Times
+tinha publicado que a outra mulher era
+
+10
+00:00:27,350 --> 00:00:30,720
+suspeita de trabalhar para
+a inteligência chinesa.
+
+11
+00:00:30,720 --> 00:00:35,180
+E aí uma traição virou assunto de
+Estado entre Washington e Pequim.
+
+12
+00:00:44,580 --> 00:00:45,480
+Capítulo um.
+
+13
+00:00:45,480 --> 00:00:47,550
+O menino que limpava banheiros.
+
+14
+00:00:48,950 --> 00:00:51,510
+Jen-Hsun Huang nasceu em Taiwan, em 1963.
+
+15
+00:00:51,510 --> 00:00:58,730
+Aos cinco anos, a família se mudou para
+a Tailândia, por causa do trabalho do
+
+16
+00:00:58,730 --> 00:01:00,510
+pai numa refinaria.
+
+17
+00:01:01,510 --> 00:01:07,330
+Em 1973, com o país em crise política,
+os pais tomaram uma decisão dura:
+
+18
+00:01:07,330 --> 00:01:10,590
+mandar os dois filhos sozinhos
+para os Estados Unidos.
+
+19
+00:01:10,590 --> 00:01:12,470
+Ele tinha nove anos.
+
+20
+00:01:13,470 --> 00:01:18,440
+Os tios procuraram uma escola e
+escolheram, sem saber direito o que era, um
+
+21
+00:01:18,440 --> 00:01:20,290
+internato rural no Kentucky.
+
+22
+00:01:20,290 --> 00:01:23,220
+Era um lugar para jovens problemáticos.
+
+23
+00:01:24,220 --> 00:01:26,150
+Huang era o aluno mais novo.
+
+24
+00:01:26,150 --> 00:01:29,630
+Dividia o quarto com um
+rapaz de dezessete anos.
+
+25
+00:01:29,630 --> 00:01:34,920
+Todo aluno tinha um trabalho, e o dele
+era limpar os banheiros de cerca de cem
+
+26
+00:01:34,920 --> 00:01:35,460
+meninos.
+
+27
+00:01:36,460 --> 00:01:38,930
+A família se falava por fita cassete:
+
+28
+00:01:38,930 --> 00:01:43,540
+uma vez por mês, os pais gravavam
+uma mensagem e mandavam pelo correio.
+
+29
+00:01:43,540 --> 00:01:47,490
+Mesmo assim, anos depois, ele
+disse à rádio pública americana:
+
+30
+00:01:47,490 --> 00:01:49,740
+eu amei o tempo que passei lá.
+
+31
+00:01:50,740 --> 00:01:55,490
+Os pais chegaram cerca de dois anos
+depois, e a família foi para o Oregon.
+
+32
+00:01:55,490 --> 00:02:00,450
+Ele pulou dois anos na escola, terminou
+o ensino médio aos dezesseis e foi
+
+33
+00:02:00,450 --> 00:02:03,530
+trabalhar no Denny's,
+uma rede de lanchonetes:
+
+34
+00:02:03,530 --> 00:02:06,300
+lavou pratos, foi ajudante e garçom.
+
+35
+00:02:07,300 --> 00:02:12,850
+Depois, cursou engenharia elétrica na
+Oregon State, onde conheceu a parceira de
+
+36
+00:02:12,850 --> 00:02:14,120
+laboratório, Lori.
+
+37
+00:02:14,120 --> 00:02:15,890
+Os dois se casaram.
+
+38
+00:02:17,390 --> 00:02:18,580
+Capítulo dois.
+
+39
+00:02:18,580 --> 00:02:21,060
+Um Denny's e cinco milhões da Sega.
+
+40
+00:02:22,460 --> 00:02:28,700
+Nos anos 80, Huang projetava processadores
+na AMD e fazia mestrado em Stanford.
+
+41
+00:02:28,700 --> 00:02:35,250
+Depois foi para a LSI Logic, onde conheceu
+dois engenheiros da Sun Microsystems:
+
+42
+00:02:35,250 --> 00:02:38,300
+Chris Malachowsky e Curtis Priem.
+
+43
+00:02:39,300 --> 00:02:45,930
+Em 1993, os três se sentaram numa
+mesa de um Denny's em San Jose.
+
+44
+00:02:45,930 --> 00:02:49,490
+Ali decidiram abrir uma
+empresa de chips gráficos.
+
+45
+00:02:49,490 --> 00:02:52,500
+Ele tinha trinta anos
+e dois filhos pequenos.
+
+46
+00:02:52,500 --> 00:02:56,710
+Virou CEO no primeiro dia,
+e nunca mais deixou o cargo.
+
+47
+00:02:57,710 --> 00:02:59,840
+O começo quase acabou com tudo.
+
+48
+00:02:59,840 --> 00:03:04,570
+O primeiro chip, o NV1,
+desenhava imagens com curvas.
+
+49
+00:03:04,570 --> 00:03:09,160
+Só que a Microsoft escolheu triângulos
+como padrão dos jogos no Windows.
+
+50
+00:03:09,160 --> 00:03:14,430
+O produto nasceu obsoleto, e um contrato
+com a Sega também foi cancelado.
+
+51
+00:03:15,430 --> 00:03:17,740
+Huang fez um pedido inusitado:
+
+52
+00:03:17,740 --> 00:03:22,690
+que a Sega transformasse o pagamento
+do contrato em investimento.
+
+53
+00:03:22,690 --> 00:03:28,560
+O presidente da Sega, Shoichiro
+Irimajiri, convenceu o conselho.
+
+54
+00:03:28,560 --> 00:03:33,870
+Foram cinco milhões de dólares, o
+suficiente para uns seis meses de vida.
+
+55
+00:03:34,870 --> 00:03:40,840
+Huang cortou cerca de metade da equipe
+e apostou o que sobrou num único chip, o
+
+56
+00:03:40,840 --> 00:03:41,520
+RIVA 128.
+
+57
+00:03:41,520 --> 00:03:46,850
+Em 1997, ele vendeu um milhão
+de unidades em quatro meses.
+
+58
+00:03:47,850 --> 00:03:50,920
+Trinta anos depois, ele
+foi a Tóquio agradecer.
+
+59
+00:03:50,920 --> 00:03:56,630
+Se não fosse pelo que a Sega fez pela
+Nvidia, disse ele, a Nvidia não estaria
+
+60
+00:03:56,630 --> 00:03:57,370
+aqui hoje.
+
+61
+00:03:58,870 --> 00:04:00,070
+Capítulo três.
+
+62
+00:04:00,070 --> 00:04:02,210
+A aposta que ninguém entendeu.
+
+63
+00:04:03,610 --> 00:04:09,170
+Em 1999, a Nvidia abriu capital e lançou
+a GeForce 256, vendida como a primeira
+
+64
+00:04:09,170 --> 00:04:11,990
+GPU, a unidade de processamento gráfico.
+
+65
+00:04:11,990 --> 00:04:14,400
+Era coisa de gamer.
+
+66
+00:04:14,400 --> 00:04:15,770
+Mas Huang via outra coisa:
+
+67
+00:04:15,770 --> 00:04:21,620
+uma placa de vídeo faz milhares
+de contas ao mesmo tempo.
+
+68
+00:04:21,620 --> 00:04:24,830
+E se ela servisse para
+qualquer cálculo pesado?
+
+69
+00:04:25,830 --> 00:04:32,010
+Em 2007 nasceu a CUDA, a ferramenta que
+deixou cientistas programarem as placas
+
+70
+00:04:32,010 --> 00:04:32,790
+da Nvidia.
+
+71
+00:04:32,790 --> 00:04:34,810
+Wall Street não gostou.
+
+72
+00:04:34,810 --> 00:04:40,140
+O custo dos chips quase dobrou, a receita
+não acompanhou, e o valor da empresa
+
+73
+00:04:40,140 --> 00:04:45,060
+despencou de cerca de doze bilhões
+para dois ou três bilhões de dólares.
+
+74
+00:04:46,060 --> 00:04:48,840
+A resposta veio em 2012.
+
+75
+00:04:48,840 --> 00:04:55,090
+Pesquisadores da Universidade de Toronto
+treinaram uma rede neural chamada
+
+76
+00:04:55,090 --> 00:04:58,970
+AlexNet em duas placas
+de videogame da Nvidia.
+
+77
+00:04:58,970 --> 00:05:03,700
+Ela venceu com folga uma competição
+de reconhecimento de imagens.
+
+78
+00:05:03,700 --> 00:05:07,930
+Ali começou a era moderna
+da inteligência artificial.
+
+79
+00:05:08,930 --> 00:05:13,590
+Em 2016, Huang entregou pessoalmente
+um supercomputador à OpenAI.
+
+80
+00:05:13,590 --> 00:05:17,470
+Seis anos depois, a OpenAI lançou o ChatGPT.
+
+81
+00:05:18,470 --> 00:05:23,520
+Em maio de 2023, a Nvidia virou a
+primeira fabricante de chips a valer um
+
+82
+00:05:23,520 --> 00:05:24,830
+trilhão de dólares.
+
+83
+00:05:25,830 --> 00:05:31,030
+Em outubro de 2025, virou a primeira
+empresa do mundo a valer cinco trilhões.
+
+84
+00:05:32,030 --> 00:05:37,420
+O menino que limpava banheiros no Kentucky
+estava entre as pessoas mais ricas do
+
+85
+00:05:37,420 --> 00:05:42,340
+planeta, com uma fortuna estimada em
+mais de duzentos bilhões de dólares.
+
+86
+00:05:43,840 --> 00:05:45,100
+Capítulo quatro.
+
+87
+00:05:45,100 --> 00:05:46,530
+Jensanity.
+
+88
+00:05:47,930 --> 00:05:51,650
+E aí aconteceu algo raro
+para um executivo de chips:
+
+89
+00:05:51,650 --> 00:05:53,740
+ele virou celebridade.
+
+90
+00:05:53,740 --> 00:06:00,650
+Em março de 2024, uma palestra dele lotou
+uma arena de hóquei em San Jose, com
+
+91
+00:06:00,650 --> 00:06:02,770
+mais de dez mil lugares.
+
+92
+00:06:02,770 --> 00:06:07,220
+A imprensa chamou de Woodstock
+da inteligência artificial.
+
+93
+00:06:07,220 --> 00:06:10,360
+Sempre com a mesma jaqueta de couro preta.
+
+94
+00:06:11,360 --> 00:06:13,780
+Em Taiwan, o fenômeno ganhou nome:
+
+95
+00:06:13,780 --> 00:06:15,140
+Jensanity.
+
+96
+00:06:15,140 --> 00:06:17,740
+Repórteres o seguiam o dia inteiro.
+
+97
+00:06:17,740 --> 00:06:20,430
+Os restaurantes onde ele comia lotavam.
+
+98
+00:06:20,430 --> 00:06:25,870
+Ele jogou o primeiro arremesso num jogo
+de beisebol e distribuiu autógrafos.
+
+99
+00:06:25,870 --> 00:06:32,190
+Em 2025, a Nvidia abriu uma loja temporária
+com camisetas e baralhos com o rosto
+
+100
+00:06:32,190 --> 00:06:32,580
+dele.
+
+101
+00:06:33,580 --> 00:06:37,200
+Mark Zuckerberg chegou a
+compará-lo a Taylor Swift.
+
+102
+00:06:38,200 --> 00:06:39,560
+Guarde essa imagem:
+
+103
+00:06:39,560 --> 00:06:44,360
+um homem cercado de fãs, câmeras
+e jantares concorridos em Taipei.
+
+104
+00:06:44,360 --> 00:06:48,000
+Porque foi num desses jantares
+que a história começou a mudar.
+
+105
+00:06:49,500 --> 00:06:50,580
+Capítulo cinco.
+
+106
+00:06:50,580 --> 00:06:52,980
+O homem entre Washington e Pequim.
+
+107
+00:06:54,380 --> 00:07:00,330
+A partir de 2022, os Estados Unidos
+proibiram a venda dos chips de inteligência
+
+108
+00:07:00,330 --> 00:07:03,260
+artificial mais avançados para a China.
+
+109
+00:07:03,260 --> 00:07:07,610
+Para a Nvidia, a China
+era um mercado gigante.
+
+110
+00:07:07,610 --> 00:07:09,990
+Em outubro de 2025, Huang resumiu:
+
+111
+00:07:09,990 --> 00:07:16,070
+fomos de noventa e cinco por cento
+de participação de mercado para zero.
+
+112
+00:07:17,070 --> 00:07:23,860
+Ele virou o principal defensor, em
+Washington, de vender chips para a China.
+
+113
+00:07:23,860 --> 00:07:30,300
+E foi ouvido.
+
+114
+00:07:30,300 --> 00:07:32,050
+Em agosto de 2025, o governo Trump liberou
+vendas do chip H20 em troca de quinze
+
+115
+00:07:32,050 --> 00:07:32,510
+por cento da receita.
+
+116
+00:07:32,510 --> 00:07:39,200
+Em dezembro, liberou o H200, mais
+potente, com uma taxa de vinte e cinco por
+
+117
+00:07:39,200 --> 00:07:39,730
+cento.
+
+118
+00:07:40,730 --> 00:07:46,220
+Em maio de 2026, Huang entrou de última
+hora na comitiva de Trump a Pequim.
+
+119
+00:07:46,220 --> 00:07:52,100
+Em setembro, foi com a esposa ao
+jantar de Estado para Xi Jinping.
+
+120
+00:07:52,100 --> 00:07:56,850
+Um ex-funcionário do governo chegou
+a chamá-lo de encarregado informal da
+
+121
+00:07:56,850 --> 00:07:58,280
+política para a China.
+
+122
+00:07:59,280 --> 00:08:02,350
+Do outro lado, Pequim também desconfiava.
+
+123
+00:08:02,350 --> 00:08:08,460
+Orientou empresas chinesas a evitar chips
+americanos e acusou o H20 de ter uma
+
+124
+00:08:08,460 --> 00:08:12,140
+possível porta dos fundos,
+o que a Nvidia nega.
+
+125
+00:08:13,640 --> 00:08:14,620
+Capítulo seis.
+
+126
+00:08:14,620 --> 00:08:15,820
+A reportagem.
+
+127
+00:08:17,220 --> 00:08:23,250
+Em 29 de outubro de 2026, o New York
+Times publicou uma reportagem baseada em
+
+128
+00:08:23,250 --> 00:08:25,440
+fontes do governo americano.
+
+129
+00:08:25,440 --> 00:08:30,930
+Segundo o jornal, autoridades dos Estados
+Unidos concluíram que uma empresária
+
+130
+00:08:30,930 --> 00:08:36,490
+chinesa, Alice Huang, sem parentesco com
+Jensen, seria um ativo da inteligência
+
+131
+00:08:36,490 --> 00:08:37,050
+chinesa.
+
+132
+00:08:37,050 --> 00:08:40,110
+E que ela tinha uma relação próxima com ele.
+
+133
+00:08:41,110 --> 00:08:46,940
+Alice era executiva da Megaspeed, uma
+empresa de data centers de Singapura que,
+
+134
+00:08:46,940 --> 00:08:52,550
+segundo o jornal, comprou cerca de
+quatro vírgula oito bilhões de dólares em
+
+135
+00:08:52,550 --> 00:08:54,250
+equipamentos da Nvidia.
+
+136
+00:08:54,250 --> 00:08:59,850
+A Megaspeed é investigada nos Estados
+Unidos desde 2024, por suspeita de ajudar
+
+137
+00:08:59,850 --> 00:09:02,120
+a China a obter chips proibidos.
+
+138
+00:09:02,120 --> 00:09:07,020
+Ninguém foi acusado formalmente,
+e a empresa nega irregularidades.
+
+139
+00:09:08,020 --> 00:09:14,490
+Os dois foram vistos juntos em Taiwan,
+inclusive num jantar oferecido por Huang
+
+140
+00:09:14,490 --> 00:09:18,920
+em Taipei, em maio de 2025,
+exibido pela TV taiwanesa.
+
+141
+00:09:18,920 --> 00:09:21,610
+Onde Alice está hoje, ninguém sabe.
+
+142
+00:09:21,610 --> 00:09:23,530
+Ela nunca se pronunciou.
+
+143
+00:09:24,530 --> 00:09:29,890
+Na época, Huang disse à Bloomberg que os
+encontros tinham a ver com a Megaspeed
+
+144
+00:09:29,890 --> 00:09:31,860
+e eram completamente normais.
+
+145
+00:09:31,860 --> 00:09:34,930
+Dez dias depois, ele mudaria a versão.
+
+146
+00:09:36,430 --> 00:09:37,640
+Capítulo sete.
+
+147
+00:09:37,640 --> 00:09:38,840
+A confissão.
+
+148
+00:09:40,240 --> 00:09:42,970
+No domingo, 8 de novembro, veio o e-mail.
+
+149
+00:09:42,970 --> 00:09:47,160
+Huang admitiu a traição e pediu
+desculpas à mulher e aos filhos.
+
+150
+00:09:48,160 --> 00:09:53,100
+Quase ao mesmo tempo, o conselho
+da Nvidia anunciou uma investigação
+
+151
+00:09:53,100 --> 00:09:58,540
+independente, por causa das reportagens
+de que o CEO teria sido alvo de uma
+
+152
+00:09:58,540 --> 00:10:01,230
+operação de inteligência estrangeira.
+
+153
+00:10:01,230 --> 00:10:06,640
+O conselho disse não ter motivo para
+acreditar que segredos da empresa ou a
+
+154
+00:10:06,640 --> 00:10:09,890
+segurança nacional tenham
+sido comprometidos.
+
+155
+00:10:09,890 --> 00:10:11,980
+E Huang continua no cargo.
+
+156
+00:10:12,980 --> 00:10:16,880
+Na segunda-feira, a ação chegou
+a cair mais de seis por cento.
+
+157
+00:10:17,880 --> 00:10:23,180
+A China reagiu pela voz do porta-voz
+da chancelaria, Guo Jiakun:
+
+158
+00:10:23,180 --> 00:10:29,160
+a história de espiões chineses seria
+completamente infundada, e uma difamação
+
+159
+00:10:29,160 --> 00:10:30,320
+contra a China.
+
+160
+00:10:30,320 --> 00:10:36,830
+O jornal estatal Global Times chamou o
+caso de thriller político de espionagem.
+
+161
+00:10:38,330 --> 00:10:39,380
+Capítulo oito.
+
+162
+00:10:39,380 --> 00:10:42,370
+O que isso muda entre
+Estados Unidos e China.
+
+163
+00:10:43,770 --> 00:10:48,680
+Por que a vida pessoal de um
+CEO importa para duas potências?
+
+164
+00:10:48,680 --> 00:10:50,900
+Porque Huang era a ponte.
+
+165
+00:10:50,900 --> 00:10:56,140
+Se ele perde credibilidade, quem quer
+endurecer com a China ganha força.
+
+166
+00:10:56,140 --> 00:11:01,790
+Os democratas assumem o Congresso em
+janeiro, e senadores já falam em apoio dos
+
+167
+00:11:01,790 --> 00:11:03,500
+dois partidos para agir.
+
+168
+00:11:03,500 --> 00:11:09,370
+Analistas acham que o escândalo deve
+fortalecer projetos de lei de controle de
+
+169
+00:11:09,370 --> 00:11:10,190
+exportação.
+
+170
+00:11:11,190 --> 00:11:12,630
+E tem o calendário.
+
+171
+00:11:12,630 --> 00:11:18,830
+Nos dias 18 e 19 de novembro, líderes
+se reúnem na cúpula da APEC em Shenzhen,
+
+172
+00:11:18,830 --> 00:11:19,540
+na China.
+
+173
+00:11:19,540 --> 00:11:23,030
+Trump disse que levaria Huang.
+
+174
+00:11:23,030 --> 00:11:28,740
+No mesmo dia 18, deputados republicanos
+pediram que ele explicasse ao Congresso,
+
+175
+00:11:28,740 --> 00:11:31,950
+a portas fechadas, a
+relação com Alice Huang.
+
+176
+00:11:32,950 --> 00:11:35,660
+Em Taiwan, Huang ainda é herói.
+
+177
+00:11:35,660 --> 00:11:38,800
+Em Washington, virou dúvida de segurança.
+
+178
+00:11:38,800 --> 00:11:43,310
+Em Pequim, é apresentado como alvo
+de uma campanha contra a China.
+
+179
+00:11:44,310 --> 00:11:47,210
+E a pergunta que importa
+ainda não tem resposta:
+
+180
+00:11:47,210 --> 00:11:50,160
+ele sabia de alguma coisa, e algo vazou?
+
+181
+00:11:50,160 --> 00:11:51,760
+Como disse um analista:
+
+182
+00:11:51,760 --> 00:11:55,180
+isso exige provas, não especulação.
+
+183
+00:11:56,680 --> 00:12:01,730
+Do internato no Kentucky ao topo do
+mundo, Jensen Huang sobreviveu a quase
+
+184
+00:12:01,730 --> 00:12:06,310
+falências, a apostas que ninguém
+entendia e a uma guerra comercial.
+
+185
+00:12:06,310 --> 00:12:09,780
+Agora enfrenta uma crise
+que não é de tecnologia.
+
+186
+00:12:09,780 --> 00:12:11,260
+É de confiança.
+
+187
+00:12:11,260 --> 00:12:15,140
+Todas as fontes deste episódio
+estão no comentário fixado.
+
+188
+00:12:15,140 --> 00:12:17,210
+Até o próximo dossiê.

@@ -1,0 +1,504 @@
+[
+ {
+  "t": "headline",
+  "head": "US chipmaker Nvidia investigates CEO Jensen Huang over affair",
+  "mark": "investigates CEO Jensen Huang over affair",
+  "outlet": "AL JAZEERA · 8 DE NOVEMBRO DE 2026",
+  "url": "aljazeera.com",
+  "n": "Domingo, 8 de novembro de 2026. O homem que comanda a empresa de chips mais importante do planeta manda um e-mail aos funcionários. São poucas linhas."
+ },
+ {
+  "t": "quote",
+  "q": "Eu fui infiel à minha esposa. Minhas ações feriram ela e nossos filhos. Não há desculpa para o que eu fiz.",
+  "src": "E-mail aos funcionários, 08/11/2026 · tradução livre",
+  "who": "JENSEN HUANG",
+  "n": "Eu fui infiel à minha esposa. Minhas ações feriram ela e nossos filhos. Não há desculpa para o que eu fiz."
+ },
+ {
+  "t": "fact",
+  "big": "ESPIONAGEM?",
+  "kicker": "A SUSPEITA",
+  "src": "NYT, 29/10/2026, via Al Jazeera e ABC Austrália",
+  "sub": "Segundo fontes anônimas ouvidas pelo New York Times, a outra mulher seria ligada à inteligência chinesa. Não há acusação formal.",
+  "n": "Uma confissão pessoal. Só que, dias antes, o New York Times tinha publicado que a outra mulher era suspeita de trabalhar para a inteligência chinesa. E aí uma traição virou assunto de Estado entre Washington e Pequim."
+ },
+ {
+  "t": "title",
+  "dur": 6,
+  "n": "",
+  "bg": "sc18"
+ },
+ {
+  "t": "chapter",
+  "name": "O menino que limpava banheiros",
+  "num": "01",
+  "n": "Capítulo um. O menino que limpava banheiros."
+ },
+ {
+  "t": "timeline",
+  "cur": 0,
+  "ev": [
+   [
+    "1963",
+    "Nasce em Taiwan"
+   ],
+   [
+    "1973",
+    "Vai sozinho para os EUA"
+   ],
+   [
+    "1993",
+    "Funda a Nvidia"
+   ],
+   [
+    "2025",
+    "US$ 5 trilhões"
+   ],
+   [
+    "2026",
+    "A crise"
+   ]
+  ],
+  "kicker": "LINHA DO TEMPO · JENSEN HUANG",
+  "src": "Wikipédia",
+  "n": "Jen-Hsun Huang nasceu em Taiwan, em 1963. Aos cinco anos, a família se mudou para a Tailândia, por causa do trabalho do pai numa refinaria."
+ },
+ {
+  "t": "timeline",
+  "cur": 1,
+  "ev": [
+   [
+    "1963",
+    "Nasce em Taiwan"
+   ],
+   [
+    "1973",
+    "Vai sozinho para os EUA"
+   ],
+   [
+    "1993",
+    "Funda a Nvidia"
+   ],
+   [
+    "2025",
+    "US$ 5 trilhões"
+   ],
+   [
+    "2026",
+    "A crise"
+   ]
+  ],
+  "kicker": "LINHA DO TEMPO · JENSEN HUANG",
+  "src": "NPR, 2012 · Fortune, 2025",
+  "n": "Em 1973, com o país em crise política, os pais tomaram uma decisão dura: mandar os dois filhos sozinhos para os Estados Unidos. Ele tinha nove anos."
+ },
+ {
+  "t": "fact",
+  "big": "ONEIDA BAPTIST INSTITUTE",
+  "kicker": "KENTUCKY, EUA",
+  "src": "Wikipédia · Fortune, dez. 2025",
+  "sub": "Internato rural que recebia jovens problemáticos. Os tios o matricularam por engano.",
+  "n": "Os tios procuraram uma escola e escolheram, sem saber direito o que era, um internato rural no Kentucky. Era um lugar para jovens problemáticos.",
+  "bg": "oneida_st"
+ },
+ {
+  "t": "fact",
+  "big": "~100",
+  "kicker": "O TRABALHO DELE NO INTERNATO",
+  "src": "Fortune, 05/12/2025 · NPR, 2012",
+  "sub": "meninos cujos banheiros ele limpava. Era o aluno mais novo; dividia o quarto com um rapaz de 17 anos.",
+  "n": "Huang era o aluno mais novo. Dividia o quarto com um rapaz de dezessete anos. Todo aluno tinha um trabalho, e o dele era limpar os banheiros de cerca de cem meninos."
+ },
+ {
+  "t": "quote",
+  "q": "Eu amei o tempo que passei lá.",
+  "src": "À rádio NPR, 2012 · tradução livre",
+  "who": "JENSEN HUANG",
+  "n": "A família se falava por fita cassete: uma vez por mês, os pais gravavam uma mensagem e mandavam pelo correio. Mesmo assim, anos depois, ele disse à rádio pública americana: eu amei o tempo que passei lá.",
+  "bg": "oneida"
+ },
+ {
+  "t": "fact",
+  "big": "DENNY'S",
+  "kicker": "1978 A 1983",
+  "src": "Wikipédia · Fortune, dez. 2025",
+  "sub": "Lavador de pratos, ajudante e garçom numa rede de lanchonetes do Oregon.",
+  "n": "Os pais chegaram cerca de dois anos depois, e a família foi para o Oregon. Ele pulou dois anos na escola, terminou o ensino médio aos dezesseis e foi trabalhar no Denny's, uma rede de lanchonetes: lavou pratos, foi ajudante e garçom.",
+  "bg": "dennys_or"
+ },
+ {
+  "t": "fact",
+  "big": "ENGENHARIA ELÉTRICA",
+  "kicker": "OREGON STATE · 1984",
+  "src": "Wikipédia",
+  "sub": "Na faculdade conheceu Lori, sua parceira de laboratório. Os dois se casaram e têm dois filhos.",
+  "n": "Depois, cursou engenharia elétrica na Oregon State, onde conheceu a parceira de laboratório, Lori. Os dois se casaram.",
+  "bg": "osu"
+ },
+ {
+  "t": "chapter",
+  "name": "Um Denny's e cinco milhões da Sega",
+  "num": "02",
+  "n": "Capítulo dois. Um Denny's e cinco milhões da Sega."
+ },
+ {
+  "t": "name",
+  "name": "Chris Malachowsky e Curtis Priem",
+  "role": "Cofundadores da Nvidia, engenheiros vindos da Sun Microsystems",
+  "src": "Wikipédia, Nvidia",
+  "n": "Nos anos 80, Huang projetava processadores na AMD e fazia mestrado em Stanford. Depois foi para a LSI Logic, onde conheceu dois engenheiros da Sun Microsystems: Chris Malachowsky e Curtis Priem.",
+  "bg": "malach"
+ },
+ {
+  "t": "quote",
+  "q": "Viemos a este Denny's, sentamos bem ali, e nós três decidimos abrir a empresa.",
+  "src": "Em vídeo da CNBC, 2024 · tradução livre",
+  "who": "JENSEN HUANG",
+  "n": "Em 1993, os três se sentaram numa mesa de um Denny's em San Jose. Ali decidiram abrir uma empresa de chips gráficos. Ele tinha trinta anos e dois filhos pequenos. Virou CEO no primeiro dia, e nunca mais deixou o cargo.",
+  "bg": "berryessa"
+ },
+ {
+  "t": "fact",
+  "big": "O CHIP ERRADO",
+  "kicker": "NV1 · 1995",
+  "src": "The Next Web, jul. 2026 · Time Extension",
+  "sub": "Desenhava imagens com curvas. A Microsoft escolheu triângulos como padrão dos jogos no Windows.",
+  "n": "O começo quase acabou com tudo. O primeiro chip, o NV1, desenhava imagens com curvas. Só que a Microsoft escolheu triângulos como padrão dos jogos no Windows. O produto nasceu obsoleto, e um contrato com a Sega também foi cancelado.",
+  "bg": "nv1"
+ },
+ {
+  "t": "fact",
+  "big": "US$ 5 MILHÕES",
+  "kicker": "O RESGATE DA SEGA",
+  "src": "The Next Web · Wikipédia, Nvidia",
+  "sub": "Pagamento de contrato transformado em investimento. Cerca de seis meses de fôlego.",
+  "n": "Huang fez um pedido inusitado: que a Sega transformasse o pagamento do contrato em investimento. O presidente da Sega, Shoichiro Irimajiri, convenceu o conselho. Foram cinco milhões de dólares, o suficiente para uns seis meses de vida.",
+  "bg": "saturn"
+ },
+ {
+  "t": "fact",
+  "big": "1 MILHÃO",
+  "kicker": "RIVA 128 · 1997",
+  "src": "Quartr · The Next Web",
+  "sub": "de unidades vendidas em quatro meses. A empresa estava salva.",
+  "n": "Huang cortou cerca de metade da equipe e apostou o que sobrou num único chip, o RIVA 128. Em 1997, ele vendeu um milhão de unidades em quatro meses.",
+  "bg": "riva"
+ },
+ {
+  "t": "quote",
+  "q": "Se não fosse pelo que a Sega fez pela Nvidia, a Nvidia não estaria aqui hoje.",
+  "src": "Tóquio, julho de 2026 · tradução livre",
+  "who": "JENSEN HUANG",
+  "n": "Trinta anos depois, ele foi a Tóquio agradecer. Se não fosse pelo que a Sega fez pela Nvidia, disse ele, a Nvidia não estaria aqui hoje.",
+  "bg": "saturn_jp"
+ },
+ {
+  "t": "chapter",
+  "name": "A aposta que ninguém entendeu",
+  "num": "03",
+  "n": "Capítulo três. A aposta que ninguém entendeu."
+ },
+ {
+  "t": "fact",
+  "big": "GEFORCE 256",
+  "kicker": "1999",
+  "src": "Wikipédia, Nvidia",
+  "sub": "O primeiro produto que a Nvidia vendeu com o nome GPU. No mesmo ano, a empresa abriu capital.",
+  "n": "Em 1999, a Nvidia abriu capital e lançou a GeForce 256, vendida como a primeira GPU, a unidade de processamento gráfico. Era coisa de gamer. Mas Huang via outra coisa: uma placa de vídeo faz milhares de contas ao mesmo tempo. E se ela servisse para qualquer cálculo pesado?",
+  "bg": "gf256"
+ },
+ {
+  "t": "fact",
+  "big": "US$ 12 BI → US$ 2 A 3 BI",
+  "kicker": "CUDA · 2007",
+  "src": "Quartr · Fortune, dez. 2025",
+  "sub": "A queda no valor de mercado depois da aposta na CUDA.",
+  "n": "Em 2007 nasceu a CUDA, a ferramenta que deixou cientistas programarem as placas da Nvidia. Wall Street não gostou. O custo dos chips quase dobrou, a receita não acompanhou, e o valor da empresa despencou de cerca de doze bilhões para dois ou três bilhões de dólares."
+ },
+ {
+  "t": "fact",
+  "big": "2 PLACAS GTX 580",
+  "kicker": "ALEXNET · 2012",
+  "src": "Wikipédia, AlexNet",
+  "sub": "A rede neural da Universidade de Toronto que inaugurou a era moderna da IA foi treinada em placas de videogame da Nvidia.",
+  "n": "A resposta veio em 2012. Pesquisadores da Universidade de Toronto treinaram uma rede neural chamada AlexNet em duas placas de videogame da Nvidia. Ela venceu com folga uma competição de reconhecimento de imagens. Ali começou a era moderna da inteligência artificial.",
+  "bg": "gtx580"
+ },
+ {
+  "t": "fact",
+  "big": "DGX-1 → OPENAI",
+  "kicker": "2016",
+  "src": "Quartr",
+  "sub": "Huang entrega pessoalmente o primeiro supercomputador de IA da Nvidia.",
+  "n": "Em 2016, Huang entregou pessoalmente um supercomputador à OpenAI. Seis anos depois, a OpenAI lançou o ChatGPT."
+ },
+ {
+  "t": "headline",
+  "head": "Nvidia becomes first chipmaker valued at over $1 trillion",
+  "mark": "first chipmaker",
+  "outlet": "BUSINESS TODAY · 30 DE MAIO DE 2023",
+  "url": "businesstoday.in",
+  "n": "Em maio de 2023, a Nvidia virou a primeira fabricante de chips a valer um trilhão de dólares.",
+  "bg": "nvsign"
+ },
+ {
+  "t": "headline",
+  "head": "AI chipmaker Nvidia is the first $5 trillion company",
+  "mark": "first $5 trillion company",
+  "outlet": "AP · 29 DE OUTUBRO DE 2025",
+  "url": "opb.org",
+  "n": "Em outubro de 2025, virou a primeira empresa do mundo a valer cinco trilhões.",
+  "bg": "nvhq"
+ },
+ {
+  "t": "photo",
+  "cap": "Jensen Huang na cerimônia do 1º Prêmio K.T. Li, Taiwan",
+  "credit": "Foto: Gabinete da Presidência de Taiwan / Wikimedia Commons · CC BY 2.0",
+  "date": "09.11.2023",
+  "n": "O menino que limpava banheiros no Kentucky estava entre as pessoas mais ricas do planeta, com uma fortuna estimada em mais de duzentos bilhões de dólares.",
+  "bg": "ktli"
+ },
+ {
+  "t": "chapter",
+  "name": "Jensanity",
+  "num": "04",
+  "n": "Capítulo quatro. Jensanity."
+ },
+ {
+  "t": "fact",
+  "big": "10 MIL+ LUGARES",
+  "kicker": "SAN JOSE · MARÇO DE 2024",
+  "src": "Asia Economy, 19/03/2024",
+  "sub": "Arena lotada para uma palestra de chips. A imprensa chamou de “Woodstock da IA”.",
+  "n": "E aí aconteceu algo raro para um executivo de chips: ele virou celebridade. Em março de 2024, uma palestra dele lotou uma arena de hóquei em San Jose, com mais de dez mil lugares. A imprensa chamou de Woodstock da inteligência artificial. Sempre com a mesma jaqueta de couro preta.",
+  "bg": "ces"
+ },
+ {
+  "t": "headline",
+  "head": "Like a pop star, Nvidia's CEO Huang stirs up 'Jensanity' in Taiwan",
+  "mark": "Like a pop star",
+  "outlet": "REUTERS · 5 DE JUNHO DE 2024",
+  "url": "thestar.com.my",
+  "n": "Em Taiwan, o fenômeno ganhou nome: Jensanity. Repórteres o seguiam o dia inteiro. Os restaurantes onde ele comia lotavam. Ele jogou o primeiro arremesso num jogo de beisebol e distribuiu autógrafos. Em 2025, a Nvidia abriu uma loja temporária com camisetas e baralhos com o rosto dele.",
+  "bg": "computex10"
+ },
+ {
+  "t": "photo",
+  "cap": "Huang tira selfies com estudantes depois de palestra em Stanford",
+  "credit": "Foto: Anderseidesvik / Wikimedia Commons · CC BY-SA 4.0",
+  "date": "30.04.2026",
+  "n": "Mark Zuckerberg chegou a compará-lo a Taylor Swift.",
+  "bg": "stanford"
+ },
+ {
+  "t": "photo",
+  "cap": "Jensen Huang na feira Computex, em Taipei",
+  "credit": "Foto: NVIDIA Taiwan / Wikimedia Commons · CC BY 2.0",
+  "date": "31.05.2016",
+  "n": "Guarde essa imagem: um homem cercado de fãs, câmeras e jantares concorridos em Taipei. Porque foi num desses jantares que a história começou a mudar.",
+  "bg": "computex16"
+ },
+ {
+  "t": "chapter",
+  "name": "O homem entre Washington e Pequim",
+  "num": "05",
+  "n": "Capítulo cinco. O homem entre Washington e Pequim."
+ },
+ {
+  "t": "fact",
+  "big": "95% → 0%",
+  "kicker": "PARTICIPAÇÃO DA NVIDIA NA CHINA",
+  "src": "Fortune · Tom's Hardware, out. 2025",
+  "sub": "Segundo o próprio Huang, em outubro de 2025.",
+  "n": "A partir de 2022, os Estados Unidos proibiram a venda dos chips de inteligência artificial mais avançados para a China. Para a Nvidia, a China era um mercado gigante. Em outubro de 2025, Huang resumiu: fomos de noventa e cinco por cento de participação de mercado para zero.",
+  "bg": "wh0430"
+ },
+ {
+  "t": "timeline",
+  "cur": 2,
+  "ev": [
+   [
+    "2022",
+    "EUA proíbem chips avançados"
+   ],
+   [
+    "AGO 2025",
+    "H20 liberado com 15%"
+   ],
+   [
+    "DEZ 2025",
+    "H200 liberado com 25%"
+   ],
+   [
+    "MAI 2026",
+    "Na comitiva a Pequim"
+   ],
+   [
+    "SET 2026",
+    "Jantar de Estado para Xi"
+   ]
+  ],
+  "kicker": "A GUERRA DOS CHIPS",
+  "src": "Wikipédia, Nvidia · RTÉ/Reuters, 09/12/2025",
+  "n": "Ele virou o principal defensor, em Washington, de vender chips para a China. E foi ouvido. Em agosto de 2025, o governo Trump liberou vendas do chip H20 em troca de quinze por cento da receita. Em dezembro, liberou o H200, mais potente, com uma taxa de vinte e cinco por cento.",
+  "bg": "aisummit"
+ },
+ {
+  "t": "photo",
+  "cap": "Trump apresenta autoridades chinesas a empresários, entre eles Elon Musk e Jensen Huang, no aeroporto de Pequim",
+  "credit": "Foto oficial da Casa Branca (Daniel Torok) · domínio público",
+  "date": "13.05.2026",
+  "n": "Em maio de 2026, Huang entrou de última hora na comitiva de Trump a Pequim. Em setembro, foi com a esposa ao jantar de Estado para Xi Jinping. Um ex-funcionário do governo chegou a chamá-lo de encarregado informal da política para a China.",
+  "bg": "beijing"
+ },
+ {
+  "t": "fact",
+  "big": "DESCONFIANÇA",
+  "kicker": "A RESPOSTA DE PEQUIM",
+  "src": "RTÉ/Reuters, 09/12/2025",
+  "sub": "Pequim orientou empresas a evitar chips americanos e acusou o H20 de ter uma possível “porta dos fundos”. A Nvidia nega.",
+  "n": "Do outro lado, Pequim também desconfiava. Orientou empresas chinesas a evitar chips americanos e acusou o H20 de ter uma possível porta dos fundos, o que a Nvidia nega.",
+  "bg": "greathall"
+ },
+ {
+  "t": "chapter",
+  "name": "A reportagem",
+  "num": "06",
+  "n": "Capítulo seis. A reportagem."
+ },
+ {
+  "t": "headline",
+  "head": "Why is Nvidia's Jensen Huang at the centre of a US-China spy scandal?",
+  "mark": "US-China spy scandal",
+  "outlet": "AL JAZEERA · 9 DE NOVEMBRO DE 2026",
+  "url": "aljazeera.com",
+  "n": "Em 29 de outubro de 2026, o New York Times publicou uma reportagem baseada em fontes do governo americano. Segundo o jornal, autoridades dos Estados Unidos concluíram que uma empresária chinesa, Alice Huang, sem parentesco com Jensen, seria um ativo da inteligência chinesa. E que ela tinha uma relação próxima com ele."
+ },
+ {
+  "t": "name",
+  "name": "Alice Huang (Huang Le)",
+  "role": "Ex-executiva da Megaspeed, Singapura · suspeita sem acusação formal",
+  "src": "Al Jazeera · ABC Austrália",
+  "n": "Alice era executiva da Megaspeed, uma empresa de data centers de Singapura que, segundo o jornal, comprou cerca de quatro vírgula oito bilhões de dólares em equipamentos da Nvidia. A Megaspeed é investigada nos Estados Unidos desde 2024, por suspeita de ajudar a China a obter chips proibidos. Ninguém foi acusado formalmente, e a empresa nega irregularidades."
+ },
+ {
+  "t": "status",
+  "rows": [
+   [
+    "Caso extraconjugal",
+    "CONFIRMADO POR HUANG"
+   ],
+   [
+    "Espionagem",
+    "ALEGAÇÃO · FONTES ANÔNIMAS"
+   ],
+   [
+    "Vazamento de segredos",
+    "NVIDIA DIZ QUE NÃO"
+   ],
+   [
+    "Acusação formal",
+    "NENHUMA"
+   ]
+  ],
+  "src": "ABC Austrália · Al Jazeera · 09/11/2026",
+  "n": "Os dois foram vistos juntos em Taiwan, inclusive num jantar oferecido por Huang em Taipei, em maio de 2025, exibido pela TV taiwanesa. Onde Alice está hoje, ninguém sabe. Ela nunca se pronunciou."
+ },
+ {
+  "t": "quote",
+  "q": "Completamente normais e nada incomuns.",
+  "src": "À Bloomberg, fim de outubro de 2026 · tradução livre",
+  "who": "JENSEN HUANG, SOBRE OS ENCONTROS",
+  "n": "Na época, Huang disse à Bloomberg que os encontros tinham a ver com a Megaspeed e eram completamente normais. Dez dias depois, ele mudaria a versão."
+ },
+ {
+  "t": "chapter",
+  "name": "A confissão",
+  "num": "07",
+  "n": "Capítulo sete. A confissão."
+ },
+ {
+  "t": "quote",
+  "q": "Não há desculpa para o que eu fiz. Sinto muito.",
+  "src": "E-mail aos funcionários, 08/11/2026 · tradução livre",
+  "who": "JENSEN HUANG",
+  "n": "No domingo, 8 de novembro, veio o e-mail. Huang admitiu a traição e pediu desculpas à mulher e aos filhos."
+ },
+ {
+  "t": "quote",
+  "q": "Não temos motivo para acreditar que a segurança nacional ou segredos da Nvidia tenham sido comprometidos.",
+  "src": "Comunicado, 08/11/2026 · tradução livre",
+  "who": "CONSELHO DA NVIDIA",
+  "n": "Quase ao mesmo tempo, o conselho da Nvidia anunciou uma investigação independente, por causa das reportagens de que o CEO teria sido alvo de uma operação de inteligência estrangeira. O conselho disse não ter motivo para acreditar que segredos da empresa ou a segurança nacional tenham sido comprometidos. E Huang continua no cargo."
+ },
+ {
+  "t": "fact",
+  "big": "−6,49%",
+  "kicker": "AÇÃO DA NVIDIA · 09/11/2026, 11H33 EM NOVA YORK",
+  "src": "Yahoo Finance, ao vivo",
+  "sub": "US$ 174,52 por ação, no dia seguinte à confissão.",
+  "n": "Na segunda-feira, a ação chegou a cair mais de seis por cento."
+ },
+ {
+  "t": "quote",
+  "q": "A chamada alegação de ‘espiões chineses’ é completamente infundada e nada mais que uma difamação contra a China.",
+  "src": "09/11/2026, via The Week · tradução livre",
+  "who": "GUO JIAKUN, CHANCELARIA DA CHINA",
+  "n": "A China reagiu pela voz do porta-voz da chancelaria, Guo Jiakun: a história de espiões chineses seria completamente infundada, e uma difamação contra a China. O jornal estatal Global Times chamou o caso de thriller político de espionagem."
+ },
+ {
+  "t": "chapter",
+  "name": "O que isso muda entre EUA e China",
+  "num": "08",
+  "n": "Capítulo oito. O que isso muda entre Estados Unidos e China."
+ },
+ {
+  "t": "fact",
+  "big": "NOVO CONGRESSO",
+  "kicker": "JANEIRO DE 2027",
+  "src": "Yahoo Finance, 09/11/2026",
+  "sub": "Democratas assumem o Congresso. Senadores falam em apoio dos dois partidos para agir sobre a Nvidia e as exportações.",
+  "n": "Por que a vida pessoal de um CEO importa para duas potências? Porque Huang era a ponte. Se ele perde credibilidade, quem quer endurecer com a China ganha força. Os democratas assumem o Congresso em janeiro, e senadores já falam em apoio dos dois partidos para agir. Analistas acham que o escândalo deve fortalecer projetos de lei de controle de exportação.",
+  "bg": "capitol"
+ },
+ {
+  "t": "fact",
+  "big": "SHENZHEN",
+  "kicker": "18 E 19 DE NOVEMBRO DE 2026",
+  "src": "Wikipédia, APEC 2026 · Seoul Economic Daily · Paper Tiger",
+  "sub": "Cúpula da APEC na China. No mesmo dia 18, o Congresso pediu um depoimento de Huang a portas fechadas.",
+  "n": "E tem o calendário. Nos dias 18 e 19 de novembro, líderes se reúnem na cúpula da APEC em Shenzhen, na China. Trump disse que levaria Huang. No mesmo dia 18, deputados republicanos pediram que ele explicasse ao Congresso, a portas fechadas, a relação com Alice Huang.",
+  "bg": "shenzhen"
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "TAIWAN",
+    "Herói nacional"
+   ],
+   [
+    "WASHINGTON",
+    "Dúvida de segurança"
+   ],
+   [
+    "PEQUIM",
+    "Alvo de uma “campanha contra a China”"
+   ]
+  ],
+  "src": "The Star/Reuters · Yahoo Finance · The Week",
+  "n": "Em Taiwan, Huang ainda é herói. Em Washington, virou dúvida de segurança. Em Pequim, é apresentado como alvo de uma campanha contra a China."
+ },
+ {
+  "t": "quote",
+  "q": "Essas perguntas exigem provas, não especulação.",
+  "src": "À AP, via The Week, 09/11/2026 · tradução livre",
+  "who": "GEORGE CHEN, THE ASIA GROUP",
+  "n": "E a pergunta que importa ainda não tem resposta: ele sabia de alguma coisa, e algo vazou? Como disse um analista: isso exige provas, não especulação."
+ },
+ {
+  "t": "end",
+  "credits": true,
+  "n": "Do internato no Kentucky ao topo do mundo, Jensen Huang sobreviveu a quase falências, a apostas que ninguém entendia e a uma guerra comercial. Agora enfrenta uma crise que não é de tecnologia. É de confiança. Todas as fontes deste episódio estão no comentário fixado. Até o próximo dossiê."
+ }
+]
