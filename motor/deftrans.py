@@ -6,9 +6,9 @@ KINDS = {  # name: (label for the panel, default duration in seconds)
  'redact': ('Tarja preta (censura)', .8), 'stamp': ('Carimbo CONFIDENCIAL', 1.0), 'terminal': ('Terminal de busca', 1.7),
  'decrypt': ('Descriptografando', .8), 'cctv': ('Câmera de vigilância', 1.2),
  'shred': ('Fragmentadora de papel', .9), 'pixel': ('Pixelado (identidade protegida)', .6), 'static': ('Sinal perdido (chuvisco)', .6),
- 'enhance': ('Ampliar e melhorar imagem', 1.0), 'vhs': ('Fita VHS rebobinando', .8), 'radar': ('Varredura de radar', 1.2),
- 'map': ('Rastreamento no mapa', 1.6), 'fingerprint': ('Impressão digital', 1.3), 'access': ('Acesso ao sistema', 1.6),
- 'search': ('Busca no banco de dados', 1.6), 'wiretap': ('Escuta telefônica', 1.2)}
+ 'enhance': ('Ampliar e melhorar imagem', 1.0), 'vhs': ('Fita VHS rebobinando', .8),
+ 'fingerprint': ('Impressão digital', 1.3),
+ 'search': ('Busca no banco de dados', 1.6)}
 CORES_PADRAO = {'fundo': '#0B0B0B', 'texto': '#F2F2F2', 'destaque': '#F2F2F2', 'papel': '#EDEDED', 'fotos': 'pb'}
 PALETAS = {  # ready-made color sets offered in the Studio
  'Dossiê (padrão)': CORES_PADRAO,

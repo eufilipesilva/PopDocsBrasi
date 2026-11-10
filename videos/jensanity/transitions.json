@@ -347,15 +347,13 @@
   "to": 45
  },
  {
-  "kind": "radar",
+  "kind": "redact",
   "params": {
-   "title": "REAÇÃO INTERNACIONAL",
-   "label": "PEQUIM",
-   "sub": "CHANCELARIA"
+   "label": "[ REAÇÃO INTERNACIONAL ]",
+   "sub": "PEQUIM · CHANCELARIA"
   },
   "from": 45,
-  "to": 46,
-  "dur": 1.2
+  "to": 46
  },
  {
   "kind": "terminal",
@@ -376,15 +374,16 @@
   "to": 48
  },
  {
-  "kind": "map",
+  "kind": "search",
   "params": {
-   "title": "PRÓXIMO DESTINO",
-   "place": "SHENZHEN, CHINA",
-   "coord": "22.5431° N · 114.0579° E"
+   "db": "ARQUIVO POPDOCS · CHINA",
+   "query": "shenzhen nvidia",
+   "result": "SHENZHEN, CHINA",
+   "ok": "PRÓXIMO DESTINO"
   },
+  "dur": 1.6,
   "from": 48,
-  "to": 49,
-  "dur": 1.6
+  "to": 49
  },
  {
   "kind": "zoom",
