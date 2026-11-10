@@ -2,7 +2,7 @@
    backed by the local server (servidor.py) and the video folders on disk. */
 (function(){
   window.POPDOCS_LOCAL = true;
-  const KINDS = ['zoom','dissolve','cut','scan','paper','flash','whip','glitch','redact','stamp','terminal','decrypt','cctv','folder','shred','pixel','static','enhance','vhs','radar','map','fingerprint','access','search','wiretap'];
+  const KINDS = ['zoom','dissolve','cut','scan','paper','flash','whip','glitch','redact','stamp','terminal','decrypt','cctv','shred','pixel','static','enhance','vhs','radar','map','fingerprint','access','search','wiretap'];
   const S = {};            // slug -> {video, scenes:{id:doc}, fotos:{key:doc}}
   const L = {};            // path -> [listeners]
   const pending = {};      // temp upload id -> {data, type}

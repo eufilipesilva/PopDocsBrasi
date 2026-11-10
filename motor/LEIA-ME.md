@@ -60,12 +60,11 @@ Qualquer cena (menos `photo`) pode receber `bg` para ganhar uma foto de fundo es
 | `zoom` avanço com escurecimento | `redact` tarja preta (censura) | `glitch` falha digital |
 | `dissolve` dissolver | `stamp` carimbo CONFIDENCIAL | `terminal` terminal de busca |
 | `cut` corte seco | `cctv` câmera de vigilância com mira | `decrypt` descriptografando |
-| `scan` linha de scanner | `folder` pasta de arquivo | `access` login com ACESSO CONCEDIDO |
-| `paper` folha de papel | `shred` fragmentadora de papel | `search` busca no banco de dados |
-| `flash` flash de câmera | `pixel` pixelado (identidade protegida) | `enhance` ampliar e melhorar imagem |
-| `whip` chicote com desfoque | `fingerprint` impressão digital | `static` sinal perdido (chuvisco) |
-| | `radar` varredura de radar | `vhs` fita VHS rebobinando |
-| | `map` rastreamento no mapa | |
+| `scan` linha de scanner | `shred` fragmentadora de papel | `access` login com ACESSO CONCEDIDO |
+| `paper` folha de papel | `pixel` pixelado (identidade protegida) | `search` busca no banco de dados |
+| `flash` flash de câmera | `fingerprint` impressão digital | `enhance` ampliar e melhorar imagem |
+| `whip` chicote com desfoque | `radar` varredura de radar | `static` sinal perdido (chuvisco) |
+| | `map` rastreamento no mapa | `vhs` fita VHS rebobinando |
 | | `wiretap` escuta telefônica | |
 
 Padrão: pasta ou terminal na entrada dos capítulos, scanner na saída, papel nas manchetes, flash nas fotos e avanço no resto. Os textos de cada transição (`params`) aparecem como campos no Estúdio; vazio usa o padrão.

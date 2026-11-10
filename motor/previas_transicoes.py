@@ -17,7 +17,7 @@ from deftrans import KINDS  # noqa: E402
 FPS = 30; W, H = 1920, 1080; PW, PH = 480, 270
 SAMPLE = {  # example text for the transitions that show words
     'redact': {}, 'stamp': {}, 'terminal': {'lines': ['> acessar /arquivos/popdocs', '> abrir capitulo_02.dossie'], 'ok': 'CAPÍTULO 02 ENCONTRADO'},
-    'folder': {'title': 'CAPÍTULO 02'}, 'map': {'place': 'SANTA CLARA, CALIFÓRNIA'}, 'search': {'query': 'jensen huang nvidia'},
+    'map': {'place': 'SANTA CLARA, CALIFÓRNIA'}, 'search': {'query': 'jensen huang nvidia'},
 }
 
 def main():

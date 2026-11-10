@@ -4,7 +4,7 @@ KINDS = {  # name: (label for the panel, default duration in seconds)
  'scan': ('Linha de scanner', .7), 'paper': ('Folha de papel deslizando', .6), 'flash': ('Flash de câmera', .4),
  'whip': ('Chicote com desfoque', .5), 'glitch': ('Glitch digital', .5),
  'redact': ('Tarja preta (censura)', .8), 'stamp': ('Carimbo CONFIDENCIAL', 1.0), 'terminal': ('Terminal de busca', 1.7),
- 'decrypt': ('Descriptografando', .8), 'cctv': ('Câmera de vigilância', 1.2), 'folder': ('Pasta de arquivo', 1.4),
+ 'decrypt': ('Descriptografando', .8), 'cctv': ('Câmera de vigilância', 1.2),
  'shred': ('Fragmentadora de papel', .9), 'pixel': ('Pixelado (identidade protegida)', .6), 'static': ('Sinal perdido (chuvisco)', .6),
  'enhance': ('Ampliar e melhorar imagem', 1.0), 'vhs': ('Fita VHS rebobinando', .8), 'radar': ('Varredura de radar', 1.2),
  'map': ('Rastreamento no mapa', 1.6), 'fingerprint': ('Impressão digital', 1.3), 'access': ('Acesso ao sistema', 1.6),
@@ -26,7 +26,7 @@ def default_transitions(S, cfg):
         if b == 'end': k = 'dissolve'
         elif b == 'chapter':
             n = S[i + 1].get('num', '')
-            if ch.index(i + 1) % 2 == 0: k, P = 'folder', {'tab': arch, 'title': f'CAPÍTULO {n}', 'kick': cfg.get('brand', 'POPDOCSBRASIL · DOSSIÊ')}
+            if ch.index(i + 1) % 2 == 0: k, P = 'decrypt', {'text': f'CAPÍTULO {n}', 'sub': cfg.get('brand', 'POPDOCSBRASIL · DOSSIÊ')}
             else: k, P = 'terminal', {'lines': [f'> acessar /arquivos/popdocs/{slug}', f'> abrir capitulo_{n}.dossie'], 'ok': f'CAPÍTULO {n} ENCONTRADO'}
         elif a == 'chapter': k = 'scan'
         elif b == 'photo': k = 'flash'

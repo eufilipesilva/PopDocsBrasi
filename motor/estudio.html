@@ -142,7 +142,6 @@ const KINDS={
  terminal:{l:'Terminal de busca',d:1.7,g:'computador',p:{lines:'Comandos (um por linha)',ok:'Mensagem final'}},
  decrypt:{l:'Descriptografando',d:.8,g:'computador',p:{text:'Texto central',sub:'Linha abaixo'}},
  cctv:{l:'Câmera de vigilância',d:1.2,g:'espionagem',p:{cam:'Câmera',date:'Data',label:'Etiqueta do alvo'}},
- folder:{l:'Pasta de arquivo',d:1.4,g:'espionagem',p:{tab:'Aba da pasta',title:'Título na capa',kick:'Linha de cima'}},
  shred:{l:'Fragmentadora de papel',d:.9,g:'espionagem',p:{n:'Número de tiras (padrão 24)'}},
  pixel:{l:'Pixelado (identidade protegida)',d:.6,g:'espionagem'},
  fingerprint:{l:'Impressão digital',d:1.3,g:'espionagem',p:{title:'Título',label:'Resultado',name:'Nome abaixo do resultado'}},
@@ -165,7 +164,7 @@ const PALETAS={'Dossiê (padrão)':CORES0,
  'Terminal verde':{fundo:'#060B07',texto:'#E3F2E6',destaque:'#3DDC84',papel:'#E8EFE9',fotos:'pb'},
  'Ouro e preto':{fundo:'#0D0B08',texto:'#F4EFE6',destaque:'#E2B13C',papel:'#EFE8DA',fotos:'pb'},
  'Cores originais':{fundo:'#0B0B0B',texto:'#F2F2F2',destaque:'#F2F2F2',papel:'#EDEDED',fotos:'cor'}};
-const CFIELDS=[['fundo','Fundo'],['texto','Texto'],['destaque','Destaque (faixas, linhas, carimbos)'],['papel','Papel (manchetes e pastas)']];
+const CFIELDS=[['fundo','Fundo'],['texto','Texto'],['destaque','Destaque (faixas, linhas, carimbos)'],['papel','Papel (manchetes e documentos)']];
 const FOTOMODOS=[['pb','Preto e branco'],['cor','Cores originais'],['tom','Duas cores (fundo e destaque)']];
 const VFIELDS=[['title','Título na abertura'],['subtitle','Subtítulo na abertura'],['titleKick','Linha acima do título'],['brand','Marca no canto das cenas'],['archive','Número do arquivo'],['photoTag','Etiqueta das fotos'],['endTitle','Título do encerramento'],['endNote','Nota do encerramento'],['endCredits','Créditos de música e fotos']];
 const TFIELDS=[['kick','Thumbnail · linha de cima'],['title','Thumbnail · título'],['band','Thumbnail · faixa'],['stamp','Thumbnail · carimbo'],['photo','Thumbnail · foto (chave)']];

@@ -19,11 +19,10 @@
   "to": 3
  },
  {
-  "kind": "folder",
+  "kind": "decrypt",
   "params": {
-   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
-   "tab": "ARQUIVO Nº 002",
-   "title": "CAPÍTULO 01"
+   "text": "CAPÍTULO 01",
+   "sub": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG"
   },
   "from": 3,
   "to": 4
@@ -128,11 +127,10 @@
   "to": 18
  },
  {
-  "kind": "folder",
+  "kind": "decrypt",
   "params": {
-   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
-   "tab": "ARQUIVO Nº 002",
-   "title": "CAPÍTULO 03"
+   "text": "CAPÍTULO 03",
+   "sub": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG"
   },
   "from": 18,
   "to": 19
@@ -228,11 +226,10 @@
   "to": 31
  },
  {
-  "kind": "folder",
+  "kind": "decrypt",
   "params": {
-   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
-   "tab": "ARQUIVO Nº 002",
-   "title": "CAPÍTULO 05"
+   "text": "CAPÍTULO 05",
+   "sub": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG"
   },
   "from": 31,
   "to": 32
@@ -323,11 +320,10 @@
   "to": 41
  },
  {
-  "kind": "folder",
+  "kind": "decrypt",
   "params": {
-   "kick": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG",
-   "tab": "ARQUIVO Nº 002",
-   "title": "CAPÍTULO 07"
+   "text": "CAPÍTULO 07",
+   "sub": "POPDOCSBRASIL · DOSSIÊ JENSEN HUANG"
   },
   "from": 41,
   "to": 42
