@@ -7,7 +7,7 @@ UA = "PopDocsBrasil/1.0 (documentario sem fins de assedio; imagens livres com cr
 import os as _os
 BASE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "videos")
 SRC = BASE
-PAUSA = 2.0
+PAUSA = 4.0
 def get(url, tries=6):
     for t in range(tries):
         try:
