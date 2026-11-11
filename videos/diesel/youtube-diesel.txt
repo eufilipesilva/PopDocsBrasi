@@ -1,0 +1,134 @@
+=== TÍTULO (3 opções) ===
+1. O homem que deu nome ao diesel sumiu no mar | Dossiê Rudolf Diesel
+2. Diesel: o inventor que desapareceu de um navio em 1913 e nunca foi achado
+3. O mistério de Rudolf Diesel: suicídio, crime ou fuga?
+
+=== DESCRIÇÃO ===
+Na noite de 29 de setembro de 1913, Rudolf Diesel embarcou num vapor da Bélgica para a Inglaterra e nunca chegou. O nome dele está na bomba de quase todo posto do Brasil. Neste dossiê: a infância entre Paris, Londres e Augsburg, o motor que explodiu antes de funcionar, a fortuna que virou dívida, a última noite no navio Dresden, o corpo no mar e as três hipóteses que até hoje não têm prova.
+
+Suicídio, assassinato e fuga são tratados aqui como hipóteses. Nenhuma tem prova documental. Fontes completas no comentário fixado.
+
+Capítulos (minutagem a conferir depois da renderização):
+[00:00] Noite de 29 de setembro de 1913
+[00:00] 01 · O menino de Paris
+[00:00] 02 · A máquina que explodiu
+[00:00] 03 · Rico, famoso e endividado
+[00:00] 04 · A última noite no Dresden
+[00:00] 05 · O corpo no mar
+[00:00] 06 · Três hipóteses
+[00:00] O diesel no Brasil hoje
+
+Narração: voz sintética (ElevenLabs).
+Música: “Constance”, Kevin MacLeod (incompetech.com), licença CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/).
+Imagens de arquivo: Wikimedia Commons (domínio público e licenças Creative Commons), créditos no comentário fixado.
+
+#RudolfDiesel #Diesel #Documentário #PopDocsBrasil #Mistério
+
+=== TAGS ===
+Rudolf Diesel, diesel, motor a diesel, inventor do diesel, mistério, desaparecimento, 1913, navio Dresden, documentário, dossiê, história, história da tecnologia, biodiesel, óleo diesel, PopDocsBrasil, Douglas Brunt, mistérios da história, Primeira Guerra Mundial, inventores, documentário em português
+
+=== COMENTÁRIO FIXADO ===
+Fontes deste dossiê (pesquisa concluída em 10/11/2026). Suicídio, assassinato e fuga são hipóteses: nenhuma tem prova documental. Detalhes como o chapéu e o sobretudo dobrados e a cruz na agenda vêm de biógrafos (Morton Grosser, 1978), e a bolsa de dinheiro para Martha vem de Greg Pahl (2008), citado pela Time.
+
+Primárias e de época
+- Stratford Evening Post, 02/10/1913, "A Mystery of the Sea" https://dynamic-rsnz.natlib.govt.nz/newspapers/STEP19131002.2.16
+- Wairarapa Age, 17/10/1913, "Dr. Diesel" https://dynamic-rsnz.natlib.govt.nz/newspapers/WAG19131017.2.28.8
+- Time, 09/12/1940, "Science: His Name Is an Engine" https://time.com/archive/6764397/science-his-name-is-an-engine
+- Eugen Diesel, verbete na Neue Deutsche Biographie, vol. 3 (1957) https://www.deutsche-biographie.de/sfz69644.html
+- Rudolf Diesel, Solidarismus (1903), Project Gutenberg https://www.gutenberg.org/ebooks/58351
+- Patente DRP 67207 (imagem no Commons) https://commons.wikimedia.org/wiki/File:Lumbar_patent_dieselengine.jpg
+
+Museus, empresas e instituições
+- Deutsches Museum, objeto 3096 (motor de 1897) https://digital.deutsches-museum.de/en/digital-catalogue/collection-object/3096/
+- Everllence (ex-MAN Energy Solutions), história https://www.everllence.com/company/history
+- Lemelson-MIT https://lemelson.mit.edu/resources/rudolf-diesel
+- Agência Gov, B15 https://agenciagov.ebc.com.br/noticias/202508/e30-e-b15-entram-em-vigor-em-todo-o-brasil
+- Infra S.A./ONTL https://www.infrasa.gov.br/ontl-bl/a-importancia-do-modo-rodoviario-para-o-brasil/
+
+Acadêmicas e enciclopédias
+- Britannica https://www.britannica.com/biography/Rudolf-Diesel
+- Lytle, R. H., "The Introduction of Diesel Power in the United States, 1897–1912", Business History Review, 1968 https://www.cambridge.org/core/journals/business-history-review/article/introduction-of-diesel-power-in-the-united-states-18971912/4C30CE988588BA5F7D851E0365AD35C3
+- Knothe, G., "Historical perspectives on vegetable oil-based diesel fuels", INFORM/AOCS, 2001 https://www.aocs.org/resource/historical-perspectives-on-vegetable-oil-based-diesel-fuels/
+- Encyclopedia of World Biography (Gale), via Encyclopedia.com https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/rudolf-diesel
+- DieselNet (Jääskeläinen) https://dieselnet.com/tech/diesel_history.php
+
+Imprensa e livros
+- Time, 29/09/2015, Jennifer Latson https://time.com/4049401/diesel-disappearance/
+- Smithsonian Magazine https://www.smithsonianmag.com/smart-news/when-inventor-diesel-engine-disappeared-180960635/
+- History.com https://www.history.com/this-day-in-history/september-29/inventor-rudolf-diesel-vanishes
+- Gear Technology, 20/06/2023 https://geartechnology.com/articles/30359-the-mystery-of-diesel-lost-at-sea
+- Brunt, excerto (Bookreporter) https://www.bookreporter.com/reviews/the-mysterious-case-of-rudolf-diesel-genius-power-and-deception-on-the-eve-of-world-war-i/excerpt
+- InsideHook, 09/11/2023, entrevista com Brunt https://www.insidehook.com/books/rudolf-diesel-mystery-douglas-brunt-interview
+- Billy Penn, 19/10/2023 https://billypenn.com/2023/10/19/diesel-engine-inventor-mystery-douglas-brunt/
+- Washington Free Beacon, 07/01/2024, resenha https://freebeacon.com/culture/fuel-for-a-conspiracy/
+- Hagerty, 13/12/2023, Ronnie Schreiber https://www.hagerty.com/media/?p=354573
+- Deutsche Handwerks Zeitung/dpa, 2013 https://www.deutsche-handwerks-zeitung.de/?p=150896
+- Brunt, galeria de pesquisa https://douglasbrunt-author.com/diesel-research-gallery
+- IstoÉ Dinheiro, 13/01/2025 https://istoedinheiro.com.br/producao-de-biodiesel-cresce-em-20-anos-e-chega-a-77-bilhoes-de-litros
+- Tank Terminals/Reuters, 31/01/2025 https://tankterminals.com/news/diesel-sales-in-brazil-hit-record-67-26-billion-liters-in-2024-anp-shows/
+
+Pontos de partida (Wikipedia)
+- https://en.wikipedia.org/wiki/Rudolf_Diesel
+- https://de.wikipedia.org/wiki/Rudolf_Diesel
+- https://en.wikipedia.org/wiki/Diesel_engine
+- https://en.wikipedia.org/wiki/SS_Dresden_(1896)
+- https://en.wikipedia.org/wiki/Busch-Sulzer
+- https://en.wikipedia.org/wiki/Adolphus_Busch
+- https://wiki.riteme.site/wiki/Motor_250/400 (espelho do verbete Motor 250/400)
+
+Imagens (Wikimedia Commons):
+- Rudolf Diesel, retrato: Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Rudolf_Diesel.jpg
+- Rudolf Diesel, retrato: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Rudolf_Diesel2.jpg
+- Rudolf Diesel: Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Rudolf_Diesel_(cropped).jpg
+- Diesel aos 25 anos, ano do casamento com Martha: Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Diesel_1883.jpg
+- Retrato de Rudolf Diesel (Nationaal Archief, Holanda): Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_Diesel,_uitvinder_van_de_dieselmotor,_SFA007001969.jpg
+- Retrato de Rudolf Diesel (Nationaal Archief, Holanda): Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Portret_van_dr,_SFA007001970.jpg
+- Diesel em gravura da enciclopédia Collier's: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Collier%27s_Diesel_Rudolf.png
+- Rudolf Diesel, em imagem do acervo comunitário Harwich & Dovercourt: Foto: Harwich & Dovercourt (Flickr) / Wikimedia Commons · CC BY-SA 2.0 · https://commons.wikimedia.org/wiki/File:Doctor_R.Diesel_(5774953779).jpg
+- Assinatura de Rudolf Diesel: Assinatura: Rudolf Diesel (digitalização de Mailtosap) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Unterschrift_Rudolf_Diesel.jpg
+- Placa na casa onde Diesel nasceu, 38 rue Notre-Dame-de-Nazareth, Paris: Foto: Poissons1957 / Wikimedia Commons · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Plaque_38_rue_Notre-Dame-de-Nazareth_(Paris_3e).jpg
+- Rue Notre-Dame-de-Nazareth, Paris, onde Diesel nasceu: Foto: Benoît Prieur / Wikimedia Commons · CC0 · https://commons.wikimedia.org/wiki/File:Rue_Notre-Dame-de-Nazareth_-_Rudolf_Diesel.jpg
+- Placa da casa natal de Diesel em Paris: Foto: Parisette / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Plaque_Diesel_(maison_natale).jpg
+- O Cerco de Paris, pintura de Meissonier: Pintura: Jean-Louis-Ernest Meissonier / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Siege_of_Paris.jpg
+- Estudantes vão às barricadas, Illustrated London News: Ilustração: Fred Barnard, Illustrated London News / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Franco-Prussian_War_-_Students_Going_to_Man_the_Barricades_-_Illustrated_London_News_Oct_1_1870.jpg
+- Balão deixa Paris sitiada: Foto: autor anônimo / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Siege_of_Paris_1870_Balloon.jpg
+- Carl von Linde, professor e primeiro patrão de Diesel: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Carl_von_Linde_1868.jpg
+- Documento da Sociedade de Máquinas de Gelo Linde: Foto: Julie Ceccaldi / Wikimedia Commons · CC0 · https://commons.wikimedia.org/wiki/File:Gesellschaft_Lindes_Eismaschinen_1880.jpg
+- Desenho de patente de Diesel: Desenho: Rudolf Diesel (patente) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Rudolf_Diesel%27s_compound_internal_combustion_engine.png
+- Patente alemã nº 67207 de Diesel: Documento: Reichspatentamt / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Lumbar_patent_dieselengine.jpg
+- Patente de Diesel exposta em museu: Foto: Måns Hagberg / Wikimedia Commons · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Patent_Rudolf_Diesel.jpg
+- Primeiro motor diesel (museu MAN, Augsburg): Foto: Vitold Muratov / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:First_Diesel_motor.jpg
+- Segundo protótipo do motor diesel, 1894: Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Second_prototype_of_the_Diesel_engine_(1894),_1.jpg
+- Motor diesel experimental no museu MAN: Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Experimental_Diesel_Engine.jpg
+- Motor de 1897 no Deutsches Museum, Munique: Foto: Frank Schulenburg / Wikimedia Commons · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Station%C3%A4rer_Dieselmotor,_Prototyp_1897,_Deutsches_Museum-L1001401.jpg
+- Motor 250/400 de 1897: Foto: Johannes Maximilian / Wikimedia Commons · CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Motor_250-400_IMG_1353_2023-11-25_JM.jpg
+- Motor diesel histórico no Deutsches Museum: Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Historical_Diesel_engine_in_Deutsches_Museum.jpg
+- Museu MAN em Augsburg: Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:MAN-museum_1.jpg
+- Heinrich von Buz, diretor da Maschinenfabrik Augsburg: Foto: MAN SE / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:HeinrichVonBuz.jpg
+- Friedrich Alfred Krupp, retrato de Ludwig Noster: Foto: Ludwig Noster / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Friedrich_Alfred_Krupp,_portrait_by_Ludwig_Noster,_1896.jpg
+- Motor diesel de 1898: Foto: SulzerAG / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Dieselmotor_1898.jpg
+- Diesel na Exposição de Munique: Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:2021_07_09_1898_Diesel_auf_der_M%C3%BCnchener_Ausstellung.png
+- Adolphus Busch, cervejeiro que comprou os direitos americanos: Foto: Library of Congress (LCCN 98510413) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Adolphus_Busch,_half-length_portrait,_seated,_facing_slightly_right_LCCN98510413.jpg
+- Capa de Solidarismus, livro de Diesel: Capa: Rudolf Diesel, 1903 / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Rudolf_Diesels_Solidarismus_(1903),_Titelseite.jpg
+- Exposição Universal de Paris: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Eiffel_Tower,_full-view_looking_toward_the_Trocadero,_Exposition_Universal,_1900,_Paris,_France.jpg
+- Amendoim, ilustração botânica: Ilustração: Franz Eugen Köhler / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg
+- Folheto de Diesel de 1912 sobre o motor na Europa: Capa: Rudolf Diesel, 1912 / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Diesel_-_The_Present_Status_of_The_Diesel_Engine_in_Europe,_1912_Front.jpg
+- Navio Selandia, primeiro grande navio oceânico a diesel: Foto: Bain News Service (Library of Congress) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Selandia_LCCN2014691629.jpg
+- Selandia em Bangkok: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Selandia_Bangkok_1912_600dpi.jpg
+- Quadro do documentário dinamarquês Selandia: Foto: Nordisk Films Kompagni / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Selandia_(1912_film).jpg
+- Diesel com Thomas Edison em West Orange, EUA: Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_Library_of_his_West_Orange_Laboratory_with_Dr._Rudolf_Diesel._(ff713d866fd545cb93a4245d35d6150a).jpg
+- Edison com Rudolf e Martha Diesel: Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_laboratory_Library_with_(from_left),_Dr._Rudolf_Diesel,_Mrs._Calvin_W._Rice,_J.W._Lieb_Jr.,_Mrs._Diesel._(5ed7c9c81b774de9ae1c8df8cf102814).jpg
+- O vapor Dresden, da Great Eastern Railway, linha Harwich–Antuérpia: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Great_Eastern_Railway_Company%27s_S.S._Dresden_GER_Dresden-01_700.jpg
+- Porto de Antuérpia (gravura, Rijksmuseum): Gravura: Rijksmuseum / Wikimedia Commons · CC0 · https://commons.wikimedia.org/wiki/File:Gezicht_op_de_haven_van_Antwerpen_met_schepen_op_de_voorgrond,_RP-P-1913-1972.jpg
+- Fim de tarde no cais de Vlissingen, Paul Signac: Pintura: Paul Signac (Cleveland Museum of Art) / Wikimedia Commons · CC0 · https://commons.wikimedia.org/wiki/File:Paul_Signac_-_Evening,_The_Jetty_at_Vlissingen_-_1983.229_-_Cleveland_Museum_of_Art.tif
+- Estuário do Escalda (Westerschelde), Holanda: Foto: LimoWreck / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Hoofdplaat_-_Westerschelde_1.jpg
+- Parkeston Quay, porto de Harwich: Foto: Martin Addison / Wikimedia Commons · CC BY-SA 2.0 · https://commons.wikimedia.org/wiki/File:Harwich_Parkeston_Quay_-_geograph.org.uk_-_1516663.jpg
+- Kaiser Guilherme II: Foto: E. Bieber (livro digitalizado pelo Internet Archive) / Wikimedia Commons · Sem restrições conhecidas · https://commons.wikimedia.org/wiki/File:Kaiser_Wilhelm_II_by_E._Bieber,_1913.jpg
+- Winston Churchill deixa o Almirantado: Foto: autor desconhecido / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:Winston_Churchill_verl_sst_das_Geb_ude_der_Admiralt_t_(1912).jpg
+- Submarinos alemães em Kiel: Foto: Bain News Service / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:U-Boote_Kiel_1914.jpg
+- Pedra do Memorial Rudolf Diesel, Augsburg (doado pela japonesa Yanmar): Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Gedenkstein.JPG
+- Bosque memorial Rudolf Diesel, Augsburg: Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Hain.JPG
+- Busto de Diesel no Ruhmeshalle, Munique: Foto: Rufus46 / Wikimedia Commons · CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Ruhmeshalle_Muenchen_Rudolf_Diesel_Jngenieur-1.jpg
+- Caminhão Foden a diesel: Foto: Oxyman / Wikimedia Commons · CC BY 2.5 · https://commons.wikimedia.org/wiki/File:Foden_F1_Diesel_Lorry_1931.jpg
+
+Música: “Constance”, Kevin MacLeod (incompetech.com), CC BY 4.0.

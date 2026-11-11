@@ -1,0 +1,596 @@
+[
+ {
+  "t": "photo",
+  "bg": "east_ave",
+  "cap": "East Avenue, Rochester, a avenida da casa de Eastman",
+  "credit": "Foto: Detroit Publishing Company (NYPL) / Wikimedia Commons · domínio público",
+  "date": "c. 1908",
+  "n": "Rochester, Nova York. Segunda-feira, catorze de março de mil novecentos e trinta e dois. Um homem de setenta e sete anos chama alguns amigos à sua casa."
+ },
+ {
+  "t": "photo",
+  "bg": "mansao",
+  "cap": "A casa de George Eastman, em Rochester",
+  "credit": "Foto: Warren LeMay / Wikimedia Commons · CC BY-SA 2.0",
+  "date": "2024",
+  "n": "Eles assinam como testemunhas uma mudança no testamento dele. Conversam, brincam. Depois, ele pede que todos saiam do quarto."
+ },
+ {
+  "t": "quote",
+  "q": "Aos meus amigos. Meu trabalho está feito. Por que esperar?",
+  "who": "GEORGE EASTMAN · BILHETE, 14/03/1932",
+  "src": "PBS American Experience · tradução livre",
+  "n": "Minutos depois, os empregados da casa encontram um bilhete curto, em inglês: \"Aos meus amigos. Meu trabalho está feito. Por que esperar?\""
+ },
+ {
+  "t": "name",
+  "name": "George Eastman",
+  "role": "Fundador da Kodak · 1854-1932. Doou quase toda a fortuna ainda em vida.",
+  "src": "Museu George Eastman",
+  "bg": "retrato1890",
+  "n": "O homem era George Eastman. Ele pôs uma câmera na mão de milhões de pessoas e inventou um nome que você conhece: Kodak. Doou quase toda a fortuna ainda em vida."
+ },
+ {
+  "t": "photo",
+  "bg": "sasson_camera",
+  "cap": "A câmera digital criada na Kodak por Steven Sasson, em exposição",
+  "credit": "Foto: Bertrand Labévue / Wikimedia Commons · CC BY-SA 4.0",
+  "date": "1975",
+  "n": "E, décadas depois da morte dele, a própria Kodak criou a câmera digital. A mesma tecnologia que ajudaria a derrubar a empresa. Este é o dossiê de George Eastman."
+ },
+ {
+  "t": "title",
+  "dur": 6,
+  "n": "",
+  "bg": "retrato_nadar"
+ },
+ {
+  "t": "chapter",
+  "num": "01",
+  "name": "O menino do livro-caixa",
+  "n": "Capítulo um. O menino do livro-caixa."
+ },
+ {
+  "t": "photo",
+  "bg": "waterville",
+  "cap": "Waterville, Nova York, cidade natal de Eastman",
+  "credit": "Foto: Doug Kerr / Wikimedia Commons · CC BY-SA 2.0",
+  "date": "2009",
+  "n": "George Eastman nasceu em doze de julho de mil oitocentos e cinquenta e quatro, em Waterville, no interior do estado de Nova York. Era o caçula de três filhos. Quando ele tinha seis anos, a família se mudou para Rochester."
+ },
+ {
+  "t": "timeline",
+  "kicker": "A FAMÍLIA EASTMAN",
+  "ev": [
+   [
+    "1854",
+    "Nasce em Waterville"
+   ],
+   [
+    "1860",
+    "Mudança para Rochester"
+   ],
+   [
+    "1862",
+    "Morre o pai"
+   ],
+   [
+    "1870",
+    "Morre a irmã Katie"
+   ]
+  ],
+  "cur": 2,
+  "src": "Ackerman, 1930 · Museu Eastman",
+  "n": "O pai tinha aberto ali uma escola de comércio. Em mil oitocentos e sessenta e dois, o pai morreu de repente. A mãe, Maria, passou a receber hóspedes em casa para pagar as contas.",
+  "bg": "casa_infancia"
+ },
+ {
+  "t": "timeline",
+  "kicker": "A FAMÍLIA EASTMAN",
+  "ev": [
+   [
+    "1854",
+    "Nasce em Waterville"
+   ],
+   [
+    "1860",
+    "Mudança para Rochester"
+   ],
+   [
+    "1862",
+    "Morre o pai"
+   ],
+   [
+    "1870",
+    "Morre a irmã Katie"
+   ]
+  ],
+  "cur": 3,
+  "src": "Ackerman, 1930 · Museu Eastman",
+  "n": "Em mil oitocentos e setenta, a irmã Katie, que tinha tido poliomielite, também morreu. Ainda adolescente, George largou a escola para sustentar a mãe e as irmãs.",
+  "bg": "main_st"
+ },
+ {
+  "t": "fact",
+  "kicker": "PRIMEIRO EMPREGO · 1868",
+  "big": "US$ 3/SEMANA",
+  "sub": "Office boy numa firma de seguros, segundo a biografia de Carl Ackerman.",
+  "src": "Ackerman, 1930",
+  "n": "O primeiro emprego foi de office boy numa firma de seguros. Segundo a biografia de Carl Ackerman, publicada em mil novecentos e trinta, o salário era de três dólares por semana.",
+  "bg": "main_st"
+ },
+ {
+  "t": "quote",
+  "q": "Sorvete: 65 centavos.",
+  "who": "CADERNO DE CONTAS DE EASTMAN · 12/07/1868",
+  "src": "Ackerman, 1930 · tradução livre",
+  "n": "No dia em que fez catorze anos, ele anotou no caderno de contas um gasto: sessenta e cinco centavos de sorvete."
+ },
+ {
+  "t": "photo",
+  "bg": "banco1880",
+  "cap": "Banco de Poupança de Rochester, onde Eastman trabalhou",
+  "credit": "Foto: George H. Monroe / Wikimedia Commons · domínio público",
+  "date": "c. 1880",
+  "n": "Em mil oitocentos e setenta e quatro, virou auxiliar de contabilidade no Banco de Poupança de Rochester."
+ },
+ {
+  "t": "fact",
+  "kicker": "SALÁRIO NO BANCO · 1876",
+  "big": "US$ 1.400/ANO",
+  "sub": "Aos 22 anos, era o chefe da casa.",
+  "src": "Ackerman, 1930",
+  "n": "Dois anos depois, já ganhava mil e quatrocentos dólares por ano. Era o chefe da casa. E não tinha nenhuma intenção de mexer com fotografia.",
+  "bg": "banco1880"
+ },
+ {
+  "t": "chapter",
+  "num": "02",
+  "name": "A viagem que nunca aconteceu",
+  "n": "Capítulo dois. A viagem que nunca aconteceu."
+ },
+ {
+  "t": "photo",
+  "bg": "church_foto",
+  "cap": "Eastman com uma câmera, fotografado por Fred Church",
+  "credit": "Foto: Frederick Church / Wikimedia Commons · domínio público",
+  "date": "1890",
+  "n": "Em mil oitocentos e setenta e sete, aos vinte e três anos, Eastman planejou uma viagem a Santo Domingo, no Caribe. Um colega do banco sugeriu que ele levasse uma câmera para registrar tudo. Ele comprou o equipamento."
+ },
+ {
+  "t": "quote",
+  "q": "Quase a carga de um cavalo.",
+  "who": "GEORGE EASTMAN, SOBRE O EQUIPAMENTO DE PLACAS ÚMIDAS",
+  "src": "Ackerman, 1930 · tradução livre",
+  "n": "E descobriu o tamanho do problema. Naquela época, cada foto era feita numa placa de vidro que precisava ser preparada com produtos químicos na hora, e revelada antes de secar. Nas palavras do próprio Eastman, era quase \"a carga de um cavalo\".",
+  "bg": "barba_kodak"
+ },
+ {
+  "t": "fact",
+  "kicker": "1877 A 1880",
+  "big": "3 ANOS",
+  "sub": "de experiências na cozinha da mãe, sem largar o emprego no banco.",
+  "src": "Museu George Eastman",
+  "n": "Ele nunca foi a Santo Domingo. Mas ficou obcecado pela fotografia. Durante três anos, segundo o Museu George Eastman, fez experiências na cozinha da mãe, sem largar o emprego no banco.",
+  "bg": "church_foto"
+ },
+ {
+  "t": "photo",
+  "bg": "catalogo1886",
+  "cap": "Catálogo da Eastman Dry Plate and Film Company",
+  "credit": "Foto: Internet Archive Book Images / Wikimedia Commons · domínio público",
+  "date": "1886",
+  "n": "O objetivo era uma placa seca, pronta para usar, que pudesse ser fabricada em série. Em mil oitocentos e oitenta, ele patenteou uma máquina para cobrir essas placas."
+ },
+ {
+  "t": "timeline",
+  "kicker": "A EMPRESA",
+  "ev": [
+   [
+    "1880",
+    "Patente da máquina de placas"
+   ],
+   [
+    "JAN 1881",
+    "Eastman Dry Plate Company"
+   ],
+   [
+    "SET 1881",
+    "Deixa o banco"
+   ]
+  ],
+  "cur": 1,
+  "src": "Ackerman, 1930",
+  "n": "Em janeiro de mil oitocentos e oitenta e um, com o dinheiro de um amigo da família, Henry Strong, fundou a Eastman Dry Plate Company. Só deixou o banco em setembro daquele ano.",
+  "bg": "kodak_sede1900"
+ },
+ {
+  "t": "fact",
+  "kicker": "1881 A 1882",
+  "big": "A CRISE",
+  "sub": "Um lote de placas estragou nas mãos de um distribuidor. Eastman recolheu tudo.",
+  "src": "Ackerman, 1930",
+  "n": "Então veio a crise. Um lote de placas estragou nas mãos de um distribuidor, e Eastman recolheu tudo. Depois, a fórmula simplesmente parou de funcionar."
+ },
+ {
+  "t": "fact",
+  "kicker": "TENTATIVAS ATÉ ACERTAR",
+  "big": "469",
+  "sub": "fracassos antes de refazer a fórmula. Muitas noites, ele dormiu numa rede dentro da fábrica.",
+  "src": "Ackerman, 1930",
+  "n": "Segundo Ackerman, foram quatrocentas e sessenta e nove tentativas fracassadas antes de acertar de novo. Muitas noites, ele dormiu numa rede dentro da fábrica.",
+  "bg": "catalogo1886"
+ },
+ {
+  "t": "chapter",
+  "num": "03",
+  "name": "Você aperta o botão",
+  "n": "Capítulo três. Você aperta o botão."
+ },
+ {
+  "t": "fact",
+  "kicker": "1885",
+  "big": "FILME EM ROLO",
+  "sub": "Suporte patenteado com um sócio. Faltava a câmera. E faltava o nome.",
+  "src": "Ackerman, 1930 · Kodak",
+  "n": "Em mil oitocentos e oitenta e cinco, ele patenteou com um sócio um suporte para filme em rolo. Faltava uma câmera simples para usar esse filme. E faltava um nome.",
+  "bg": "kodak_sede1900"
+ },
+ {
+  "t": "quote",
+  "q": "A letra K sempre foi a minha favorita. Parece uma letra forte, incisiva.",
+  "who": "GEORGE EASTMAN",
+  "src": "Kodak, via cinematography.net · tradução livre",
+  "n": "O nome ele inventou do zero. Segundo Ackerman, a letra K era a primeira do sobrenome de solteira da mãe, Kilbourn, e parecia a ele firme e fácil de pronunciar.",
+  "bg": "retrato_nadar"
+ },
+ {
+  "t": "fact",
+  "kicker": "O NOME",
+  "big": "KODAK",
+  "sub": "Curto, fácil de pronunciar e sem significado em nenhuma língua.",
+  "src": "Ackerman, 1930 · PBS",
+  "n": "Eastman queria uma palavra curta, sem significado em nenhuma língua, que só lembrasse o produto. Combinou letras até chegar a Kodak.",
+  "bg": "anuncio1888"
+ },
+ {
+  "t": "fact",
+  "kicker": "MAIO DE 1888",
+  "big": "US$ 25",
+  "sub": "A câmera Kodak, já carregada com filme para cem fotos.",
+  "src": "PBS · History",
+  "n": "Em maio de mil oitocentos e oitenta e oito, a câmera Kodak chegou às lojas. Custava vinte e cinco dólares e vinha carregada com filme para cem fotos.",
+  "bg": "patente"
+ },
+ {
+  "t": "photo",
+  "bg": "gallia",
+  "cap": "Eastman a bordo do navio S.S. Gallia, foto feita com uma câmera Kodak",
+  "credit": "Foto: Frederick Church / Wikimedia Commons · domínio público",
+  "date": "1890",
+  "n": "Depois, o cliente mandava a câmera inteira de volta para Rochester. A fábrica revelava, imprimia e devolvia a câmera recarregada."
+ },
+ {
+  "t": "quote",
+  "q": "Você aperta o botão, nós fazemos o resto.",
+  "who": "SLOGAN DA KODAK",
+  "src": "Anúncio de 1889 · tradução livre",
+  "n": "O slogan resumia tudo: \"Você aperta o botão, nós fazemos o resto.\"",
+  "bg": "slogan1889"
+ },
+ {
+  "t": "photo",
+  "bg": "kodacolor_edison",
+  "cap": "Eastman filma Thomas Edison no lançamento do filme Kodacolor, em sua casa",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "date": "31.07.1928",
+  "n": "No ano seguinte, a empresa lançou um filme transparente e flexível. Segundo a própria Kodak, foi esse filme que permitiu a Thomas Edison desenvolver sua câmera de cinema. O cinema viraria um dos maiores clientes de Eastman."
+ },
+ {
+  "t": "fact",
+  "kicker": "BROWNIE · 1900",
+  "big": "US$ 1",
+  "sub": "Cerca de 100 mil fabricadas só no primeiro ano.",
+  "src": "PBS American Experience",
+  "n": "Em mil novecentos, veio a Brownie, uma câmera de um dólar, pensada para crianças. Segundo o programa American Experience, da rede pública americana PBS, cerca de cem mil foram fabricadas só naquele ano.",
+  "bg": "brownie1905"
+ },
+ {
+  "t": "timeline",
+  "kicker": "KODAK NO BRASIL",
+  "ev": [
+   [
+    "1920",
+    "Início no Rio"
+   ],
+   [
+    "1954",
+    "Fábrica em São Paulo"
+   ],
+   [
+    "1972",
+    "São José dos Campos"
+   ],
+   [
+    "1989",
+    "Manaus"
+   ]
+  ],
+  "cur": 0,
+  "src": "Kodak · ExpoPrint, 2020",
+  "n": "No Brasil, segundo a própria empresa, a Kodak começou a atuar em mil novecentos e vinte, no Rio de Janeiro, por um decreto do presidente Epitácio Pessoa. Décadas depois, teria fábricas em São Paulo, em São José dos Campos e em Manaus.",
+  "bg": "kodak_girl"
+ },
+ {
+  "t": "chapter",
+  "num": "04",
+  "name": "O misterioso senhor Smith",
+  "n": "Capítulo quatro. O misterioso senhor Smith."
+ },
+ {
+  "t": "photo",
+  "bg": "mit_domo",
+  "cap": "Edifícios Maclaurin e o Grande Domo do MIT, pagos pelo \"senhor Smith\"",
+  "credit": "Foto: Beyond My Ken / Wikimedia Commons · CC BY-SA 4.0",
+  "date": "2017",
+  "n": "Em mil novecentos e doze, o Instituto de Tecnologia de Massachusetts, o MIT, recebeu uma promessa de dois milhões e meio de dólares para construir seu novo campus. O doador exigiu sigilo. Era chamado apenas de \"senhor Smith\"."
+ },
+ {
+  "t": "fact",
+  "kicker": "O DOADOR SECRETO DO MIT",
+  "big": "SR. SMITH",
+  "sub": "Revelado em janeiro de 1920: George Eastman. Doações ao MIT: perto de US$ 20 milhões.",
+  "src": "MIT · Ackerman, 1930",
+  "n": "Por quase oito anos, ninguém soube quem era. Só em janeiro de mil novecentos e vinte o nome foi revelado: George Eastman. Segundo Ackerman, as doações ao MIT chegaram perto de vinte milhões de dólares.",
+  "bg": "bain1915"
+ },
+ {
+  "t": "fact",
+  "kicker": "A REGRA DE EASTMAN · 1925",
+  "big": "DOAR TUDO",
+  "sub": "Numa carta, escreveu que sua política era doar todo o dinheiro antes de morrer.",
+  "src": "National Portrait Gallery, Smithsonian",
+  "n": "Eastman tinha uma regra. Numa carta de mil novecentos e vinte e cinco, citada pela National Portrait Gallery, do Instituto Smithsonian, ele escreveu que sua política era doar todo o dinheiro antes de morrer.",
+  "bg": "cor1914"
+ },
+ {
+  "t": "photo",
+  "bg": "escola_musica",
+  "cap": "Escola de Música Eastman, Rochester",
+  "credit": "Foto: Daderot / Wikimedia Commons · domínio público",
+  "date": "2008",
+  "n": "E cumpriu. Em Rochester, financiou uma escola de música, um teatro, uma faculdade de medicina e odontologia."
+ },
+ {
+  "t": "photo",
+  "bg": "dental_roc",
+  "cap": "Prédio do Eastman Dental Dispensary, Rochester",
+  "credit": "Foto: Matthew D. Wilson (LtPowers) / Wikimedia Commons · CC BY-SA 3.0",
+  "date": "2009",
+  "n": "Fundou uma clínica dentária, o Rochester Dental Dispensary. Explicou que, entre todos os projetos de caridade que tinha estudado, era ali que o dinheiro rendia mais resultado."
+ },
+ {
+  "t": "fact",
+  "kicker": "CLÍNICAS NA EUROPA",
+  "big": "US$ 1 MI",
+  "sub": "para cada uma: Londres, Roma, Bruxelas, Estocolmo e Paris. Atendiam crianças pobres de até 16 anos.",
+  "src": "Universidade de Rochester (URMC)",
+  "n": "Depois, segundo os arquivos da Universidade de Rochester, deu um milhão de dólares para cada clínica semelhante em Londres, Roma, Bruxelas, Estocolmo e Paris. Elas atendiam crianças pobres de até dezesseis anos.",
+  "bg": "dental_bxl"
+ },
+ {
+  "t": "photo",
+  "bg": "enfermaria1927",
+  "cap": "Enfermaria da fábrica Eastman Kodak (Arquivo Nacional dos EUA)",
+  "credit": "Foto: Arquivo Nacional dos EUA (NARA) / Wikimedia Commons · domínio público",
+  "date": "07.04.1927",
+  "n": "Na fábrica, criou um dividendo salarial: um bônus para os funcionários ligado ao lucro da empresa."
+ },
+ {
+  "t": "photo",
+  "bg": "time1924",
+  "cap": "Eastman na capa da revista Time",
+  "credit": "Foto: capa da revista TIME / Wikimedia Commons · domínio público",
+  "date": "31.03.1924",
+  "n": "Em dezembro de mil novecentos e vinte e quatro, aos setenta anos, dividiu a maior parte da fortuna entre a Universidade de Rochester, o MIT e dois institutos de ensino para estudantes negros, Hampton e Tuskegee."
+ },
+ {
+  "t": "fact",
+  "kicker": "DOADO EM VIDA",
+  "big": "US$ 100 MI+",
+  "sub": "Segundo o Museu George Eastman. Nunca se casou e não teve filhos.",
+  "src": "Museu George Eastman",
+  "n": "Segundo o Museu George Eastman, ele doou em vida mais de cem milhões de dólares. Nunca se casou e não teve filhos.",
+  "bg": "mesa"
+ },
+ {
+  "t": "chapter",
+  "num": "05",
+  "name": "Por que esperar?",
+  "n": "Capítulo cinco. Por que esperar?"
+ },
+ {
+  "t": "photo",
+  "bg": "eastman_velho",
+  "cap": "George Eastman",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "date": "",
+  "n": "Em mil novecentos e vinte e cinco, Eastman deixou a presidência da Kodak. No fim da década, começou a sentir dores fortes nas costas. Ficou magro e fraco."
+ },
+ {
+  "t": "fact",
+  "kicker": "HIPÓTESE DE HOJE, SEM LAUDO DA ÉPOCA",
+  "big": "ESTENOSE?",
+  "sub": "Estreitamento do canal da coluna. Diagnóstico sugerido depois, não um laudo de 1932.",
+  "src": "PBS American Experience",
+  "n": "Tinha dificuldade para ficar de pé e passou a andar arrastando os pés. Segundo o programa American Experience, um médico de hoje provavelmente diagnosticaria estenose espinhal, um estreitamento do canal da coluna. Mas é uma hipótese feita depois, não um laudo da época."
+ },
+ {
+  "t": "photo",
+  "bg": "kodacolor_grupo",
+  "cap": "Edison, Adolph Ochs, o general Pershing e Eastman na casa de Eastman",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "date": "31.07.1928",
+  "n": "Eastman tinha visto a mãe passar os dois últimos anos de vida numa cadeira de rodas. Segundo a PBS, ele temia o mesmo destino, e disse a um amigo que já não havia muito pelo que viver."
+ },
+ {
+  "t": "quote",
+  "q": "Meu trabalho está feito. Por que esperar?",
+  "who": "GEORGE EASTMAN · 14/03/1932",
+  "src": "PBS American Experience · tradução livre",
+  "n": "Em catorze de março de mil novecentos e trinta e dois, depois de reunir os amigos para testemunhar o testamento, ele tirou a própria vida em casa. Deixou o bilhete: \"Meu trabalho está feito. Por que esperar?\""
+ },
+ {
+  "t": "quote",
+  "q": "Ele revolucionou a arte da fotografia, pondo a Kodak ao alcance de milhões de pessoas.",
+  "who": "HERBERT HOOVER, PRESIDENTE DOS EUA",
+  "src": "Nota oficial, 15/03/1932 · tradução livre",
+  "n": "No dia seguinte, o presidente americano Herbert Hoover divulgou uma nota. Disse que Eastman \"revolucionou a arte da fotografia, pondo a Kodak ao alcance de milhões de pessoas\".",
+  "bg": "estatua"
+ },
+ {
+  "t": "photo",
+  "bg": "kodak_park",
+  "cap": "Kodak Park, o complexo industrial, visto do Seneca Park",
+  "credit": "Foto: DanielPenfield / Wikimedia Commons · CC BY-SA 3.0",
+  "date": "2010",
+  "n": "Quando o caixão saiu da casa, tocou uma peça de órgão que ele próprio chamava de \"minha marcha fúnebre\". As cinzas foram enterradas no terreno da fábrica, o Kodak Park."
+ },
+ {
+  "t": "photo",
+  "bg": "mansao",
+  "cap": "A mansão de Eastman, hoje Museu George Eastman",
+  "credit": "Foto: Warren LeMay / Wikimedia Commons · CC BY-SA 2.0",
+  "date": "2024",
+  "n": "A fortuna que restava foi para a Universidade de Rochester. A mansão de cinquenta cômodos onde ele morreu é hoje o Museu George Eastman."
+ },
+ {
+  "t": "chapter",
+  "num": "06",
+  "name": "A câmera na gaveta",
+  "n": "Capítulo seis. A câmera na gaveta."
+ },
+ {
+  "t": "fact",
+  "kicker": "EUA · ANOS 1970",
+  "big": "~90% DO FILME",
+  "sub": "e cerca de 85% das vendas de câmeras.",
+  "src": "Columbia Business School",
+  "n": "A Kodak seguiu gigante por décadas. Segundo um estudo de caso da Escola de Negócios de Columbia, nos anos setenta a empresa tinha cerca de oitenta e cinco por cento das vendas de câmeras e noventa por cento das vendas de filme nos Estados Unidos.",
+  "bg": "instamatic"
+ },
+ {
+  "t": "name",
+  "name": "Steven Sasson",
+  "role": "Engenheiro da Kodak. Em 1975, montou uma câmera de 3,6 kg que fazia imagens de 100 por 100 pixels.",
+  "src": "National Inventors Hall of Fame",
+  "bg": "sasson",
+  "n": "Em mil novecentos e setenta e cinco, um jovem engenheiro da Kodak, Steven Sasson, montou um aparelho estranho. Pesava três quilos e seiscentos. Fazia uma imagem em preto e branco de cem por cem pixels."
+ },
+ {
+  "t": "fact",
+  "kicker": "A CÂMERA DE SASSON · 1975",
+  "big": "23 SEGUNDOS",
+  "sub": "para gravar cada foto numa fita cassete. Para o Hall da Fama, a primeira câmera digital autônoma do mundo.",
+  "src": "National Inventors Hall of Fame",
+  "n": "E levava vinte e três segundos para gravar cada foto numa fita cassete. O Hall da Fama dos Inventores dos Estados Unidos a considera a primeira câmera digital autônoma do mundo.",
+  "bg": "sasson_camera"
+ },
+ {
+  "t": "photo",
+  "bg": "sasson",
+  "cap": "Steven Sasson na Photokina de 2010",
+  "credit": "Foto: Aljawad / Wikimedia Commons · CC BY 3.0",
+  "date": "2010",
+  "n": "Sasson contou ao jornal The New York Times, em dois mil e oito, como a diretoria reagiu. Era fotografia sem filme."
+ },
+ {
+  "t": "quote",
+  "q": "Que bonitinho. Mas não conte para ninguém.",
+  "who": "A DIRETORIA DA KODAK, SEGUNDO STEVEN SASSON",
+  "src": "The New York Times, 2008, via Forbes · tradução livre",
+  "n": "E a resposta foi: \"Que bonitinho. Mas não conte para ninguém.\""
+ },
+ {
+  "t": "fact",
+  "kicker": "ESTUDO DA WHARTON · 2022",
+  "big": "ELA PREVIU",
+  "sub": "A Kodak antecipou a chegada do digital e tentou vários caminhos.",
+  "src": "Vinokurova e Kapoor, Wharton, 2022",
+  "n": "Mas a história é mais complicada. Pesquisadores da Escola Wharton mostram que a Kodak previu a chegada do digital e tentou vários caminhos.",
+  "bg": "kodak_tower"
+ },
+ {
+  "t": "fact",
+  "kicker": "EUA · 2004 E 2005",
+  "big": "Nº 1 DIGITAL",
+  "sub": "em vendas de câmeras digitais. Mas o filme dava muito lucro, e a câmera digital dava pouco.",
+  "src": "Vinokurova e Kapoor, Wharton, 2022",
+  "n": "Em dois mil e quatro e dois mil e cinco, chegou a liderar as vendas de câmeras digitais nos Estados Unidos. O problema era outro: o filme dava muito lucro, e a câmera digital dava pouco.",
+  "bg": "kodak_park"
+ },
+ {
+  "t": "headline",
+  "outlet": "ABC NEWS · 19 DE JANEIRO DE 2012",
+  "head": "Kodak files for Chapter 11 bankruptcy",
+  "mark": "Chapter 11 bankruptcy",
+  "url": "abcnews.com",
+  "bg": "kodak_tower_noite",
+  "n": "Em dezenove de janeiro de dois mil e doze, a Eastman Kodak pediu recuperação judicial nos Estados Unidos."
+ },
+ {
+  "t": "fact",
+  "kicker": "NO PEDIDO DE RECUPERAÇÃO",
+  "big": "US$ 6,75 BI",
+  "sub": "em dívidas, contra US$ 5,1 bi em ativos. Empregados: de ~130 mil (anos 1980) a ~17 mil.",
+  "src": "ABC News, 19/01/2012",
+  "n": "Segundo os documentos do processo, citados pela rede ABC, tinha cinco vírgula um bilhões de dólares em ativos e seis vírgula setenta e cinco bilhões em dívidas. No começo dos anos oitenta, empregava cerca de cento e trinta mil pessoas no mundo. Em dois mil e doze, eram cerca de dezessete mil.",
+  "bg": "kodak_building"
+ },
+ {
+  "t": "photo",
+  "bg": "kodak_tower",
+  "cap": "Kodak Tower, sede da empresa em Rochester",
+  "credit": "Foto: Luxhunter68 / Wikimedia Commons · CC BY-SA 3.0",
+  "date": "2010",
+  "n": "Em setembro de dois mil e treze, a empresa saiu da recuperação. Menor, focada em impressão para empresas, sem vender câmeras ao público."
+ },
+ {
+  "t": "photo",
+  "bg": "barba_kodak",
+  "cap": "Homem de cartola com uma das primeiras câmeras Kodak",
+  "credit": "Foto: Biblioteca do Congresso / Wikimedia Commons · domínio público",
+  "date": "1890",
+  "n": "George Eastman passou a vida tirando a complicação do caminho. Do vidro para o rolo. Do laboratório para um botão."
+ },
+ {
+  "t": "photo",
+  "bg": "brownie_mao",
+  "cap": "Mão segurando uma Brownie",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "date": "1904",
+  "n": "De vinte e cinco dólares para um."
+ },
+ {
+  "t": "photo",
+  "bg": "sasson_camera",
+  "cap": "A câmera digital de Steven Sasson (1975) em exposição",
+  "credit": "Foto: Bertrand Labévue / Wikimedia Commons · CC BY-SA 4.0",
+  "date": "1975",
+  "n": "A empresa que ele criou fez a mesma coisa em mil novecentos e setenta e cinco. Só que, desta vez, a simplicidade ameaçava o próprio negócio."
+ },
+ {
+  "t": "photo",
+  "bg": "camera_pessoal",
+  "cap": "Câmera pessoal de Eastman, no museu",
+  "credit": "Foto: Arnob Alam / Wikimedia Commons · CC BY-SA 2.0",
+  "date": "2009",
+  "n": "Fica a pergunta: quando você inventa o futuro, mas vive do passado, você tem coragem de apertar o botão?"
+ },
+ {
+  "t": "end",
+  "credits": true,
+  "bg": "selo1954",
+  "n": "Se este dossiê te fez pensar, inscreva-se no canal. Toda semana, um novo arquivo aberto."
+ }
+]

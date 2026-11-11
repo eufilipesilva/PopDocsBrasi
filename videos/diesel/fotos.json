@@ -1,0 +1,121 @@
+{
+ "diesel_retrato": {
+  "cap": "Rudolf Diesel, retrato",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel.jpg",
+  "file": "File:Rudolf Diesel.jpg"
+ },
+ "diesel_retrato2": {
+  "cap": "Rudolf Diesel, retrato",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel2.jpg",
+  "file": "File:Rudolf Diesel2.jpg"
+ },
+ "diesel_cortado": {
+  "cap": "Rudolf Diesel",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel_(cropped).jpg",
+  "file": "File:Rudolf Diesel (cropped).jpg"
+ },
+ "diesel_1883": {
+  "cap": "Diesel aos 25 anos, ano do casamento com Martha",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Diesel_1883.jpg",
+  "file": "File:Diesel 1883.jpg"
+ },
+ "diesel_sfa1": {
+  "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_Diesel,_uitvinder_van_de_dieselmotor,_SFA007001969.jpg",
+  "file": "File:Portret van Rudolf Diesel, uitvinder van de dieselmotor, SFA007001969.jpg"
+ },
+ "diesel_sfa2": {
+  "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Portret_van_dr,_SFA007001970.jpg",
+  "file": "File:Portret van dr, SFA007001970.jpg"
+ },
+ "diesel_colliers": {
+  "cap": "Diesel em gravura da enciclopédia Collier's",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Collier%27s_Diesel_Rudolf.png",
+  "file": "File:Collier's Diesel Rudolf.png"
+ },
+ "diesel_harwich": {
+  "cap": "Rudolf Diesel, em imagem do acervo comunitário Harwich & Dovercourt",
+  "credit": "Foto: Harwich & Dovercourt (Flickr) / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Doctor_R.Diesel_(5774953779).jpg",
+  "file": "File:Doctor R.Diesel (5774953779).jpg"
+ },
+ "assinatura": {
+  "cap": "Assinatura de Rudolf Diesel",
+  "credit": "Assinatura: Rudolf Diesel (digitalização de Mailtosap) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Unterschrift_Rudolf_Diesel.jpg",
+  "file": "File:Unterschrift Rudolf Diesel.jpg"
+ },
+ "placa_paris": {
+  "cap": "Placa na casa onde Diesel nasceu, 38 rue Notre-Dame-de-Nazareth, Paris",
+  "credit": "Foto: Poissons1957 / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaque_38_rue_Notre-Dame-de-Nazareth_(Paris_3e).jpg",
+  "file": "File:Plaque 38 rue Notre-Dame-de-Nazareth (Paris 3e).jpg"
+ },
+ "rua_paris": {
+  "cap": "Rue Notre-Dame-de-Nazareth, Paris, onde Diesel nasceu",
+  "credit": "Foto: Benoît Prieur / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rue_Notre-Dame-de-Nazareth_-_Rudolf_Diesel.jpg",
+  "file": "File:Rue Notre-Dame-de-Nazareth - Rudolf Diesel.jpg"
+ },
+ "placa_natal": {
+  "cap": "Placa da casa natal de Diesel em Paris",
+  "credit": "Foto: Parisette / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaque_Diesel_(maison_natale).jpg",
+  "file": "File:Plaque Diesel (maison natale).jpg"
+ },
+ "cerco_paris": {
+  "cap": "O Cerco de Paris, pintura de Meissonier",
+  "credit": "Pintura: Jean-Louis-Ernest Meissonier / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris.jpg",
+  "file": "File:Siege of Paris.jpg"
+ },
+ "barricadas_1870": {
+  "cap": "Estudantes vão às barricadas, Illustrated London News",
+  "credit": "Ilustração: Fred Barnard, Illustrated London News / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Franco-Prussian_War_-_Students_Going_to_Man_the_Barricades_-_Illustrated_London_News_Oct_1_1870.jpg",
+  "file": "File:Franco-Prussian War - Students Going to Man the Barricades - Illustrated London News Oct 1 1870.jpg"
+ },
+ "balao_1870": {
+  "cap": "Balão deixa Paris sitiada",
+  "credit": "Foto: autor anônimo / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris_1870_Balloon.jpg",
+  "file": "File:Siege of Paris 1870 Balloon.jpg"
+ },
+ "linde": {
+  "cap": "Carl von Linde, professor e primeiro patrão de Diesel",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Carl_von_Linde_1868.jpg",
+  "file": "File:Carl von Linde 1868.jpg"
+ },
+ "linde_gelo": {
+  "cap": "Documento da Sociedade de Máquinas de Gelo Linde",
+  "credit": "Foto: Julie Ceccaldi / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Gesellschaft_Lindes_Eismaschinen_1880.jpg",
+  "file": "File:Gesellschaft Lindes Eismaschinen 1880.jpg"
+ }
+}

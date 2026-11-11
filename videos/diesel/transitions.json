@@ -1,0 +1,383 @@
+[
+ {
+  "from": 0,
+  "to": 1,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 1,
+  "to": 2,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 2,
+  "to": 3,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 3,
+  "to": 4,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 4,
+  "to": 5,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 5,
+  "to": 6,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAPÍTULO 01",
+   "sub": "POPDOCSBRASIL · DOSSIÊ RUDOLF DIESEL"
+  }
+ },
+ {
+  "from": 6,
+  "to": 7,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 7,
+  "to": 8,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 8,
+  "to": 9,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 9,
+  "to": 10,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 10,
+  "to": 11,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 11,
+  "to": 12,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/diesel",
+    "> abrir capitulo_02.dossie"
+   ],
+   "ok": "CAPÍTULO 02 ENCONTRADO"
+  }
+ },
+ {
+  "from": 12,
+  "to": 13,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 13,
+  "to": 14,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 14,
+  "to": 15,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 15,
+  "to": 16,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 16,
+  "to": 17,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 17,
+  "to": 18,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 18,
+  "to": 19,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 19,
+  "to": 20,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 20,
+  "to": 21,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 21,
+  "to": 22,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAPÍTULO 03",
+   "sub": "POPDOCSBRASIL · DOSSIÊ RUDOLF DIESEL"
+  }
+ },
+ {
+  "from": 22,
+  "to": 23,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 23,
+  "to": 24,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 24,
+  "to": 25,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 25,
+  "to": 26,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 26,
+  "to": 27,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 27,
+  "to": 28,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 28,
+  "to": 29,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 29,
+  "to": 30,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 30,
+  "to": 31,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 31,
+  "to": 32,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/diesel",
+    "> abrir capitulo_04.dossie"
+   ],
+   "ok": "CAPÍTULO 04 ENCONTRADO"
+  }
+ },
+ {
+  "from": 32,
+  "to": 33,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 33,
+  "to": 34,
+  "kind": "paper",
+  "params": {}
+ },
+ {
+  "from": 34,
+  "to": 35,
+  "kind": "paper",
+  "params": {}
+ },
+ {
+  "from": 35,
+  "to": 36,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 36,
+  "to": 37,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 37,
+  "to": 38,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 38,
+  "to": 39,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAPÍTULO 05",
+   "sub": "POPDOCSBRASIL · DOSSIÊ RUDOLF DIESEL"
+  }
+ },
+ {
+  "from": 39,
+  "to": 40,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 40,
+  "to": 41,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 41,
+  "to": 42,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 42,
+  "to": 43,
+  "kind": "paper",
+  "params": {}
+ },
+ {
+  "from": 43,
+  "to": 44,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 44,
+  "to": 45,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/diesel",
+    "> abrir capitulo_06.dossie"
+   ],
+   "ok": "CAPÍTULO 06 ENCONTRADO"
+  }
+ },
+ {
+  "from": 45,
+  "to": 46,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 46,
+  "to": 47,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 47,
+  "to": 48,
+  "kind": "paper",
+  "params": {}
+ },
+ {
+  "from": 48,
+  "to": 49,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 49,
+  "to": 50,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 50,
+  "to": 51,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 51,
+  "to": 52,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 52,
+  "to": 53,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 53,
+  "to": 54,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 54,
+  "to": 55,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 55,
+  "to": 56,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 56,
+  "to": 57,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 57,
+  "to": 58,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 58,
+  "to": 59,
+  "kind": "dissolve",
+  "params": {}
+ }
+]
