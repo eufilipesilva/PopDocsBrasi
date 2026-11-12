@@ -52,10 +52,25 @@ if __name__ in ('__main__','__mp_main__'):  # also in worker processes (spawn on
     S=json.load(open('scenes.json')); P=json.load(open('plan.json'))
     cum=np.array([p['start'] for p in P]+[P[-1]['start']+P[-1]['dur']]); fr=np.round(cum*FPS).astype(int)
     os.makedirs(OUT,exist_ok=True)
-def cover(img,scale=1.12):
+def cover(img,scale=1.12,fx=0.5,fy=0.5):
+    """Fill the frame, cropping around the focus point (fx, fy from 0 to 1; 0.5, 0.5 is the center)."""
     h,w=img.shape[:2]; tw,th=int(W*scale),int(H*scale); r=max(tw/w,th/h)
     img=cv2.resize(img,(int(w*r+1),int(h*r+1)),interpolation=cv2.INTER_AREA)
-    h,w=img.shape[:2]; y=(h-th)//2; x=(w-tw)//2; return img[y:y+th,x:x+tw]
+    h,w=img.shape[:2]; y=int(round((h-th)*min(max(fy,0),1))); x=int(round((w-tw)*min(max(fx,0),1))); return img[y:y+th,x:x+tw]
+def whole(img,scale=1.12,fx=0.5):
+    """The whole photo, fitted to the frame height, over a blurred and darkened copy of itself (for portraits and documents)."""
+    tw,th=int(W*scale),int(H*scale); back=cover(img,scale)
+    back=(cv2.GaussianBlur(back,(0,0),40)*0.45).astype(np.uint8)
+    h,w=img.shape[:2]; r=min(th*0.94/h,tw*0.94/w); fw,fh=int(w*r),int(h*r)
+    fg=cv2.resize(img,(fw,fh),interpolation=cv2.INTER_AREA if r<1 else cv2.INTER_CUBIC)
+    x=int(round((tw-fw)*min(max(fx,0),1))); y=(th-fh)//2; back[y:y+fh,x:x+fw]=fg; return back
+def framed(img,s,scale=1.12):
+    """Photo framing from the library: 'fotoRecorte' [x0,y0,x1,y1] crops first, 'fotoEnq' 'inteira' shows it whole, 'fotoFoco' [x,y] moves the crop."""
+    rc=s.get('fotoRecorte')
+    if rc:
+        h,w=img.shape[:2]; img=img[int(h*rc[1]):int(h*rc[3]),int(w*rc[0]):int(w*rc[2])]
+    fx,fy=(s.get('fotoFoco') or [0.5,0.5])[:2]
+    return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' else cover(img,scale,fx,fy)
 def ld(p):
     o=cv2.imread(p,cv2.IMREAD_UNCHANGED).astype(np.float32)
     if o.shape[2]==3: o=np.dstack([o,np.full(o.shape[:2],255,np.float32)])
@@ -66,7 +81,7 @@ def job(i):
     bg=None; clip=None; dark=(0.55 if s['t']=='title' else 0.85); src=find_bg(IMG,s['bg']) if s.get('bg') else None
     if is_video(src): clip=Clip(src,s.get('vin',0))
     elif src:
-        bg=cover(treat(cv2.imread(src),CORES,modo=s.get('fotoModo'))).astype(np.float32)*dark; bh,bw=bg.shape[:2]
+        bg=framed(treat(cv2.imread(src),CORES,modo=s.get('fotoModo')),s).astype(np.float32)*dark; bh,bw=bg.shape[:2]
     pr=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS),'-i','-',
         '-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
     zin = (i%2==0)

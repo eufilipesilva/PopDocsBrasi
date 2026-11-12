@@ -17,6 +17,8 @@ Dica: ative a verificação em duas etapas na conta nova logo no primeiro dia e 
 
 1. Abra uma **janela anônima** no navegador (Ctrl+Shift+N no Chrome), para não misturar com a sua conta pessoal.
 2. Vá em `accounts.google.com/signup` e crie a conta: nome **PopDocs**, sobrenome **Brasil**, e-mail `popdocsbrasil@gmail.com` (ou a alternativa que estiver livre).
+   - **Data de nascimento:** use a sua data verdadeira. A conta precisa ser de maior de 18 anos para monetizar, e o Google pode pedir essa data para recuperar a conta. Ela não aparece no canal.
+   - **Gênero:** escolha "Prefiro não dizer". Não muda nada no canal.
 3. Com a conta nova, entre em `youtube.com`, clique na foto do canto superior direito e em **Criar um canal**.
 4. Nome: **PopDocsBrasil**. Identificador (@): **@PopDocsBrasil**. Se estiver ocupado, use na ordem: `@PopDocsBR`, `@PopDocsBrasilOficial`, `@DossiePopDocs`.
 5. Entre no **YouTube Studio** (`studio.youtube.com`) → **Personalização**:

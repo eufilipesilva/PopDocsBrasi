@@ -21,7 +21,7 @@ import numpy as np, soundfile as sf
 HERE = os.path.dirname(os.path.abspath(__file__))
 SR = 24000; FPS = 30
 STEPS = ['tts', 'plan', 'shots', 'clips', 'trans', 'mix', 'srt', 'thumb', 'previas']
-ENV = dict(os.environ, NODE_PATH=os.path.join(HERE, 'node_modules') + os.pathsep + os.environ.get('NODE_PATH', ''))
+ENV = dict(os.environ, PYTHONUTF8='1', NODE_PATH=os.path.join(HERE, 'node_modules') + os.pathsep + os.environ.get('NODE_PATH', ''))
 
 def H(*objs):
     h = hashlib.sha1()
@@ -69,6 +69,8 @@ class Video:
                 else:
                     f = self.fotos.get(bg, {})
                     if f.get('modo') in ('pb', 'cor', 'tom'): s['fotoModo'] = f['modo']
+                    for k, v in (('foco', 'fotoFoco'), ('enquadrar', 'fotoEnq'), ('recorte', 'fotoRecorte')):   # framing: scene overrides library
+                        if s.get(k) or f.get(k): s[v] = s.get(k) or f.get(k)
                     if s['t'] != 'title': s.setdefault('cap', f.get('cap', ''))
                     s.setdefault('credit', f.get('credit', ''))
             out.append(s)
@@ -190,20 +192,38 @@ class Video:
         self.save_hashes()
         print(f'  {len(todo)} cenas com transição refeitas')
 
-    # ---------- 6. final mix ----------
-    def mix(self):
-        P = json.load(open(self.w('plan.json'))); total = P[-1]['start'] + P[-1]['dur']
-        open(self.w('trans', 'list.txt'), 'w').write(''.join(f"file '{i:02d}.mp4'\n" for i in range(len(self.S))))
-        run(['ffmpeg', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', self.w('trans', 'list.txt'), '-c', 'copy', self.w('video.mp4')])
-        mu = self.cfg['music']; src = mu['file'] if os.path.isabs(mu['file']) else f"{self.V}/{mu['file']}"
+    def music_loop(self, file, length, out):
+        """Repeat one music file (4 s crossfade between repeats) to `length` seconds."""
+        src = file if os.path.isabs(file) else f"{self.V}/{file}"
         ln = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', src], capture_output=True, text=True).stdout)
-        loops = int(total // (ln - 4)) + 1
+        loops = int(length // (ln - 4)) + 1
         ins = sum([['-i', src] for _ in range(loops)], [])
         if loops == 1: fc = '[0]'
         else:
             fc = ''; cur = '[0]'
             for k in range(1, loops):
                 nxt = f'[x{k}]'; fc += f'{cur}[{k}]acrossfade=d=4{nxt};'; cur = nxt
+            fc += cur
+        fc += f'atrim=0:{length}[m]'
+        run(['ffmpeg', '-loglevel', 'error', '-y', *ins, '-filter_complex', fc, '-map', '[m]', '-ar', '48000', '-ac', '2', out])
+        return out
+
+    # ---------- 6. final mix ----------
+    def mix(self):
+        P = json.load(open(self.w('plan.json'))); total = P[-1]['start'] + P[-1]['dur']
+        open(self.w('trans', 'list.txt'), 'w').write(''.join(f"file '{i:02d}.mp4'\n" for i in range(len(self.S))))
+        run(['ffmpeg', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', self.w('trans', 'list.txt'), '-c', 'copy', self.w('video.mp4')])
+        # music: one track for the whole video ('music'), or one per section ('musicas': [{cena, file, credit}], cena = first scene, 1-based)
+        segs = self.cfg.get('musicas') or [dict(self.cfg['music'], cena=1)]
+        starts = [P[s['cena'] - 1]['start'] if s.get('cena', 1) > 1 else 0 for s in segs]; ends = starts[1:] + [total]
+        parts = []
+        for k, s in enumerate(segs):   # each section is longer by the 3 s crossfade, so every change starts exactly on its scene
+            parts.append(self.music_loop(s['file'], ends[k] - starts[k] + (3 if k < len(segs) - 1 else 0), self.w(f'music_part{k}.wav')))
+        ins = sum([['-i', p] for p in parts], []); fc = '[0]'
+        if len(parts) > 1:
+            fc = ''; cur = '[0]'
+            for k in range(1, len(parts)):
+                nxt = f'[y{k}]'; fc += f'{cur}[{k}]acrossfade=d=3{nxt};'; cur = nxt
             fc += cur
         fc += f'atrim=0:{total},afade=t=in:d=2,afade=t=out:st={total-7}:d=7[m]'
         run(['ffmpeg', '-loglevel', 'error', '-y', *ins, '-filter_complex', fc, '-map', '[m]', '-ar', '48000', '-ac', '2', self.w('music_bed.wav')])
