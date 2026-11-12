@@ -348,5 +348,20 @@
   "license": "CC BY 4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Grave_of_Will_Keith_Kellogg_(1860%E2%80%931951)_at_Oak_Hill_Cemetery,_Battle_Creek_1.jpg",
   "file": "File:Grave of Will Keith Kellogg (1860–1951) at Oak Hill Cemetery, Battle Creek 1.jpg"
+ },
+ "anuncio_1908": {
+  "cap": "Anúncio de Kellogg's Toasted Corn Flakes, 1908",
+  "credit": "Foto: Judge Company / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Kellogg%27s_TOASTED_CORN_FLAKES_advertisement,_United_States,_1908.webp",
+  "file": "File:Kellogg's TOASTED CORN FLAKES advertisement, United States, 1908.webp"
+ },
+ "video_comercial_1950": {
+  "cap": "Comercial de Corn Flakes para crianças, anos 1950 (vídeo)",
+  "credit": "Vídeo: Kellogg's / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Kellogg%27s_Corn_Flakes_kid%27s_commercial_(1950s).webm",
+  "file": "File:Kellogg's Corn Flakes kid's commercial (1950s).webm",
+  "tipo": "video"
  }
 }
