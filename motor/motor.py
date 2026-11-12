@@ -290,6 +290,8 @@ class Video:
         print('  prévias atualizadas')
 
 if __name__ == '__main__':
+    if not sys.flags.utf8_mode:  # Windows opens files as cp1252 by default; the project files are UTF-8
+        sys.exit(subprocess.call([sys.executable, '-X', 'utf8'] + sys.argv))
     v = Video(sys.argv[1]); steps = sys.argv[2:] or STEPS
     for st in steps:
         print(f'== {st}', flush=True); getattr(v, st)()
