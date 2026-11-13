@@ -9,6 +9,7 @@ Canal de documentários no YouTube, estilo dossiê, sem rosto. Um vídeo por sem
 ## Regras
 
 - Roteiro: checar tudo. Cada fato precisa de fonte confiável, e alegações sem prova aparecem como alegações.
+- Roteiro: só escrever o que a fonte diz. Nada de detalhe inventado ou inferido (cômodo, gesto, diálogo, causa) sem fonte; se for inferência, marcar como tal. Entregar com planilha de checagem frase a frase (fonte e link por frase).
 - Imagens e vídeos só de domínio público, licença livre ou do próprio canal, sempre com crédito e licença em `fotos.json`.
 - A chave da ElevenLabs fica só em `~/.popdocs/elevenlabs.txt`. Nunca pedir, mostrar ou copiar a chave.
 - Narração gasta créditos: só mudar o texto `n` de uma cena quando for preciso.
