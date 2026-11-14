@@ -97,7 +97,7 @@ def start_render(slug, modo='final'):
         if r and not r.get('ended'): return False
         log = os.path.join(V, 'saidas', 'renderizacao.log'); os.makedirs(os.path.dirname(log), exist_ok=True)
         f = open(log, 'w', encoding='utf-8')
-        proc = subprocess.Popen([sys.executable, '-u', os.path.join(MOTOR, 'motor.py'), V, *extra], stdout=f, stderr=subprocess.STDOUT, cwd=MOTOR)
+        proc = subprocess.Popen([sys.executable, '-u', os.path.join(MOTOR, 'motor.py'), V, *extra], stdout=f, stderr=subprocess.STDOUT, cwd=MOTOR, **({} if os.name == 'nt' else {'start_new_session': True}))
         RENDER[slug] = {'proc': proc, 'log': log, 'started': time.time(), 'modo': modo}
     def wait():
         code = proc.wait(); f.close()
@@ -126,7 +126,13 @@ def render_status(slug):
 def cancel_render(slug):
     r = RENDER.get(slug)
     if not r or r.get('ended'): return False
-    r['cancelado'] = True; r['proc'].terminate(); return True
+    r['cancelado'] = True
+    if os.name == 'nt':   # terminate() would leave ffmpeg and node (children of the engine) running on Windows
+        subprocess.run(['taskkill', '/PID', str(r['proc'].pid), '/T', '/F'], capture_output=True)
+    else:
+        try: os.killpg(os.getpgid(r['proc'].pid), 15)
+        except OSError: r['proc'].terminate()
+    return True
 
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
