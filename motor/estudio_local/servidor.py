@@ -8,7 +8,7 @@ It reads and writes the video folders directly and has a Render button that runs
 Only the standard library is needed for the server itself; the engine needs ffmpeg, Node + Playwright,
 and the Python packages listed in INSTALAR.md.
 """
-import json, os, sys, threading, subprocess, webbrowser, argparse, base64, re, time, mimetypes
+import json, os, sys, threading, subprocess, webbrowser, argparse, base64, re, time, mimetypes, hashlib
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, unquote
 
@@ -36,6 +36,37 @@ def media_url(slug, rel):
     p = os.path.join(VIDEOS, slug, rel)
     return f'/media/{slug}/{rel}?v={int(os.path.getmtime(p))}' if os.path.exists(p) else ''
 
+def nhash(*objs):   # same hash as motor.py (narration cache names), without importing the engine
+    h = hashlib.sha1()
+    for o in objs: h.update(json.dumps(o, sort_keys=True, ensure_ascii=False).encode())
+    return h.hexdigest()[:16]
+
+def size_of(p): return os.path.getsize(p) if os.path.exists(p) else 0
+
+def extras(slug, V, vdoc, scenes):
+    """What only the local Studio knows: narration still to be generated (credits), music files, outputs, YouTube text."""
+    voice = vdoc.get('voice_id'); model = vdoc.get('voice_model', 'eleven_multilingual_v2')
+    vs = vdoc.get('voice_settings', {"stability": 0.5, "similarity_boost": 0.75})
+    total = pend = npend = 0
+    for sid, d in scenes:
+        n = d.get('n') or ''
+        if not n: continue
+        total += len(n); key = nhash(n, voice, model, vs)
+        if os.path.exists(os.path.join(V, 'audio', key + '.mp3')): d['audio'] = f'/media/{slug}/audio/{key}.mp3'
+        else: pend += len(n); npend += 1
+    mus = []
+    md = os.path.join(V, 'musica')
+    for f in sorted(os.listdir(md)) if os.path.isdir(md) else []:
+        if f.lower().endswith(('.mp3', '.wav', '.ogg', '.m4a', '.flac')): mus.append({'file': 'musica/' + f, 'url': f'/media/{slug}/musica/{f}'})
+    out = {}
+    for k, rel in (('video', f'saidas/{slug}.mp4'), ('teste', f'saidas/{slug}-TESTE.mp4'), ('celular', f'saidas/{slug}-celular.mp4'),
+                   ('legendas', f'saidas/{slug}-legendas.srt'), ('thumbnail', f'saidas/{slug}-thumbnail.jpg')):
+        p = os.path.join(V, rel)
+        if os.path.exists(p): out[k] = {'url': media_url(slug, rel), 'mb': round(size_of(p) / 1e6, 1), 'em': time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(os.path.getmtime(p)))}
+    yt = os.path.join(V, f'youtube-{slug}.txt')
+    return {'narr': {'total': total, 'pendentes': pend, 'cenas': npend}, 'musicas': mus, 'saidas': out,
+            'youtube': open(yt, encoding='utf-8').read() if os.path.exists(yt) else '', 'pasta': V}
+
 def load_video(slug):
     V = vdir(slug)
     def thumb_of(kind, key):
@@ -45,6 +76,7 @@ def load_video(slug):
     vdoc, scenes, fotos = studio.files_to_docs(V, thumb_of)
     r = RENDER.get(slug)
     if r and not r.get('ended'): vdoc['render'] = {'requested': True, 'at': vdoc['render'].get('at', '')}
+    vdoc['local'] = extras(slug, V, vdoc, scenes)
     return {'video': vdoc, 'scenes': dict(scenes), 'fotos': fotos}
 
 def list_videos():
@@ -55,19 +87,22 @@ def list_videos():
             c = studio.jload(p); out.append({'id': d, 'title': c.get('title', d), 'createdAt': c.get('createdAt', '')})
     return out
 
-def start_render(slug):
-    V = vdir(slug)
+PASSOS = {'tts': 'Narração', 'plan': 'Tempos e legendas', 'shots': 'Desenho das cenas', 'clips': 'Clipes das cenas', 'trans': 'Transições',
+          'mix': 'Som e vídeo final', 'srt': 'Legendas', 'thumb': 'Thumbnail', 'previas': 'Prévias', 'celular': 'Cópia para celular'}
+
+def start_render(slug, modo='final'):
+    V = vdir(slug); extra = {'teste': ['--teste'], 'celular': ['celular']}.get(modo, [])
     with LOCK:
         r = RENDER.get(slug)
         if r and not r.get('ended'): return False
         log = os.path.join(V, 'saidas', 'renderizacao.log'); os.makedirs(os.path.dirname(log), exist_ok=True)
         f = open(log, 'w', encoding='utf-8')
-        proc = subprocess.Popen([sys.executable, '-u', os.path.join(MOTOR, 'motor.py'), V], stdout=f, stderr=subprocess.STDOUT, cwd=MOTOR)
-        RENDER[slug] = {'proc': proc, 'log': log, 'started': time.time()}
+        proc = subprocess.Popen([sys.executable, '-u', os.path.join(MOTOR, 'motor.py'), V, *extra], stdout=f, stderr=subprocess.STDOUT, cwd=MOTOR)
+        RENDER[slug] = {'proc': proc, 'log': log, 'started': time.time(), 'modo': modo}
     def wait():
         code = proc.wait(); f.close()
         RENDER[slug].update(ended=time.time(), ok=(code == 0))
-        if code == 0:
+        if code == 0 and modo == 'final':
             c = studio.jload(os.path.join(V, 'video.json')); c['renderedAt'] = time.strftime('%Y-%m-%dT%H:%M:%S'); studio.jsave(c, os.path.join(V, 'video.json'))
     threading.Thread(target=wait, daemon=True).start()
     return True
@@ -75,11 +110,23 @@ def start_render(slug):
 def render_status(slug):
     r = RENDER.get(slug)
     if not r: return {'running': False}
-    tail = ''
-    try: tail = ''.join(open(r['log'], encoding='utf-8', errors='replace').readlines()[-14:])
+    tail = ''; steps = []; done = []
+    try:
+        lines = open(r['log'], encoding='utf-8', errors='replace').readlines(); tail = ''.join(lines[-14:])
+        for ln in lines:
+            if ln.startswith('== passos:'): steps = ln.split(':', 1)[1].split()
+            elif ln.startswith('== '): done.append(ln[3:].strip())
     except OSError: pass
-    return {'running': not r.get('ended'), 'ok': r.get('ok'), 'elapsed': int((r.get('ended') or time.time()) - r['started']), 'log': tail,
-            'video': f'/media/{slug}/saidas/{slug}.mp4' if r.get('ok') else ''}
+    cur = done[-1] if done else ''; nome = {'final': slug, 'teste': slug + '-TESTE', 'celular': slug + '-celular'}[r.get('modo', 'final')]
+    return {'running': not r.get('ended'), 'ok': r.get('ok'), 'cancelado': bool(r.get('cancelado')), 'modo': r.get('modo', 'final'),
+            'elapsed': int((r.get('ended') or time.time()) - r['started']), 'log': tail,
+            'passos': [{'id': k, 'nome': PASSOS.get(k, k), 'estado': 'feito' if (k in done and k != cur) or (r.get('ok') and k in done) else 'agora' if k == cur else 'espera'} for k in steps],
+            'video': f'/media/{slug}/saidas/{nome}.mp4?v={int(time.time())}' if r.get('ok') else ''}
+
+def cancel_render(slug):
+    r = RENDER.get(slug)
+    if not r or r.get('ended'): return False
+    r['cancelado'] = True; r['proc'].terminate(); return True
 
 class H(BaseHTTPRequestHandler):
     def log_message(self, *a): pass
@@ -122,7 +169,7 @@ class H(BaseHTTPRequestHandler):
             if m: return self.send(200, render_status(m.group(1)))
             m = re.fullmatch(r'/transicoes/([a-z]+)\.mp4', p)
             if m: return self.file(os.path.join(AQUI, 'transicoes', m.group(1) + '.mp4'))
-            m = re.fullmatch(r'/media/([A-Za-z0-9_\-]+)/((?:img|previas|saidas)/[^/]+)', p)
+            m = re.fullmatch(r'/media/([A-Za-z0-9_\-]+)/((?:img|previas|saidas|musica|audio)/[^/]+)', p)
             if m: return self.file(os.path.join(vdir(m.group(1)), *m.group(2).split('/')))
             self.send(404, {'erro': 'não encontrado'})
         except FileNotFoundError: self.send(404, {'erro': 'vídeo não encontrado'})
@@ -159,8 +206,17 @@ class H(BaseHTTPRequestHandler):
                 F = studio.jload(os.path.join(V, 'fotos.json'), {}); F[key] = {'cap': b.get('cap', ''), 'credit': b.get('credit', ''), 'license': b.get('license', ''), 'origin': 'upload', 'tipo': tipo}
                 studio.jsave(F, os.path.join(V, 'fotos.json'))
                 return self.send(200, {'key': key, 'url': media_url(m.group(1), f'previas/foto-{key}.jpg')})
+            m = re.fullmatch(r'/api/video/([^/]+)/youtube', p)
+            if m:
+                V = vdir(m.group(1)); open(os.path.join(V, f'youtube-{m.group(1)}.txt'), 'w', encoding='utf-8').write(self.body().get('texto', ''))
+                return self.send(200, {'ok': True})
+            m = re.fullmatch(r'/api/render/([^/]+)/cancelar', p)
+            if m: return self.send(200, {'cancelado': cancel_render(m.group(1))})
             m = re.fullmatch(r'/api/render/([^/]+)', p)
-            if m: return self.send(200, {'iniciado': start_render(m.group(1))})
+            if m:
+                modo = self.body().get('modo', 'final')
+                if modo not in ('final', 'teste', 'celular'): modo = 'final'
+                return self.send(200, {'iniciado': start_render(m.group(1), modo)})
             self.send(404, {'erro': 'não encontrado'})
         except FileNotFoundError: self.send(404, {'erro': 'vídeo não encontrado'})
         except Exception as e: self.send(500, {'erro': str(e)})

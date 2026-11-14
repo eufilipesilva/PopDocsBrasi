@@ -103,3 +103,24 @@ Requisitos do ambiente: `ffmpeg`, Python com `opencv-python numpy soundfile`, No
 - Música: fonte pública ou licença livre, com crédito no encerramento e na descrição.
 - Voz: ElevenLabs, voz Leonardo (`4XmhZ74tBbUVCXIYNMMo`), modelo `eleven_multilingual_v2`.
 - Estilo visual: preto e branco, Oswald + IBM Plex Mono, ar de dossiê.
+
+
+## Estúdio 2 (novembro de 2026)
+
+O Estúdio foi refeito a partir das lições do Diesel e do vídeo da NVIDIA. As seções ficam na barra lateral:
+
+- **Cenas.** Linha do tempo clicável com capítulos e trechos de música, busca e filtros (alteradas, sem foto, sem voz), player do áudio de cada cena e setas do teclado para andar entre cenas. O enquadramento da foto é feito na tela: clique no ponto que deve ficar visível e escolha "Preencher a tela" ou "Foto inteira". Marque "Só nesta cena" para não mudar as outras cenas que usam a mesma foto.
+- **Mídia.** Galeria com filtros (em cena, sem uso, vídeos, sem crédito) e edição de legenda, crédito, licença, cor e enquadramento.
+- **Música.** Trechos de música por cena (`musicas` no `video.json`), com a lista dos arquivos da pasta `musica/` e o volume.
+- **Estilo.** Paletas lado a lado, modelos de transição aplicados a todas as cenas ("Documentário", "Sóbrio", "Dossiê tecnológico"), textos fixos e thumbnail.
+- **Publicar.** Lista de pendências (checagem frase a frase, narração ainda sem áudio e quantos créditos vai gastar, fotos sem crédito, vídeo desatualizado), texto do YouTube, capítulos com os tempos e os três modos de renderização.
+
+Modos de renderização (também pela linha de comando):
+
+- `python motor/motor.py videos/<slug> --teste`: versão de teste com voz sintética grátis (pacote `edge-tts`), sem gastar créditos. Sai como `saidas/<slug>-TESTE.mp4` e usa pasta de trabalho e cache de voz próprios (`audio-teste/`, fora do Git). A voz de teste é `pt-BR-AntonioNeural`; troque com `"voz_teste"` no `video.json`.
+- `python motor/motor.py videos/<slug>`: vídeo final, com a voz da ElevenLabs.
+- `python motor/motor.py videos/<slug> celular`: cópia leve em 540p do vídeo final, `saidas/<slug>-celular.mp4`.
+
+Mudar os créditos finais ou o título agora refaz só a cena de encerramento ou de abertura, e não o vídeo inteiro. Na primeira renderização depois desta atualização, todas as cenas são refeitas uma vez, porque a chave do cache mudou.
+
+A checagem do roteiro fica em `"checagem": {"url": "...", "ok": true}` no `video.json`. O Estúdio avisa antes de gerar a voz se ela não estiver marcada como conferida.

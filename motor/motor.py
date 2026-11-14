@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """PopDocsBrasil video engine.
 
-usage:  python3 motor.py <video_dir> [step ...]
-steps:  tts plan shots clips trans mix srt thumb   (default: all, in that order)
+usage:  python3 motor.py <video_dir> [--teste] [step ...]
+steps:  tts plan shots clips trans mix srt thumb previas   (default: all, in that order)
+        celular   (not in the default list) makes a light 540p copy of the final video for phones
+--teste renders a draft with a free synthetic voice (edge-tts): no ElevenLabs credits are spent.
+        The draft has its own work dir and narration cache and is saved as saidas/<slug>-TESTE.mp4.
 
 <video_dir> (kept in the project files) holds:
   video.json         title, texts, voice, music, thumbnail settings
@@ -43,11 +46,12 @@ def eleven_key():
     return k  # None in the Claude environment, where the proxy adds the key
 
 class Video:
-    def __init__(self, vdir):
-        self.V = os.path.abspath(vdir)
+    def __init__(self, vdir, teste=False):
+        self.V = os.path.abspath(vdir); self.teste = teste
         self.cfg = json.load(open(f'{self.V}/video.json'))
         self.slug = self.cfg['slug']
-        self.WD = os.environ.get('POPDOCS_WORK', os.path.join(tempfile.gettempdir(), 'popdocs-work', self.slug))
+        self.WD = os.environ.get('POPDOCS_WORK', os.path.join(tempfile.gettempdir(), 'popdocs-work', self.slug)) + ('-teste' if teste else '')
+        self.out = self.slug + ('-TESTE' if teste else '')
         os.makedirs(self.WD, exist_ok=True); os.makedirs(f'{self.V}/saidas', exist_ok=True); os.makedirs(f'{self.V}/audio', exist_ok=True)
         self.S = json.load(open(f'{self.V}/scenes.json'))
         self.fotos = json.load(open(f'{self.V}/fotos.json')) if os.path.exists(f'{self.V}/fotos.json') else {}
@@ -97,8 +101,33 @@ class Video:
         m = {k: c.get(k, '') for k in ('brand', 'titleKick', 'title', 'subtitle', 'endTitle', 'endNote', 'endCredits', 'photoTag')}
         m['cores'] = self.cores(); return m
 
+    def meta_of(self, t):
+        """The video-wide texts one scene type really shows. Used in the cache key, so that editing the final
+        credits only redraws the closing scene and editing the title only redraws the opening."""
+        m = self.meta(); own = {'title': ('titleKick', 'title', 'subtitle'), 'end': ('endTitle', 'endNote', 'endCredits')}
+        drop = [k for tt, ks in own.items() if tt != t for k in ks]
+        return {k: v for k, v in m.items() if k not in drop}
+
+    # ---------- 1b. draft narration with a free voice (no credits) ----------
+    def tts_teste(self):
+        try: import edge_tts, asyncio
+        except ImportError: sys.exit('  ! falta o pacote edge-tts. Rode: pip install edge-tts')
+        voice = self.cfg.get('voz_teste', 'pt-BR-AntonioNeural'); os.makedirs(self.w('aud'), exist_ok=True); os.makedirs(f'{self.V}/audio-teste', exist_ok=True)
+        for i, s in enumerate(self.S):
+            if not s.get('n'): continue
+            key = H(s['n'], voice, 'edge-tts'); mp3 = f'{self.V}/audio-teste/{key}.mp3'
+            if not os.path.exists(mp3):
+                asyncio.run(edge_tts.Communicate(s['n'], voice).save(mp3 + '.part')); os.replace(mp3 + '.part', mp3)
+                print(f'  voz de teste: cena {i}', flush=True)
+            wav = self.w('aud', f'{i:02d}.wav')
+            if self.hashes.get(f'wav{i:02d}') != key or not os.path.exists(wav):
+                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
+                self.hashes[f'wav{i:02d}'] = key
+        self.save_hashes()
+
     # ---------- 1. narration ----------
     def tts(self):
+        if self.teste: return self.tts_teste()
         voice = self.cfg['voice_id']; model = self.cfg.get('voice_model', 'eleven_multilingual_v2')
         vs = self.cfg.get('voice_settings', {"stability": 0.5, "similarity_boost": 0.75})
         os.makedirs(self.w('aud'), exist_ok=True)
@@ -122,7 +151,7 @@ class Video:
         sys.path.insert(0, HERE); from align import build_plan
         plan, narr = build_plan(self.S, self.w('aud'), SR)
         json.dump(plan, open(self.w('plan.json'), 'w'), ensure_ascii=False)
-        os.makedirs(f'{self.V}/previas', exist_ok=True); json.dump(plan, open(f'{self.V}/previas/plan.json', 'w'), ensure_ascii=False)
+        if not self.teste: os.makedirs(f'{self.V}/previas', exist_ok=True); json.dump(plan, open(f'{self.V}/previas/plan.json', 'w'), ensure_ascii=False)
         sf.write(self.w('narr.wav'), narr, SR)
         total = plan[-1]['start'] + plan[-1]['dur']
         print(f'  duração total {total:.1f}s ({int(total//60)}min{int(total%60):02d}s), {sum(len(p["subs"]) for p in plan)} legendas')
@@ -136,7 +165,7 @@ class Video:
         tpl = fhash(f'{HERE}/templates/frame.html')
         keys = []
         for i, s in enumerate(R):
-            keys.append(H(s, P[i], tpl, self.meta(), fhash(self.bgpath(s['bg'])) if s.get('bg') else None))
+            keys.append(H(s, P[i], tpl, self.meta_of(s['t']), fhash(self.bgpath(s['bg'])) if s.get('bg') else None))
         return keys
 
     # ---------- 3. still frames of each scene state + subtitles ----------
@@ -229,7 +258,7 @@ class Video:
         run(['ffmpeg', '-loglevel', 'error', '-y', *ins, '-filter_complex', fc, '-map', '[m]', '-ar', '48000', '-ac', '2', self.w('music_bed.wav')])
         cites = self.cite_track(P, total)   # original sound of 'clip' scenes; music goes to zero under them
         vol = self.cfg.get('music_volume', 0.20)
-        out = f"{self.V}/saidas/{self.slug}.mp4"
+        out = f"{self.V}/saidas/{self.out}.mp4"
         run(['ffmpeg', '-loglevel', 'error', '-y', '-i', self.w('video.mp4'), '-i', self.w('narr.wav'), '-i', self.w('music_bed.wav'), *(['-i', cites] if cites else []), '-filter_complex',
              f"[1:a]aresample=48000,loudnorm=I=-16:TP=-1.5:LRA=11,aformat=channel_layouts=stereo,apad,asplit=2[n][sc];[2:a]volume={vol}[mu];"
              "[mu][sc]sidechaincompress=threshold=0.02:ratio=5:attack=40:release=700:makeup=1[duck];"
@@ -260,6 +289,14 @@ class Video:
         sf.write(self.w('music_bed.wav'), m * env[:, None], msr)
         sf.write(self.w('cites.wav'), track[:int(total * SRM)], SRM)
         print(f'  {len(spans)} trecho(s) com som original; música zerada embaixo'); return self.w('cites.wav')
+
+    def celular(self):
+        """A light copy of the final video for phones and messaging apps (540p, small file)."""
+        src = f"{self.V}/saidas/{self.out}.mp4"; out = f"{self.V}/saidas/{self.out}-celular.mp4"
+        if not os.path.exists(src): sys.exit('  ! renderize o vídeo antes de fazer a cópia para celular')
+        run(['ffmpeg', '-loglevel', 'error', '-y', '-i', src, '-vf', 'scale=-2:540', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '30',
+             '-c:a', 'aac', '-b:a', '64k', '-ac', '1', '-movflags', '+faststart', out])
+        print(f'  cópia para celular: {out} ({os.path.getsize(out) / 1e6:.1f} MB)')
 
     def srt(self):
         P = json.load(open(self.w('plan.json')))
@@ -312,6 +349,9 @@ class Video:
 if __name__ == '__main__':
     if not sys.flags.utf8_mode:  # Windows opens files as cp1252 by default; the project files are UTF-8
         sys.exit(subprocess.call([sys.executable, '-X', 'utf8'] + sys.argv))
-    v = Video(sys.argv[1]); steps = sys.argv[2:] or STEPS
+    args = [a for a in sys.argv[2:] if a != '--teste']; teste = '--teste' in sys.argv
+    v = Video(sys.argv[1], teste=teste)
+    steps = args or (['tts', 'plan', 'shots', 'clips', 'trans', 'mix'] if teste else STEPS)
+    print(f'== passos: {" ".join(steps)}', flush=True)
     for st in steps:
         print(f'== {st}', flush=True); getattr(v, st)()

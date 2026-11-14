@@ -12,7 +12,7 @@ Used by the Claude flow (ArtifactData batches) and by the local Studio (estudio_
 import json, os, sys, glob, shutil, time, tempfile
 
 META_KEYS = ('t', 'n', 'bg', 'dur', 'pre', 'post')
-VIDEO_EDIT = ('title', 'subtitle', 'titleKick', 'brand', 'archive', 'photoTag', 'endTitle', 'endNote', 'endCredits', 'music_volume', 'thumb', 'cores')
+VIDEO_EDIT = ('title', 'subtitle', 'titleKick', 'brand', 'archive', 'photoTag', 'endTitle', 'endNote', 'endCredits', 'music_volume', 'thumb', 'cores', 'music', 'musicas', 'checagem')
 
 def jload(p, default=None):
     return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else default
@@ -64,11 +64,14 @@ def docs_to_files(V, vdoc, scene_docs, foto_docs):
     for i, t in enumerate(T): t.setdefault('params', {}); t['from'] = i; t['to'] = i + 1
     F = jload(f'{V}/fotos.json', {})
     for k, f in foto_docs.items():
-        F.setdefault(k, {}); F[k].update({x: f[x] for x in ('cap', 'credit', 'license', 'source', 'asset', 'origin', 'modo', 'tipo') if x in f})
+        F.setdefault(k, {}); F[k].update({x: f[x] for x in ('cap', 'credit', 'license', 'source', 'asset', 'origin', 'modo', 'tipo', 'foco', 'enquadrar', 'recorte') if x in f})
+        for x in ('modo', 'foco', 'enquadrar', 'recorte'):   # empty value = back to the default
+            if x in F[k] and F[k][x] in ('', None, []): del F[k][x]
     old = {n: jload(f'{V}/{n}') for n in ('scenes.json', 'transitions.json', 'fotos.json', 'video.json') if os.path.exists(f'{V}/{n}')}
     new_cfg = dict(cfg)
     for k in VIDEO_EDIT:
         if k in vdoc: new_cfg[k] = vdoc[k]
+    if not new_cfg.get('musicas'): new_cfg.pop('musicas', None)   # empty list = one track for the whole video
     if old.get('scenes.json') == S and old.get('transitions.json') == T and old.get('fotos.json') == F and old.get('video.json') == new_cfg:
         return []
     stamp = time.strftime('%Y%m%d-%H%M%S'); os.makedirs(f'{V}/historico/{stamp}', exist_ok=True)

@@ -35,5 +35,9 @@
   "destaque": "#D2A85A",
   "papel": "#E9DFC8",
   "fotos": "tom"
+ },
+ "checagem": {
+  "url": "https://claude.ai/artifact/VpxHMjydddSVpVm21k6YGQ",
+  "ok": false
  }
 }
