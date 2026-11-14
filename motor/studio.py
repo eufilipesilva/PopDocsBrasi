@@ -23,6 +23,11 @@ def jsave(obj, p):
 def work_dir(cfg):
     return os.environ.get('POPDOCS_WORK', os.path.join(tempfile.gettempdir(), 'popdocs-work', cfg['slug']))
 
+def keep_order(new, old):
+    """`new` with its keys in the order they have in `old` (new keys go last), so that saving does not shuffle the files."""
+    if not isinstance(old, dict): return new
+    return {**{k: new[k] for k in old if k in new}, **{k: v for k, v in new.items() if k not in old}}
+
 def files_to_docs(V, thumb_of=None):
     """Video folder -> (video doc, [(scene id, scene doc)], {foto key: foto doc}).
     thumb_of(kind, key) returns the preview URL for 'scene' (key = index), 'foto' (key = foto key) or 'thumb'."""
@@ -64,7 +69,9 @@ def docs_to_files(V, vdoc, scene_docs, foto_docs):
     for i, t in enumerate(T): t.setdefault('params', {}); t['from'] = i; t['to'] = i + 1
     F = jload(f'{V}/fotos.json', {})
     for k, f in foto_docs.items():
-        F.setdefault(k, {}); F[k].update({x: f[x] for x in ('cap', 'credit', 'license', 'source', 'asset', 'origin', 'modo', 'tipo', 'foco', 'enquadrar', 'recorte') if x in f})
+        new = k not in F; F.setdefault(k, {})
+        F[k].update({x: f[x] for x in ('cap', 'credit', 'license', 'source', 'asset', 'origin', 'modo', 'tipo', 'foco', 'enquadrar', 'recorte')
+                     if x in f and not (x == 'origin' and not new and 'origin' not in F[k] and f[x] == 'commons')})   # 'commons' is only the Studio's default
         for x in ('modo', 'foco', 'enquadrar', 'recorte'):   # empty value = back to the default
             if x in F[k] and F[k][x] in ('', None, []): del F[k][x]
     old = {n: jload(f'{V}/{n}') for n in ('scenes.json', 'transitions.json', 'fotos.json', 'video.json') if os.path.exists(f'{V}/{n}')}
@@ -72,13 +79,17 @@ def docs_to_files(V, vdoc, scene_docs, foto_docs):
     for k in VIDEO_EDIT:
         if k in vdoc: new_cfg[k] = vdoc[k]
     if not new_cfg.get('musicas'): new_cfg.pop('musicas', None)   # empty list = one track for the whole video
-    if old.get('scenes.json') == S and old.get('transitions.json') == T and old.get('fotos.json') == F and old.get('video.json') == new_cfg:
-        return []
+    oS = old.get('scenes.json') or []; oT = old.get('transitions.json') or []
+    S = [next((o for o in oS if o == x), None) or keep_order(x, oS[i] if i < len(oS) else None) for i, x in enumerate(S)]   # same key order as on disk
+    T = [keep_order(t, oT[i] if i < len(oT) else {'from': 0, 'to': 0}) for i, t in enumerate(T)]
+    new = {'scenes.json': S, 'transitions.json': T, 'fotos.json': F, 'video.json': new_cfg}
+    changed = [n for n in new if old.get(n) != new[n]]
+    if not changed: return []
     stamp = time.strftime('%Y%m%d-%H%M%S'); os.makedirs(f'{V}/historico/{stamp}', exist_ok=True)
     for n in old: shutil.copy(f'{V}/{n}', f'{V}/historico/{stamp}/{n}')
     for d in sorted(os.listdir(f'{V}/historico'))[:-30]: shutil.rmtree(f'{V}/historico/{d}', ignore_errors=True)  # keep the last 30
-    jsave(S, f'{V}/scenes.json'); jsave(T, f'{V}/transitions.json'); jsave(F, f'{V}/fotos.json'); jsave(new_cfg, f'{V}/video.json')
-    oS = old.get('scenes.json', []); oT = old.get('transitions.json', []); ch = []
+    for n in changed: jsave(new[n], f'{V}/{n}')   # only the files that really changed
+    ch = []
     if len(oS) != len(S): ch.append(f'número de cenas {len(oS)} -> {len(S)}')
     for i, s in enumerate(S):
         if i < len(oS) and s != oS[i]:
