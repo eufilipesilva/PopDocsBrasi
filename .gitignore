@@ -11,3 +11,6 @@ Thumbs.db
 # Nunca versionar chaves
 elevenlabs.txt
 .popdocs/
+# Brutos de arquivo (originais longos) e voz de teste: ficam só no PC
+videos/*/arquivo-videos/
+videos/*/audio-teste/

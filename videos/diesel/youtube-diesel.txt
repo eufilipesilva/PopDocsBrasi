@@ -8,20 +8,20 @@ Na noite de 29 de setembro de 1913, Rudolf Diesel embarcou num vapor da Bélgica
 
 Suicídio, assassinato e fuga são tratados aqui como hipóteses. Nenhuma tem prova documental. Fontes completas no comentário fixado.
 
-Capítulos (minutagem a conferir depois da renderização):
-[00:00] Noite de 29 de setembro de 1913
-[00:00] 01 · O menino de Paris
-[00:00] 02 · A máquina que explodiu
-[00:00] 03 · Rico, famoso e endividado
-[00:00] 04 · A última noite no Dresden
-[00:00] 05 · O corpo no mar
-[00:00] 06 · Três hipóteses
-[00:00] O diesel no Brasil hoje
+Capítulos:
+00:00 Noite de 29 de setembro de 1913
+01:06 01 · O menino de Paris
+02:33 02 · A máquina que explodiu
+04:25 03 · Rico, famoso e endividado
+06:41 04 · A última noite no Dresden
+08:47 05 · O corpo no mar
+10:09 06 · Três hipóteses
+11:48 O diesel no Brasil hoje
 
 Narração: voz sintética (ElevenLabs).
 Músicas (domínio público):
 - “Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · https://commons.wikimedia.org/wiki/File:Satie_-_Gnossienne_1.ogg
-- “A manhã” (Peer Gynt), Edvard Grieg (1875), Musopen Symphony (Orquestra Sinfônica Nacional Tcheca) · Musopen / Wikimedia Commons · https://commons.wikimedia.org/wiki/File:Musopen_-_Morning.ogg
+- “Gymnopédie nº 1”, Erik Satie (1888), gravação Robin Alciatore (Musopen) · Wikimedia Commons · https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg
 Imagens e filmes de arquivo: Wikimedia Commons (domínio público e licenças Creative Commons), créditos no comentário fixado.
 
 #RudolfDiesel #Diesel #Documentário #PopDocsBrasil #Mistério
@@ -138,4 +138,4 @@ Filmes de arquivo:
 - Exposição Universal de Paris, 1900: compilação de filmes de 1900 / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:1900_-_The_Paris_Exposition_Universelle.webm
 - Thomas Edison no laboratório de West Orange: “A Day with Thomas Edison”, 1922 / Wikimedia Commons · Domínio público · https://commons.wikimedia.org/wiki/File:A_Day_with_Thomas_Edison_(1922).webm
 
-Músicas: “Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · domínio público; “A manhã” (Peer Gynt), Edvard Grieg (1875), Musopen Symphony · Musopen / Wikimedia Commons · domínio público.
+Músicas: “Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · domínio público; “Gymnopédie nº 1”, Erik Satie (1888), gravação Robin Alciatore (Musopen) · Wikimedia Commons · domínio público.
