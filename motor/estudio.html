@@ -730,7 +730,7 @@ async function poll(){
   pill.onclick=()=>{j.open=true;poll.draw()};
   poll.draw=()=>{const d=$('#dlg'); if(!j.open){return} const cur=r.passos.find(p=>p.estado==='agora');
     d.innerHTML=`<div class="in"><h2>${r.running?esc(MODO[r.modo])+': '+esc(cur?cur.nome.toLowerCase():'começando')+'…':r.ok?esc(MODO[r.modo])+(r.modo==='cena'?' '+r.cena:'')+' pronta em '+el:r.cancelado?'Renderização cancelada':'A renderização parou com erro'}</h2>
-     ${r.running?`<div class="pbar"><i style="width:${pct}%"></i></div><div class="note">Tempo: ${el}. ${r.modo==='cena'?'Leva de 10 a 30 segundos. Qualidade baixa, sem transições, legendas nem música: é só para ver como a cena ficou.':'A primeira vez leva de 20 a 40 minutos; depois só o que mudou é refeito. Pode fechar esta janela e continuar editando.'}</div>`:''}
+     ${r.running?`<div class="pbar"><i style="width:${pct}%"></i></div><div class="note">Tempo: ${el}. ${r.modo==='cena'?'Leva menos de um minuto. Qualidade baixa, sem transições, legendas nem música: é só para ver como a cena ficou.':'A primeira vez leva de 20 a 40 minutos; depois só o que mudou é refeito. Pode fechar esta janela e continuar editando.'}</div>`:''}
      <div class="steps">${r.passos.map(p=>`<div class="step ${p.estado}"><i></i>${esc(p.nome)}</div>`).join('')}</div>
      ${r.ok&&r.video?`<video controls ${r.modo==='cena'?'autoplay':''} src="${esc(r.video)}" style="width:100%;border-radius:10px;background:#000"></video>`:''}
      <details ${!r.running&&!r.ok&&!r.cancelado?'open':''}><summary class="note" style="cursor:pointer">Detalhes técnicos</summary><pre class="mono" style="margin-top:8px">${esc(r.log||'')}</pre></details>

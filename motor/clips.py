@@ -143,7 +143,9 @@ def job(i):
     pr.stdin.close(); pr.wait(); return i
 if __name__=='__main__':
     only=[int(x) for x in sys.argv[1:]]
-    with Pool(4) as pl:
-        for i in pl.imap_unordered(job,only or range(len(S))): print(i,end=' ',flush=True)
+    if len(only)==1: print(job(only[0]),end=' ',flush=True)   # one scene (quick preview): starting worker processes costs more than it saves
+    else:
+        with Pool(4) as pl:
+            for i in pl.imap_unordered(job,only or range(len(S))): print(i,end=' ',flush=True)
     pass #.write(''.join(f"file '{i:02d}.mp4'\n" for i in range(len(S))))
     print('\ntotal',cum[-1])
