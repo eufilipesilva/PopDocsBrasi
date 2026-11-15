@@ -23,6 +23,7 @@ import numpy as np, soundfile as sf
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SR = 24000; FPS = 30
+FX_VER = 2   # raise when the look of an effect in clips.py changes (ambient, extra photos, detail zoom): scenes that use it are redrawn
 STEPS = ['tts', 'plan', 'shots', 'clips', 'trans', 'mix', 'srt', 'thumb', 'previas']
 ENV = dict(os.environ, PYTHONUTF8='1', NODE_PATH=os.path.join(HERE, 'node_modules') + os.pathsep + os.environ.get('NODE_PATH', ''))
 
@@ -77,7 +78,7 @@ class Video:
                         if s.get(k) or f.get(k): s[v] = s.get(k) or f.get(k)
                     if s['t'] != 'title': s.setdefault('cap', f.get('cap', ''))
                     s.setdefault('credit', f.get('credit', ''))
-                    if self.cfg.get('ambiente'): s['amb'] = self.cfg['ambiente']   # living texture over photos and background clips
+                    if self.cfg.get('ambiente'): s['amb'] = self.cfg['ambiente']; s['fxv'] = FX_VER   # living texture over photos and background clips
                     extra = []   # more photos in the same scene ('bgs'): each one framed and credited from the library
                     for k2 in s.pop('bgs', None) or []:
                         f2 = self.fotos.get(k2, {}); p2 = self.bgpath(k2)
@@ -88,7 +89,8 @@ class Video:
                         for k, v in (('foco', 'fotoFoco'), ('enquadrar', 'fotoEnq'), ('recorte', 'fotoRecorte')):
                             if f2.get(k): e[v] = f2[k]
                         extra.append(e)
-                    if extra: s['fundos'] = extra
+                    if extra: s['fundos'] = extra; s['fxv'] = FX_VER
+                    if s.get('zoom'): s['fxv'] = FX_VER
             out.append(s)
         return out
 
