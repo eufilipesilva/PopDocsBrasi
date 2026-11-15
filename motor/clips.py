@@ -69,23 +69,24 @@ def framed(img,s,scale=1.12):
     rc=s.get('fotoRecorte')
     if rc:
         h,w=img.shape[:2]; img=img[int(h*rc[1]):int(h*rc[3]),int(w*rc[0]):int(w*rc[2])]
-    fx,fy=(s.get('fotoFoco') or [0.5,0.5])[:2]
-    return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' else cover(img,scale,fx,fy)
+    fx,fy=(s.get('fotoFoco') or [0.5,0.5])[:2]; h,w=img.shape[:2]
+    auto=s.get('auto') and not s.get('fotoEnq') and not s.get('fotoFoco') and h>w*1.15   # extra photo, upright, never framed by hand: show it whole
+    return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' or auto else cover(img,scale,fx,fy)
 _DUST={}
 def ambient(frame,f,seed,kind):
-    """Living texture over a photo so that it never looks frozen: film grain with a faint flicker ('grao'),
-    plus slow drifting dust in two layers ('poeira')."""
-    if kind not in ('grao','poeira'): return frame
-    g=np.empty((H//2,W//2),np.float32); cv2.randn(g,0,8.0)
-    frame=frame+cv2.resize(g,(W,H),interpolation=cv2.INTER_LINEAR)[:,:,None]
-    frame*=1+0.015*np.sin(f*0.83+seed)
+    """Life over a photo so that it never looks frozen: the light breathes like an old projector ('luz'),
+    plus slow drifting dust in two layers ('poeira'). No random film grain: measured on a real scene, it more than
+    doubles the size of the final file (4.8 -> 10 Mbps), while these two cost almost nothing."""
+    if kind=='grao': kind='luz'   # older videos
+    if kind not in ('luz','poeira'): return frame
+    frame=frame*(1+0.018*np.sin(f*0.83+seed)+0.012*np.sin(f*0.21+seed*1.7))
     if kind=='poeira':
         if 'a' not in _DUST:
             rng=np.random.default_rng(7); P=400
             for name,n,blur in (('a',70,1.6),('b',35,3.2)):
                 c=np.zeros((H+P,W+P),np.float32)
                 for _ in range(n):
-                    cv2.circle(c,(int(rng.integers(0,W+P)),int(rng.integers(0,H+P))),int(rng.integers(1,4)),float(rng.integers(40,110)),-1)
+                    cv2.circle(c,(int(rng.integers(0,W+P)),int(rng.integers(0,H+P))),int(rng.integers(1,4)),float(rng.integers(90,200)),-1)
                 _DUST[name]=cv2.GaussianBlur(c,(0,0),blur)
         for name,vx,vy in (('a',0.55,0.22),('b',-0.3,0.4)):
             x=int((f*vx+seed*53)%400); y=int((f*vy+seed*29)%400)

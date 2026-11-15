@@ -83,7 +83,7 @@ class Video:
                         f2 = self.fotos.get(k2, {}); p2 = self.bgpath(k2)
                         if not p2: print(f'  ! foto extra "{k2}" não encontrada em img/'); continue
                         if p2.lower().endswith(('.mp4', '.webm', '.mov', '.m4v')): print(f'  ! "{k2}" é vídeo: fotos extras precisam ser imagens'); continue
-                        e = {'key': k2, 'hash': fhash(p2), 'cap': f2.get('cap', ''), 'credit': f2.get('credit', ''), 'date': f2.get('date', '')}   # each photo shows its own caption and credit
+                        e = {'key': k2, 'auto': True, 'hash': fhash(p2), 'cap': f2.get('cap', ''), 'credit': f2.get('credit', ''), 'date': f2.get('date', '')}   # each photo shows its own caption and credit
                         if f2.get('modo') in ('pb', 'cor', 'tom'): e['fotoModo'] = f2['modo']
                         for k, v in (('foco', 'fotoFoco'), ('enquadrar', 'fotoEnq'), ('recorte', 'fotoRecorte')):
                             if f2.get(k): e[v] = f2[k]
@@ -172,7 +172,8 @@ class Video:
         sys.path.insert(0, HERE); from align import build_plan
         plan, narr = build_plan(self.S, self.w('aud'), SR)
         json.dump(plan, open(self.w('plan.json'), 'w'), ensure_ascii=False)
-        if not self.teste: os.makedirs(f'{self.V}/previas', exist_ok=True); json.dump(plan, open(f'{self.V}/previas/plan.json', 'w'), ensure_ascii=False)
+        if not self.teste or not os.path.exists(f'{self.V}/saidas/{self.slug}.mp4'):   # a draft only fills the Studio timings while there is no final video
+            os.makedirs(f'{self.V}/previas', exist_ok=True); json.dump(plan, open(f'{self.V}/previas/plan.json', 'w'), ensure_ascii=False)
         sf.write(self.w('narr.wav'), narr, SR)
         total = plan[-1]['start'] + plan[-1]['dur']
         print(f'  duração total {total:.1f}s ({int(total//60)}min{int(total%60):02d}s), {sum(len(p["subs"]) for p in plan)} legendas')
@@ -351,7 +352,7 @@ class Video:
     def previas(self):
         import cv2
         os.makedirs(f'{self.V}/previas', exist_ok=True)
-        for i in range(len(self.S)):
+        for i in range(len(self.S) if not self.teste or not os.path.exists(f'{self.V}/saidas/{self.slug}.mp4') else 0):   # a draft never replaces the previews of the final video
             p = self.w('edges', f'{i:02d}_last.png')
             if os.path.exists(p):
                 cv2.imwrite(f'{self.V}/previas/cena-{i:02d}.jpg', cv2.resize(cv2.imread(p), (480, 270), interpolation=cv2.INTER_AREA), [cv2.IMWRITE_JPEG_QUALITY, 80])
@@ -372,7 +373,7 @@ if __name__ == '__main__':
         sys.exit(subprocess.call([sys.executable, '-X', 'utf8'] + sys.argv))
     args = [a for a in sys.argv[2:] if a != '--teste']; teste = '--teste' in sys.argv
     v = Video(sys.argv[1], teste=teste)
-    steps = args or (['tts', 'plan', 'shots', 'clips', 'trans', 'mix'] if teste else STEPS)
+    steps = args or (['tts', 'plan', 'shots', 'clips', 'trans', 'mix', 'previas'] if teste else STEPS)
     print(f'== passos: {" ".join(steps)}', flush=True)
     for st in steps:
         print(f'== {st}', flush=True); getattr(v, st)()
