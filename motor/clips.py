@@ -2,9 +2,10 @@
 import json, subprocess, numpy as np, cv2, sys, os
 from multiprocessing import Pool
 PREVIA=bool(os.environ.get('POPDOCS_PREVIA')); STEP=2 if PREVIA else 1   # quick scene preview: half the frames, small and fast encode
-FPS=30; W,H=1920,1080; OUT='clips'; IMG=os.environ.get('POPDOCS_IMG','img')
+FPS=30; W,H=(960,540) if PREVIA else (1920,1080);   # the preview is composed at half size, about four times faster
+K=W/1920; OUT='clips'; IMG=os.environ.get('POPDOCS_IMG','img')
 def _bgr(h): h=h.lstrip('#'); return np.array([int(h[4:6],16),int(h[2:4],16),int(h[0:2],16)],np.float32)
-BOX=(260,140,1400,788)  # x,y,w,h of the window of a 'clip' scene (must match templates/frame.html)
+BOX=tuple(int(v*K) for v in (260,140,1400,788))  # x,y,w,h of the window of a 'clip' scene (must match templates/frame.html)
 IMG_EXT=('.jpg','.jpeg','.png','.webp'); VID_EXT=('.mp4','.webm','.mov','.m4v')
 def find_bg(imgdir,key):
     """Path of the photo or video clip saved as img/<key>.<ext>, or None."""
@@ -61,7 +62,7 @@ def cover(img,scale=1.12,fx=0.5,fy=0.5):
 def whole(img,scale=1.12,fx=0.5):
     """The whole photo, fitted to the frame height, over a blurred and darkened copy of itself (for portraits and documents)."""
     tw,th=int(W*scale),int(H*scale); back=cover(img,scale)
-    back=(cv2.GaussianBlur(back,(0,0),40)*0.45).astype(np.uint8)
+    back=(cv2.GaussianBlur(back,(0,0),40*K)*0.45).astype(np.uint8)
     h,w=img.shape[:2]; r=min(th*0.94/h,tw*0.94/w); fw,fh=int(w*r),int(h*r)
     fg=cv2.resize(img,(fw,fh),interpolation=cv2.INTER_AREA if r<1 else cv2.INTER_CUBIC)
     x=int(round((tw-fw)*min(max(fx,0),1))); y=(th-fh)//2; back[y:y+fh,x:x+fw]=fg; return back
@@ -90,7 +91,9 @@ def kenburns(bg,u,dirn,s=None):
         M=np.array([[z,0,-(dx+W/2)*z+W/2],[0,z,-(dy+H/2)*z+H/2]],np.float32)
     return cv2.warpAffine(bg,M,(W,H),flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_REPLICATE)
 def ld(p):
-    o=cv2.imread(p,cv2.IMREAD_UNCHANGED).astype(np.float32)
+    o=cv2.imread(p,cv2.IMREAD_UNCHANGED)
+    if o.shape[1]!=W: o=cv2.resize(o,(W,H),interpolation=cv2.INTER_AREA)
+    o=o.astype(np.float32)
     if o.shape[2]==3: o=np.dstack([o,np.full(o.shape[:2],255,np.float32)])
     return np.ascontiguousarray(o[:,:,:3]),np.ascontiguousarray(o[:,:,3]/255.0)
 def job(i):
@@ -109,7 +112,7 @@ def job(i):
                 bgs.append(framed(treat(cv2.imread(p2),CORES,modo=x.get('fotoModo')),x).astype(np.float32)*dark)
         segN=N/len(bgs); XF=int(0.6*FPS)
     pr=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS/STEP),'-i','-',
-        *(['-vf','scale=960:540','-c:v','libx264','-preset','ultrafast','-crf','26'] if PREVIA else ['-c:v','libx264','-preset','veryfast','-crf','16']),'-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
+        *(['-c:v','libx264','-preset','ultrafast','-crf','26'] if PREVIA else ['-c:v','libx264','-preset','veryfast','-crf','16']),'-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
     zin = (i%2==0)
     for f in range(0,N,STEP):
         t=f/FPS; u=f/max(N-1,1)
