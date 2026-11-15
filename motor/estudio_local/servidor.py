@@ -63,8 +63,10 @@ def extras(slug, V, vdoc, scenes):
                    ('legendas', f'saidas/{slug}-legendas.srt'), ('thumbnail', f'saidas/{slug}-thumbnail.jpg')):
         p = os.path.join(V, rel)
         if os.path.exists(p): out[k] = {'url': media_url(slug, rel), 'mb': round(size_of(p) / 1e6, 1), 'em': time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(os.path.getmtime(p)))}
-    yt = os.path.join(V, f'youtube-{slug}.txt')
-    return {'narr': {'total': total, 'pendentes': pend, 'cenas': npend}, 'musicas': mus, 'saidas': out,
+    yt = os.path.join(V, f'youtube-{slug}.txt'); pq = os.path.join(V, 'pesquisa.md')
+    ptxt = open(pq, encoding='utf-8').read()[:300000] if os.path.exists(pq) else ''
+    return {'pesquisa': {'texto': ptxt, 'links': len(re.findall(r'https?://', ptxt))}, 'checagem': studio.jload(os.path.join(V, 'checagem.json'), None),
+            'narr': {'total': total, 'pendentes': pend, 'cenas': npend}, 'musicas': mus, 'saidas': out,
             'youtube': open(yt, encoding='utf-8').read() if os.path.exists(yt) else '', 'pasta': V}
 
 def load_video(slug):
@@ -88,17 +90,17 @@ def list_videos():
     return out
 
 PASSOS = {'tts': 'Narração', 'plan': 'Tempos e legendas', 'shots': 'Desenho das cenas', 'clips': 'Clipes das cenas', 'trans': 'Transições',
-          'mix': 'Som e vídeo final', 'srt': 'Legendas', 'thumb': 'Thumbnail', 'previas': 'Prévias', 'celular': 'Cópia para celular'}
+          'mix': 'Som e vídeo final', 'srt': 'Legendas', 'thumb': 'Thumbnail', 'previas': 'Prévias', 'celular': 'Cópia para celular', 'cena': 'Prévia da cena'}
 
-def start_render(slug, modo='final'):
-    V = vdir(slug); extra = {'teste': ['--teste'], 'celular': ['celular']}.get(modo, [])
+def start_render(slug, modo='final', cena=1):
+    V = vdir(slug); extra = {'teste': ['--teste'], 'celular': ['celular'], 'cena': ['cena', str(int(cena))]}.get(modo, [])
     with LOCK:
         r = RENDER.get(slug)
         if r and not r.get('ended'): return False
-        log = os.path.join(V, 'saidas', 'renderizacao.log'); os.makedirs(os.path.dirname(log), exist_ok=True)
+        log = os.path.join(V, 'saidas', 'previa-cena.log' if modo == 'cena' else 'renderizacao.log'); os.makedirs(os.path.dirname(log), exist_ok=True)
         f = open(log, 'w', encoding='utf-8')
         proc = subprocess.Popen([sys.executable, '-u', os.path.join(MOTOR, 'motor.py'), V, *extra], stdout=f, stderr=subprocess.STDOUT, cwd=MOTOR, **({} if os.name == 'nt' else {'start_new_session': True}))
-        RENDER[slug] = {'proc': proc, 'log': log, 'started': time.time(), 'modo': modo}
+        RENDER[slug] = {'proc': proc, 'log': log, 'started': time.time(), 'modo': modo, 'cena': int(cena)}
     def wait():
         code = proc.wait(); f.close()
         RENDER[slug].update(ended=time.time(), ok=(code == 0))
@@ -117,11 +119,11 @@ def render_status(slug):
             if ln.startswith('== passos:'): steps = ln.split(':', 1)[1].split()
             elif ln.startswith('== '): done.append(ln[3:].strip())
     except OSError: pass
-    cur = done[-1] if done else ''; nome = {'final': slug, 'teste': slug + '-TESTE', 'celular': slug + '-celular'}[r.get('modo', 'final')]
-    return {'running': not r.get('ended'), 'ok': r.get('ok'), 'cancelado': bool(r.get('cancelado')), 'modo': r.get('modo', 'final'),
+    cur = done[-1] if done else ''; m = r.get('modo', 'final'); arq = f"previas/cena-{r.get('cena', 1) - 1:02d}.mp4" if m == 'cena' else 'saidas/' + {'final': slug, 'teste': slug + '-TESTE', 'celular': slug + '-celular'}[m] + '.mp4'
+    return {'running': not r.get('ended'), 'ok': r.get('ok'), 'cancelado': bool(r.get('cancelado')), 'modo': m, 'cena': r.get('cena'),
             'elapsed': int((r.get('ended') or time.time()) - r['started']), 'log': tail,
             'passos': [{'id': k, 'nome': PASSOS.get(k, k), 'estado': 'feito' if (k in done and k != cur) or (r.get('ok') and k in done) else 'agora' if k == cur else 'espera'} for k in steps],
-            'video': f'/media/{slug}/saidas/{nome}.mp4?v={int(time.time())}' if r.get('ok') else ''}
+            'video': f'/media/{slug}/{arq}?v={int(time.time())}' if r.get('ok') else ''}
 
 def cancel_render(slug):
     r = RENDER.get(slug)
@@ -216,13 +218,18 @@ class H(BaseHTTPRequestHandler):
             if m:
                 V = vdir(m.group(1)); open(os.path.join(V, f'youtube-{m.group(1)}.txt'), 'w', encoding='utf-8').write(self.body().get('texto', ''))
                 return self.send(200, {'ok': True})
+            m = re.fullmatch(r'/api/video/([^/]+)/checagem', p)
+            if m:   # fact-check, sentence by sentence: [{frase, situacao, fonte, links, trecho, obs, conferido, em}]
+                itens = self.body().get('itens')
+                if not isinstance(itens, list): return self.send(400, {'erro': 'lista inválida'})
+                studio.jsave(itens, os.path.join(vdir(m.group(1)), 'checagem.json')); return self.send(200, {'ok': True})
             m = re.fullmatch(r'/api/render/([^/]+)/cancelar', p)
             if m: return self.send(200, {'cancelado': cancel_render(m.group(1))})
             m = re.fullmatch(r'/api/render/([^/]+)', p)
             if m:
-                modo = self.body().get('modo', 'final')
-                if modo not in ('final', 'teste', 'celular'): modo = 'final'
-                return self.send(200, {'iniciado': start_render(m.group(1), modo)})
+                b = self.body(); modo = b.get('modo', 'final')
+                if modo not in ('final', 'teste', 'celular', 'cena'): modo = 'final'
+                return self.send(200, {'iniciado': start_render(m.group(1), modo, b.get('cena') or 1)})
             self.send(404, {'erro': 'não encontrado'})
         except FileNotFoundError: self.send(404, {'erro': 'vídeo não encontrado'})
         except Exception as e: self.send(500, {'erro': str(e)})

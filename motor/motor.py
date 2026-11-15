@@ -47,11 +47,11 @@ def eleven_key():
     return k  # None in the Claude environment, where the proxy adds the key
 
 class Video:
-    def __init__(self, vdir, teste=False):
+    def __init__(self, vdir, teste=False, sufixo=''):
         self.V = os.path.abspath(vdir); self.teste = teste
         self.cfg = json.load(open(f'{self.V}/video.json'))
         self.slug = self.cfg['slug']
-        self.WD = os.environ.get('POPDOCS_WORK', os.path.join(tempfile.gettempdir(), 'popdocs-work', self.slug)) + ('-teste' if teste else '')
+        self.WD = os.environ.get('POPDOCS_WORK', os.path.join(tempfile.gettempdir(), 'popdocs-work', self.slug)) + ('-teste' if teste else '') + sufixo
         self.out = self.slug + ('-TESTE' if teste else '')
         os.makedirs(self.WD, exist_ok=True); os.makedirs(f'{self.V}/saidas', exist_ok=True); os.makedirs(f'{self.V}/audio', exist_ok=True)
         self.S = json.load(open(f'{self.V}/scenes.json'))
@@ -78,7 +78,7 @@ class Video:
                         if s.get(k) or f.get(k): s[v] = s.get(k) or f.get(k)
                     if s['t'] != 'title': s.setdefault('cap', f.get('cap', ''))
                     s.setdefault('credit', f.get('credit', ''))
-                    if self.cfg.get('ambiente'): s['amb'] = self.cfg['ambiente']; s['fxv'] = FX_VER   # living texture over photos and background clips
+                    if self.cfg.get('ambiente'): s['amb'] = 'luz'; s['fxv'] = FX_VER   # the light breathes over photos and background clips (the dust layer was dropped: it looked artificial)
                     extra = []   # more photos in the same scene ('bgs'): each one framed and credited from the library
                     for k2 in s.pop('bgs', None) or []:
                         f2 = self.fotos.get(k2, {}); p2 = self.bgpath(k2)
@@ -134,10 +134,9 @@ class Video:
                 asyncio.run(edge_tts.Communicate(s['n'], voice).save(mp3 + '.part')); os.replace(mp3 + '.part', mp3)
                 print(f'  voz de teste: cena {i}', flush=True)
             wav = self.w('aud', f'{i:02d}.wav')
-            wk = f'{key}@{self.ritmo():.3f}'
-            if self.hashes.get(f'wav{i:02d}') != wk or not os.path.exists(wav):
-                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, *self.tempo(), '-ac', '1', '-ar', str(SR), wav])
-                self.hashes[f'wav{i:02d}'] = wk
+            if self.hashes.get(f'wav{i:02d}') != key or not os.path.exists(wav):
+                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
+                self.hashes[f'wav{i:02d}'] = key
         self.save_hashes()
 
     # ---------- 1. narration ----------
@@ -156,18 +155,10 @@ class Video:
                 data = urllib.request.urlopen(r, timeout=180).read(); open(mp3 + '.part', 'wb').write(data); os.replace(mp3 + '.part', mp3)
                 print(f'  voz gerada: cena {i} ({len(s["n"])} caracteres)', flush=True)
             wav = self.w('aud', f'{i:02d}.wav')
-            wk = f'{key}@{self.ritmo():.3f}'
-            if self.hashes.get(f'wav{i:02d}') != wk or not os.path.exists(wav):
-                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, *self.tempo(), '-ac', '1', '-ar', str(SR), wav])
-                self.hashes[f'wav{i:02d}'] = wk
+            if self.hashes.get(f'wav{i:02d}') != key or not os.path.exists(wav):
+                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
+                self.hashes[f'wav{i:02d}'] = key
         self.save_hashes()
-
-    def ritmo(self):
-        """Narration speed ('ritmo_voz' in video.json, 1.0 = as recorded). Applied when the cached audio is converted,
-        keeping the pitch, so changing it costs no credits."""
-        try: return min(1.5, max(0.8, float(self.cfg.get('ritmo_voz') or 1)))
-        except (TypeError, ValueError): return 1.0
-    def tempo(self): return ['-filter:a', f'atempo={self.ritmo():.3f}'] if abs(self.ritmo() - 1) > 0.004 else []
 
     # ---------- 2. timing plan + narration track ----------
     def plan(self):
@@ -354,6 +345,41 @@ class Video:
         im = cv2.imread(self.w('thumb.png')); cv2.imwrite(f"{self.V}/saidas/{self.slug}-thumbnail.jpg", im, [cv2.IMWRITE_JPEG_QUALITY, 92])
         print('  thumbnail pronta')
 
+    # ---------- quick preview of one scene ----------
+    def cena(self, i):
+        """A light preview of one scene (540p, with its narration, no transitions, subtitles or music), in seconds.
+        Never spends credits: uses the real narration if it is already in the cache, else the free draft voice,
+        else silence with the estimated length."""
+        if not 0 <= i < len(self.S): sys.exit(f'  ! cena {i + 1} não existe')
+        s = self.S[i]; os.makedirs(self.w('aud'), exist_ok=True); wav = self.w('aud', f'{i:02d}.wav'); voz = 'sem narração'
+        S2 = [dict(x, n='', dur=1) if j != i else dict(x) for j, x in enumerate(self.S)]   # only this scene needs real timing
+        if s.get('n'):
+            voice = self.cfg.get('voice_id'); model = self.cfg.get('voice_model', 'eleven_multilingual_v2')
+            vs = self.cfg.get('voice_settings', {"stability": 0.5, "similarity_boost": 0.75}); vt = self.cfg.get('voz_teste', 'pt-BR-AntonioNeural')
+            real = f"{self.V}/audio/{H(s['n'], voice, model, vs)}.mp3"; draft = f"{self.V}/audio-teste/{H(s['n'], vt, 'edge-tts')}.mp3"
+            if os.path.exists(real): mp3 = real; voz = 'voz final'
+            else:
+                mp3 = draft; voz = 'voz de teste'
+                if not os.path.exists(draft):
+                    try:
+                        import edge_tts, asyncio
+                        os.makedirs(os.path.dirname(draft), exist_ok=True)
+                        asyncio.run(edge_tts.Communicate(s['n'], vt).save(draft + '.part')); os.replace(draft + '.part', draft)
+                    except Exception as e:
+                        print(f'  ! sem voz de teste ({type(e).__name__}); prévia muda com a duração estimada'); mp3 = None; voz = 'sem voz'
+            if mp3: run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
+            else: S2[i] = dict(s, n='', dur=round(len(s['n']) / 15 + 0.5, 1))
+        sys.path.insert(0, HERE); from align import build_plan
+        plan, narr = build_plan(S2, self.w('aud'), SR)
+        self.prepare(); json.dump(plan, open(self.w('plan.json'), 'w'), ensure_ascii=False)
+        os.makedirs(self.w('clips'), exist_ok=True)
+        ENV['POPDOCS_PREVIA'] = '1'
+        run(['node', 'shots.js', str(i)], cwd=self.WD); run([sys.executable, 'clips.py', str(i)], cwd=self.WD)
+        a = int(plan[i]['start'] * SR); sf.write(self.w('cena.wav'), narr[a:a + int(plan[i]['dur'] * SR)], SR)
+        os.makedirs(f'{self.V}/previas', exist_ok=True); out = f'{self.V}/previas/cena-{i:02d}.mp4'
+        run(['ffmpeg', '-loglevel', 'error', '-y', '-i', self.w('clips', f'{i:02d}.mp4'), '-i', self.w('cena.wav'), '-c:v', 'copy', '-c:a', 'aac', '-b:a', '96k', '-shortest', '-movflags', '+faststart', out])
+        print(f"  prévia da cena {i + 1}: {out} ({plan[i]['dur']:.1f}s, {voz})")
+
     # ---------- 9. small previews for the Studio ----------
     def previas(self):
         import cv2
@@ -378,6 +404,8 @@ if __name__ == '__main__':
     if not sys.flags.utf8_mode:  # Windows opens files as cp1252 by default; the project files are UTF-8
         sys.exit(subprocess.call([sys.executable, '-X', 'utf8'] + sys.argv))
     args = [a for a in sys.argv[2:] if a != '--teste']; teste = '--teste' in sys.argv
+    if args[:1] == ['cena']:   # python motor.py videos/<slug> cena 12  (scene number as shown in the Studio)
+        print('== passos: cena\n== cena', flush=True); Video(sys.argv[1], sufixo='-cena').cena(int(args[1]) - 1); sys.exit(0)
     v = Video(sys.argv[1], teste=teste)
     steps = args or (['tts', 'plan', 'shots', 'clips', 'trans', 'mix', 'previas'] if teste else STEPS)
     print(f'== passos: {" ".join(steps)}', flush=True)

@@ -225,6 +225,23 @@ dialog .foot{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
 .pbar{height:6px;border-radius:999px;background:var(--sunk);overflow:hidden}.pbar i{display:block;height:100%;background:var(--ac);transition:width .4s}
 #rpill{display:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.stage{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--raise);display:flex;flex-direction:column;gap:8px;text-align:left}
+.stage .num{font:700 12px var(--mono);color:var(--muted);letter-spacing:.06em}
+.stage h3{margin:0;font:700 17px var(--display);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.stage ul{margin:0;padding:0;list-style:none;font-size:12.5px;color:var(--muted);flex:1;display:flex;flex-direction:column;gap:4px}
+.stage li.w{color:var(--warn)}.stage li.b{color:var(--bad)}.stage li.o{color:var(--ok)}
+.stage.now{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.fr{border-top:1px solid var(--line);padding:12px 2px;display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px}
+.fr:first-of-type{border-top:0}
+.fr .tx{font-size:14.5px;color:var(--ink)}
+.fr .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted);margin-top:6px}
+.fr .meta a{word-break:break-all}
+.fr blockquote{margin:6px 0 0;padding:6px 10px;border-left:3px solid var(--line);font-size:12.5px;color:var(--muted)}
+.fr .edit{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:8px}
+.fr input[type=checkbox]{width:18px;height:18px;margin-top:2px}
+.frh{font:700 12px var(--mono);letter-spacing:.06em;color:var(--muted);text-transform:uppercase;padding:14px 2px 4px}
+pre.md{white-space:pre-wrap;word-break:break-word;font:12.5px/1.6 var(--mono);max-height:420px;overflow:auto;margin:10px 0 0}
 </style>
 
 <div class="app">
@@ -289,7 +306,7 @@ const PRESETS={
  dossie:{l:'Dossiê tecnológico',d:'Scanner, flash e folha de papel. Foi o modelo do vídeo da NVIDIA; os efeitos de capítulo continuam à mão.',
   f:(a,b)=>b==='end'?['dissolve',1]:b==='chapter'?['decrypt',.8]:a==='chapter'?['scan',.7]:b==='photo'?['flash',.4]:b==='headline'?['paper',.6]:['zoom',.4]}
 };
-const NAV=[['cenas','Cenas','<path d="M3 5h18v14H3zM3 9h18M8 5v4M16 5v4"/>'],['midia','Mídia','<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/>'],['musica','Música','<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'],['estilo','Estilo','<circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2-2h2a3 3 0 0 0 3-3"/>'],['publicar','Publicar','<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>']];
+const NAV=[['circuito','Circuito','<circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 12h3"/>'],['apuracao','Apuração','<path d="M9 11l3 3 8-8"/><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h11"/>'],['cenas','Cenas','<path d="M3 5h18v14H3zM3 9h18M8 5v4M16 5v4"/>'],['midia','Mídia','<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/>'],['musica','Música','<path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/>'],['estilo','Estilo','<circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2-2h2a3 3 0 0 0 3-3"/>'],['publicar','Publicar','<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>']];
 
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -297,7 +314,7 @@ const fmt=t=>{t=Math.max(0,Math.round(t||0));return `${Math.floor(t/60)}:${Strin
 const nf=n=>Number(n||0).toLocaleString('pt-BR');
 const LOCAL=window.POPDOCS_LOCAL||null;
 let db=null, assets=null;
-const st={videos:[],slug:null,video:null,scenes:[],fotos:{},config:{},sel:null,tab:'cenas',q:'',filt:'todas',picker:false,pq:'',msel:null,mfilt:'todas',unsub:[],job:null};
+const st={videos:[],slug:null,video:null,scenes:[],fotos:{},config:{},sel:null,tab:'circuito',q:'',aq:'',afilt:'todas',filt:'todas',picker:false,pq:'',msel:null,mfilt:'todas',unsub:[],job:null};
 const M=$('#main');
 function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,2400)}
 const timers={};
@@ -312,7 +329,7 @@ const live=()=>st.scenes.filter(s=>!s.deleted).sort((a,b)=>a.order-b.order);
 const sceneRef=s=>`${vref()}/scenes/${s.id}`;
 const extra=()=>(st.video&&st.video.local)||null;
 /* Scene length: the real one after a render, otherwise an estimate from the narration (about 15 characters per second). */
-const est=s=>s.len||((s.n?s.n.length/15/(Number((st.video||{}).ritmo_voz)||1)+1.2:Number((s.f||{}).dur)||5));
+const est=s=>s.len||((s.n?s.n.length/15+1.2:Number((s.f||{}).dur)||5));
 const imgs=s=>s.bg?1+((s.f||{}).bgs||[]).length:1;
 const pace=s=>est(s)/imgs(s);
 const lenta=s=>s.t!=='clip'&&(st.fotos[s.bg]||{}).tipo!=='video'&&(s.bg?pace(s)>LENTA:est(s)>18);
@@ -334,7 +351,7 @@ function stats(){
   $('#stats').innerHTML=st.video?h:'';
   const rb=$('#renderBtn'); rb.disabled=!db||!st.video||!!st.job;
   rb.querySelector('span').textContent=LOCAL?'Renderizar':((st.video&&st.video.render||{}).requested?'Marcado':'Marcar para renderizar');
-  $('#rail').innerHTML=NAV.map(([id,l,ic])=>`<button role="tab" data-tab="${id}" aria-selected="${st.tab===id}"><svg viewBox="0 0 24 24">${ic}</svg>${l}${id==='publicar'&&st.video&&problems().length?`<span class="badge">${problems().length}</span>`:''}</button>`).join('')+`<div class="foot">${LOCAL?'Tudo é salvo na pasta do vídeo, com cópia em historico/.':'Edições salvas no arquivo do canal.'}</div>`;
+  $('#rail').innerHTML=NAV.map(([id,l,ic])=>`<button role="tab" data-tab="${id}" aria-selected="${st.tab===id}"><svg viewBox="0 0 24 24">${ic}</svg>${l}${id==='publicar'&&st.video&&problems().length?`<span class="badge">${problems().length}</span>`:''}${id==='apuracao'&&st.video&&apur().pend?`<span class="badge">${apur().pend}</span>`:''}</button>`).join('')+`<div class="foot">${LOCAL?'Tudo é salvo na pasta do vídeo, com cópia em historico/.':'Edições salvas no arquivo do canal.'}</div>`;
 }
 
 /* ---------- scenes ---------- */
@@ -390,7 +407,7 @@ function editor(){
   const fk=Object.keys(f).filter(x=>!HIDE.includes(x)), foto=s.bg?st.fotos[s.bg]:null, prev=st.config.previews||{}, x=extra();
   let h=`<div class="card"><div class="hero">${thumbOf(s)}<div><div class="kicker"><span class="chip ac">Cena ${String(k+1).padStart(2,'0')} de ${L.length}</span><span>${esc(TYPES[s.t]||s.t)}</span><span>${fmt(T.start)}</span><span>${s.len?'':'≈ '}${T.len.toFixed(1)}s</span>${s.dirty?'<span class="chip warn">alterada</span>':''}</div>
     <h2>${esc(headText(s).slice(0,90))}</h2><div class="note">${s.thumb?'A prévia é da última renderização'+(s.dirty?'; esta cena mudou depois disso.':'.'):'A prévia aparece depois da primeira renderização.'}</div>
-    <div class="acts" style="margin-top:10px"><button class="btn sm" data-act="prev" ${k===0?'disabled':''} title="Atalho: seta para cima">← Anterior</button><button class="btn sm" data-act="next" ${k===L.length-1?'disabled':''} title="Atalho: seta para baixo">Próxima →</button><button class="btn sm" data-act="up" ${k===0?'disabled':''}>Mover para cima</button><button class="btn sm" data-act="down" ${k===L.length-1?'disabled':''}>Mover para baixo</button><button class="btn sm" data-act="dup">Duplicar</button><button class="btn sm danger" data-act="del">Remover</button></div></div></div></div>`;
+    <div class="acts" style="margin-top:10px">${LOCAL?'<button class="btn sm primary" data-act="previa" title="Monta só esta cena, em qualidade baixa, com a voz que já existir. Não gasta créditos.">▶ Ver prévia desta cena</button>':''}<button class="btn sm" data-act="prev" ${k===0?'disabled':''} title="Atalho: seta para cima">← Anterior</button><button class="btn sm" data-act="next" ${k===L.length-1?'disabled':''} title="Atalho: seta para baixo">Próxima →</button><button class="btn sm" data-act="up" ${k===0?'disabled':''}>Mover para cima</button><button class="btn sm" data-act="down" ${k===L.length-1?'disabled':''}>Mover para baixo</button><button class="btn sm" data-act="dup">Duplicar</button><button class="btn sm danger" data-act="del">Remover</button></div></div></div></div>`;
   h+=`<div class="card"><h3>Narração<span class="sp"></span><span class="chip" id="ncount">${(s.n||'').length} caracteres</span></h3><textarea class="narr" id="narr" aria-label="Narração">${esc(s.n||'')}</textarea>
     <div class="under">${s.audio?`<audio controls preload="none" src="${esc(s.audio)}"></audio><span class="chip ok">áudio pronto</span>`:s.n&&x?'<span class="chip warn">áudio ainda não gerado</span>':''}<span id="ncost">${s.n&&!s.audio&&x?`Gerar este trecho gasta cerca de ${(s.n||'').length} créditos da ElevenLabs.`:'Mudar o texto gera um áudio novo e gasta créditos. Vazio = cena só com música.'}</span></div></div>`;
   h+=`<div class="card"><h3>Texto na tela</h3><div class="fields" id="fields">${fk.map(x=>fieldInput(x,f[x])).join('')||'<div class="note">Este tipo de cena não tem texto editável aqui. Os textos da abertura e do encerramento ficam em Estilo.</div>'}</div></div>`;
@@ -482,6 +499,7 @@ async function frmClick(e){
 }
 async function sceneAct(a,s){
   const L=live(), k=L.indexOf(s);
+  if(a==='previa'){startRender('cena',k+1);return}
   if(a==='prev'||a==='next'){const o=L[a==='prev'?k-1:k+1]; if(o) select(o.id,true); return}
   if(a==='up'||a==='down'){const o=L[a==='up'?k-1:k+1]; if(!o) return; const so=s.order, oo=o.order;
     await save(sceneRef(s),{order:oo},''); await save(sceneRef(o),{order:so},'Cena movida'); s.order=oo;o.order=so; viewCenas(); return}
@@ -553,20 +571,19 @@ function viewEstilo(){
     <div class="pals" id="pals">${Object.entries(PALETAS).map(([n,p])=>`<button class="pal" data-pal="${esc(n)}" aria-pressed="${palOf(c)===n}">${mock(p)}<span>${esc(n)}</span></button>`).join('')}</div>
     <details><summary class="note" style="cursor:pointer">Ajustar cores à mão</summary><div class="fields" id="cf" style="margin-top:10px">${CFIELDS.map(([k,l])=>`<label class="f">${esc(l)}<span class="color"><input type="color" data-c="${k}" value="${esc(c[k])}" aria-label="${esc(l)}"><input type="text" data-ch="${k}" value="${esc(c[k])}" maxlength="7" aria-label="${esc(l)} em hexadecimal"></span></label>`).join('')}
      <label class="f">Fotos<select data-c="fotos">${FOTOMODOS.map(([k,l])=>`<option value="${k}" ${c.fotos===k?'selected':''}>${esc(l)}</option>`).join('')}</select></label></div></details></div>
-   <div class="card"><h3>Ambiente sobre as fotos</h3><div class="note">Vida sobre a foto, para ela nunca parecer congelada: a luz oscila de leve e a poeira passa devagar. Não pesa no arquivo final. Vale para todas as cenas com foto ou vídeo de fundo e redesenha essas cenas na próxima renderização.</div>
-    <div class="seg" role="group" aria-label="Ambiente">${[['','Nenhum'],['luz','Luz viva (projetor antigo)'],['poeira','Luz viva e poeira no ar']].map(([id,l])=>`<button data-amb="${id}" aria-pressed="${(v.ambiente==='grao'?'luz':v.ambiente||'')===id}">${l}</button>`).join('')}</div></div>
+   <div class="card"><h3>Ambiente sobre as fotos</h3><div class="note">Vida sobre a foto, para ela nunca parecer congelada: a luz oscila de leve, como num projetor antigo. Não pesa no arquivo final. Vale para todas as cenas com foto ou vídeo de fundo e redesenha essas cenas na próxima renderização.</div>
+    <div class="seg" role="group" aria-label="Ambiente">${[['','Nenhum'],['luz','Luz viva (projetor antigo)']].map(([id,l])=>`<button data-amb="${id}" aria-pressed="${(v.ambiente?'luz':'')===id}">${l}</button>`).join('')}</div></div>
    <div class="card"><h3>Modelo de transições</h3><div class="note">Aplica uma regra a todas as passagens de cena de uma vez. Depois você ainda pode trocar cada uma em Cenas. Hoje: ${Object.entries(cnt).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`${n}× ${(KINDS[k]||{l:k}).l.toLowerCase()}`).join(', ')||'nenhuma'}.</div>
     <div class="rmodes">${Object.entries(PRESETS).map(([id,p])=>`<div class="rmode"><b>${esc(p.l)}</b><p>${esc(p.d)}</p><button class="btn sm" data-preset="${id}">Aplicar a todas</button></div>`).join('')}</div></div>
    <div class="card"><h3>Textos fixos</h3><div class="fields" id="vf">${VFIELDS.map(([k,l])=>{const long=String(v[k]||'').length>60||k==='endCredits'||k==='endNote';return `<label class="f ${long?'wide':''}">${esc(l)}${long?`<textarea data-v="${k}">${esc(v[k]||'')}</textarea>`:`<input type="text" data-v="${k}" value="${esc(v[k]||'')}">`}</label>`}).join('')}</div><div class="note">Mudar os créditos ou a nota final refaz só a cena de encerramento.</div></div>
    <div class="card"><h3>Thumbnail</h3><div class="hero">${v.thumbUrl?`<img src="${esc(v.thumbUrl)}" alt="Thumbnail atual">`:'<div class="noimg">A THUMBNAIL APARECE DEPOIS DA RENDERIZAÇÃO</div>'}<div class="fields" id="tf">${TFIELDS.map(([k,l])=>`<label class="f">${esc(l)}<input type="text" data-t="${k}" value="${esc(th[k]||'')}" ${k==='photo'?'list="fotokeys"':''}></label>`).join('')}<datalist id="fotokeys">${Object.keys(st.fotos).sort().map(k=>`<option value="${esc(k)}">`).join('')}</datalist></div></div></div>
-   <div class="card"><h3>Voz</h3><label class="f">Velocidade da narração<div class="range"><input type="range" id="ritmo" min="0.9" max="1.3" step="0.01" value="${v.ritmo_voz||1}"><output id="ritmoOut">${Math.round((v.ritmo_voz||1)*100)}%</output></div></label><div class="note">Acelera o áudio já gravado sem mudar o tom e sem gastar créditos. A nossa voz fala cerca de 120 palavras por minuto; o vídeo de referência, 166. Entre 110% e 120% já aproxima. Teste na versão de teste antes.</div><div class="under"><span class="chip">${esc(v.voice_name||v.voice_id||'não definida')}</span><span>${esc(v.voice_model||'')}</span></div><div class="note">A voz é definida no video.json. Trocar de voz gera todos os áudios de novo (cerca de ${nf((extra()||{narr:{total:live().reduce((a,s)=>a+(s.n||'').length,0)}}).narr.total)} créditos), então decida antes com a versão de teste.</div></div></div>`;
+   <div class="card"><h3>Voz</h3><div class="note">A narração toca na velocidade natural da voz. Para um vídeo mais ágil, o caminho é o roteiro: frases mais curtas e mais trocas de imagem.</div><div class="under"><span class="chip">${esc(v.voice_name||v.voice_id||'não definida')}</span><span>${esc(v.voice_model||'')}</span></div><div class="note">A voz é definida no video.json. Trocar de voz gera todos os áudios de novo (cerca de ${nf((extra()||{narr:{total:live().reduce((a,s)=>a+(s.n||'').length,0)}}).narr.total)} créditos), então decida antes com a versão de teste.</div></div></div>`;
   const setC=(c2,msg)=>{st.video={...st.video,cores:c2};later('c',()=>save(vref(),{cores:c2},msg||'Cores salvas'),300)};
   M.onclick=async e=>{const am=e.target.closest('[data-amb]'); if(am){st.video={...st.video,ambiente:am.dataset.amb}; await save(vref(),{ambiente:am.dataset.amb},'Ambiente salvo'); viewEstilo(); return}
     const b=e.target.closest('[data-pal]'); if(b){await save(vref(),{cores:{...PALETAS[b.dataset.pal]}},'Paleta: '+b.dataset.pal); st.video={...st.video,cores:{...PALETAS[b.dataset.pal]}}; viewEstilo(); return}
     const p=e.target.closest('[data-preset]'); if(p) ask(`Aplicar o modelo “${PRESETS[p.dataset.preset].l}”?`,`As ${L.length-1} transições deste vídeo serão trocadas. As cenas não são redesenhadas, só as passagens.`,'Aplicar',()=>applyPreset(p.dataset.preset))};
   M.onchange=null;
   M.oninput=e=>{const i=e.target;
-    if(i.id==='ritmo'){$('#ritmoOut').textContent=Math.round(i.value*100)+'%'; later('rv',()=>{st.video={...st.video,ritmo_voz:Number(i.value)};save(vref(),{ritmo_voz:Number(i.value)},'Velocidade salva');stats()});return}
     if(i.dataset.v){later('v',()=>{const d={};$$('#vf [data-v]').forEach(x=>d[x.dataset.v]=x.value);st.video={...st.video,...d};save(vref(),d)});return}
     if(i.dataset.t){later('t',()=>{const d={...(st.video.thumb||{})};$$('#tf [data-t]').forEach(x=>d[x.dataset.t]=x.value);save(vref(),{thumb:d})});return}
     const k=i.dataset.c||i.dataset.ch; if(!k) return; let val=i.value.trim();
@@ -577,10 +594,83 @@ async function applyPreset(id){const L=live(), f=PRESETS[id].f; let n=0;
   for(let i=0;i<L.length-1;i++){const [kind,dur]=f(L[i].t,L[i+1].t), o=L[i].trans||{}; if(o.kind===kind&&(o.dur??KINDS[kind].d)===dur) continue; L[i].trans={kind,dur,params:{}}; await save(sceneRef(L[i]),{trans:L[i].trans},''); n++}
   toast(n?`${n} transições trocadas`:'Já estava neste modelo'); viewEstilo()}
 
+/* ---------- fact-check, sentence by sentence ---------- */
+const SIT=['Confirmado','Atribuído à fonte','Hipótese','Interpretação','Texto autoral','Precisa corrigir'];
+const sents=t=>String(t||'').split(/(?<=[.?!]["”]?)\s+/).map(x=>x.trim()).filter(Boolean);
+const nrm=t=>String(t||'').toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,' ').trim();
+function apur(){ // every sentence of the narration, matched by text to videos/<slug>/checagem.json
+  const x=extra(), C=(x&&x.checagem)||null, by={}; (C||[]).forEach(c=>by[nrm(c.frase)]=c);
+  const rows=[]; let cap='Abertura';
+  live().forEach((s,i)=>{ if(s.t==='chapter') cap=(s.f||{}).name||'Capítulo'; sents(s.n).forEach(fr=>{const c=by[nrm(fr)]; rows.push({cena:i+1,id:s.id,cap,frase:fr,c:c||null})}) });
+  const pend=rows.filter(r=>!(r.c&&r.c.conferido)).length, novas=rows.filter(r=>!r.c).length, corr=rows.filter(r=>r.c&&r.c.situacao==='Precisa corrigir').length;
+  return {tem:!!C,rows,total:rows.length,pend,novas,corr};
+}
+async function putApur(frase,d){
+  const x=extra(); if(!x||!LOCAL) return; const C=x.checagem=x.checagem||[], k=nrm(frase); let c=C.find(y=>nrm(y.frase)===k);
+  if(!c){c={frase,situacao:'',fonte:'',links:[],trecho:'',obs:'',conferido:false};C.push(c)} Object.assign(c,d);
+  later('apur',async()=>{try{await LOCAL.checagem(st.slug,C);toast('Apuração salva')}catch(e){toast('Não salvou: '+(e.message||'erro'))} stats()},500);
+}
+function viewApuracao(){
+  const A=apur(), x=extra(), q=nrm(st.aq), F=st.afilt;
+  const show=A.rows.filter(r=>(!q||nrm(r.frase+' '+((r.c||{}).fonte||'')).includes(q))&&(F==='todas'||(F==='pend'&&!(r.c&&r.c.conferido))||(F==='novas'&&!r.c)||(F==='corr'&&r.c&&r.c.situacao==='Precisa corrigir')||(F==='semfonte'&&r.c&&!(r.c.links||[]).length&&r.c.situacao!=='Texto autoral')));
+  let cap=null;
+  const row=r=>{const c=r.c||{}, L=c.links||[]; let h='';
+    if(r.cap!==cap){cap=r.cap;h+=`<div class="frh">${esc(cap)}</div>`}
+    return h+`<div class="fr" data-fr="${esc(r.frase)}"><input type="checkbox" data-conf ${c.conferido?'checked':''} ${LOCAL?'':'disabled'} aria-label="Conferido" title="Conferi esta frase na fonte"><div><div class="tx">${esc(r.frase)}</div>
+     <div class="meta"><button class="chip ac" data-go="${esc(r.id)}" style="border:0;cursor:pointer">cena ${String(r.cena).padStart(2,'0')}</button>${r.c?`<span class="chip ${c.situacao==='Precisa corrigir'?'bad':c.situacao?'':'warn'}">${esc(c.situacao||'a classificar')}</span>`:'<span class="chip bad">frase nova ou alterada: sem checagem</span>'}${c.fonte?`<span>${esc(c.fonte)}</span>`:''}${L.map((u,i)=>`<a href="${esc(u)}" target="_blank" rel="noopener">fonte ${i+1}</a>`).join('')}${c.conferido&&c.em?`<span>conferido em ${esc(new Date(c.em).toLocaleDateString('pt-BR'))}</span>`:''}</div>
+     ${c.trecho?`<blockquote>${esc(c.trecho)}</blockquote>`:''}${c.obs?`<div class="note" style="margin-top:6px">${esc(c.obs)}</div>`:''}
+     ${LOCAL?`<details><summary class="note" style="cursor:pointer;margin-top:6px">Editar fonte</summary><div class="edit"><label class="f">Situação<select data-ap="situacao"><option value="">a classificar</option>${SIT.map(o=>`<option ${c.situacao===o?'selected':''}>${o}</option>`).join('')}</select></label><label class="f">Fonte<input type="text" data-ap="fonte" value="${esc(c.fonte||'')}"></label><label class="f">Links (um por linha)<textarea data-ap="links">${esc(L.join('\n'))}</textarea></label><label class="f">Trecho original que sustenta a frase<textarea data-ap="trecho">${esc(c.trecho||'')}</textarea></label><label class="f">Observação<textarea data-ap="obs">${esc(c.obs||'')}</textarea></label></div></details>`:''}</div></div>`};
+  M.innerHTML=`<div class="page"><h1>Apuração</h1><p class="lead">Cada frase da narração, com a fonte que a sustenta. Regra do canal: só se escreve o que a fonte diz, e a voz só é gerada depois de tudo conferido.</p>
+   ${x?'':'<div class="card"><div class="note">A apuração frase a frase fica no Estúdio local, na pasta do vídeo.</div></div>'}
+   <div class="card"><h3>Situação<span class="sp"></span><span class="chip ${A.pend?'warn':'ok'}">${A.total-A.pend} de ${A.total} conferidas</span></h3>
+    <div class="pbar"><i style="width:${A.total?Math.round(100*(A.total-A.pend)/A.total):0}%"></i></div>
+    <div class="under">${A.novas?`<span class="chip bad">${A.novas} sem checagem</span>`:''}${A.corr?`<span class="chip bad">${A.corr} a corrigir</span>`:''}<span>Quando o texto de uma cena muda, a frase volta para “sem checagem” até ter fonte de novo.</span></div></div>
+   ${x&&x.pesquisa&&x.pesquisa.texto?`<div class="card"><h3>Pesquisa<span class="sp"></span><span class="chip">${x.pesquisa.links} links</span></h3><details><summary class="note" style="cursor:pointer">Abrir o dossiê de pesquisa (pesquisa.md)</summary><pre class="md">${esc(x.pesquisa.texto).replace(/https?:\/\/[^\s)&]+/g,u=>`<a href="${u}" target="_blank" rel="noopener">${u}</a>`)}</pre></details></div>`:''}
+   <div class="card"><h3>Frases</h3><div class="tools" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:6px"><input type="search" id="aq" placeholder="Buscar frase ou fonte" value="${esc(st.aq)}" aria-label="Buscar frase" style="flex:1;min-width:200px">
+    <div class="seg" role="group" aria-label="Filtro">${[['todas','Todas'],['pend','Por conferir'],['novas','Sem checagem'],['semfonte','Sem link'],['corr','A corrigir']].map(([id,l])=>`<button data-afilt="${id}" aria-pressed="${F===id}">${l}</button>`).join('')}</div></div>
+    <div id="frases">${show.map(row).join('')||'<div class="note">Nenhuma frase neste filtro.</div>'}</div></div></div>`;
+  M.onclick=e=>{const f=e.target.closest('[data-afilt]'); if(f){st.afilt=f.dataset.afilt;viewApuracao();return}
+    const g=e.target.closest('[data-go]'); if(g){st.tab='cenas';st.sel=g.dataset.go;view();scrollTo(0,0)}};
+  M.oninput=e=>{ if(e.target.id==='aq'){st.aq=e.target.value;later('aq',()=>{const p=e.target.selectionStart;viewApuracao();const i=$('#aq');i.focus();i.setSelectionRange(p,p)},250);return}
+    const k=e.target.dataset.ap, fr=e.target.closest('[data-fr]'); if(k&&fr&&e.target.tagName!=='SELECT') putApur(fr.dataset.fr,{[k]:k==='links'?e.target.value.split('\n').map(u=>u.trim()).filter(Boolean):e.target.value}) };
+  M.onchange=e=>{const fr=e.target.closest('[data-fr]'); if(!fr) return;
+    if(e.target.matches('[data-conf]')){putApur(fr.dataset.fr,{conferido:e.target.checked,em:e.target.checked?new Date().toISOString():''}); stats(); const A2=apur(); const ch=$('.page .card .chip'); if(ch){ch.textContent=`${A2.total-A2.pend} de ${A2.total} conferidas`;ch.className='chip '+(A2.pend?'warn':'ok')} const pb=$('.page .pbar i'); if(pb)pb.style.width=(A2.total?Math.round(100*(A2.total-A2.pend)/A2.total):0)+'%'}
+    else if(e.target.dataset.ap==='situacao') putApur(fr.dataset.fr,{situacao:e.target.value}) };
+}
+
+/* ---------- the circuit: research -> fact-check -> images -> edit -> publish ---------- */
+function viewCircuito(){
+  const v=st.video||{}, x=extra(), A=apur(), L=live(), u=usage(), P=problems(), T=timing();
+  const semc=Object.keys(u).filter(k=>st.fotos[k]&&(!st.fotos[k].credit||!st.fotos[k].license)).length, falt=Object.keys(u).filter(k=>!st.fotos[k]||!st.fotos[k].thumb).length, par=L.filter(lenta).length;
+  const dirty=st.scenes.filter(s=>s.dirty&&!s.deleted).length, nfot=Object.keys(st.fotos).length, sai=(x&&x.saidas)||{};
+  const li=(c,t)=>`<li class="${c}">${c==='o'?'✓':c==='b'?'✕':c==='w'?'!':'·'} ${esc(t)}</li>`;
+  const E=[
+   {id:'apuracao',n:'Pesquisa',d:'Varredura do tema e dossiê de fontes.',ok:!!(x&&x.pesquisa&&x.pesquisa.texto),na:!x,
+    it:x?[x.pesquisa&&x.pesquisa.texto?li('o',`Dossiê de pesquisa com ${x.pesquisa.links} links`):li('b','Falta o dossiê de pesquisa (pesquisa.md)'),li('',`${L.length} cenas e ${nf(L.reduce((a,s)=>a+(s.n||'').length,0))} caracteres de roteiro`)]:[li('','Disponível no Estúdio local')]},
+   {id:'apuracao',n:'Apuração',d:'Cada frase com fonte, conferida por você.',ok:A.tem&&!A.pend,na:!x,
+    it:!x?[li('','Disponível no Estúdio local')]:!A.tem?[li('b','Ainda não há planilha de checagem deste roteiro')]:[A.pend?li('w',`${A.pend} de ${A.total} frases por conferir`):li('o',`${A.total} frases conferidas`),...(A.novas?[li('b',`${A.novas} frase(s) sem checagem`)]:[]),...(A.corr?[li('b',`${A.corr} frase(s) a corrigir`)]:[])]},
+   {id:'midia',n:'Imagens e vídeos',d:'Só domínio público ou licença livre, com crédito.',ok:nfot>0&&!semc&&!falt&&!par,
+    it:[li('',`${nfot} itens na galeria, ${Object.keys(u).length} em cena`),semc?li('b',`${semc} em cena sem crédito ou licença`):li('o','Créditos e licenças em dia'),...(falt?[li('b',`${falt} fundo(s) ainda não baixados`)]:[]),par?li('w',`${par} cena(s) com a imagem parada por mais de ${LENTA}s`):li('o','Nenhuma cena parada')]},
+   {id:'cenas',n:'Edição',d:'Cenas, ritmo, música e estilo. Prévia por cena e versão de teste.',ok:!!(sai.teste||sai.video)&&!dirty,
+    it:[li('',`Duração ${T.real?'':'≈ '}${fmt(T.total)}`),sai.teste||sai.video?li('o','Versão de teste ou final já renderizada'):li('w','Ainda sem versão de teste'),dirty?li('w',`${dirty} cena(s) alteradas desde a última renderização`):li('o','Nenhuma cena alterada')]},
+   {id:'publicar',n:'Publicação',d:'Voz final, vídeo, thumbnail e texto do YouTube.',ok:!P.length&&!!sai.video,
+    it:[x?(x.narr.pendentes?li('w',`Voz a gerar: ${nf(x.narr.pendentes)} caracteres`):li('o','Narração pronta')):li('','Voz gerada no Estúdio local'),sai.video?li('o',`Vídeo final (${sai.video.mb} MB)`):li('w','Vídeo final ainda não renderizado'),x&&x.youtube?li('o','Texto do YouTube pronto'):li('w','Falta o texto do YouTube'),P.length?li('w',`${P.length} pendência(s) em Publicar`):li('o','Sem pendências')]}];
+  const now=E.findIndex(e=>!e.ok&&!e.na);
+  M.innerHTML=`<div class="page"><h1>Circuito</h1><p class="lead">O caminho de cada vídeo, da pesquisa à publicação. A etapa destacada é onde este vídeo está agora.</p>
+   <div class="flow">${E.map((e,i)=>`<div class="stage ${i===now?'now':''}"><div class="num">ETAPA ${i+1}</div><h3>${esc(e.n)}<span class="chip ${e.ok?'ok':i===now?'ac':''}">${e.ok?'feito':i===now?'agora':e.na?'no PC':'depois'}</span></h3><div class="note">${esc(e.d)}</div><ul>${e.it.join('')}</ul><button class="btn sm ${i===now?'primary':''}" data-open="${e.id}">Abrir ${esc(e.n.toLowerCase())}</button></div>`).join('')}</div>
+   <div class="card" style="margin-top:14px"><h3>Regras do circuito</h3><div class="check">
+    <div class="ck ok"><div class="st">1</div><div><b>Nada entra no roteiro sem fonte</b><span>Detalhe inferido aparece marcado como hipótese ou interpretação.</span></div></div>
+    <div class="ck ok"><div class="st">2</div><div><b>A voz só é gerada depois da apuração</b><span>A versão de teste e a prévia por cena usam voz grátis e não gastam créditos.</span></div></div>
+    <div class="ck ok"><div class="st">3</div><div><b>Imagem só com licença livre e crédito</b><span>Sem crédito ou licença, a foto bloqueia a publicação.</span></div></div></div></div></div>`;
+  M.onclick=e=>{const b=e.target.closest('[data-open]'); if(b){st.tab=b.dataset.open;view();scrollTo(0,0)}}; M.oninput=null; M.onchange=null;
+}
+
 /* ---------- publish ---------- */
 function problems(){
   const v=st.video||{}, x=extra(), L=live(), u=usage(), P=[], ck=v.checagem||{};
-  if(!ck.ok) P.push({id:'checagem',lv:x&&x.narr.pendentes?'bad':'warn',t:'Checagem frase a frase pendente',d:ck.url?'A planilha está ligada, mas ainda não foi marcada como conferida.':'Regra do canal: todo roteiro passa pela planilha de checagem antes de gerar a voz.'});
+  const A=apur();
+  if(A.tem){ if(A.pend) P.push({id:'checagem',lv:x&&x.narr.pendentes?'bad':'warn',t:`Apuração: ${A.pend} de ${A.total} frases por conferir`,d:(A.novas?`${A.novas} frase(s) novas ou alteradas ainda sem fonte. `:'')+'Abra Apuração e marque cada frase depois de conferir a fonte.'}) }
+  else if(!ck.ok) P.push({id:'checagem',lv:x&&x.narr.pendentes?'bad':'warn',t:'Checagem frase a frase pendente',d:ck.url?'A planilha está ligada, mas ainda não foi marcada como conferida.':'Regra do canal: todo roteiro passa pela planilha de checagem antes de gerar a voz.'});
   if(x&&x.narr.pendentes) P.push({id:'voz',lv:'warn',t:`${nf(x.narr.pendentes)} caracteres de narração ainda sem áudio`,d:`${x.narr.cenas} cenas. Gerar gasta cerca de ${nf(x.narr.pendentes)} créditos da ElevenLabs. Use a versão de teste antes.`});
   const semc=Object.keys(u).filter(k=>st.fotos[k]&&(!st.fotos[k].credit||!st.fotos[k].license)); if(semc.length) P.push({id:'credito',lv:'bad',t:`${semc.length} foto(s) em cena sem crédito ou licença`,d:semc.slice(0,8).join(', ')});
   const falt=Object.keys(u).filter(k=>!st.fotos[k]||!st.fotos[k].thumb); if(falt.length) P.push({id:'faltam',lv:'bad',t:`${falt.length} fundo(s) usados em cena ainda não baixados`,d:falt.slice(0,8).join(', ')});
@@ -599,7 +689,8 @@ function viewPublicar(){
   const names={video:'Vídeo final',teste:'Versão de teste',celular:'Cópia para celular',legendas:'Legendas (.srt)',thumbnail:'Thumbnail'};
   M.innerHTML=`<div class="page"><h1>Publicar</h1><p class="lead">O caminho até o YouTube: conferir, testar com voz grátis, gerar a voz de verdade e levar os arquivos.</p>
    <div class="card"><h3>Pronto para publicar?<span class="sp"></span><span class="chip ${P.length?'warn':'ok'}">${P.length?P.length+' pendência(s)':'tudo certo'}</span></h3><div class="check">${P.map(p=>`<div class="ck ${p.lv}"><div class="st">!</div><div><b>${esc(p.t)}</b><span>${esc(p.d)}</span></div></div>`).join('')}${okItems.map(([t,d])=>`<div class="ck ok"><div class="st">✓</div><div><b>${esc(t)}</b><span>${esc(d)}</span></div></div>`).join('')}</div></div>
-   <div class="card"><h3>Checagem do roteiro</h3><div class="fields"><label class="f wide">Link da planilha de checagem frase a frase<input type="url" id="ckurl" value="${esc(ck.url||'')}" placeholder="https://…"></label></div>
+   ${apur().tem?`<div class="card"><h3>Apuração do roteiro<span class="sp"></span><span class="chip ${apur().pend?'warn':'ok'}">${apur().total-apur().pend} de ${apur().total} frases conferidas</span></h3><div class="under"><button class="btn sm" data-open="apuracao">Abrir a apuração</button>${ck.url?`<a href="${esc(ck.url)}" target="_blank" rel="noopener">Planilha original</a>`:''}</div></div>`:''}
+   <div class="card" ${apur().tem?'hidden':''}><h3>Checagem do roteiro</h3><div class="fields"><label class="f wide">Link da planilha de checagem frase a frase<input type="url" id="ckurl" value="${esc(ck.url||'')}" placeholder="https://…"></label></div>
     <div class="under"><label style="display:flex;gap:8px;align-items:center;color:var(--ink);font-weight:500"><input type="checkbox" id="ckok" ${ck.ok?'checked':''}> Conferi frase por frase e o roteiro está aprovado</label>${ck.url?`<a href="${esc(ck.url)}" target="_blank" rel="noopener">Abrir a planilha</a>`:''}${ck.em?`<span>marcado em ${esc(new Date(ck.em).toLocaleDateString('pt-BR'))}</span>`:''}</div></div>
    <div class="card"><h3>Gancho: os dois primeiros minutos</h3><div class="note">Lições do vídeo de referência (188 mil visualizações num canal de 15,6 mil inscritos).</div>${GANCHO.map(([k,l])=>`<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-gancho="${k}" ${(v.gancho||{})[k]?'checked':''}> ${esc(l)}</label>`).join('')}</div>
    <div class="card"><h3>Renderizar</h3>${LOCAL?`<div class="rmodes">
@@ -614,6 +705,7 @@ function viewPublicar(){
   M.onchange=async e=>{ if(e.target.dataset.gancho){const g={...(st.video.gancho||{}),[e.target.dataset.gancho]:e.target.checked}; st.video={...st.video,gancho:g}; await save(vref(),{gancho:g},'Gancho salvo'); viewPublicar(); stats(); return}
     if(e.target.id==='ckok'){await putCk({ok:e.target.checked,em:e.target.checked?new Date().toISOString():''}); viewPublicar(); stats()} };
   M.onclick=e=>{const c=e.target.closest('[data-copy]'); if(c){const el=$('#'+c.dataset.copy); navigator.clipboard.writeText(el.value??el.textContent).then(()=>toast('Copiado'),()=>toast('Não consegui copiar'));return}
+    const o=e.target.closest('[data-open]'); if(o){st.tab=o.dataset.open;view();scrollTo(0,0);return}
     const r=e.target.closest('[data-render]'); if(r) askRender(r.dataset.render)};
 }
 
@@ -621,15 +713,15 @@ function viewPublicar(){
 function ask(title,text,okLabel,fn,danger){const d=$('#dlg'); d.innerHTML=`<div class="in"><h2>${esc(title)}</h2><div style="color:var(--muted)">${text}</div><div class="foot"><button class="btn" data-x>Cancelar</button><button class="btn ${danger?'':'primary'}" data-ok>${esc(okLabel)}</button></div></div>`;
   d.onclick=e=>{if(e.target.closest('[data-x]'))d.close(); if(e.target.closest('[data-ok]')){d.close();fn()}}; d.showModal()}
 function askRender(modo){
-  const x=extra(), ck=(st.video.checagem||{}).ok;
-  if(modo==='final'&&x&&x.narr.pendentes) return ask('Gerar a voz e renderizar o vídeo final?',`Isto vai gerar <b>${nf(x.narr.pendentes)} caracteres</b> de narração na ElevenLabs (cerca de ${nf(x.narr.pendentes)} créditos), em ${x.narr.cenas} cenas.${ck?'':'<br><br><b style="color:var(--bad)">A checagem frase a frase ainda não está marcada como conferida.</b> O recomendado é conferir e fazer a versão de teste antes.'}`,ck?'Gerar voz e renderizar':'Gerar mesmo assim',()=>startRender(modo),!ck);
+  const x=extra(), A0=apur(), ck=A0.tem?!A0.pend:(st.video.checagem||{}).ok;
+  if(modo==='final'&&x&&x.narr.pendentes) return ask('Gerar a voz e renderizar o vídeo final?',`Isto vai gerar <b>${nf(x.narr.pendentes)} caracteres</b> de narração na ElevenLabs (cerca de ${nf(x.narr.pendentes)} créditos), em ${x.narr.cenas} cenas.${ck?'':'<br><br><b style="color:var(--bad)">A apuração frase a frase ainda não está completa.</b> O recomendado é conferir e fazer a versão de teste antes.'}`,ck?'Gerar voz e renderizar':'Gerar mesmo assim',()=>startRender(modo),!ck);
   startRender(modo);
 }
-async function startRender(modo){
+async function startRender(modo,cena){
   if(!LOCAL){await save(vref(),{render:{...(st.video.render||{}),requested:true,requestedAt:new Date().toISOString()}},'Marcado. Agora escreva "renderiza" no chat.');return}
-  try{const r=await LOCAL.render(st.slug,modo); if(!r.iniciado) toast('Já existe uma renderização em andamento'); st.job={slug:st.slug,open:true}; stats(); poll()}catch(e){toast('Não começou: '+(e.message||'erro'))}
+  try{const r=await LOCAL.render(st.slug,modo,cena); if(!r.iniciado) toast('Já existe uma renderização em andamento'); st.job={slug:st.slug,open:true}; stats(); poll()}catch(e){toast('Não começou: '+(e.message||'erro'))}
 }
-const MODO={final:'Vídeo final',teste:'Versão de teste',celular:'Cópia para celular'};
+const MODO={final:'Vídeo final',teste:'Versão de teste',celular:'Cópia para celular',cena:'Prévia da cena'};
 async function poll(){
   const j=st.job; if(!j) return; let r; try{r=await LOCAL.status(j.slug)}catch(e){return setTimeout(poll,4000)}
   if(!r.passos){st.job=null;stats();return}
@@ -637,21 +729,21 @@ async function poll(){
   pill.style.display='inline-flex'; pill.innerHTML=r.running?`<span class="step agora" style="font-size:12.5px"><i></i>${esc(MODO[r.modo])} · ${pct}% · ${el}</span>`:r.ok?'✓ Renderização pronta':r.cancelado?'Renderização cancelada':'A renderização parou com erro';
   pill.onclick=()=>{j.open=true;poll.draw()};
   poll.draw=()=>{const d=$('#dlg'); if(!j.open){return} const cur=r.passos.find(p=>p.estado==='agora');
-    d.innerHTML=`<div class="in"><h2>${r.running?esc(MODO[r.modo])+': '+esc(cur?cur.nome.toLowerCase():'começando')+'…':r.ok?esc(MODO[r.modo])+' pronto em '+el:r.cancelado?'Renderização cancelada':'A renderização parou com erro'}</h2>
-     ${r.running?`<div class="pbar"><i style="width:${pct}%"></i></div><div class="note">Tempo: ${el}. A primeira vez leva de 20 a 40 minutos; depois só o que mudou é refeito. Pode fechar esta janela e continuar editando.</div>`:''}
+    d.innerHTML=`<div class="in"><h2>${r.running?esc(MODO[r.modo])+': '+esc(cur?cur.nome.toLowerCase():'começando')+'…':r.ok?esc(MODO[r.modo])+(r.modo==='cena'?' '+r.cena:'')+' pronta em '+el:r.cancelado?'Renderização cancelada':'A renderização parou com erro'}</h2>
+     ${r.running?`<div class="pbar"><i style="width:${pct}%"></i></div><div class="note">Tempo: ${el}. ${r.modo==='cena'?'Leva de 10 a 30 segundos. Qualidade baixa, sem transições, legendas nem música: é só para ver como a cena ficou.':'A primeira vez leva de 20 a 40 minutos; depois só o que mudou é refeito. Pode fechar esta janela e continuar editando.'}</div>`:''}
      <div class="steps">${r.passos.map(p=>`<div class="step ${p.estado}"><i></i>${esc(p.nome)}</div>`).join('')}</div>
-     ${r.ok&&r.video?`<video controls src="${esc(r.video)}" style="width:100%;border-radius:10px;background:#000"></video>`:''}
+     ${r.ok&&r.video?`<video controls ${r.modo==='cena'?'autoplay':''} src="${esc(r.video)}" style="width:100%;border-radius:10px;background:#000"></video>`:''}
      <details ${!r.running&&!r.ok&&!r.cancelado?'open':''}><summary class="note" style="cursor:pointer">Detalhes técnicos</summary><pre class="mono" style="margin-top:8px">${esc(r.log||'')}</pre></details>
      <div class="foot">${r.running?'<button class="btn danger" data-cancel>Cancelar renderização</button>':''}${r.ok&&r.video?`<a class="btn" href="${esc(r.video)}" target="_blank" rel="noopener">Abrir em outra aba</a>`:''}<button class="btn primary" data-x>${r.running?'Continuar editando':'Fechar'}</button></div></div>`;
     d.onclick=async e=>{if(e.target.closest('[data-x]')){j.open=false;d.close()} if(e.target.closest('[data-cancel]')){await LOCAL.cancel(j.slug);toast('Cancelando…')}};
     if(!d.open)d.showModal()};
   if(j.open&&!(r.running&&$('#dlg').open&&$('#dlg details')?.open)) poll.draw();
-  if(r.running) return setTimeout(poll,2500);
+  if(r.running) return setTimeout(poll,r.modo==='cena'?900:2500);
   st.job=null; setTimeout(()=>{if(!st.job)pill.style.display='none'},15000); try{await LOCAL.reload(j.slug)}catch(e){} stats();
 }
 
 /* ---------- shell ---------- */
-const VIEWS={cenas:viewCenas,midia:viewMidia,musica:viewMusica,estilo:viewEstilo,publicar:viewPublicar};
+const VIEWS={circuito:viewCircuito,apuracao:viewApuracao,cenas:viewCenas,midia:viewMidia,musica:viewMusica,estilo:viewEstilo,publicar:viewPublicar};
 function view(){ stats();
   if(!st.video){M.innerHTML='<div class="empty">Nenhum vídeo no arquivo ainda. Peça ao Claude para criar o primeiro dossiê.</div>';return}
   VIEWS[st.tab](); }

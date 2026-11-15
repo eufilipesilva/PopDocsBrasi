@@ -58,9 +58,10 @@
   }
   // What only the local Studio can do. The page (estudio.html) draws the interface for it.
   window.POPDOCS_LOCAL = {
-    render: async (slug, modo) => { await flush(slug); return api('/api/render/' + slug, {modo: modo || 'final'}); },
+    render: async (slug, modo, cena) => { await flush(slug); return api('/api/render/' + slug, {modo: modo || 'final', cena}); },
     status: slug => api('/api/render/' + slug),
     cancel: slug => api('/api/render/' + slug + '/cancelar', {}),
+    checagem: (slug, itens) => api('/api/video/' + slug + '/checagem', {itens}),
     youtube: (slug, texto) => api('/api/video/' + slug + '/youtube', {texto}),
     reload: async slug => { await flush(slug); await load(slug, true); emit(slug); }
   };

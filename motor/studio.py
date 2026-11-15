@@ -80,7 +80,8 @@ def docs_to_files(V, vdoc, scene_docs, foto_docs):
         if k in vdoc: new_cfg[k] = vdoc[k]
     if not new_cfg.get('musicas'): new_cfg.pop('musicas', None)
     if not new_cfg.get('ambiente'): new_cfg.pop('ambiente', None)
-    if abs(float(new_cfg.get('ritmo_voz') or 1) - 1) < 0.005: new_cfg.pop('ritmo_voz', None)   # empty list = one track for the whole video
+    new_cfg.pop('ritmo_voz', None)   # speeding up recorded audio was dropped (robotic voice)
+    if new_cfg.get('ambiente'): new_cfg['ambiente'] = 'luz'   # empty list = one track for the whole video
     oS = old.get('scenes.json') or []; oT = old.get('transitions.json') or []
     S = [next((o for o in oS if o == x), None) or keep_order(x, oS[i] if i < len(oS) else None) for i, x in enumerate(S)]   # same key order as on disk
     T = [keep_order(t, oT[i] if i < len(oT) else {'from': 0, 'to': 0}) for i, t in enumerate(T)]

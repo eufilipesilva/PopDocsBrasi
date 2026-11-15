@@ -1,6 +1,7 @@
 """Renders one MP4 per scene (Ken Burns on photos, smooth zoom on text, state reveals). Run inside the work dir."""
 import json, subprocess, numpy as np, cv2, sys, os
 from multiprocessing import Pool
+PREVIA=bool(os.environ.get('POPDOCS_PREVIA')); STEP=2 if PREVIA else 1   # quick scene preview: half the frames, small and fast encode
 FPS=30; W,H=1920,1080; OUT='clips'; IMG=os.environ.get('POPDOCS_IMG','img')
 def _bgr(h): h=h.lstrip('#'); return np.array([int(h[4:6],16),int(h[2:4],16),int(h[0:2],16)],np.float32)
 BOX=(260,140,1400,788)  # x,y,w,h of the window of a 'clip' scene (must match templates/frame.html)
@@ -72,26 +73,11 @@ def framed(img,s,scale=1.12):
     fx,fy=(s.get('fotoFoco') or [0.5,0.5])[:2]; h,w=img.shape[:2]
     auto=s.get('auto') and not s.get('fotoEnq') and not s.get('fotoFoco') and h>w*1.15   # extra photo, upright, never framed by hand: show it whole
     return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' or auto else cover(img,scale,fx,fy)
-_DUST={}
 def ambient(frame,f,seed,kind):
-    """Life over a photo so that it never looks frozen: the light breathes like an old projector ('luz'),
-    plus slow drifting dust in two layers ('poeira'). No random film grain: measured on a real scene, it more than
-    doubles the size of the final file (4.8 -> 10 Mbps), while these two cost almost nothing."""
-    if kind=='grao': kind='luz'   # older videos
-    if kind not in ('luz','poeira'): return frame
-    frame=frame*(1+0.018*np.sin(f*0.83+seed)+0.012*np.sin(f*0.21+seed*1.7))
-    if kind=='poeira':
-        if 'a' not in _DUST:
-            rng=np.random.default_rng(7); P=400
-            for name,n,blur in (('a',70,1.6),('b',35,3.2)):
-                c=np.zeros((H+P,W+P),np.float32)
-                for _ in range(n):
-                    cv2.circle(c,(int(rng.integers(0,W+P)),int(rng.integers(0,H+P))),int(rng.integers(1,4)),float(rng.integers(90,200)),-1)
-                _DUST[name]=cv2.GaussianBlur(c,(0,0),blur)
-        for name,vx,vy in (('a',0.55,0.22),('b',-0.3,0.4)):
-            x=int((f*vx+seed*53)%400); y=int((f*vy+seed*29)%400)
-            frame=frame+_DUST[name][y:y+H,x:x+W][:,:,None]
-    return frame
+    """Life over a photo so that it never looks frozen: the light breathes like an old projector.
+    No film grain (it doubles the final file) and no dust (it looked artificial)."""
+    if not kind: return frame
+    return frame*(1+0.018*np.sin(f*0.83+seed)+0.012*np.sin(f*0.21+seed*1.7))
 def kenburns(bg,u,dirn,s=None):
     """One photo in motion. Default: slow push-in with a sideways drift. With s['zoom']=='detalhe', the camera
     travels to the point s['zp'] = [x, y] of the frame (0 to 1), e.g. a signature or one line of a newspaper."""
@@ -122,10 +108,10 @@ def job(i):
                 allst.append([ld(f'png/{i:02d}_f{len(allst)}_{k}.png') for k in range(len(p['steps']))] if os.path.exists(q) else states)
                 bgs.append(framed(treat(cv2.imread(p2),CORES,modo=x.get('fotoModo')),x).astype(np.float32)*dark)
         segN=N/len(bgs); XF=int(0.6*FPS)
-    pr=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS),'-i','-',
-        '-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
+    pr=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS/STEP),'-i','-',
+        *(['-vf','scale=960:540','-c:v','libx264','-preset','ultrafast','-crf','26'] if PREVIA else ['-c:v','libx264','-preset','veryfast','-crf','16']),'-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
     zin = (i%2==0)
-    for f in range(N):
+    for f in range(0,N,STEP):
         t=f/FPS; u=f/max(N-1,1)
         k=max(j for j,st in enumerate(p['steps']) if st<=t+1e-6)
         def comp(rgb,al,M):

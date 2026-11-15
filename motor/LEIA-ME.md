@@ -133,8 +133,11 @@ O estudo está em `pesquisa/referencias/fatos-mecanicos-diesel.md`. O que virou 
 - **Várias fotos na mesma cena.** No Estúdio, em Cenas → Fundo → "Mais fotos nesta cena". No `scenes.json` é o campo `"bgs": ["chave2", "chave3"]`. As fotos se revezam em partes iguais, com passagem suave, e cada uma mostra a própria legenda e o próprio crédito (da galeria).
 - **Aviso de ritmo.** O topo mostra de quanto em quanto tempo a imagem troca. Cenas em que a mesma imagem passa de 9 segundos ganham o selo "parada", aparecem no filtro "Paradas", na linha do tempo e nas pendências de Publicar. A referência troca a cada 5,6 s.
 - **Zoom no detalhe.** Em Fundo, marque "Zoom no detalhe" e clique no ponto. No `scenes.json`: `"zoom": "detalhe", "zp": [x, y]` (0 a 1, na tela).
-- **Ambiente.** Em Estilo: luz viva (a luz oscila como num projetor antigo), ou luz viva e poeira no ar, sobre fotos e vídeos de fundo. No `video.json`: `"ambiente": "luz"` ou `"poeira"`. Grão de filme aleatório ficou de fora: medido numa cena real, ele mais que dobra o tamanho do arquivo final.
-- **Velocidade da narração.** Em Estilo → Voz. No `video.json`: `"ritmo_voz": 1.15`. Acelera o áudio em cache sem mudar o tom e sem gastar créditos.
+- **Ambiente.** Em Estilo: luz viva (a luz oscila como num projetor antigo) sobre fotos e vídeos de fundo, ou nenhum. No `video.json`: `"ambiente": "luz"`. Grão de filme e poeira foram retirados (o grão dobrava o arquivo; a poeira ficava artificial).
+- **Prévia de uma cena.** Em Cenas, "Ver prévia desta cena" monta só aquela cena em cerca de 10 a 30 segundos, em 540p, com a voz que já existir (final em cache, senão a de teste, senão muda). Sem transições, legendas nem música, e sem gastar créditos. Linha de comando: `python motor/motor.py videos/<slug> cena 12`.
+- **Circuito.** A primeira tela mostra as cinco etapas do vídeo (pesquisa, apuração, imagens e vídeos, edição, publicação), o que falta em cada uma e em qual o vídeo está.
+- **Apuração.** Lista cada frase da narração com fonte, links, trecho original, situação e a caixa "Conferido". Fica em `videos/<slug>/checagem.json`. A frase é casada pelo texto: se a narração de uma cena muda, a frase volta para "sem checagem". Enquanto houver frase por conferir, Publicar avisa antes de gerar a voz.
+- A velocidade da narração (acelerar o áudio gravado) foi retirada: deixava a voz robótica.
 - **Gancho.** Lista de conferência dos dois primeiros minutos em Publicar (`"gancho"` no `video.json`).
 - **Volume.** A narração agora sai em -14 LUFS, o padrão do YouTube (`"lufs"` no `video.json` muda isso).
 
