@@ -71,17 +71,56 @@ def framed(img,s,scale=1.12):
         h,w=img.shape[:2]; img=img[int(h*rc[1]):int(h*rc[3]),int(w*rc[0]):int(w*rc[2])]
     fx,fy=(s.get('fotoFoco') or [0.5,0.5])[:2]
     return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' else cover(img,scale,fx,fy)
+_DUST={}
+def ambient(frame,f,seed,kind):
+    """Living texture over a photo so that it never looks frozen: film grain with a faint flicker ('grao'),
+    plus slow drifting dust in two layers ('poeira')."""
+    if kind not in ('grao','poeira'): return frame
+    g=np.empty((H//2,W//2),np.float32); cv2.randn(g,0,8.0)
+    frame=frame+cv2.resize(g,(W,H),interpolation=cv2.INTER_LINEAR)[:,:,None]
+    frame*=1+0.015*np.sin(f*0.83+seed)
+    if kind=='poeira':
+        if 'a' not in _DUST:
+            rng=np.random.default_rng(7); P=400
+            for name,n,blur in (('a',70,1.6),('b',35,3.2)):
+                c=np.zeros((H+P,W+P),np.float32)
+                for _ in range(n):
+                    cv2.circle(c,(int(rng.integers(0,W+P)),int(rng.integers(0,H+P))),int(rng.integers(1,4)),float(rng.integers(40,110)),-1)
+                _DUST[name]=cv2.GaussianBlur(c,(0,0),blur)
+        for name,vx,vy in (('a',0.55,0.22),('b',-0.3,0.4)):
+            x=int((f*vx+seed*53)%400); y=int((f*vy+seed*29)%400)
+            frame=frame+_DUST[name][y:y+H,x:x+W][:,:,None]
+    return frame
+def kenburns(bg,u,dirn,s=None):
+    """One photo in motion. Default: slow push-in with a sideways drift. With s['zoom']=='detalhe', the camera
+    travels to the point s['zp'] = [x, y] of the frame (0 to 1), e.g. a signature or one line of a newspaper."""
+    bh,bw=bg.shape[:2]
+    if s and s.get('zoom')=='detalhe':
+        px,py=(s.get('zp') or [0.5,0.5])[:2]; e=u*u*(3-2*u) if u<1 else 1.0; z=1+0.55*e; dx=(bw-W)/2; dy=(bh-H)/2
+        M=np.array([[z,0,-dx*z+px*W*(1-z)],[0,z,-dy*z+py*H*(1-z)]],np.float32)
+    else:
+        z=1+0.09*u; dx=(bw-W)/2+(bw-W)*0.25*(u-0.5)*dirn; dy=(bh-H)/2
+        M=np.array([[z,0,-(dx+W/2)*z+W/2],[0,z,-(dy+H/2)*z+H/2]],np.float32)
+    return cv2.warpAffine(bg,M,(W,H),flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_REPLICATE)
 def ld(p):
     o=cv2.imread(p,cv2.IMREAD_UNCHANGED).astype(np.float32)
     if o.shape[2]==3: o=np.dstack([o,np.full(o.shape[:2],255,np.float32)])
     return np.ascontiguousarray(o[:,:,:3]),np.ascontiguousarray(o[:,:,3]/255.0)
 def job(i):
     s=S[i]; p=P[i]; N=fr[i+1]-fr[i]; fade=int(0.35*FPS); xf=0.3
-    states=[ld(f'png/{i:02d}_{k}.png') for k in range(len(p['steps']))]
+    states=[ld(f'png/{i:02d}_{k}.png') for k in range(len(p['steps']))]; allst=[states]
     bg=None; clip=None; dark=(0.55 if s['t']=='title' else 0.85); src=find_bg(IMG,s['bg']) if s.get('bg') else None
     if is_video(src): clip=Clip(src,s.get('vin',0))
     elif src:
-        bg=framed(treat(cv2.imread(src),CORES,modo=s.get('fotoModo')),s).astype(np.float32)*dark; bh,bw=bg.shape[:2]
+        bg=framed(treat(cv2.imread(src),CORES,modo=s.get('fotoModo')),s).astype(np.float32)*dark
+        bgs=[bg]   # extra photos of the same scene ('fundos'): the image changes every few seconds while the narration goes on
+        for x in s.get('fundos') or []:
+            p2=find_bg(IMG,x['key'])
+            if p2 and not is_video(p2):
+                q=f'png/{i:02d}_f{len(allst)}_0.png'   # text states drawn with this photo's own caption and credit
+                allst.append([ld(f'png/{i:02d}_f{len(allst)}_{k}.png') for k in range(len(p['steps']))] if os.path.exists(q) else states)
+                bgs.append(framed(treat(cv2.imread(p2),CORES,modo=x.get('fotoModo')),x).astype(np.float32)*dark)
+        segN=N/len(bgs); XF=int(0.6*FPS)
     pr=subprocess.Popen(['ffmpeg','-loglevel','error','-y','-f','rawvideo','-pix_fmt','bgr24','-s',f'{W}x{H}','-r',str(FPS),'-i','-',
         '-c:v','libx264','-preset','veryfast','-crf','16','-pix_fmt','yuv420p',f'{OUT}/{i:02d}.mp4'],stdin=subprocess.PIPE)
     zin = (i%2==0)
@@ -101,10 +140,13 @@ def job(i):
             vf=clip.at(t)
             bgv=cover(treat(vf,CORES,modo=s.get('fotoModo')),1.0).astype(np.float32)*dark if vf is not None else np.zeros((H,W,3),np.float32)
             z=1+0.03*u; frame=cv2.warpAffine(bgv,np.array([[z,0,W/2*(1-z)],[0,z,H/2*(1-z)]],np.float32),(W,H),flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_REPLICATE); Mo=None
+            frame=ambient(frame,f,i,s.get('amb'))
         elif bg is not None:
-            z=1+0.07*u; dx=(bw-W)/2+(bw-W)*0.25*(u-0.5)*(1 if i%2 else -1); dy=(bh-H)/2
-            M=np.array([[z,0,-(dx+W/2)*z+W/2],[0,z,-(dy+H/2)*z+H/2]],np.float32)
-            frame=cv2.warpAffine(bg,M,(W,H),flags=cv2.INTER_LINEAR,borderMode=cv2.BORDER_REPLICATE); Mo=None
+            j=min(int(f/segN),len(bgs)-1); lf=f-j*segN; dj=1 if (i+j)%2 else -1
+            frame=kenburns(bgs[j],lf/max(segN-1,1),dj,s if j==0 else None)
+            if j>0 and lf<XF:   # cross-fade from the previous photo, which keeps moving
+                w=1-lf/XF; frame=frame*(1-w)+kenburns(bgs[j-1],1+lf/max(segN-1,1),-dj,s if j==1 else None)*w
+            frame=ambient(frame,f,i,s.get('amb')); Mo=None; states=allst[j]
         else:
             z=1+0.04*(u if zin else 1-u); Mo=np.array([[z,0,W/2*(1-z)],[0,z,H/2*(1-z)]],np.float32); frame=np.zeros((H,W,3),np.float32)
         r,a=comp(*states[k],Mo); frame=frame*(1-a)+r*a

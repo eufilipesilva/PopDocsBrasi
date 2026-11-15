@@ -77,6 +77,18 @@ class Video:
                         if s.get(k) or f.get(k): s[v] = s.get(k) or f.get(k)
                     if s['t'] != 'title': s.setdefault('cap', f.get('cap', ''))
                     s.setdefault('credit', f.get('credit', ''))
+                    if self.cfg.get('ambiente'): s['amb'] = self.cfg['ambiente']   # living texture over photos and background clips
+                    extra = []   # more photos in the same scene ('bgs'): each one framed and credited from the library
+                    for k2 in s.pop('bgs', None) or []:
+                        f2 = self.fotos.get(k2, {}); p2 = self.bgpath(k2)
+                        if not p2: print(f'  ! foto extra "{k2}" não encontrada em img/'); continue
+                        if p2.lower().endswith(('.mp4', '.webm', '.mov', '.m4v')): print(f'  ! "{k2}" é vídeo: fotos extras precisam ser imagens'); continue
+                        e = {'key': k2, 'hash': fhash(p2), 'cap': f2.get('cap', ''), 'credit': f2.get('credit', ''), 'date': f2.get('date', '')}   # each photo shows its own caption and credit
+                        if f2.get('modo') in ('pb', 'cor', 'tom'): e['fotoModo'] = f2['modo']
+                        for k, v in (('foco', 'fotoFoco'), ('enquadrar', 'fotoEnq'), ('recorte', 'fotoRecorte')):
+                            if f2.get(k): e[v] = f2[k]
+                        extra.append(e)
+                    if extra: s['fundos'] = extra
             out.append(s)
         return out
 
@@ -120,9 +132,10 @@ class Video:
                 asyncio.run(edge_tts.Communicate(s['n'], voice).save(mp3 + '.part')); os.replace(mp3 + '.part', mp3)
                 print(f'  voz de teste: cena {i}', flush=True)
             wav = self.w('aud', f'{i:02d}.wav')
-            if self.hashes.get(f'wav{i:02d}') != key or not os.path.exists(wav):
-                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
-                self.hashes[f'wav{i:02d}'] = key
+            wk = f'{key}@{self.ritmo():.3f}'
+            if self.hashes.get(f'wav{i:02d}') != wk or not os.path.exists(wav):
+                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, *self.tempo(), '-ac', '1', '-ar', str(SR), wav])
+                self.hashes[f'wav{i:02d}'] = wk
         self.save_hashes()
 
     # ---------- 1. narration ----------
@@ -141,10 +154,18 @@ class Video:
                 data = urllib.request.urlopen(r, timeout=180).read(); open(mp3 + '.part', 'wb').write(data); os.replace(mp3 + '.part', mp3)
                 print(f'  voz gerada: cena {i} ({len(s["n"])} caracteres)', flush=True)
             wav = self.w('aud', f'{i:02d}.wav')
-            if self.hashes.get(f'wav{i:02d}') != key or not os.path.exists(wav):
-                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, '-ac', '1', '-ar', str(SR), wav])
-                self.hashes[f'wav{i:02d}'] = key
+            wk = f'{key}@{self.ritmo():.3f}'
+            if self.hashes.get(f'wav{i:02d}') != wk or not os.path.exists(wav):
+                run(['ffmpeg', '-loglevel', 'error', '-y', '-i', mp3, *self.tempo(), '-ac', '1', '-ar', str(SR), wav])
+                self.hashes[f'wav{i:02d}'] = wk
         self.save_hashes()
+
+    def ritmo(self):
+        """Narration speed ('ritmo_voz' in video.json, 1.0 = as recorded). Applied when the cached audio is converted,
+        keeping the pitch, so changing it costs no credits."""
+        try: return min(1.5, max(0.8, float(self.cfg.get('ritmo_voz') or 1)))
+        except (TypeError, ValueError): return 1.0
+    def tempo(self): return ['-filter:a', f'atempo={self.ritmo():.3f}'] if abs(self.ritmo() - 1) > 0.004 else []
 
     # ---------- 2. timing plan + narration track ----------
     def plan(self):
@@ -260,7 +281,7 @@ class Video:
         vol = self.cfg.get('music_volume', 0.20)
         out = f"{self.V}/saidas/{self.out}.mp4"
         run(['ffmpeg', '-loglevel', 'error', '-y', '-i', self.w('video.mp4'), '-i', self.w('narr.wav'), '-i', self.w('music_bed.wav'), *(['-i', cites] if cites else []), '-filter_complex',
-             f"[1:a]aresample=48000,loudnorm=I=-16:TP=-1.5:LRA=11,aformat=channel_layouts=stereo,apad,asplit=2[n][sc];[2:a]volume={vol}[mu];"
+             f"[1:a]aresample=48000,loudnorm=I={float(self.cfg.get('lufs', -14))}:TP=-1.5:LRA=11,aformat=channel_layouts=stereo,apad,asplit=2[n][sc];[2:a]volume={vol}[mu];"
              "[mu][sc]sidechaincompress=threshold=0.02:ratio=5:attack=40:release=700:makeup=1[duck];"
              + ("[3:a]aformat=sample_rates=48000:channel_layouts=stereo,apad[ct];[n][duck][ct]amix=inputs=3:normalize=0:duration=first,alimiter=limit=0.95[a]" if cites else
                 "[n][duck]amix=inputs=2:normalize=0:duration=shortest,alimiter=limit=0.95[a]"),

@@ -12,7 +12,7 @@ Used by the Claude flow (ArtifactData batches) and by the local Studio (estudio_
 import json, os, sys, glob, shutil, time, tempfile
 
 META_KEYS = ('t', 'n', 'bg', 'dur', 'pre', 'post')
-VIDEO_EDIT = ('title', 'subtitle', 'titleKick', 'brand', 'archive', 'photoTag', 'endTitle', 'endNote', 'endCredits', 'music_volume', 'thumb', 'cores', 'music', 'musicas', 'checagem')
+VIDEO_EDIT = ('title', 'subtitle', 'titleKick', 'brand', 'archive', 'photoTag', 'endTitle', 'endNote', 'endCredits', 'music_volume', 'thumb', 'cores', 'music', 'musicas', 'checagem', 'ambiente', 'ritmo_voz', 'gancho')
 
 def jload(p, default=None):
     return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else default
@@ -78,7 +78,9 @@ def docs_to_files(V, vdoc, scene_docs, foto_docs):
     new_cfg = dict(cfg)
     for k in VIDEO_EDIT:
         if k in vdoc: new_cfg[k] = vdoc[k]
-    if not new_cfg.get('musicas'): new_cfg.pop('musicas', None)   # empty list = one track for the whole video
+    if not new_cfg.get('musicas'): new_cfg.pop('musicas', None)
+    if not new_cfg.get('ambiente'): new_cfg.pop('ambiente', None)
+    if abs(float(new_cfg.get('ritmo_voz') or 1) - 1) < 0.005: new_cfg.pop('ritmo_voz', None)   # empty list = one track for the whole video
     oS = old.get('scenes.json') or []; oT = old.get('transitions.json') or []
     S = [next((o for o in oS if o == x), None) or keep_order(x, oS[i] if i < len(oS) else None) for i, x in enumerate(S)]   # same key order as on disk
     T = [keep_order(t, oT[i] if i < len(oT) else {'from': 0, 'to': 0}) for i, t in enumerate(T)]

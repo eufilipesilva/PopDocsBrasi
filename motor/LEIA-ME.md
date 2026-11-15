@@ -124,3 +124,18 @@ Modos de renderização (também pela linha de comando):
 Mudar os créditos finais ou o título agora refaz só a cena de encerramento ou de abertura, e não o vídeo inteiro. Na primeira renderização depois desta atualização, todas as cenas são refeitas uma vez, porque a chave do cache mudou.
 
 A checagem do roteiro fica em `"checagem": {"url": "...", "ok": true}` no `video.json`. O Estúdio avisa antes de gerar a voz se ela não estiver marcada como conferida.
+
+
+## Ritmo (lições do vídeo de referência sobre o Diesel)
+
+O estudo está em `pesquisa/referencias/fatos-mecanicos-diesel.md`. O que virou recurso:
+
+- **Várias fotos na mesma cena.** No Estúdio, em Cenas → Fundo → "Mais fotos nesta cena". No `scenes.json` é o campo `"bgs": ["chave2", "chave3"]`. As fotos se revezam em partes iguais, com passagem suave, e cada uma mostra a própria legenda e o próprio crédito (da galeria).
+- **Aviso de ritmo.** O topo mostra de quanto em quanto tempo a imagem troca. Cenas em que a mesma imagem passa de 9 segundos ganham o selo "parada", aparecem no filtro "Paradas", na linha do tempo e nas pendências de Publicar. A referência troca a cada 5,6 s.
+- **Zoom no detalhe.** Em Fundo, marque "Zoom no detalhe" e clique no ponto. No `scenes.json`: `"zoom": "detalhe", "zp": [x, y]` (0 a 1, na tela).
+- **Ambiente.** Em Estilo: grão de filme, ou grão e poeira no ar, sobre fotos e vídeos de fundo. No `video.json`: `"ambiente": "grao"` ou `"poeira"`.
+- **Velocidade da narração.** Em Estilo → Voz. No `video.json`: `"ritmo_voz": 1.15`. Acelera o áudio em cache sem mudar o tom e sem gastar créditos.
+- **Gancho.** Lista de conferência dos dois primeiros minutos em Publicar (`"gancho"` no `video.json`).
+- **Volume.** A narração agora sai em -14 LUFS, o padrão do YouTube (`"lufs"` no `video.json` muda isso).
+
+Não entrou: imagem gerada por IA. O canal usa só material real com fonte, que é o que a referência não tem.

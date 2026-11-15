@@ -100,6 +100,15 @@ textarea{resize:vertical;min-height:70px;line-height:1.5}
 .tl .bar button.c1{background:color-mix(in srgb,var(--ac) 55%,var(--line2))}
 .tl .bar button.cap{background:var(--ink)}
 .tl .bar button.dirty{box-shadow:inset 0 -4px 0 var(--warn)}
+.tl .bar button.slow{box-shadow:inset 0 4px 0 var(--bad)}
+.tl .bar button.slow.dirty{box-shadow:inset 0 4px 0 var(--bad),inset 0 -4px 0 var(--warn)}
+.extras{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.extras .x{position:relative;width:112px}
+.extras .x img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:7px;display:block}
+.extras .x button{position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;border:0;background:rgba(0,0,0,.7);color:#fff;font-size:12px;line-height:1;padding:0}
+.extras .x small{display:block;font-size:10.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frm .out[data-zp]{cursor:crosshair}
+.frm .out i.zp{position:absolute;width:26px;height:26px;border:2px solid var(--ac);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 2px rgba(0,0,0,.6);pointer-events:none}
 .tl .bar button:hover{opacity:1;filter:brightness(1.15)}
 .tl .bar button[aria-current=true]{background:var(--ac);outline:2px solid var(--ac);outline-offset:1px}
 .tl .mus{display:flex;gap:1.5px;height:8px}
@@ -237,7 +246,9 @@ dialog .foot{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
 <script>
 const TYPES={headline:'Manchete',quote:'Citação',fact:'Fato',title:'Abertura',chapter:'Capítulo',timeline:'Linha do tempo',name:'Personagem',status:'Situação',cols:'Comparação',photo:'Foto',clip:'Trecho de vídeo',end:'Encerramento'};
 const FIELD={kicker:'Chapéu (linha de cima)',big:'Destaque',sub:'Texto de apoio',src:'Fonte na tela',q:'Citação',who:'Quem disse',outlet:'Veículo e data',head:'Manchete (como publicada)',mark:'Trecho grifado',url:'Site',num:'Número do capítulo',name:'Nome',role:'Descrição',cap:'Legenda da foto',date:'Data',credit:'Crédito da foto',ev:'Eventos (data · texto)',rows:'Linhas (assunto · situação)',cols:'Colunas (título · texto)',cur:'Evento em destaque (0 = primeiro)',dur:'Duração sem narração (s)',vin:'Início do vídeo de fundo (segundos)',tag:'Etiqueta do trecho',vol:'Volume do som do vídeo (1 = normal)'};
-const HIDE=['t','n','bg','foco','enquadrar','recorte','credits','som'];
+const HIDE=['t','n','bg','bgs','zoom','zp','foco','enquadrar','recorte','credits','som'];
+const GANCHO=[['forte','Abre com a cena mais forte, não com contexto'],['promessa','Promessa com número nos primeiros 30 segundos (ex.: “três hipóteses”)'],['pergunta','Deixa uma pergunta em aberto que só fecha no final'],['ritmo','No primeiro minuto, a imagem troca a cada 3 ou 4 segundos'],['inscricao','Pedido de inscrição antes dos 2 minutos']];
+const LENTA=9; // seconds one image may stay on screen before the scene is flagged
 const MODOS=[['','Igual ao vídeo'],['pb','Preto e branco'],['cor','Colorida'],['tom','Duas cores']];
 const KINDS={
  zoom:{l:'Avanço com escurecimento',d:.4,g:'clássica'},dissolve:{l:'Dissolver',d:1,g:'clássica'},cut:{l:'Corte seco',d:0,g:'clássica'},
@@ -301,19 +312,23 @@ const live=()=>st.scenes.filter(s=>!s.deleted).sort((a,b)=>a.order-b.order);
 const sceneRef=s=>`${vref()}/scenes/${s.id}`;
 const extra=()=>(st.video&&st.video.local)||null;
 /* Scene length: the real one after a render, otherwise an estimate from the narration (about 15 characters per second). */
-const est=s=>s.len||((s.n?s.n.length/15+1.2:Number((s.f||{}).dur)||5));
+const est=s=>s.len||((s.n?s.n.length/15/(Number((st.video||{}).ritmo_voz)||1)+1.2:Number((s.f||{}).dur)||5));
+const imgs=s=>s.bg?1+((s.f||{}).bgs||[]).length:1;
+const pace=s=>est(s)/imgs(s);
+const lenta=s=>s.t!=='clip'&&(st.fotos[s.bg]||{}).tipo!=='video'&&(s.bg?pace(s)>LENTA:est(s)>18);
 function timing(){const L=live();let t=0,real=true;const out=L.map(s=>{if(!s.len)real=false;const o={s,start:t,len:est(s)};t+=o.len;return o});return {items:out,total:t,real}}
 function chapters(L){const g=[];let cur={name:'Abertura',num:'',items:[]};L.forEach((s,i)=>{if(s.t==='chapter'){if(cur.items.length)g.push(cur);cur={name:(s.f||{}).name||'Capítulo',num:(s.f||{}).num||'',items:[]}}cur.items.push([s,i])});if(cur.items.length)g.push(cur);return g}
 const firstText=s=>{const f=s.f||{};return s.n||f.big||f.q||f.head||f.name||f.cap||TYPES[s.t]||''};
 const headText=s=>{const f=s.f||{};return f.big||f.q||f.head||f.name||f.cap||(s.t==='title'?(st.video||{}).title:'')||TYPES[s.t]||''};
 const thumbOf=s=>s.thumb?`<img src="${esc(s.thumb)}" alt="" loading="lazy">`:`<div class="noimg">SEM PRÉVIA</div>`;
 const segs=()=>{const v=st.video||{};return (v.musicas&&v.musicas.length?v.musicas:[{...(v.music||{}),cena:1}]).map(x=>({...x}))};
-function usage(){const u={};live().forEach((s,i)=>{if(s.bg)(u[s.bg]=u[s.bg]||[]).push(i+1)});return u}
+function usage(){const u={};live().forEach((s,i)=>{if(s.bg)[s.bg,...((s.f||{}).bgs||[])].forEach(k=>(u[k]=u[k]||[]).push(i+1))});return u}
 
 /* ---------- top bar ---------- */
 function stats(){
   const T=timing(), L=T.items, dirty=st.scenes.filter(s=>s.dirty&&!s.deleted).length, x=extra();
   let h=`<span class="stat">cenas <b>${L.length}</b></span><span class="stat">duração <b>${T.real?'':'≈ '}${fmt(T.total)}</b></span>`;
+  const troca=T.total/Math.max(1,L.reduce((a,o)=>a+imgs(o.s),0)); h+=`<span class="stat ${troca>8?'warn':''}" title="Tempo médio que cada imagem fica na tela. O vídeo de referência troca a cada 5,6 s.">imagem troca a cada <b>${troca.toFixed(1)}s</b></span>`;
   if(dirty) h+=`<span class="stat warn">alteradas <b>${dirty}</b></span>`;
   if(x) h+=x.narr.pendentes?`<span class="stat warn" title="Caracteres de narração que ainda não têm áudio gerado">voz a gerar <b>${nf(x.narr.pendentes)}</b></span>`:`<span class="stat ok">voz <b>pronta</b></span>`;
   $('#stats').innerHTML=st.video?h:'';
@@ -325,7 +340,7 @@ function stats(){
 /* ---------- scenes ---------- */
 function timeline(){
   const T=timing(); if(!T.items.length) return '';
-  let ci=-1; const bar=T.items.map((o,i)=>{if(o.s.t==='chapter')ci++;return `<button style="flex:${o.len.toFixed(2)}" class="${o.s.t==='chapter'?'cap':ci%2?'':'c1'}${o.s.dirty?' dirty':''}" data-go="${esc(o.s.id)}" aria-current="${o.s.id===st.sel}" title="${String(i+1).padStart(2,'0')} · ${esc(TYPES[o.s.t]||o.s.t)} · ${fmt(o.start)} · ${esc(firstText(o.s).slice(0,70))}" aria-label="Cena ${i+1}"></button>`}).join('');
+  let ci=-1; const bar=T.items.map((o,i)=>{if(o.s.t==='chapter')ci++;return `<button style="flex:${o.len.toFixed(2)}" class="${o.s.t==='chapter'?'cap':ci%2?'':'c1'}${o.s.dirty?' dirty':''}${lenta(o.s)?' slow':''}" data-go="${esc(o.s.id)}" aria-current="${o.s.id===st.sel}" title="${String(i+1).padStart(2,'0')} · ${esc(TYPES[o.s.t]||o.s.t)} · ${fmt(o.start)} · ${esc(firstText(o.s).slice(0,70))}" aria-label="Cena ${i+1}"></button>`}).join('');
   const G=chapters(T.items.map(o=>o.s)); const caps=G.map(g=>{const len=g.items.reduce((a,[s])=>a+est(s),0);return `<span style="flex:${len.toFixed(2)}">${esc(g.num?g.num+' · ':'')}${esc(g.name)}</span>`}).join('');
   const S=segs(); let mus='';
   if(S.length>1||S[0].file){const starts=S.map(x=>T.items[Math.max(0,(x.cena||1)-1)]?.start||0);mus=`<div class="mus" title="Trechos de música">${S.map((x,k)=>`<i style="flex:${Math.max(.01,((starts[k+1]??T.total)-starts[k])).toFixed(2)}" title="${esc((x.file||'').replace('musica/',''))}"></i>`).join('')}</div>`}
@@ -333,25 +348,25 @@ function timeline(){
 }
 function sceneMatch(s){
   if(st.q&&!JSON.stringify([s.n,s.f,s.bg]).toLowerCase().includes(st.q.toLowerCase())) return false;
-  return st.filt==='todas'||(st.filt==='alteradas'&&s.dirty)||(st.filt==='semfoto'&&!s.bg)||(st.filt==='semvoz'&&s.n&&extra()&&!s.audio);
+  return st.filt==='todas'||(st.filt==='alteradas'&&s.dirty)||(st.filt==='semfoto'&&!s.bg)||(st.filt==='lentas'&&lenta(s))||(st.filt==='semvoz'&&s.n&&extra()&&!s.audio);
 }
 function listHtml(){
   const L=live(), T=timing(), G=chapters(L), del=st.scenes.filter(s=>s.deleted); let h='';
   G.forEach(g=>{const it=g.items.filter(([s])=>sceneMatch(s)); if(!it.length) return;
     h+=`<div class="grp"><span>${esc(g.num?'Cap. '+g.num+' · ':'')}${esc(g.name)}</span><span>${fmt(g.items.reduce((a,[s])=>a+est(s),0))}</span></div>`;
-    it.forEach(([s,i])=>{h+=`<button class="sc" data-id="${esc(s.id)}" aria-current="${s.id===st.sel}">${thumbOf(s)}<div><div class="row1"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${esc(TYPES[s.t]||s.t)}</span><span>${fmt(T.items[i].start)}</span>${s.dirty?'<i class="dot" title="Alterada depois da última renderização"></i>':''}</div><div class="txt">${esc(firstText(s))}</div></div></button>`})});
+    it.forEach(([s,i])=>{h+=`<button class="sc" data-id="${esc(s.id)}" aria-current="${s.id===st.sel}">${thumbOf(s)}<div><div class="row1"><span class="num">${String(i+1).padStart(2,'0')}</span><span>${esc(TYPES[s.t]||s.t)}</span><span>${fmt(T.items[i].start)}</span>${s.dirty?'<i class="dot" title="Alterada depois da última renderização"></i>':''}${lenta(s)?`<span class="chip bad" title="A mesma imagem fica ${pace(s).toFixed(0)} s na tela">parada ${pace(s).toFixed(0)}s</span>`:''}</div><div class="txt">${esc(firstText(s))}</div></div></button>`})});
   if(del.length) h+=`<div class="grp"><span>Removidas</span></div>`+del.map(s=>`<button class="btn sm" data-restore="${esc(s.id)}">Restaurar “${esc(firstText(s).slice(0,26))}…”</button>`).join('');
   return h||'<div class="note" style="padding:14px">Nenhuma cena com este filtro.</div>';
 }
 function framing(k,f,scope){ // scope: 'foto' (library) or 'cena' (override in the current scene)
   if(!f||!f.thumb||f.thumbKind==='video') return '';
   const s=scope==='cena'?cur():null, sf=s&&s.f||{}, own=!!(s&&(sf.foco||sf.enquadrar));
-  const enq=own?sf.enquadrar:f.enquadrar, fo=(own?sf.foco:f.foco)||[.5,.5], whole=enq==='inteira', src=esc(f.thumb);
+  const enq=own?sf.enquadrar:f.enquadrar, fo=(own?sf.foco:f.foco)||[.5,.5], whole=enq==='inteira', src=esc(f.thumb), zd=s&&sf.zoom==='detalhe', zp=sf.zp||[.5,.5];
   return `<div class="frm" data-frm="${esc(k)}" data-scope="${scope}">
-   <figure><div class="out">${whole?`<img class="back" src="${src}" alt=""><img src="${src}" alt="" style="object-fit:contain;object-position:${fo[0]*100}% 50%">`:`<img src="${src}" alt="" style="object-fit:cover;object-position:${fo[0]*100}% ${fo[1]*100}%">`}</div>Como aparece no vídeo (o movimento de câmera entra na renderização)</figure>
+   <figure><div class="out" ${zd?'data-zp="1"':''}>${zd?`<i class="zp" style="left:${zp[0]*100}%;top:${zp[1]*100}%;z-index:2"></i>`:''}${whole?`<img class="back" src="${src}" alt=""><img src="${src}" alt="" style="object-fit:contain;object-position:${fo[0]*100}% 50%">`:`<img src="${src}" alt="" style="object-fit:cover;object-position:${fo[0]*100}% ${fo[1]*100}%">`}</div>${zd?'Clique aqui no detalhe para onde a câmera deve ir':'Como aparece no vídeo (o movimento de câmera entra na renderização)'}</figure>
    <figure><div class="map" data-map="1"><img src="${src}" alt="Foto inteira. Clique no ponto que deve ficar visível."><b style="left:${fo[0]*100}%;top:${fo[1]*100}%"></b></div>Clique no ponto da foto que deve ficar visível</figure></div>
    <div class="under"><div class="seg" role="group" aria-label="Enquadramento"><button data-enq="" aria-pressed="${!whole}">Preencher a tela</button><button data-enq="inteira" aria-pressed="${whole}">Foto inteira</button></div>
-   ${scope==='cena'?`<label style="display:flex;gap:6px;align-items:center"><input type="checkbox" data-own ${own?'checked':''}> Só nesta cena</label>`:''}
+   ${scope==='cena'?`<label style="display:flex;gap:6px;align-items:center"><input type="checkbox" data-own ${own?'checked':''}> Só nesta cena</label><label style="display:flex;gap:6px;align-items:center" title="A câmera viaja até um ponto da foto, como uma assinatura ou uma linha do jornal"><input type="checkbox" data-zoom ${zd?'checked':''}> Zoom no detalhe</label>`:''}
    <button class="btn sm ghost" data-frmreset>Voltar ao centro</button>${f.recorte?'<span class="chip">com recorte</span>':''}</div>`;
 }
 function media(f){return f.thumb?(f.thumbKind==='video'?`<video src="${esc(f.thumb)}#t=0.5" muted playsinline preload="metadata"></video>`:`<img src="${esc(f.thumb)}" alt="" loading="lazy">`):'<div class="noimg">AGUARDANDO DOWNLOAD</div>'}
@@ -364,6 +379,9 @@ function fieldInput(key,val){
   const long=String(val).length>60||['sub','q','head','role'].includes(key);
   return long?`<label class="f wide">${esc(lab)}<textarea data-k="${esc(key)}">${esc(val)}</textarea></label>`:`<label class="f">${esc(lab)}<input type="text" data-k="${esc(key)}" value="${esc(val)}"></label>`;
 }
+function extrasHtml(s){const B=(s.f||{}).bgs||[], p=pace(s);
+  return `<div class="h3" style="margin-top:6px">Mais fotos nesta cena<span class="chip ${p>LENTA?'bad':'ok'}">imagem troca a cada ${p.toFixed(1)}s</span></div><div class="extras">${B.map((k,i)=>{const f=st.fotos[k]||{};return `<div class="x">${f.thumb?`<img src="${esc(f.thumb)}" alt="">`:'<div class="noimg" style="aspect-ratio:16/9">?</div>'}<button data-xrm="${i}" aria-label="Tirar esta foto da cena">×</button><small>${esc(f.cap||k)}</small></div>`}).join('')}<button class="btn sm" id="xadd">+ Adicionar foto</button></div>
+  <div class="note">As fotos se revezam em partes iguais enquanto a narração segue, cada uma com a própria legenda e crédito. O vídeo de referência troca de imagem a cada 5 ou 6 segundos${p>LENTA?`; esta cena pede ${Math.ceil(est(s)/6)-imgs(s)} foto(s) a mais`:''}.</div>`}
 function cur(){const L=live();return L.find(x=>x.id===st.sel)||L[0]}
 function editor(){
   const L=live(), s=cur(); if(!s) return '<div class="empty">Este vídeo ainda não tem cenas.</div>';
@@ -376,14 +394,14 @@ function editor(){
     <div class="under">${s.audio?`<audio controls preload="none" src="${esc(s.audio)}"></audio><span class="chip ok">áudio pronto</span>`:s.n&&x?'<span class="chip warn">áudio ainda não gerado</span>':''}<span id="ncost">${s.n&&!s.audio&&x?`Gerar este trecho gasta cerca de ${(s.n||'').length} créditos da ElevenLabs.`:'Mudar o texto gera um áudio novo e gasta créditos. Vazio = cena só com música.'}</span></div></div>`;
   h+=`<div class="card"><h3>Texto na tela</h3><div class="fields" id="fields">${fk.map(x=>fieldInput(x,f[x])).join('')||'<div class="note">Este tipo de cena não tem texto editável aqui. Os textos da abertura e do encerramento ficam em Estilo.</div>'}</div></div>`;
   h+=`<div class="card" id="bgcard"><h3>Fundo<span class="sp"></span><button class="btn sm" id="pickBtn">${st.picker?'Fechar galeria':s.bg?'Trocar':'Escolher foto ou vídeo'}</button>${s.bg?'<button class="btn sm ghost" data-foto="">Tirar o fundo</button>':''}</h3>`;
-  if(st.picker){const u=usage(),E=Object.entries(st.fotos).filter(([k2,f2])=>!st.pq||(k2+' '+(f2.cap||'')).toLowerCase().includes(st.pq.toLowerCase())).sort();
-    h+=`<input type="search" id="pq" placeholder="Buscar na galeria deste vídeo" value="${esc(st.pq)}" aria-label="Buscar foto"><div class="fotos" id="picker">${E.map(([k2,f2])=>fotoCard(k2,f2,k2===s.bg,u[k2])).join('')||'<div class="note">Nada encontrado.</div>'}</div>`}
-  else if(s.bg){h+=foto?`<div class="under"><b style="color:var(--ink)">${esc(foto.cap||s.bg)}</b><span>${esc(foto.credit||'sem crédito')}</span>${foto.tipo==='video'?'<span class="chip ac">vídeo de fundo</span>':''}</div>${framing(s.bg,foto,'cena')||media(foto)}`:`<div class="note warn">A foto “${esc(s.bg)}” não está na galeria deste vídeo.</div>`}
+  if(st.picker){const u=usage(),E=Object.entries(st.fotos).filter(([k2,f2])=>(st.picker!=='add'||(f2.tipo!=='video'&&k2!==s.bg&&!((f.bgs||[]).includes(k2))))&&(!st.pq||(k2+' '+(f2.cap||'')).toLowerCase().includes(st.pq.toLowerCase()))).sort();
+    h+=`${st.picker==='add'?'<div class="note">Escolha a foto que entra depois das atuais nesta cena.</div>':''}<input type="search" id="pq" placeholder="Buscar na galeria deste vídeo" value="${esc(st.pq)}" aria-label="Buscar foto"><div class="fotos" id="picker">${E.map(([k2,f2])=>fotoCard(k2,f2,k2===s.bg,u[k2])).join('')||'<div class="note">Nada encontrado.</div>'}</div>`}
+  else if(s.bg){h+=foto?`<div class="under"><b style="color:var(--ink)">${esc(foto.cap||s.bg)}</b><span>${esc(foto.credit||'sem crédito')}</span>${foto.tipo==='video'?'<span class="chip ac">vídeo de fundo</span>':''}</div>${framing(s.bg,foto,'cena')||media(foto)}${foto.tipo==='video'?'':extrasHtml(s)}`:`<div class="note warn">A foto “${esc(s.bg)}” não está na galeria deste vídeo.</div>`}
   else h+='<div class="note">Sem foto: fundo na cor do vídeo, só com o texto.</div>';
   h+='</div>';
   if(k<L.length-1){
     const dur=t.dur??K.d;
-    h+=`<div class="card"><h3>Transição para a cena ${String(k+2).padStart(2,'0')}<span class="sp"></span><span class="chip">${esc(K.l)}</span></h3><div id="kinds">${GROUPS.map(([g,gl])=>`<div class="kgrp">${esc(gl)}</div><div class="kinds">${Object.entries(KINDS).filter(([,k3])=>k3.g===g).map(([id,k3])=>`<button class="kind" data-kind="${id}" aria-pressed="${id===t.kind}">${prev[id]?`<video src="${esc(prev[id])}#t=0.6" muted loop playsinline preload="none"></video>`:''}<div class="nm">${esc(k3.l)}</div></button>`).join('')}</div>`).join('')}</div>`;
+    h+=`<div class="card"><h3>Transição para a cena ${String(k+2).padStart(2,'0')}<span class="sp"></span><span class="chip">${esc(K.l)}</span></h3><div id="kinds">${GROUPS.map(([g,gl])=>`<div class="kgrp">${esc(gl)}</div><div class="kinds">${Object.entries(KINDS).filter(([,k3])=>k3.g===g).map(([id,k3])=>`<button class="kind" data-kind="${id}" aria-pressed="${id===t.kind}">${prev[id]?`<video src="${esc(prev[id])}#t=0.6" muted loop playsinline preload="metadata"></video>`:''}<div class="nm">${esc(k3.l)}</div></button>`).join('')}</div>`).join('')}</div>`;
     if(t.kind!=='cut') h+=`<label class="f">Duração<div class="range"><input type="range" id="tdur" min="0.2" max="3" step="0.1" value="${dur}"><output id="tdurOut">${Number(dur).toFixed(1)}s</output></div></label>`;
     if(K.p) h+=`<div class="fields" id="tparams">${Object.entries(K.p).map(([pk,pl])=>{const v=(t.params||{})[pk];return pk==='lines'?`<label class="f wide">${esc(pl)}<textarea data-p="lines">${esc((v||[]).join('\n'))}</textarea></label>`:`<label class="f">${esc(pl)}<input type="text" data-p="${pk}" value="${esc(v??'')}" placeholder="padrão"></label>`}).join('')}</div>`;
     h+=`<div class="note">Passe o mouse sobre uma transição para ver a prévia. Para trocar todas de uma vez, use os modelos em Estilo.</div></div>`;
@@ -393,7 +411,7 @@ function editor(){
 function viewCenas(){
   const sc=$('.list .scroll')?.scrollTop||0;
   M.innerHTML=timeline()+`<div class="desk"><aside class="list"><div class="tools"><input type="search" id="q" placeholder="Buscar no texto das cenas" value="${esc(st.q)}" aria-label="Buscar cenas">
-    <div class="seg" role="group" aria-label="Filtro">${[['todas','Todas'],['alteradas','Alteradas'],['semfoto','Sem foto'],...(extra()?[['semvoz','Sem voz']]:[])].map(([id,l])=>`<button data-filt="${id}" aria-pressed="${st.filt===id}">${l}</button>`).join('')}</div></div><div class="scroll" id="scroll">${listHtml()}</div></aside><section class="insp" id="ed">${editor()}</section></div>`;
+    <div class="seg" role="group" aria-label="Filtro">${[['todas','Todas'],['lentas','Paradas'],['alteradas','Alteradas'],['semfoto','Sem foto'],...(extra()?[['semvoz','Sem voz']]:[])].map(([id,l])=>`<button data-filt="${id}" aria-pressed="${st.filt===id}">${l}</button>`).join('')}</div></div><div class="scroll" id="scroll">${listHtml()}</div></aside><section class="insp" id="ed">${editor()}</section></div>`;
   $('#scroll').scrollTop=sc; bindEditor();
   M.onclick=async e=>{
     const go=e.target.closest('[data-go],.sc'); if(go){select(go.dataset.go||go.dataset.id,!!go.dataset.go);return}
@@ -431,19 +449,25 @@ function bindEditor(){
 async function edClick(e){
   const s=cur(); if(!s) return; const ref=sceneRef(s);
   if(await frmClick(e)) return;
-  const fo=e.target.closest('[data-foto]'); if(fo&&fo.closest('#bgcard')){const bg=fo.dataset.foto; s.bg=bg; st.picker=false; const d={bg}, f={...(s.f||{})}; delete f.foco; delete f.enquadrar;
+  if(e.target.closest('#xadd')){st.picker='add'; rerenderEditor(); return}
+  const xr=e.target.closest('[data-xrm]'); if(xr){const f={...(s.f||{})}; f.bgs=(f.bgs||[]).filter((_,i)=>i!=xr.dataset.xrm); if(!f.bgs.length) delete f.bgs; s.f=f; await save(ref,{f},'Foto tirada da cena'); rerenderEditor(); $('#scroll').innerHTML=listHtml(); return}
+  const fo=e.target.closest('[data-foto]'); if(fo&&fo.closest('#bgcard')&&st.picker==='add'){const f={...(s.f||{})}; f.bgs=[...(f.bgs||[]),fo.dataset.foto]; s.f=f; st.picker=false; await save(ref,{f},'Foto adicionada à cena'); rerenderEditor(); $('#scroll').innerHTML=listHtml(); return}
+  if(fo&&fo.closest('#bgcard')){const bg=fo.dataset.foto; s.bg=bg; st.picker=false; const d={bg}, f={...(s.f||{})}; delete f.foco; delete f.enquadrar; delete f.zoom; delete f.zp; if(!bg) delete f.bgs;
     if(bg&&(st.fotos[bg]||{}).tipo==='video'&&!('vin' in f)) f.vin=0; s.f=f; d.f=f;
     await save(ref,d,bg?'Fundo trocado':'Fundo removido'); rerenderEditor(); return}
   if(e.target.closest('#pickBtn')){st.picker=!st.picker; rerenderEditor(); return}
   const kd=e.target.closest('[data-kind]'); if(kd){const kind=kd.dataset.kind, t={kind,dur:KINDS[kind].d,params:{}}; s.trans=t; await save(ref,{trans:t},'Transição: '+KINDS[kind].l); rerenderEditor(); return}
   const act=e.target.closest('[data-act]'); if(act) sceneAct(act.dataset.act,s);
 }
-function edChange(e){ if(e.target.matches('[data-own]')){const s=cur(), f={...(s.f||{})}, lib=st.fotos[s.bg]||{};
+function edChange(e){
+  if(e.target.matches('[data-zoom]')){const s=cur(), f={...(s.f||{})}; if(e.target.checked){f.zoom='detalhe';f.zp=f.zp||[.5,.5]} else {delete f.zoom;delete f.zp} s.f=f; save(sceneRef(s),{f},e.target.checked?'Zoom no detalhe ligado: clique no ponto':'Zoom no detalhe desligado'); rerenderEditor(); return}
+  if(e.target.matches('[data-own]')){const s=cur(), f={...(s.f||{})}, lib=st.fotos[s.bg]||{};
   if(e.target.checked){f.enquadrar=lib.enquadrar||'';f.foco=lib.foco||[.5,.5]} else {delete f.foco;delete f.enquadrar}
   s.f=f; save(sceneRef(s),{f},e.target.checked?'Enquadramento só desta cena':'Voltou ao enquadramento da galeria'); rerenderEditor()} }
 /* Framing clicks, shared by the scene inspector and the media library. Returns true when it handled the event. */
 async function frmClick(e){
   const box=e.target.closest('.card')?.querySelector('[data-frm]'); if(!box) return false;
+  const zpEl=e.target.closest('[data-zp]'); if(zpEl&&box.dataset.scope==='cena'){const s=cur(), r=zpEl.getBoundingClientRect(); s.f={...(s.f||{}),zoom:'detalhe',zp:[+((e.clientX-r.left)/r.width).toFixed(3),+((e.clientY-r.top)/r.height).toFixed(3)]}; await save(sceneRef(s),{f:s.f},'Ponto do zoom salvo'); rerenderEditor(); return true}
   const map=e.target.closest('[data-map]'), enq=e.target.closest('[data-enq]'), rst=e.target.closest('[data-frmreset]'); if(!map&&!enq&&!rst) return false;
   const k=box.dataset.frm, lib=st.fotos[k]||{}, s=box.dataset.scope==='cena'?cur():null, own=s&&((s.f||{}).foco||(s.f||{}).enquadrar!==undefined&&(s.f||{}).enquadrar!==null&&'enquadrar' in (s.f||{}));
   const curv=own?{enquadrar:s.f.enquadrar,foco:s.f.foco}:{enquadrar:lib.enquadrar,foco:lib.foco}; const nv={enquadrar:curv.enquadrar||'',foco:curv.foco||[.5,.5]};
@@ -527,16 +551,20 @@ function viewEstilo(){
     <div class="pals" id="pals">${Object.entries(PALETAS).map(([n,p])=>`<button class="pal" data-pal="${esc(n)}" aria-pressed="${palOf(c)===n}">${mock(p)}<span>${esc(n)}</span></button>`).join('')}</div>
     <details><summary class="note" style="cursor:pointer">Ajustar cores à mão</summary><div class="fields" id="cf" style="margin-top:10px">${CFIELDS.map(([k,l])=>`<label class="f">${esc(l)}<span class="color"><input type="color" data-c="${k}" value="${esc(c[k])}" aria-label="${esc(l)}"><input type="text" data-ch="${k}" value="${esc(c[k])}" maxlength="7" aria-label="${esc(l)} em hexadecimal"></span></label>`).join('')}
      <label class="f">Fotos<select data-c="fotos">${FOTOMODOS.map(([k,l])=>`<option value="${k}" ${c.fotos===k?'selected':''}>${esc(l)}</option>`).join('')}</select></label></div></details></div>
+   <div class="card"><h3>Ambiente sobre as fotos</h3><div class="note">Uma textura viva para a foto nunca parecer congelada. Vale para todas as cenas com foto ou vídeo de fundo e redesenha essas cenas na próxima renderização.</div>
+    <div class="seg" role="group" aria-label="Ambiente">${[['','Nenhum'],['grao','Grão de filme'],['poeira','Grão e poeira no ar']].map(([id,l])=>`<button data-amb="${id}" aria-pressed="${(v.ambiente||'')===id}">${l}</button>`).join('')}</div></div>
    <div class="card"><h3>Modelo de transições</h3><div class="note">Aplica uma regra a todas as passagens de cena de uma vez. Depois você ainda pode trocar cada uma em Cenas. Hoje: ${Object.entries(cnt).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`${n}× ${(KINDS[k]||{l:k}).l.toLowerCase()}`).join(', ')||'nenhuma'}.</div>
     <div class="rmodes">${Object.entries(PRESETS).map(([id,p])=>`<div class="rmode"><b>${esc(p.l)}</b><p>${esc(p.d)}</p><button class="btn sm" data-preset="${id}">Aplicar a todas</button></div>`).join('')}</div></div>
    <div class="card"><h3>Textos fixos</h3><div class="fields" id="vf">${VFIELDS.map(([k,l])=>{const long=String(v[k]||'').length>60||k==='endCredits'||k==='endNote';return `<label class="f ${long?'wide':''}">${esc(l)}${long?`<textarea data-v="${k}">${esc(v[k]||'')}</textarea>`:`<input type="text" data-v="${k}" value="${esc(v[k]||'')}">`}</label>`}).join('')}</div><div class="note">Mudar os créditos ou a nota final refaz só a cena de encerramento.</div></div>
    <div class="card"><h3>Thumbnail</h3><div class="hero">${v.thumbUrl?`<img src="${esc(v.thumbUrl)}" alt="Thumbnail atual">`:'<div class="noimg">A THUMBNAIL APARECE DEPOIS DA RENDERIZAÇÃO</div>'}<div class="fields" id="tf">${TFIELDS.map(([k,l])=>`<label class="f">${esc(l)}<input type="text" data-t="${k}" value="${esc(th[k]||'')}" ${k==='photo'?'list="fotokeys"':''}></label>`).join('')}<datalist id="fotokeys">${Object.keys(st.fotos).sort().map(k=>`<option value="${esc(k)}">`).join('')}</datalist></div></div></div>
-   <div class="card"><h3>Voz</h3><div class="under"><span class="chip">${esc(v.voice_name||v.voice_id||'não definida')}</span><span>${esc(v.voice_model||'')}</span></div><div class="note">A voz é definida no video.json. Trocar de voz gera todos os áudios de novo (cerca de ${nf((extra()||{narr:{total:live().reduce((a,s)=>a+(s.n||'').length,0)}}).narr.total)} créditos), então decida antes com a versão de teste.</div></div></div>`;
+   <div class="card"><h3>Voz</h3><label class="f">Velocidade da narração<div class="range"><input type="range" id="ritmo" min="0.9" max="1.3" step="0.01" value="${v.ritmo_voz||1}"><output id="ritmoOut">${Math.round((v.ritmo_voz||1)*100)}%</output></div></label><div class="note">Acelera o áudio já gravado sem mudar o tom e sem gastar créditos. A nossa voz fala cerca de 120 palavras por minuto; o vídeo de referência, 166. Entre 110% e 120% já aproxima. Teste na versão de teste antes.</div><div class="under"><span class="chip">${esc(v.voice_name||v.voice_id||'não definida')}</span><span>${esc(v.voice_model||'')}</span></div><div class="note">A voz é definida no video.json. Trocar de voz gera todos os áudios de novo (cerca de ${nf((extra()||{narr:{total:live().reduce((a,s)=>a+(s.n||'').length,0)}}).narr.total)} créditos), então decida antes com a versão de teste.</div></div></div>`;
   const setC=(c2,msg)=>{st.video={...st.video,cores:c2};later('c',()=>save(vref(),{cores:c2},msg||'Cores salvas'),300)};
-  M.onclick=async e=>{const b=e.target.closest('[data-pal]'); if(b){await save(vref(),{cores:{...PALETAS[b.dataset.pal]}},'Paleta: '+b.dataset.pal); st.video={...st.video,cores:{...PALETAS[b.dataset.pal]}}; viewEstilo(); return}
+  M.onclick=async e=>{const am=e.target.closest('[data-amb]'); if(am){st.video={...st.video,ambiente:am.dataset.amb}; await save(vref(),{ambiente:am.dataset.amb},'Ambiente salvo'); viewEstilo(); return}
+    const b=e.target.closest('[data-pal]'); if(b){await save(vref(),{cores:{...PALETAS[b.dataset.pal]}},'Paleta: '+b.dataset.pal); st.video={...st.video,cores:{...PALETAS[b.dataset.pal]}}; viewEstilo(); return}
     const p=e.target.closest('[data-preset]'); if(p) ask(`Aplicar o modelo “${PRESETS[p.dataset.preset].l}”?`,`As ${L.length-1} transições deste vídeo serão trocadas. As cenas não são redesenhadas, só as passagens.`,'Aplicar',()=>applyPreset(p.dataset.preset))};
   M.onchange=null;
   M.oninput=e=>{const i=e.target;
+    if(i.id==='ritmo'){$('#ritmoOut').textContent=Math.round(i.value*100)+'%'; later('rv',()=>{st.video={...st.video,ritmo_voz:Number(i.value)};save(vref(),{ritmo_voz:Number(i.value)},'Velocidade salva');stats()});return}
     if(i.dataset.v){later('v',()=>{const d={};$$('#vf [data-v]').forEach(x=>d[x.dataset.v]=x.value);st.video={...st.video,...d};save(vref(),d)});return}
     if(i.dataset.t){later('t',()=>{const d={...(st.video.thumb||{})};$$('#tf [data-t]').forEach(x=>d[x.dataset.t]=x.value);save(vref(),{thumb:d})});return}
     const k=i.dataset.c||i.dataset.ch; if(!k) return; let val=i.value.trim();
@@ -554,6 +582,8 @@ function problems(){
   if(x&&x.narr.pendentes) P.push({id:'voz',lv:'warn',t:`${nf(x.narr.pendentes)} caracteres de narração ainda sem áudio`,d:`${x.narr.cenas} cenas. Gerar gasta cerca de ${nf(x.narr.pendentes)} créditos da ElevenLabs. Use a versão de teste antes.`});
   const semc=Object.keys(u).filter(k=>st.fotos[k]&&(!st.fotos[k].credit||!st.fotos[k].license)); if(semc.length) P.push({id:'credito',lv:'bad',t:`${semc.length} foto(s) em cena sem crédito ou licença`,d:semc.slice(0,8).join(', ')});
   const falt=Object.keys(u).filter(k=>!st.fotos[k]||!st.fotos[k].thumb); if(falt.length) P.push({id:'faltam',lv:'bad',t:`${falt.length} fundo(s) usados em cena ainda não baixados`,d:falt.slice(0,8).join(', ')});
+  const par=L.filter(lenta); if(par.length) P.push({id:'ritmo',lv:'warn',t:`${par.length} cena(s) com a imagem parada por mais de ${LENTA} segundos`,d:'Em Cenas, use o filtro “Paradas” e adicione mais fotos a cada uma. O vídeo de referência troca de imagem a cada 5,6 s.'});
+  const g=v.gancho||{}, gf=GANCHO.filter(([k])=>!g[k]).length; if(gf) P.push({id:'gancho',lv:'warn',t:`Gancho: ${gf} de ${GANCHO.length} itens por conferir`,d:'Os dois primeiros minutos decidem se a pessoa fica. Confira a lista abaixo.'});
   const dirty=st.scenes.filter(s=>s.dirty&&!s.deleted).length;
   if(x&&!x.saidas.video) P.push({id:'render',lv:'warn',t:'O vídeo final ainda não foi renderizado',d:'Faça primeiro a versão de teste, confira, e só então a final.'});
   else if(dirty) P.push({id:'render',lv:'warn',t:`${dirty} cena(s) mudaram depois da última renderização`,d:'Renderize de novo para o vídeo refletir as edições. Só o que mudou é refeito.'});
@@ -569,6 +599,7 @@ function viewPublicar(){
    <div class="card"><h3>Pronto para publicar?<span class="sp"></span><span class="chip ${P.length?'warn':'ok'}">${P.length?P.length+' pendência(s)':'tudo certo'}</span></h3><div class="check">${P.map(p=>`<div class="ck ${p.lv}"><div class="st">!</div><div><b>${esc(p.t)}</b><span>${esc(p.d)}</span></div></div>`).join('')}${okItems.map(([t,d])=>`<div class="ck ok"><div class="st">✓</div><div><b>${esc(t)}</b><span>${esc(d)}</span></div></div>`).join('')}</div></div>
    <div class="card"><h3>Checagem do roteiro</h3><div class="fields"><label class="f wide">Link da planilha de checagem frase a frase<input type="url" id="ckurl" value="${esc(ck.url||'')}" placeholder="https://…"></label></div>
     <div class="under"><label style="display:flex;gap:8px;align-items:center;color:var(--ink);font-weight:500"><input type="checkbox" id="ckok" ${ck.ok?'checked':''}> Conferi frase por frase e o roteiro está aprovado</label>${ck.url?`<a href="${esc(ck.url)}" target="_blank" rel="noopener">Abrir a planilha</a>`:''}${ck.em?`<span>marcado em ${esc(new Date(ck.em).toLocaleDateString('pt-BR'))}</span>`:''}</div></div>
+   <div class="card"><h3>Gancho: os dois primeiros minutos</h3><div class="note">Lições do vídeo de referência (188 mil visualizações num canal de 15,6 mil inscritos).</div>${GANCHO.map(([k,l])=>`<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" data-gancho="${k}" ${(v.gancho||{})[k]?'checked':''}> ${esc(l)}</label>`).join('')}</div>
    <div class="card"><h3>Renderizar</h3>${LOCAL?`<div class="rmodes">
      <div class="rmode"><b>1 · Versão de teste</b><p>Voz sintética grátis, sem gastar créditos. Serve para conferir ritmo, fotos, música e transições. Sai como ${esc(st.slug)}-TESTE.mp4.</p><button class="btn" data-render="teste">Gerar versão de teste</button></div>
      <div class="rmode"><b>2 · Vídeo final</b><p>Voz da ElevenLabs. ${x&&x.narr.pendentes?`Vai gerar ${nf(x.narr.pendentes)} caracteres de narração (cerca de ${nf(x.narr.pendentes)} créditos).`:'A narração já está pronta: não gasta créditos.'} Só refaz o que mudou.</p><button class="btn primary" data-render="final">Renderizar vídeo final</button></div>
@@ -578,7 +609,8 @@ function viewPublicar(){
    <div class="card"><h3>Capítulos<span class="sp"></span><button class="btn sm" data-copy="caps">Copiar</button></h3><pre class="mono" id="caps">${esc(capitulos())}</pre><div class="note">${T.real?'Tempos da última renderização.':'Tempos estimados. Ficam exatos depois de renderizar.'} Cole na descrição para o YouTube criar os capítulos.</div></div></div></div>`;
   const putCk=d=>{const c={...(st.video.checagem||{}),...d}; st.video={...st.video,checagem:c}; return save(vref(),{checagem:c},'Checagem salva')};
   M.oninput=e=>{ if(e.target.id==='ckurl') later('ck',()=>putCk({url:e.target.value.trim()})); if(e.target.id==='yt'&&LOCAL) later('yt',async()=>{try{await LOCAL.youtube(st.slug,e.target.value);st.video.local.youtube=e.target.value;toast('Texto do YouTube salvo');stats()}catch(err){toast('Não salvou: '+err.message)}},900) };
-  M.onchange=async e=>{ if(e.target.id==='ckok'){await putCk({ok:e.target.checked,em:e.target.checked?new Date().toISOString():''}); viewPublicar(); stats()} };
+  M.onchange=async e=>{ if(e.target.dataset.gancho){const g={...(st.video.gancho||{}),[e.target.dataset.gancho]:e.target.checked}; st.video={...st.video,gancho:g}; await save(vref(),{gancho:g},'Gancho salvo'); viewPublicar(); stats(); return}
+    if(e.target.id==='ckok'){await putCk({ok:e.target.checked,em:e.target.checked?new Date().toISOString():''}); viewPublicar(); stats()} };
   M.onclick=e=>{const c=e.target.closest('[data-copy]'); if(c){const el=$('#'+c.dataset.copy); navigator.clipboard.writeText(el.value??el.textContent).then(()=>toast('Copiado'),()=>toast('Não consegui copiar'));return}
     const r=e.target.closest('[data-render]'); if(r) askRender(r.dataset.render)};
 }
