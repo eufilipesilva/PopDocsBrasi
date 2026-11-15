@@ -208,7 +208,11 @@ class Video:
         todo = [i for i, k in enumerate(keys) if self.hashes.get(f'clip{i:02d}') != k or not os.path.exists(self.w('clips', f'{i:02d}.mp4'))]
         if todo:
             run([sys.executable, 'clips.py', *map(str, todo)], cwd=self.WD)
-            for i in todo: self.hashes[f'clip{i:02d}'] = keys[i]
+            for i in todo:
+                self.hashes[f'clip{i:02d}'] = keys[i]
+                # a re-rendered clip always invalidates its transition segment and its neighbours',
+                # even when the key is the same (e.g. the clips folder was deleted by hand)
+                for j in (i - 1, i, i + 1): self.hashes.pop(f'tr{j:02d}', None)
             self.save_hashes()
         print(f'  {len(todo)} clipes renderizados')
 
