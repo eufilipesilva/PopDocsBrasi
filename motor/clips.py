@@ -71,7 +71,7 @@ def framed(img,s,scale=1.12):
     rc=s.get('fotoRecorte')
     if rc:
         h,w=img.shape[:2]; img=img[int(h*rc[1]):int(h*rc[3]),int(w*rc[0]):int(w*rc[2])]
-    h,w=img.shape[:2]; fx,fy=(s.get('fotoFoco') or [0.5,0.3 if h>w*1.15 else 0.5])[:2]   # upright portrait never framed by hand: faces are usually near the top
+    h,w=img.shape[:2]; fx,fy=(s.get('fotoFoco') or [0.5,0.3 if h>w*1.4 else 0.5])[:2]   # tall full-length portrait never framed by hand: the face is near the top (not for covers and documents, which are less tall)
     auto=s.get('auto') and not s.get('fotoEnq') and not s.get('fotoFoco') and h>w*1.15   # extra photo, upright, never framed by hand: show it whole
     return whole(img,scale,fx) if s.get('fotoEnq')=='inteira' or auto else cover(img,scale,fx,fy)
 def ambient(frame,f,seed,kind):
