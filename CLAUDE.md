@@ -16,6 +16,7 @@ Canal de documentários no YouTube, estilo dossiê, sem rosto. Um vídeo por sem
 - A chave da ElevenLabs fica só em `~/.popdocs/elevenlabs.txt`. Nunca pedir, mostrar ou copiar a chave.
 - Narração gasta créditos: só mudar o texto `n` de uma cena quando for preciso.
 - Orçamento do canal: R$200 por mês.
+- O número do arquivo (ex.: "Arquivo Nº 004") é só de uso interno: nunca aparece no vídeo, na thumbnail, no título ou na descrição.
 
 ## Sincronização
 
