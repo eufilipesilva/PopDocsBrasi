@@ -1,0 +1,39 @@
+{
+ "slug": "kellogg",
+ "archive": "ARQUIVO Nº 005",
+ "brand": "POPDOCSBRASIL · DOSSIÊ JOHN HARVEY KELLOGG",
+ "titleKick": "POPDOCSBRASIL · DOSSIÊ",
+ "title": "O MÉDICO DE BRANCO",
+ "subtitle": "A história real por trás do Sucrilhos",
+ "endTitle": "Fontes no comentário fixado",
+ "endNote": "Pesquisa concluída em 10/11/2026. Lendas e teorias foram tratadas como teorias, não como fatos; as fontes estão no comentário fixado.",
+ "endCredits": "Música: “Constance”, Kevin MacLeod (incompetech.com), licença CC BY 4.0. Fotos: Wikimedia Commons e acervos públicos, créditos na tela e na descrição.",
+ "photoTag": "IMAGEM DE ARQUIVO",
+ "voice_id": "4XmhZ74tBbUVCXIYNMMo",
+ "voice_model": "eleven_multilingual_v2",
+ "voice_settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "music": {
+  "file": "musica/constance.mp3",
+  "credit": "“Constance”, Kevin MacLeod (incompetech.com), CC BY 4.0"
+ },
+ "music_volume": 0.2,
+ "thumb": {
+  "band": "A história real do Sucrilhos",
+  "face_x": 0.5,
+  "kick": "DOSSIÊ · KELLOGG'S",
+  "photo": "jhk_bain",
+  "size": 150,
+  "stamp": "A LENDA É FALSA",
+  "title": "O MÉDICO DE BRANCO"
+ },
+ "cores": {
+  "fundo": "#15110C",
+  "texto": "#F1E6D0",
+  "destaque": "#D2A85A",
+  "papel": "#E9DFC8",
+  "fotos": "tom"
+ }
+}

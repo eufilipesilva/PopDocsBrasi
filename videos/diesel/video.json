@@ -1,0 +1,61 @@
+{
+ "slug": "diesel",
+ "archive": "ARQUIVO Nº 001",
+ "brand": "POPDOCSBRASIL · DOSSIÊ RUDOLF DIESEL",
+ "titleKick": "POPDOCSBRASIL · DOSSIÊ",
+ "title": "SUMIU NO MAR",
+ "subtitle": "O mistério de Rudolf Diesel, o homem por trás do combustível",
+ "endTitle": "Fontes no comentário fixado",
+ "endNote": "Pesquisa concluída em 10/11/2026. Suicídio, assassinato e fuga foram tratados como hipóteses: nenhuma tem prova documental.",
+ "endCredits": "Música: “Gnossienne nº 1” e “Gymnopédie nº 1”, Erik Satie, gravações de La Pianista e Robin Alciatore (Musopen), domínio público, via Wikimedia Commons. Fotos e filmes de arquivo: Wikimedia Commons, créditos na tela e na descrição.",
+ "photoTag": "IMAGEM DE ARQUIVO",
+ "voice_id": "UNBIyLbtFB9k7FKW8wJv",
+ "voice_model": "eleven_multilingual_v2",
+ "voice_settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "music": {
+  "file": "musica/gnossienne1.mp3",
+  "credit": "“Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · domínio público"
+ },
+ "music_volume": 0.2,
+ "cores": {
+  "fundo": "#15110C",
+  "texto": "#F1E6D0",
+  "destaque": "#D2A85A",
+  "papel": "#E9DFC8",
+  "fotos": "tom"
+ },
+ "thumb": {
+  "band": "O PAI DO DIESEL",
+  "face_x": 0.5,
+  "kick": "DOSSIÊ · RUDOLF DIESEL",
+  "photo": "diesel_retrato",
+  "size": 130,
+  "stamp": "DESAPARECIDO · 1913",
+  "title": "SUMIU NO MAR"
+ },
+ "musicas": [
+  {
+   "file": "musica/gnossienne1.mp3",
+   "credit": "“Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · domínio público",
+   "cena": 1
+  },
+  {
+   "file": "musica/gymnopedie1.mp3",
+   "credit": "“Gymnopédie nº 1”, Erik Satie (1888), gravação Robin Alciatore (Musopen) · Wikimedia Commons · domínio público",
+   "cena": 7
+  },
+  {
+   "file": "musica/gnossienne1.mp3",
+   "credit": "“Gnossienne nº 1”, Erik Satie (1890), gravação La Pianista · Wikimedia Commons · domínio público",
+   "cena": 34
+  },
+  {
+   "file": "musica/gymnopedie1.mp3",
+   "credit": "“Gymnopédie nº 1”, Erik Satie (1888), gravação Robin Alciatore (Musopen) · Wikimedia Commons · domínio público",
+   "cena": 55
+  }
+ ]
+}

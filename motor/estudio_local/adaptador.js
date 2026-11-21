@@ -1,7 +1,6 @@
 /* Estúdio PopDocs local: gives the page the same `claude.use('db')` / `claude.use('assets')` it has inside Claude,
    backed by the local server (servidor.py) and the video folders on disk. */
 (function(){
-  window.POPDOCS_LOCAL = true;
   const KINDS = ['zoom','dissolve','cut','scan','paper','flash','whip','glitch','redact','stamp','terminal','decrypt','cctv','shred','pixel','static','enhance','vhs','fingerprint','search'];
   const S = {};            // slug -> {video, scenes:{id:doc}, fotos:{key:doc}}
   const L = {};            // path -> [listeners]
@@ -50,39 +49,22 @@
     if (kind === 'video') st.video = replace ? data : Object.assign({}, st.video, data);
     else { const box = st[kind]; box[key] = replace ? data : Object.assign({}, box[key] || {}, data); }
     emit(slug);
-    if (kind === 'video' && data.render && data.render.requested) return startRender(slug);
     scheduleSave(slug);
   }
-  async function startRender(slug){
-    clearTimeout(saveT[slug]);
-    const st = S[slug];
+  function panel(text){ window.dispatchEvent(new CustomEvent('popdocs-erro', {detail: text})); }
+  async function flush(slug){   // write pending edits to disk now
+    clearTimeout(saveT[slug]); const st = S[slug]; if (!st) return;
     await api('/api/video/' + slug + '/salvar', {video: st.video, scenes: st.scenes, fotos: st.fotos});
-    await api('/api/render/' + slug, {});
-    panel('Renderização iniciada…');
-    const tick = async () => {
-      let r; try { r = await api('/api/render/' + slug); } catch (e) { return setTimeout(tick, 4000); }
-      const m = Math.floor(r.elapsed / 60), s = String(r.elapsed % 60).padStart(2, '0');
-      if (r.running) { panel(`Renderizando… ${m}:${s}\n\n${r.log || ''}`); return setTimeout(tick, 3000); }
-      if (r.ok) panel(`Vídeo pronto em ${m}:${s}.`, false, r.video);
-      else panel(`A renderização parou com erro. Últimas linhas:\n\n${r.log || ''}`, true);
-      await load(slug, true); emit(slug);
-    };
-    setTimeout(tick, 1500);
   }
-  function panel(text, err, video){
-    let el = document.getElementById('localPanel');
-    if (!el) {
-      el = document.createElement('div'); el.id = 'localPanel';
-      el.style.cssText = 'position:fixed;left:16px;bottom:16px;max-width:min(560px,calc(100vw - 32px));max-height:50vh;overflow:auto;background:#16181A;border:1px solid #2C3034;border-radius:4px;padding:12px 14px;font:12px/1.5 "IBM Plex Mono",monospace;color:#ECEDEE;z-index:30;white-space:pre-wrap';
-      document.body.appendChild(el);
-    }
-    el.style.borderColor = err ? '#D8423A' : '#2C3034';
-    el.innerHTML = '';
-    const close = document.createElement('button'); close.textContent = 'fechar'; close.style.cssText = 'float:right;background:none;border:1px solid #2C3034;color:#8E959B;border-radius:3px;padding:2px 8px;cursor:pointer';
-    close.onclick = () => el.remove(); el.appendChild(close);
-    const t = document.createElement('div'); t.textContent = text; el.appendChild(t);
-    if (video) { const a = document.createElement('a'); a.href = video; a.target = '_blank'; a.textContent = 'Abrir o vídeo'; a.style.cssText = 'color:#ECEDEE;display:inline-block;margin-top:8px'; el.appendChild(a); }
-  }
+  // What only the local Studio can do. The page (estudio.html) draws the interface for it.
+  window.POPDOCS_LOCAL = {
+    render: async (slug, modo, cena) => { await flush(slug); return api('/api/render/' + slug, {modo: modo || 'final', cena}); },
+    status: slug => api('/api/render/' + slug),
+    cancel: slug => api('/api/render/' + slug + '/cancelar', {}),
+    checagem: (slug, itens) => api('/api/video/' + slug + '/checagem', {itens}),
+    youtube: (slug, texto) => api('/api/video/' + slug + '/youtube', {texto}),
+    reload: async slug => { await flush(slug); await load(slug, true); emit(slug); }
+  };
   const db = {
     doc(path){
       const [col, id] = split(path);

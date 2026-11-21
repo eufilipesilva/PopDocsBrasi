@@ -19,7 +19,7 @@ PALETAS = {  # ready-made color sets offered in the Studio
  'Ouro e preto': {'fundo': '#0D0B08', 'texto': '#F4EFE6', 'destaque': '#E2B13C', 'papel': '#EFE8DA', 'fotos': 'pb'},
  'Cores originais': {'fundo': '#0B0B0B', 'texto': '#F2F2F2', 'destaque': '#F2F2F2', 'papel': '#EDEDED', 'fotos': 'cor'}}
 def default_transitions(S, cfg):
-    ch = [i for i, s in enumerate(S) if s['t'] == 'chapter']; arch = cfg.get('archive', 'ARQUIVO Nº 001')
+    ch = [i for i, s in enumerate(S) if s['t'] == 'chapter']; arch = 'ARQUIVO CONFIDENCIAL'   # the archive number is internal only: never shown in the video
     slug = cfg.get('slug', 'dossie'); T = []
     for i in range(len(S) - 1):
         a, b = S[i]['t'], S[i + 1]['t']; k, P = 'zoom', {}

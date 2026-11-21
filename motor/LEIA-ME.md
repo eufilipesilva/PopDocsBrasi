@@ -103,3 +103,42 @@ Requisitos do ambiente: `ffmpeg`, Python com `opencv-python numpy soundfile`, No
 - Música: fonte pública ou licença livre, com crédito no encerramento e na descrição.
 - Voz: ElevenLabs, voz Leonardo (`4XmhZ74tBbUVCXIYNMMo`), modelo `eleven_multilingual_v2`.
 - Estilo visual: preto e branco, Oswald + IBM Plex Mono, ar de dossiê.
+
+
+## Estúdio 2 (novembro de 2026)
+
+O Estúdio foi refeito a partir das lições do Diesel e do vídeo da NVIDIA. As seções ficam na barra lateral:
+
+- **Cenas.** Linha do tempo clicável com capítulos e trechos de música, busca e filtros (alteradas, sem foto, sem voz), player do áudio de cada cena e setas do teclado para andar entre cenas. O enquadramento da foto é feito na tela: clique no ponto que deve ficar visível e escolha "Preencher a tela" ou "Foto inteira". Marque "Só nesta cena" para não mudar as outras cenas que usam a mesma foto.
+- **Mídia.** Galeria com filtros (em cena, sem uso, vídeos, sem crédito) e edição de legenda, crédito, licença, cor e enquadramento.
+- **Música.** Trechos de música por cena (`musicas` no `video.json`), com a lista dos arquivos da pasta `musica/` e o volume.
+- **Estilo.** Paletas lado a lado, modelos de transição aplicados a todas as cenas ("Documentário", "Sóbrio", "Dossiê tecnológico"), textos fixos e thumbnail.
+- **Publicar.** Lista de pendências (checagem frase a frase, narração ainda sem áudio e quantos créditos vai gastar, fotos sem crédito, vídeo desatualizado), texto do YouTube, capítulos com os tempos e os três modos de renderização.
+
+Modos de renderização (também pela linha de comando):
+
+- `python motor/motor.py videos/<slug> --teste`: versão de teste com voz sintética grátis (pacote `edge-tts`), sem gastar créditos. Sai como `saidas/<slug>-TESTE.mp4` e usa pasta de trabalho e cache de voz próprios (`audio-teste/`, fora do Git). A voz de teste é `pt-BR-AntonioNeural`; troque com `"voz_teste"` no `video.json`.
+- `python motor/motor.py videos/<slug>`: vídeo final, com a voz da ElevenLabs.
+- `python motor/motor.py videos/<slug> celular`: cópia leve em 540p do vídeo final, `saidas/<slug>-celular.mp4`.
+
+Mudar os créditos finais ou o título agora refaz só a cena de encerramento ou de abertura, e não o vídeo inteiro. Na primeira renderização depois desta atualização, todas as cenas são refeitas uma vez, porque a chave do cache mudou.
+
+A checagem do roteiro fica em `"checagem": {"url": "...", "ok": true}` no `video.json`. O Estúdio avisa antes de gerar a voz se ela não estiver marcada como conferida.
+
+
+## Ritmo (lições do vídeo de referência sobre o Diesel)
+
+O estudo está em `pesquisa/referencias/fatos-mecanicos-diesel.md`. O que virou recurso:
+
+- **Várias fotos na mesma cena.** No Estúdio, em Cenas → Fundo → "Mais fotos nesta cena". No `scenes.json` é o campo `"bgs": ["chave2", "chave3"]`. As fotos se revezam em partes iguais, com passagem suave, e cada uma mostra a própria legenda e o próprio crédito (da galeria).
+- **Aviso de ritmo.** O topo mostra de quanto em quanto tempo a imagem troca. Cenas em que a mesma imagem passa de 9 segundos ganham o selo "parada", aparecem no filtro "Paradas", na linha do tempo e nas pendências de Publicar. A referência troca a cada 5,6 s.
+- **Zoom no detalhe.** Em Fundo, marque "Zoom no detalhe" e clique no ponto. No `scenes.json`: `"zoom": "detalhe", "zp": [x, y]` (0 a 1, na tela).
+- **Ambiente.** Em Estilo: luz viva (a luz oscila como num projetor antigo) sobre fotos e vídeos de fundo, ou nenhum. No `video.json`: `"ambiente": "luz"`. Grão de filme e poeira foram retirados (o grão dobrava o arquivo; a poeira ficava artificial).
+- **Prévia de uma cena.** Em Cenas, "Ver prévia desta cena" monta só aquela cena em menos de um minuto, em 540p, com a voz que já existir (final em cache, senão a de teste, senão muda). Sem transições, legendas nem música, e sem gastar créditos. Linha de comando: `python motor/motor.py videos/<slug> cena 12`.
+- **Circuito.** A primeira tela mostra as cinco etapas do vídeo (pesquisa, apuração, imagens e vídeos, edição, publicação), o que falta em cada uma e em qual o vídeo está.
+- **Apuração.** Lista cada frase da narração com fonte, links, trecho original, situação e a caixa "Conferido". Fica em `videos/<slug>/checagem.json`. A frase é casada pelo texto: se a narração de uma cena muda, a frase volta para "sem checagem". Enquanto houver frase por conferir, Publicar avisa antes de gerar a voz.
+- A velocidade da narração (acelerar o áudio gravado) foi retirada: deixava a voz robótica.
+- **Gancho.** Lista de conferência dos dois primeiros minutos em Publicar (`"gancho"` no `video.json`).
+- **Volume.** A narração agora sai em -14 LUFS, o padrão do YouTube (`"lufs"` no `video.json` muda isso).
+
+Não entrou: imagem gerada por IA. O canal usa só material real com fonte, que é o que a referência não tem.

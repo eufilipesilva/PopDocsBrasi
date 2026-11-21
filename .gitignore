@@ -1,6 +1,6 @@
 # Arquivos grandes ou gerados: ficam fora do repositório
 videos/*/saidas/*.mp4
-videos/*/saidas/renderizacao.log
+videos/*/saidas/*.log
 videos/*/historico/
 videos/*/img/*.upload
 motor/node_modules/
@@ -11,3 +11,7 @@ Thumbs.db
 # Nunca versionar chaves
 elevenlabs.txt
 .popdocs/
+# Brutos de arquivo (originais longos) e voz de teste: ficam só no PC
+videos/*/arquivo-videos/
+videos/*/audio-teste/
+videos/*/previas/cena-*.mp4
