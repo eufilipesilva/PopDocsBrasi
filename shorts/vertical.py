@@ -5,7 +5,7 @@ D = os.path.abspath(sys.argv[1]); HERE = os.path.dirname(os.path.abspath(__file_
 cfg = json.load(open(f'{D}/video.json')); slug = cfg['slug']; ep = json.load(open(f'{D}/short.json'))
 SUF = sys.argv[2] if len(sys.argv) > 2 else ''   # '-TESTE' para o rascunho com voz grátis
 src = f'{D}/saidas/{slug}{SUF}.mp4'; WD = f'{D}/vert'; os.makedirs(WD, exist_ok=True)
-END = 3.5   # segundos do cartão final
+END = float(os.environ.get('FIM', 3.5))   # segundos de cartão final depois da narração; FIM=0 põe o cartão sobre os últimos 4 s (para caber em 60 s)
 dur = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', src], capture_output=True, text=True).stdout)
 def t(s): h, m, rest = s.split(':'); sec, ms = rest.split(','); return int(h) * 3600 + int(m) * 60 + int(sec) + int(ms) / 1000
 subs = []
@@ -43,7 +43,7 @@ for k, (a, b, s) in enumerate(subs):
     ins += ['-loop', '1', '-i', f'{WD}/sub{k:02d}.png']
     fc += f";[{cur}][{n}:v]overlay=0:{VY + 608 + 60}:enable='between(t,{a:.3f},{min(b, dur):.3f})'[s{k}]"; cur = f's{k}'; n += 1
 ins += ['-loop', '1', '-i', f'{WD}/fim.png']
-fc += f";[{cur}][{n}:v]overlay=0:0:enable='gte(t,{dur:.3f})',format=yuv420p[v]"
+fc += f";[{cur}][{n}:v]overlay=0:0:enable='gte(t,{(dur if END >= 3 else dur + END - 4):.3f})',format=yuv420p[v]"
 fc += f";[0:a]apad=pad_dur={END}[au]"
 os.makedirs(f'{D}/saidas', exist_ok=True); out = os.path.join(os.path.dirname(HERE), 'videos', ep['episodio'], 'saidas', 'shorts', f'{slug}{SUF}-vertical.mp4')
 os.makedirs(os.path.dirname(out), exist_ok=True)
