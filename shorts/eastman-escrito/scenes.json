@@ -1,0 +1,75 @@
+[
+ {
+  "t": "photo",
+  "bg": "church_foto",
+  "cap": "Eastman com uma câmera, fotografado por Fred Church",
+  "credit": "Foto: Frederick Church / Wikimedia Commons · domínio público",
+  "date": "1890",
+  "n": "Em 1877, um bancário de 23 anos compra uma câmera para uma viagem que nunca fez."
+ },
+ {
+  "t": "quote",
+  "q": "Quase a carga de um cavalo.",
+  "who": "GEORGE EASTMAN, SOBRE O EQUIPAMENTO DE PLACAS ÚMIDAS",
+  "src": "Ackerman, 1930 · tradução livre",
+  "n": "Cada foto exigia uma placa de vidro preparada na hora.",
+  "bg": "barba_kodak"
+ },
+ {
+  "t": "fact",
+  "kicker": "TENTATIVAS ATÉ ACERTAR",
+  "big": "469",
+  "sub": "fracassos antes de refazer a fórmula. Muitas noites, ele dormiu numa rede dentro da fábrica.",
+  "src": "Ackerman, 1930",
+  "n": "Ele fica obcecado: experiências na cozinha da mãe, 469 tentativas fracassadas, noites dormindo na fábrica.",
+  "bg": "catalogo1886"
+ },
+ {
+  "t": "name",
+  "name": "George Eastman",
+  "role": "Fundador da Kodak · 1854-1932. Doou quase toda a fortuna ainda em vida.",
+  "src": "Museu George Eastman",
+  "bg": "retrato1890",
+  "n": "O nome dele: George Eastman. O nome que ele inventou: Kodak."
+ },
+ {
+  "t": "quote",
+  "q": "Você aperta o botão, nós fazemos o resto.",
+  "who": "SLOGAN DA KODAK",
+  "src": "Anúncio de 1889 · tradução livre",
+  "n": "Você aperta o botão, nós fazemos o resto.",
+  "bg": "slogan1889"
+ },
+ {
+  "t": "name",
+  "name": "Steven Sasson",
+  "role": "Engenheiro da Kodak. Em 1975, montou uma câmera de 3,6 kg que fazia imagens de 100 por 100 pixels.",
+  "src": "National Inventors Hall of Fame",
+  "bg": "sasson",
+  "n": "Em 1975, um engenheiro da Kodak monta a primeira câmera digital autônoma do mundo."
+ },
+ {
+  "t": "quote",
+  "q": "Que bonitinho. Mas não conte para ninguém.",
+  "who": "A DIRETORIA DA KODAK, SEGUNDO STEVEN SASSON",
+  "src": "The New York Times, 2008, via Forbes · tradução livre",
+  "n": "Segundo ele, a diretoria respondeu: que bonitinho, mas não conte para ninguém."
+ },
+ {
+  "t": "headline",
+  "outlet": "ABC NEWS · 19 DE JANEIRO DE 2012",
+  "head": "Kodak files for Chapter 11 bankruptcy",
+  "mark": "Chapter 11 bankruptcy",
+  "url": "abcnews.com",
+  "bg": "kodak_tower_noite",
+  "n": "Em 2012, a Kodak pede recuperação judicial."
+ },
+ {
+  "t": "photo",
+  "bg": "camera_pessoal",
+  "cap": "Câmera pessoal de Eastman, no museu",
+  "credit": "Foto: Arnob Alam / Wikimedia Commons · CC BY-SA 2.0",
+  "date": "2009",
+  "n": "Como a empresa que inventou a câmera digital foi parar na recuperação judicial? A resposta é mais complicada do que parece, e está no dossiê completo, no canal."
+ }
+]

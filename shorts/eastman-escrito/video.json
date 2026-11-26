@@ -1,0 +1,44 @@
+{
+ "slug": "eastman-escrito",
+ "archive": "ARQUIVO Nº 004",
+ "brand": "POPDOCSBRASIL · DOSSIÊ GEORGE EASTMAN",
+ "titleKick": "POPDOCSBRASIL · DOSSIÊ",
+ "title": "APERTE O BOTÃO",
+ "subtitle": "George Eastman, o homem por trás da Kodak",
+ "endTitle": "Fontes no comentário fixado",
+ "endNote": "Pesquisa concluída em 10/11/2026. Teorias e versões em disputa foram tratadas como teorias. Se você precisa de ajuda, ligue 188 (CVV) ou acesse cvv.org.br",
+ "endCredits": "Música: “Constance”, Kevin MacLeod (incompetech.com), licença CC BY 4.0. Fotos e filmes de arquivo: Wikimedia Commons (domínio público e licenças livres), créditos na tela e na descrição.",
+ "photoTag": "IMAGEM DE ARQUIVO",
+ "voice_id": "4XmhZ74tBbUVCXIYNMMo",
+ "voice_model": "eleven_multilingual_v2",
+ "voice_settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75
+ },
+ "music": {
+  "file": "musica/constance.mp3",
+  "credit": "“Constance”, Kevin MacLeod (incompetech.com), CC BY 4.0"
+ },
+ "music_volume": 0.2,
+ "thumb": {
+  "band": "O homem por trás da Kodak",
+  "face_x": 0.5,
+  "kick": "DOSSIÊ · KODAK",
+  "photo": "retrato1890",
+  "size": 150,
+  "stamp": "ARQUIVO ABERTO",
+  "title": "APERTE O BOTÃO"
+ },
+ "cores": {
+  "fundo": "#15110C",
+  "texto": "#F1E6D0",
+  "destaque": "#D2A85A",
+  "papel": "#E9DFC8",
+  "fotos": "tom"
+ },
+ "checagem": {
+  "url": "https://claude.ai/artifact/VpxHMjydddSVpVm21k6YGQ",
+  "ok": false
+ },
+ "renderedAt": "2026-11-20T21:08:45"
+}

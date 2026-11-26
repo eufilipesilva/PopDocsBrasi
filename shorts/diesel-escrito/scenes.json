@@ -1,0 +1,66 @@
+[
+ {
+  "t": "name",
+  "name": "Rudolf Diesel",
+  "role": "Engenheiro alemão nascido em Paris, inventor do motor a diesel · 1858–1913",
+  "src": "Britannica",
+  "n": "Setembro de 1913. Rudolf Diesel, o nome que está em quase todo posto do Brasil, embarca num navio rumo à Inglaterra.",
+  "bg": "diesel_retrato"
+ },
+ {
+  "t": "quote",
+  "q": "Ao chegar o navio a Harwich, às 6 da manhã, ele tinha desaparecido.",
+  "who": "THE NEW YORK TIMES",
+  "src": "01/10/1913, via Smithsonian · tradução livre",
+  "n": "Pede para ser acordado às seis e quinze. Nunca foi acordado. A cama estava intacta.",
+  "bg": "harwich_cais"
+ },
+ {
+  "t": "photo",
+  "cap": "Estuário do Escalda (Westerschelde), Holanda (foto de 2008)",
+  "date": "2008",
+  "credit": "Foto: LimoWreck / Wikimedia Commons · CC BY-SA 3.0",
+  "n": "Dias depois, um corpo é avistado no mar, e o filho reconhece os objetos dos bolsos.",
+  "bg": "escalda"
+ },
+ {
+  "t": "headline",
+  "outlet": "THE NEW YORK TIMES · 15 DE OUTUBRO DE 1913",
+  "head": "Diesel Was Bankrupt: He Owed $375,000 — Tangible Assets Only About $10,000",
+  "mark": "Diesel Was Bankrupt",
+  "url": "citada pela Time, 2015",
+  "n": "Logo vem outra notícia: Diesel estava falido."
+ },
+ {
+  "t": "fact",
+  "kicker": "HIPÓTESE 1",
+  "big": "SUICÍDIO",
+  "sub": "Versão da família e da maioria dos biógrafos.",
+  "src": "NDB, 1957 · Grosser, 1978",
+  "n": "A maioria dos biógrafos fala em suicídio.",
+  "bg": "diesel_sfa2"
+ },
+ {
+  "t": "headline",
+  "outlet": "HIPÓTESE 2 · MANCHETE DE 1913",
+  "head": "Inventor Thrown Into the Sea to Stop Sale of Patents to British Government",
+  "mark": "Thrown Into the Sea",
+  "url": "citada pela History.com",
+  "n": "Mas uma manchete da época dizia que ele foi jogado ao mar."
+ },
+ {
+  "t": "name",
+  "name": "Douglas Brunt",
+  "role": "Escritor americano · autor de The Mysterious Case of Rudolf Diesel (2023)",
+  "src": "Simon & Schuster · InsideHook",
+  "n": "E há quem defenda que ele foi levado em segredo para o Canadá. Nenhuma prova confirmou essas versões."
+ },
+ {
+  "t": "photo",
+  "cap": "Pedra do Memorial Rudolf Diesel em Augsburg, doada pela japonesa Yanmar (foto de 2005)",
+  "date": "2005",
+  "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+  "n": "Desespero, crime ou fuga? No dossiê completo, eu mostro o que cada versão tem de prova, e o que não tem. Assiste no canal e me diz qual é a sua.",
+  "bg": "memorial_augsburg"
+ }
+]

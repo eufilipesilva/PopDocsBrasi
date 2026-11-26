@@ -1,0 +1,366 @@
+{
+ "retrato1890": {
+  "cap": "George Eastman em retrato do estúdio Nadar, Paris",
+  "credit": "Foto: Paul Nadar / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_founder_of_Eastman_Kodak_Company.jpg",
+  "file": "File:George Eastman founder of Eastman Kodak Company.jpg"
+ },
+ "retrato_nadar": {
+  "cap": "Eastman fotografado pelo Atelier Nadar",
+  "credit": "Foto: Atelier Nadar / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Atelier_Nadar_-_George_Eastman_(1854-1932),_Erfinder_und_Begr%C3%BCnder_des_Photokonzerns_Eastman_Kodak_(Zeno_Fotografie).jpg",
+  "file": "File:Atelier Nadar - George Eastman (1854-1932), Erfinder und Begründer des Photokonzerns Eastman Kodak (Zeno Fotografie).jpg"
+ },
+ "gallia": {
+  "cap": "Eastman a bordo do navio S.S. Gallia, foto feita com uma câmera Kodak",
+  "credit": "Foto: Frederick Church / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_onboard_the_S.S._Gallia.jpg",
+  "file": "File:George Eastman onboard the S.S. Gallia.jpg"
+ },
+ "church_foto": {
+  "cap": "Eastman com uma câmera, fotografado por Fred Church",
+  "credit": "Foto: Frederick Church / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Church,_Fred_-_George_Eastman_beim_Photographieren_(Zeno_Fotografie).jpg",
+  "file": "File:Church, Fred - George Eastman beim Photographieren (Zeno Fotografie).jpg"
+ },
+ "bain1915": {
+  "cap": "George Eastman, foto da agência Bain (Biblioteca do Congresso)",
+  "credit": "Foto: Bain News Service (Biblioteca do Congresso) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Geo._Eastman_LCCN2014709448.jpg",
+  "file": "File:Geo. Eastman LCCN2014709448.jpg"
+ },
+ "cor1914": {
+  "cap": "Retrato colorido de Eastman",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Colorpictureofgeorgeastman.jpg",
+  "file": "File:Colorpictureofgeorgeastman.jpg"
+ },
+ "mesa": {
+  "cap": "Eastman à mesa de trabalho",
+  "credit": "Foto: Dudley Hoyt / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_at_his_desk.jpg",
+  "file": "File:George Eastman at his desk.jpg",
+  "foco": [
+   0.57,
+   0.198
+  ]
+ },
+ "eastman_velho": {
+  "cap": "Retrato de George Eastman",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_eastman.jpg",
+  "file": "File:George eastman.jpg",
+  "foco": [
+   0.37,
+   0.25
+  ]
+ },
+ "time1924": {
+  "cap": "Eastman na capa da revista Time",
+  "credit": "Foto: capa da revista TIME / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:TIMEMagazine31Mar1924.jpg",
+  "file": "File:TIMEMagazine31Mar1924.jpg",
+  "enquadrar": "inteira"
+ },
+ "charge1923": {
+  "cap": "Charge de Edwin Marcus sobre Eastman no New York Times",
+  "credit": "Foto: Edwin Marcus (The New York Times) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:GeorgeEastman-EdwinMarcus.png",
+  "file": "File:GeorgeEastman-EdwinMarcus.png"
+ },
+ "kodacolor_edison": {
+  "cap": "Eastman filma Thomas Edison no lançamento do filme Kodacolor, em sua casa",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_filming_Thomas_Edison_with_a_hand-held_motion_picture_camera_during_the_introduction_of_Kodacolor_film_at_Eastman_(f3baab2ae6624e3e8507e38e995ac8e5).jpg",
+  "file": "File:George Eastman filming Thomas Edison with a hand-held motion picture camera during the introduction of Kodacolor film at Eastman (f3baab2ae6624e3e8507e38e995ac8e5).jpg"
+ },
+ "kodacolor_grupo": {
+  "cap": "Edison, Adolph Ochs, o general Pershing e Eastman na casa de Eastman",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison,_Adolf_S._Ochs,_General_Pershing,_and_George_Eastman_at_the_introduction_of_Kodacolor_film_at_Eastman%27s_home._(5b95054e245f4849a0b9b242478ca0d8).jpg",
+  "file": "File:Thomas Edison, Adolf S. Ochs, General Pershing, and George Eastman at the introduction of Kodacolor film at Eastman's home. (5b95054e245f4849a0b9b242478ca0d8).jpg"
+ },
+ "edison_rolo": {
+  "cap": "Ilustração: Eastman entrega a Edison um rolo de filme de cinema",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastman_giving_Edison_the_first_roll_of_movie_film_01.png",
+  "file": "File:Eastman giving Edison the first roll of movie film 01.png"
+ },
+ "casa_infancia": {
+  "cap": "Casa de infância de Eastman (preservada no Genesee Country Village)",
+  "credit": "Foto: DanielPenfield / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:GeorgeEastmanBoyhoodHome.JPG",
+  "file": "File:GeorgeEastmanBoyhoodHome.JPG"
+ },
+ "waterville": {
+  "cap": "Waterville, Nova York, cidade natal de Eastman",
+  "credit": "Foto: Doug Kerr / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Waterville_Triangle_Historic_District_Sep_09.jpg",
+  "file": "File:Waterville Triangle Historic District Sep 09.jpg"
+ },
+ "banco1880": {
+  "cap": "Banco de Poupança de Rochester, onde Eastman trabalhou",
+  "credit": "Foto: George H. Monroe / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rochester_Savings_Bank,_Rochester,_N.Y,_by_Monroe,_George_H._--(Hibbard),_1851-1916.jpg",
+  "file": "File:Rochester Savings Bank, Rochester, N.Y, by Monroe, George H. --(Hibbard), 1851-1916.jpg"
+ },
+ "main_st": {
+  "cap": "Main Street, Rochester",
+  "credit": "Foto: Detroit Publishing Co. / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Main_Street,_Rochester,_N.Y._det.4a18812a.jpg",
+  "file": "File:Main Street, Rochester, N.Y. det.4a18812a.jpg"
+ },
+ "east_ave": {
+  "cap": "East Avenue, a avenida da mansão de Eastman",
+  "credit": "Foto: Detroit Publishing Company (NYPL) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:East_Avenue,_Rochester,_N._Y_(NYPL_b12647398-69861).tiff",
+  "file": "File:East Avenue, Rochester, N. Y (NYPL b12647398-69861).tiff"
+ },
+ "kodak_sede1900": {
+  "cap": "Sede e fábrica da Eastman Kodak na State Street, Rochester",
+  "credit": "Foto: Detroit Publishing Company / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastman_Kodak_HQ_1900.jpg",
+  "file": "File:Eastman Kodak HQ 1900.jpg"
+ },
+ "catalogo1886": {
+  "cap": "Catálogo da Eastman Dry Plate and Film Company",
+  "credit": "Foto: Internet Archive Book Images / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Illustrated_catalogue_and_price_list_of_the_Eastman_Dry_Plate_and_Film_Company,_Rochester,_New_York_(1886)_(14596646939).jpg",
+  "file": "File:Illustrated catalogue and price list of the Eastman Dry Plate and Film Company, Rochester, New York (1886) (14596646939).jpg"
+ },
+ "patente": {
+  "cap": "Patente americana 388.850 da câmera Kodak",
+  "credit": "Foto: patente de George Eastman (USPTO) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_patent_no_388,850.png",
+  "file": "File:George Eastman patent no 388,850.png"
+ },
+ "slogan1889": {
+  "cap": "\"Você aperta o botão, nós fazemos o resto\"",
+  "credit": "Foto: anúncio da Kodak, autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:You_press_the_button,_we_do_the_rest_(Kodak).jpg",
+  "file": "File:You press the button, we do the rest (Kodak).jpg"
+ },
+ "pocket1895": {
+  "cap": "Anúncio da Pocket Kodak na revista McClure's",
+  "credit": "Foto: autor desconhecido (anúncio da Kodak) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Pocket_Kodak_Camera_Advert_(McClure%27s_Magazine_1895).jpg",
+  "file": "File:Pocket Kodak Camera Advert (McClure's Magazine 1895).jpg"
+ },
+ "brownie_mao": {
+  "cap": "Mão segurando uma Brownie",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Hand_holding_a_1904_Kodak_Brownie_camera.jpg",
+  "file": "File:Hand holding a 1904 Kodak Brownie camera.jpg"
+ },
+ "brownie1905": {
+  "cap": "Anúncio da Brownie",
+  "credit": "Foto: anúncio da Kodak / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Brownie_Camera_(1905)_(ADVERT_428).jpeg",
+  "file": "File:Brownie Camera (1905) (ADVERT 428).jpeg"
+ },
+ "kodak_girl": {
+  "cap": "A \"Kodak Girl\", personagem dos anúncios",
+  "credit": "Foto: Biblioteca do Congresso / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:No._28_-_The_Kodak_Girl_LCCN2003654748.jpg",
+  "file": "File:No. 28 - The Kodak Girl LCCN2003654748.jpg"
+ },
+ "barba_kodak": {
+  "cap": "Homem de cartola com uma das primeiras câmeras Kodak",
+  "credit": "Foto: Biblioteca do Congresso / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Bearded_man_in_high_hat_carrying_early_Kodak_camera_LCCN2016651827.jpg",
+  "file": "File:Bearded man in high hat carrying early Kodak camera LCCN2016651827.jpg"
+ },
+ "enfermaria1927": {
+  "cap": "Enfermaria da fábrica Eastman Kodak (Arquivo Nacional dos EUA)",
+  "credit": "Foto: Arquivo Nacional dos EUA (NARA) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastman_Kodak_Company._Rendering_first_aid._Woman%27s_arm_being_bandaged_by_nurse._-_NARA_-_522862.tif",
+  "file": "File:Eastman Kodak Company. Rendering first aid. Woman's arm being bandaged by nurse. - NARA - 522862.tif"
+ },
+ "mit_domo": {
+  "cap": "Edifícios Maclaurin e o Grande Domo do MIT, pagos pelo \"senhor Smith\"",
+  "credit": "Foto: Beyond My Ken / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:2017_Maclaurin_Buildings_(MIT_Building_10)_and_Great_Dome.jpg",
+  "file": "File:2017 Maclaurin Buildings (MIT Building 10) and Great Dome.jpg"
+ },
+ "mit_placa": {
+  "cap": "Placa em homenagem a Eastman no MIT",
+  "credit": "Foto: Peacearth / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_plaque_in_MIT_Building_6_(1).jpg",
+  "file": "File:George Eastman plaque in MIT Building 6 (1).jpg"
+ },
+ "escola_musica": {
+  "cap": "Escola de Música Eastman, Rochester",
+  "credit": "Foto: Daderot / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastman_School_of_Music_-_general_view.jpg",
+  "file": "File:Eastman School of Music - general view.jpg"
+ },
+ "teatro": {
+  "cap": "Teatro Eastman, Rochester",
+  "credit": "Foto: Matthew D. Wilson (LtPowers) / Wikimedia Commons · CC BY-SA 2.5",
+  "license": "CC BY-SA 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Rochester_Eastman_Theatre_-_Exterior.jpg",
+  "file": "File:Rochester Eastman Theatre - Exterior.jpg"
+ },
+ "dental_roc": {
+  "cap": "Prédio do Eastman Dental Dispensary, Rochester",
+  "credit": "Foto: Matthew D. Wilson (LtPowers) / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rochester_-_Eastman_Dental_Dispensary.jpg",
+  "file": "File:Rochester - Eastman Dental Dispensary.jpg"
+ },
+ "dental_bxl": {
+  "cap": "Antigo Instituto Dentário George Eastman, Bruxelas",
+  "credit": "Foto: Fred Romero / Wikimedia Commons · CC BY 2.0",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Bruxelles_-_Institut_Dentaire_George_Eastman.jpg",
+  "file": "File:Bruxelles - Institut Dentaire George Eastman.jpg"
+ },
+ "dental_sto": {
+  "cap": "Eastmaninstitutet, clínica dentária infantil em Estocolmo",
+  "credit": "Foto: Holger.Ellgaard / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastmanistitutet_2008f.jpg",
+  "file": "File:Eastmanistitutet 2008f.jpg"
+ },
+ "mansao": {
+  "cap": "A mansão de Eastman, hoje Museu George Eastman",
+  "credit": "Foto: Warren LeMay / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_Museum,_East_Avenue,_East_Avenue_District,_Rochester,_NY_(54420099954).jpg",
+  "file": "File:George Eastman Museum, East Avenue, East Avenue District, Rochester, NY (54420099954).jpg"
+ },
+ "biblioteca": {
+  "cap": "Biblioteca da casa de Eastman",
+  "credit": "Foto: John Blyberg / Wikimedia Commons · CC BY 2.0",
+  "license": "CC BY 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_House_bibliothek.jpg",
+  "file": "File:George Eastman House bibliothek.jpg"
+ },
+ "camera_pessoal": {
+  "cap": "Câmera pessoal de Eastman, no museu",
+  "credit": "Foto: Arnob Alam / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Eastman%27s_Personal_camera_(George_Eastman_House).jpg",
+  "file": "File:Eastman's Personal camera (George Eastman House).jpg"
+ },
+ "jornal1932": {
+  "cap": "Capa do Boston Evening Transcript de 14/03/1932 (conferir se traz a notícia)",
+  "credit": "Foto: Boston Evening Transcript (DPLA) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Boston_Evening_Transcript_March_14,_1932_-_DPLA_-_49893ad70c37395f784f68c2bf2251b0_(page_1).jpg",
+  "file": "File:Boston Evening Transcript March 14, 1932 - DPLA - 49893ad70c37395f784f68c2bf2251b0 (page 1).jpg"
+ },
+ "jornal1932b": {
+  "cap": "Capa do Boston Traveler de 14/03/1932 (conferir se traz a notícia)",
+  "credit": "Foto: The Boston Traveler (DPLA) / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Boston_Traveler_March_14,_1932_-_DPLA_-_b6cdbebf5fead671070047a81b16211a_(page_1).jpg",
+  "file": "File:The Boston Traveler March 14, 1932 - DPLA - b6cdbebf5fead671070047a81b16211a (page 1).jpg"
+ },
+ "estatua": {
+  "cap": "Estátua de Eastman na Universidade de Rochester",
+  "credit": "Foto: Tomwsulcer / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Statue_of_George_Eastman_at_the_University_of_Rochester.jpg",
+  "file": "File:Statue of George Eastman at the University of Rochester.jpg"
+ },
+ "selo1954": {
+  "cap": "Selo dos EUA com Eastman, centenário de nascimento",
+  "credit": "Foto: U.S. Bureau of Engraving and Printing / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:George_Eastman_stamp_3c_1954_issue.JPG",
+  "file": "File:George Eastman stamp 3c 1954 issue.JPG"
+ },
+ "kodak_tower": {
+  "cap": "Kodak Tower, sede da empresa em Rochester",
+  "credit": "Foto: Luxhunter68 / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Tower_Rochester_NY.jpg",
+  "file": "File:Kodak Tower Rochester NY.jpg"
+ },
+ "kodak_tower_noite": {
+  "cap": "Kodak Tower à noite",
+  "credit": "Foto: Larry / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Tower_at_Night.JPG",
+  "file": "File:Kodak Tower at Night.JPG"
+ },
+ "kodak_park": {
+  "cap": "Kodak Park, o complexo industrial, visto do Seneca Park",
+  "credit": "Foto: DanielPenfield / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Park_from_Seneca_Park.JPG",
+  "file": "File:Kodak Park from Seneca Park.JPG"
+ },
+ "kodak_building": {
+  "cap": "Prédio da Kodak na State Street (construído em 1912-1914)",
+  "credit": "Foto: Warren LeMay / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Building,_State_Street,_Brown_Square,_Rochester,_NY_(54419901541).jpg",
+  "file": "File:Kodak Building, State Street, Brown Square, Rochester, NY (54419901541).jpg"
+ },
+ "sasson_camera": {
+  "cap": "A câmera digital de Steven Sasson (1975) em exposição",
+  "credit": "Foto: Bertrand Labévue / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Sasson_BL.jpg",
+  "file": "File:Kodak Sasson BL.jpg"
+ },
+ "sasson": {
+  "cap": "Steven Sasson na Photokina de 2010",
+  "credit": "Foto: Aljawad / Wikimedia Commons · CC BY 3.0",
+  "license": "CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Steve_sasson.jpg",
+  "file": "File:Steve sasson.jpg",
+  "foco": [
+   0.5,
+   0.32
+  ],
+  "enquadrar": "inteira"
+ },
+ "instamatic": {
+  "cap": "Kodak Instamatic 100",
+  "credit": "Foto: Camerafiend / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_Instamatic_100.jpg",
+  "file": "File:Kodak Instamatic 100.jpg"
+ },
+ "anuncio1888": {
+  "cap": "Anúncio da Kodak de 1888",
+  "credit": "Foto: anúncio da Kodak / Wikimedia Commons · domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Kodak_ad_1888.GIF",
+  "file": "File:Kodak ad 1888.GIF"
+ }
+}
