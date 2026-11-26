@@ -1,0 +1,630 @@
+[
+ {
+  "t": "fact",
+  "kicker": "MAR DO NORTE · NOITE",
+  "big": "29.09.1913",
+  "sub": "Um vapor faz a travessia da Bélgica para a Inglaterra.",
+  "src": "Time, 2015 · Smithsonian",
+  "n": "Noite de vinte e nove de setembro de mil novecentos e treze. Um navio a vapor chamado Dresden atravessa o mar do Norte, da Bélgica para a Inglaterra."
+ },
+ {
+  "t": "photo",
+  "cap": "O vapor Dresden, da Great Eastern Railway, linha Harwich–Antuérpia",
+  "date": "antes de 1915",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "n": "Um passageiro de cinquenta e cinco anos janta com dois colegas, se despede e vai para a cabine. Pede para ser acordado às seis e quinze da manhã.",
+  "bg": "dresden"
+ },
+ {
+  "t": "quote",
+  "q": "Ao chegar o navio a Harwich, às 6 da manhã, ele tinha desaparecido.",
+  "who": "THE NEW YORK TIMES",
+  "src": "01/10/1913, via Smithsonian · tradução livre",
+  "n": "Ele nunca foi acordado. A cama estava intacta. A roupa de dormir, arrumada em cima dela.",
+  "bg": "harwich_cais"
+ },
+ {
+  "t": "name",
+  "name": "Rudolf Diesel",
+  "role": "Engenheiro alemão nascido em Paris, inventor do motor a diesel · 1858–1913",
+  "src": "Britannica",
+  "n": "O homem que sumiu se chamava Rudolf Diesel. O nome dele está na bomba de quase todo posto do Brasil. Move caminhões, ônibus, tratores e navios no mundo inteiro.",
+  "bg": "diesel_retrato"
+ },
+ {
+  "t": "photo",
+  "cap": "Submarinos alemães em Kiel",
+  "date": "17.02.1914",
+  "credit": "Foto: Bain News Service / Wikimedia Commons · Domínio público",
+  "n": "Dez meses depois, a Europa estaria em guerra. E a pergunta que os jornais fizeram em mil novecentos e treze continua sem resposta oficial: o que aconteceu naquela noite?",
+  "bg": "uboats_kiel"
+ },
+ {
+  "t": "title",
+  "dur": 6,
+  "n": "",
+  "bg": "diesel_retrato"
+ },
+ {
+  "t": "chapter",
+  "num": "01",
+  "name": "O menino de Paris",
+  "n": "Capítulo um. O menino de Paris.",
+  "bg": "rua_paris"
+ },
+ {
+  "t": "photo",
+  "cap": "Placa na casa onde Diesel nasceu, 38 rue Notre-Dame-de-Nazareth, Paris (foto de 2022)",
+  "date": "2022",
+  "credit": "Foto: Poissons1957 / Wikimedia Commons · CC BY-SA 4.0",
+  "n": "Rudolf Diesel nasceu em Paris, em dezoito de março de mil oitocentos e cinquenta e oito. Os pais eram imigrantes da Baviera. O pai, encadernador, depois fabricante de artigos de couro.",
+  "bg": "placa_paris"
+ },
+ {
+  "t": "photo",
+  "cap": "Rue Notre-Dame-de-Nazareth, Paris, onde Diesel nasceu (foto de 2015)",
+  "date": "2015",
+  "credit": "Foto: Benoît Prieur / Wikimedia Commons · CC0",
+  "n": "A família vivia apertada. Segundo os biógrafos, o menino trabalhava na oficina do pai e entregava encomendas empurrando um carrinho.",
+  "bg": "rua_paris"
+ },
+ {
+  "t": "timeline",
+  "kicker": "UMA INFÂNCIA EM TRÊS PAÍSES",
+  "ev": [
+   [
+    "1858",
+    "Nasce em Paris"
+   ],
+   [
+    "1870",
+    "Família expulsa, vai a Londres"
+   ],
+   [
+    "1870",
+    "Sozinho, aos 12, para Augsburg"
+   ],
+   [
+    "1875",
+    "Politécnica de Munique"
+   ]
+  ],
+  "cur": 1,
+  "src": "Britannica · Time, 1940",
+  "n": "Em mil oitocentos e setenta começou a guerra entre França e Prússia. A família, alemã, foi expulsa e foi parar em Londres. Aos doze anos, Rudolf foi mandado sozinho para Augsburg, na Alemanha, para morar com tios e estudar.",
+  "bg": "cerco_paris"
+ },
+ {
+  "t": "photo",
+  "cap": "Rudolf Diesel aos 25 anos",
+  "date": "1883",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "n": "Ele se destacou. Falava alemão, francês e inglês. Na Escola Politécnica de Munique, segundo o próprio filho, Eugen Diesel, fez o melhor exame da história da instituição até então.",
+  "bg": "diesel_1883"
+ },
+ {
+  "t": "fact",
+  "kicker": "A AULA DE CARL VON LINDE",
+  "big": "~90%",
+  "sub": "da energia do combustível era desperdiçada pelas máquinas a vapor",
+  "src": "NDB · History.com",
+  "n": "Lá, numa aula do professor Carl von Linde, ouviu algo que mudaria a vida dele: as máquinas a vapor da época desperdiçavam quase toda a energia do combustível. Diesel decidiu construir um motor melhor. Levou mais de quinze anos.",
+  "bg": "linde"
+ },
+ {
+  "t": "chapter",
+  "num": "02",
+  "name": "A máquina que explodiu",
+  "n": "Capítulo dois. A máquina que explodiu.",
+  "bg": "primeiro_motor"
+ },
+ {
+  "t": "photo",
+  "cap": "Documento da Sociedade de Máquinas de Gelo Linde, empresa de Carl von Linde",
+  "date": "1880",
+  "credit": "Foto: Julie Ceccaldi / Wikimedia Commons · CC0",
+  "n": "Primeiro, Diesel foi trabalhar para Linde, em Paris, numa fábrica de gelo. Chegou a diretor. Ao mesmo tempo, tentava um motor movido a vapor de amônia.",
+  "bg": "linde_gelo"
+ },
+ {
+  "t": "fact",
+  "kicker": "MOTOR A VAPOR DE AMÔNIA",
+  "big": "EXPLOSÃO",
+  "sub": "Num teste, um motor explodiu e quase matou Diesel.",
+  "src": "Lemelson-MIT",
+  "n": "Não deu certo. Segundo o Instituto Lemelson, do MIT, num desses testes um motor explodiu e quase o matou."
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "1 · COMPRIMIR",
+    "O ar é apertado até esquentar"
+   ],
+   [
+    "2 · INJETAR",
+    "O combustível entra no ar quente"
+   ],
+   [
+    "3 · INFLAMAR",
+    "Pega fogo sozinho: sem faísca, sem vela"
+   ]
+  ],
+  "src": "Britannica",
+  "vin": 0,
+  "n": "A ideia nova era simples de dizer e difícil de fazer. Comprimir o ar com tanta força que ele esquenta. Quando o combustível entra, pega fogo sozinho.",
+  "bg": "arq_diesel_story_compressao"
+ },
+ {
+  "t": "fact",
+  "kicker": "A PROMESSA",
+  "big": "75%",
+  "sub": "de aproveitamento da energia, nos cálculos de Diesel",
+  "src": "History.com · Lemelson-MIT",
+  "n": "Sem faísca e sem vela. No papel, Diesel calculava que o motor poderia aproveitar até setenta e cinco por cento da energia.",
+  "bg": "patente_desenho"
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "PATENTE",
+    "DRP nº 67207 · 23.02.1893"
+   ],
+   [
+    "MASCHINENFABRIK AUGSBURG",
+    "Contrato em 21.02.1893 · futura MAN"
+   ],
+   [
+    "KRUPP",
+    "Contrato em 10.04.1893"
+   ]
+  ],
+  "src": "Wikipédia, Diesel engine",
+  "n": "Em fevereiro de mil oitocentos e noventa e três, saiu a patente alemã. No mesmo ano, a Maschinenfabrik Augsburg, a futura MAN, e a Krupp toparam financiar o projeto.",
+  "bg": "patente_67207"
+ },
+ {
+  "t": "fact",
+  "kicker": "AUGSBURG · 10.08.1893",
+  "big": "1ª IGNIÇÃO",
+  "sub": "A combustão destruiu o medidor de pressão.",
+  "src": "Wikipédia · DieselNet · Time, 1940",
+  "n": "Em dez de agosto de mil oitocentos e noventa e três, o primeiro protótipo deu a primeira ignição. A combustão foi tão violenta que destruiu o medidor de pressão. Segundo a revista Time, o protótipo explodiu.",
+  "bg": "primeiro_motor"
+ },
+ {
+  "t": "photo",
+  "cap": "Segundo protótipo do motor diesel, de 1894 (foto de 2021)",
+  "date": "1894",
+  "credit": "Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 4.0",
+  "n": "Mas provou que a ideia funcionava. Foram mais quatro anos.",
+  "bg": "prototipo_1894"
+ },
+ {
+  "t": "fact",
+  "kicker": "TESTE OFICIAL · 17.02.1897",
+  "big": "26,2%",
+  "sub": "da energia do combustível virou trabalho",
+  "src": "Deutsches Museum",
+  "n": "Em dezessete de fevereiro de mil oitocentos e noventa e sete, um teste oficial mediu o resultado: cerca de vinte e seis por cento da energia do combustível virava trabalho. Bem menos que a promessa.",
+  "bg": "motor_1897b"
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "MÁQUINA A VAPOR",
+    "~10% da energia"
+   ],
+   [
+    "MOTOR DIESEL, 1897",
+    "26,2% da energia"
+   ]
+  ],
+  "src": "Deutsches Museum · DieselNet",
+  "n": "Mas as máquinas a vapor da época ficavam perto de dez. Era quase o triplo. O motor está hoje no Deutsches Museum, em Munique.",
+  "bg": "motor_1897"
+ },
+ {
+  "t": "chapter",
+  "num": "03",
+  "name": "Rico, famoso e endividado",
+  "n": "Capítulo três. Rico, famoso e endividado.",
+  "bg": "expo_1898"
+ },
+ {
+  "t": "name",
+  "name": "Adolphus Busch",
+  "role": "Cervejeiro da Anheuser-Busch · comprou os direitos do motor nos EUA e no Canadá em 09.10.1897",
+  "src": "Lytle, Business History Review, 1968",
+  "n": "O sucesso foi rápido. Em outubro de mil oitocentos e noventa e sete, o cervejeiro Adolphus Busch, da Anheuser-Busch, comprou os direitos do motor para os Estados Unidos e o Canadá.",
+  "bg": "busch"
+ },
+ {
+  "t": "fact",
+  "kicker": "1898",
+  "big": "MILIONÁRIO",
+  "sub": "1.250.000 marcos de uma vez, mais ações, pagos por uma empresa alemã",
+  "src": "Time, 1940",
+  "n": "Em mil oitocentos e noventa e oito, Diesel já era milionário. Segundo a revista Time, uma empresa alemã pagou a ele um milhão e duzentos e cinquenta mil marcos de uma vez, além de ações.",
+  "bg": "expo_1898"
+ },
+ {
+  "t": "photo",
+  "cap": "Rudolf Diesel (à esquerda) e Martha Diesel (à direita) na visita a Thomas Edison, EUA",
+  "date": "1912",
+  "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+  "n": "Em mil novecentos e um, a família se mudou para uma mansão nova em Munique. Diesel era casado com Martha desde mil oitocentos e oitenta e três, e os dois tinham três filhos.",
+  "bg": "edison_grupo"
+ },
+ {
+  "t": "photo",
+  "cap": "Motor diesel de 1898",
+  "date": "1898",
+  "credit": "Foto: SulzerAG / Wikimedia Commons · CC BY-SA 3.0",
+  "n": "Mas os primeiros motores comerciais davam defeito. Vieram processos e ataques à patente.",
+  "bg": "motor_1898"
+ },
+ {
+  "t": "fact",
+  "kicker": "SEGUNDO O FILHO, EUGEN",
+  "big": "ESPECULAÇÃO",
+  "sub": "Investimentos arriscados, com maus conselheiros, corroeram a fortuna.",
+  "src": "Neue Deutsche Biographie, 1957",
+  "n": "Diesel teve um colapso nervoso. Segundo o filho, investimentos especulativos, feitos com maus conselheiros, começaram a corroer a fortuna.",
+  "bg": "diesel_sfa1"
+ },
+ {
+  "t": "photo",
+  "cap": "Capa de Solidarismus, livro de Rudolf Diesel",
+  "date": "1903",
+  "credit": "Capa: Rudolf Diesel, 1903 / Wikimedia Commons · Domínio público",
+  "n": "Ele também sonhava alto. Em mil novecentos e três, publicou um livro sobre uma economia de cooperativas, chamado Solidarismo. Quase ninguém deu atenção.",
+  "bg": "solidarismus"
+ },
+ {
+  "t": "quote",
+  "q": "Esses óleos talvez se tornem, com o tempo, tão importantes quanto alguns óleos minerais naturais.",
+  "who": "RUDOLF DIESEL",
+  "src": "Palestra em Londres, 1912 · tradução livre",
+  "vin": 0,
+  "n": "E pensava em combustíveis. Em mil novecentos e doze, contou a engenheiros em Londres que um motor tinha rodado com óleo de amendoim na Exposição de Paris de mil e novecentos. E escreveu que óleos vegetais talvez um dia fossem tão importantes quanto o petróleo.",
+  "bg": "arq_expo_paris_1900"
+ },
+ {
+  "t": "fact",
+  "kicker": "1912 · NAVIO SELANDIA",
+  "big": "+70 MIL",
+  "sub": "motores a diesel já funcionavam no mundo",
+  "src": "History.com · Everllence",
+  "n": "Em mil novecentos e doze, o motor dele já estava no mar. O Selandia, da Dinamarca, foi o primeiro grande navio oceânico movido a diesel. Segundo o History Channel, mais de setenta mil motores a diesel já funcionavam no mundo.",
+  "bg": "selandia"
+ },
+ {
+  "t": "photo",
+  "cap": "Rudolf Diesel e Thomas Edison na biblioteca do laboratório de West Orange, EUA",
+  "date": "1912",
+  "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+  "n": "No mesmo ano, Diesel visitou Thomas Edison nos Estados Unidos. Por fora, um homem no auge.",
+  "bg": "edison_diesel"
+ },
+ {
+  "t": "photo",
+  "cap": "Thomas Edison no laboratório de West Orange",
+  "date": "1922",
+  "credit": "Vídeo: A Day with Thomas Edison (1922) / Wikimedia Commons · Domínio público",
+  "vin": 0,
+  "dur": 5,
+  "n": "",
+  "bg": "arq_edison_lab_1922"
+ },
+ {
+  "t": "chapter",
+  "num": "04",
+  "name": "A última noite no Dresden",
+  "n": "Capítulo quatro. A última noite no Dresden.",
+  "bg": "dresden"
+ },
+ {
+  "t": "timeline",
+  "kicker": "A ÚLTIMA VIAGEM",
+  "ev": [
+   [
+    "25.09",
+    "Carta à mulher, de Gante"
+   ],
+   [
+    "29.09",
+    "Embarca em Antuérpia"
+   ],
+   [
+    "~22H",
+    "Vai para a cabine"
+   ],
+   [
+    "30.09 · 6H",
+    "Chega a Harwich sem ele"
+   ]
+  ],
+  "cur": 1,
+  "src": "Stratford Evening Post, 1913 · Time",
+  "n": "Vinte e nove de setembro de mil novecentos e treze. Diesel embarca em Antuérpia, na Bélgica, no Dresden, rumo a Harwich, na Inglaterra. Vai a uma reunião da Consolidated Diesel, empresa britânica ligada ao motor dele. Quatro dias antes, em Gante, tinha escrito à mulher uma carta que falava de angústia, sem dizer o motivo.",
+  "bg": "antuerpia"
+ },
+ {
+  "t": "headline",
+  "outlet": "STRATFORD EVENING POST · 2 DE OUTUBRO DE 1913",
+  "head": "A Mystery of the Sea",
+  "mark": "Mystery of the Sea",
+  "url": "paperspast.natlib.govt.nz",
+  "n": "Segundo o jornal Stratford Evening Post, de dois de outubro, ele viajava com dois homens da empresa: o diretor Carels e o engenheiro-chefe Luckmann. Segundo a revista Time, depois do jantar ele ainda deu uma volta no convés. Os três se separaram à noite, cada um para sua cabine.",
+  "bg": "dresden"
+ },
+ {
+  "t": "headline",
+  "outlet": "THE NEW YORK TIMES · 1º DE OUTUBRO DE 1913",
+  "head": "Dr. Diesel Vanishes From a Steamship",
+  "mark": "Vanishes",
+  "url": "citada pela Time, 2015",
+  "n": "O navio chegou a Harwich por volta das seis da manhã. Diesel não estava a bordo. O New York Times noticiou que a cama não tinha sido usada e que as roupas de dormir estavam arrumadas sobre ela.",
+  "bg": "harwich_cais"
+ },
+ {
+  "t": "status",
+  "rows": [
+   [
+    "Cama intacta, roupa arrumada",
+    "NYT, 1913"
+   ],
+   [
+    "Chapéu e sobretudo dobrados",
+    "SEGUNDO BIÓGRAFOS"
+   ],
+   [
+    "Cruz na agenda, dia 29",
+    "SEGUNDO BIÓGRAFOS"
+   ],
+   [
+    "Bolsa com ~20 mil marcos",
+    "SEGUNDO GREG PAHL"
+   ]
+  ],
+  "src": "NYT, 1913 · Grosser, 1978 · Pahl, 2008",
+  "n": "Outros detalhes vêm de biógrafos e são citados até hoje. O chapéu e o sobretudo teriam sido achados dobrados junto à amurada. Na agenda, uma pequena cruz desenhada no dia vinte e nove.",
+  "bg": "diesel_harwich"
+ },
+ {
+  "t": "fact",
+  "kicker": "SEGUNDO GREG PAHL",
+  "big": "~20 MIL MARCOS",
+  "sub": "numa bolsa para Martha, com papéis financeiros, para abrir uma semana depois",
+  "src": "Pahl, 2008, via Time, 2015",
+  "n": "E, antes da viagem, segundo o autor Greg Pahl, Diesel deu à mulher, Martha, uma bolsa com cerca de vinte mil marcos e papéis financeiros. Pediu que ela só abrisse uma semana depois.",
+  "bg": "edison_grupo"
+ },
+ {
+  "t": "fact",
+  "kicker": "A PRIMEIRA SUSPEITA",
+  "big": "ACIDENTE?",
+  "sub": "Insônia, convés calmo. Em Londres, a reunião da empresa seguiu sem ele.",
+  "src": "Time, 2015 · Stratford Evening Post",
+  "n": "No começo, os amigos acharam que ele, que sofria de insônia, tinha caminhado pelo convés e caído no mar. Mas a noite estava calma. Em Londres, a reunião da empresa aconteceu sem ele. Houve uma homenagem ao inventor. E, segundo o jornal da época, acionistas cobraram explicações sobre onde tinha ido parar o capital.",
+  "bg": "dresden"
+ },
+ {
+  "t": "chapter",
+  "num": "05",
+  "name": "O corpo no mar",
+  "n": "Capítulo cinco. O corpo no mar.",
+  "bg": "escalda"
+ },
+ {
+  "t": "photo",
+  "cap": "Estuário do Escalda (Westerschelde), Holanda (foto de 2008)",
+  "date": "2008",
+  "credit": "Foto: LimoWreck / Wikimedia Commons · CC BY-SA 3.0",
+  "n": "Dias depois, perto da foz do rio Escalda, na Holanda, a tripulação do barco de práticos Coertsen avistou um corpo na água. As fontes divergem entre dez e onze de outubro. O mar estava agitado e o corpo, muito decomposto.",
+  "bg": "escalda"
+ },
+ {
+  "t": "status",
+  "rows": [
+   [
+    "Porta-moedas",
+    "RECOLHIDO"
+   ],
+   [
+    "Canivete",
+    "RECOLHIDO"
+   ],
+   [
+    "Estojo de óculos",
+    "RECOLHIDO"
+   ],
+   [
+    "Caixinha de pastilhas",
+    "RECOLHIDO"
+   ],
+   [
+    "O corpo",
+    "DEVOLVIDO AO MAR"
+   ]
+  ],
+  "src": "Wikipédia (de) · Brunt, 2023 · History.com",
+  "n": "Os marinheiros não o recolheram. Tiraram dos bolsos alguns objetos: um porta-moedas, um canivete, um estojo de óculos e uma caixinha de pastilhas. Depois devolveram o corpo ao mar."
+ },
+ {
+  "t": "photo",
+  "cap": "Fim de tarde no cais de Vlissingen, pintura de Paul Signac",
+  "date": "1898",
+  "credit": "Pintura: Paul Signac (Cleveland Museum of Art) / Wikimedia Commons · CC0",
+  "n": "Em Vlissingen, o filho Eugen reconheceu os objetos. Eram do pai. Como o navio estava em águas internacionais, não houve investigação oficial.",
+  "bg": "vlissingen"
+ },
+ {
+  "t": "headline",
+  "outlet": "THE NEW YORK TIMES · 15 DE OUTUBRO DE 1913",
+  "head": "Diesel Was Bankrupt: He Owed $375,000 — Tangible Assets Only About $10,000",
+  "mark": "Diesel Was Bankrupt",
+  "url": "citada pela Time, 2015",
+  "n": "E então veio a segunda notícia. Em quinze de outubro, o New York Times publicou que Diesel estava falido: devia trezentos e setenta e cinco mil dólares e tinha só uns dez mil em bens."
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "NEW YORK TIMES · 15.10.1913",
+    "Dívidas: US$ 375 mil · Bens: ~US$ 10 mil"
+   ],
+   [
+    "WAIRARAPA AGE · 17.10.1913",
+    "Relato de Berlim: passivo ~£75 mil · ativo ~£2 mil"
+   ]
+  ],
+  "src": "Time, 2015 · Papers Past",
+  "n": "Um jornal da Nova Zelândia repetiu números parecidos, vindos de Londres e de Berlim. A família, segundo esses relatos, não sabia de nada.",
+  "bg": "diesel_sfa2"
+ },
+ {
+  "t": "chapter",
+  "num": "06",
+  "name": "Três hipóteses",
+  "n": "Capítulo seis. Três hipóteses.",
+  "bg": "diesel_retrato2"
+ },
+ {
+  "t": "fact",
+  "kicker": "HIPÓTESE 1",
+  "big": "SUICÍDIO",
+  "sub": "Versão da família e da maioria dos biógrafos.",
+  "src": "NDB, 1957 · Grosser, 1978",
+  "n": "Primeira: suicídio. É a conclusão da maioria dos biógrafos.",
+  "bg": "diesel_sfa2"
+ },
+ {
+  "t": "quote",
+  "q": "Não há dúvida de que D. pulou do navio.",
+  "who": "EUGEN DIESEL, FILHO",
+  "src": "Neue Deutsche Biographie, 1957 · tradução livre",
+  "n": "O próprio filho, Eugen Diesel, escreveu num dicionário biográfico alemão, em mil novecentos e cinquenta e sete, que não havia dúvida de que o pai tinha pulado do navio. As dívidas e a saúde frágil pesam a favor."
+ },
+ {
+  "t": "headline",
+  "outlet": "HIPÓTESE 2 · MANCHETE DE 1913",
+  "head": "Inventor Thrown Into the Sea to Stop Sale of Patents to British Government",
+  "mark": "Thrown Into the Sea",
+  "url": "citada pela History.com",
+  "n": "Segunda: assassinato. Logo em mil novecentos e treze, uma manchete dizia que o inventor tinha sido jogado ao mar para impedir a venda de patentes ao governo britânico. O motor dele era peça-chave dos submarinos."
+ },
+ {
+  "t": "fact",
+  "kicker": "O QUE DIZEM OS CRÍTICOS",
+  "big": "SEM PROVA",
+  "sub": "Em 1913 nem existiam carros a diesel para ameaçar a gasolina.",
+  "src": "History.com · Hagerty, 13/12/2023",
+  "n": "Outra culpava agentes dos trustes do petróleo. Nenhuma prova jamais apareceu. E críticos lembram que, em mil novecentos e treze, ainda nem existiam carros a diesel para ameaçar a gasolina.",
+  "bg": "kaiser"
+ },
+ {
+  "t": "fact",
+  "kicker": "HIPÓTESE 3 · 1914",
+  "big": "FUGA?",
+  "sub": "Uma revista de Munique publicou que Diesel estaria vivo no Canadá. Nunca confirmado.",
+  "src": "NYT, 1914, via Time, 2015",
+  "n": "Terceira: fuga. Na primavera de mil novecentos e catorze, uma revista de Munique publicou que Diesel estaria vivo no Canadá. Ninguém confirmou.",
+  "bg": "diesel_retrato"
+ },
+ {
+  "t": "name",
+  "name": "Douglas Brunt",
+  "role": "Escritor americano · autor de The Mysterious Case of Rudolf Diesel (2023)",
+  "src": "Simon & Schuster · InsideHook",
+  "n": "Em dois mil e vinte e três, o escritor americano Douglas Brunt retomou essa linha. Ele defende que o governo britânico teria encenado a morte para levar Diesel a trabalhar em segredo no Canadá."
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "A TESE",
+    "Operação britânica teria encenado a morte e levado Diesel ao Canadá"
+   ],
+   [
+    "A CRÍTICA",
+    "“Possível, mas mais especulativa do que provada”"
+   ]
+  ],
+  "src": "Brunt, 2023 · Washington Free Beacon, 07/01/2024",
+  "n": "Os críticos do livro dizem que a tese é possível, mas especulativa. Até hoje, nenhum documento comprovou.",
+  "bg": "churchill"
+ },
+ {
+  "t": "photo",
+  "cap": "O vapor Dresden, que em 1918 já era o HMS Louvain",
+  "date": "antes de 1915",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "n": "Diesel não viu o que veio depois. Em mil novecentos e dezoito, o próprio Dresden, já como navio de guerra britânico, foi afundado por um submarino alemão.",
+  "bg": "dresden"
+ },
+ {
+  "t": "fact",
+  "kicker": "BRASIL · 2024",
+  "big": "67 BI LITROS",
+  "sub": "de óleo diesel vendidos no país, um recorde",
+  "src": "ANP, via Reuters",
+  "n": "No Brasil, o motor dele virou a espinha do transporte. Em dois mil e vinte e quatro, foram vendidos sessenta e sete bilhões de litros de óleo diesel no país, um recorde, segundo a ANP.",
+  "bg": "caminhao_1931"
+ },
+ {
+  "t": "fact",
+  "kicker": "BRASIL · SEGUNDA GUERRA",
+  "big": "ALGODÃO",
+  "sub": "Exportação de óleo de algodão proibida para usar no lugar do diesel importado",
+  "src": "Chem. Metall. Eng., 1943, via AOCS",
+  "n": "E a ideia do óleo vegetal tem história aqui. Durante a Segunda Guerra, o Brasil chegou a proibir a exportação de óleo de algodão para usar no lugar do diesel importado, segundo uma revista técnica americana de mil novecentos e quarenta e três.",
+  "bg": "amendoim"
+ },
+ {
+  "t": "timeline",
+  "kicker": "BIODIESEL NO BRASIL",
+  "ev": [
+   [
+    "2005",
+    "Lei 11.097: mistura obrigatória"
+   ],
+   [
+    "2024",
+    "B14"
+   ],
+   [
+    "01.08.2025",
+    "B15"
+   ]
+  ],
+  "cur": 0,
+  "src": "Lei 11.097/2005 · Agência Gov",
+  "n": "Hoje, a ideia voltou. Desde dois mil e cinco, a lei obriga misturar biodiesel ao diesel."
+ },
+ {
+  "t": "fact",
+  "kicker": "DESDE 01.08.2025",
+  "big": "B15",
+  "sub": "15% de biodiesel no diesel. A soja é a maior parte da matéria-prima.",
+  "src": "Agência Gov · EPE, via IstoÉ Dinheiro",
+  "n": "Em agosto de dois mil e vinte e cinco, a mistura chegou a quinze por cento. A maior parte desse biodiesel é feita de soja.",
+  "bg": "busto_munique"
+ },
+ {
+  "t": "photo",
+  "cap": "Pedra do Memorial Rudolf Diesel em Augsburg, doada pela japonesa Yanmar (foto de 2005)",
+  "date": "2005",
+  "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+  "n": "O homem que sonhou com motores movidos a óleo de planta terminou no mar, sem túmulo e sem resposta. Para você, foi desespero, crime ou fuga?",
+  "bg": "memorial_augsburg"
+ },
+ {
+  "t": "end",
+  "credits": true,
+  "n": "Se este dossiê te prendeu até aqui, inscreva-se no canal. Toda semana tem um arquivo novo."
+ }
+]

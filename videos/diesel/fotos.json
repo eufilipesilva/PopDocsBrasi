@@ -1,0 +1,520 @@
+{
+ "diesel_retrato": {
+  "cap": "Rudolf Diesel, retrato",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel.jpg",
+  "file": "File:Rudolf Diesel.jpg",
+  "origin": "commons",
+  "foco": [
+   0.5,
+   0.2
+  ]
+ },
+ "diesel_retrato2": {
+  "cap": "Rudolf Diesel, retrato",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel2.jpg",
+  "file": "File:Rudolf Diesel2.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "diesel_cortado": {
+  "cap": "Rudolf Diesel",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel_(cropped).jpg",
+  "file": "File:Rudolf Diesel (cropped).jpg",
+  "origin": "commons"
+ },
+ "diesel_1883": {
+  "cap": "Diesel aos 25 anos, ano do casamento com Martha",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Diesel_1883.jpg",
+  "file": "File:Diesel 1883.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "diesel_sfa1": {
+  "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_Diesel,_uitvinder_van_de_dieselmotor,_SFA007001969.jpg",
+  "file": "File:Portret van Rudolf Diesel, uitvinder van de dieselmotor, SFA007001969.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "diesel_sfa2": {
+  "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Portret_van_dr,_SFA007001970.jpg",
+  "file": "File:Portret van dr, SFA007001970.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "diesel_colliers": {
+  "cap": "Diesel em gravura da enciclopédia Collier's",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Collier%27s_Diesel_Rudolf.png",
+  "file": "File:Collier's Diesel Rudolf.png",
+  "origin": "commons"
+ },
+ "diesel_harwich": {
+  "cap": "Rudolf Diesel, em imagem do acervo comunitário Harwich & Dovercourt",
+  "credit": "Foto: Harwich & Dovercourt (Flickr) / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Doctor_R.Diesel_(5774953779).jpg",
+  "file": "File:Doctor R.Diesel (5774953779).jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "assinatura": {
+  "cap": "Assinatura de Rudolf Diesel",
+  "credit": "Assinatura: Rudolf Diesel (digitalização de Mailtosap) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Unterschrift_Rudolf_Diesel.jpg",
+  "file": "File:Unterschrift Rudolf Diesel.jpg",
+  "origin": "commons"
+ },
+ "placa_paris": {
+  "cap": "Placa na casa onde Diesel nasceu, 38 rue Notre-Dame-de-Nazareth, Paris",
+  "credit": "Foto: Poissons1957 / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaque_38_rue_Notre-Dame-de-Nazareth_(Paris_3e).jpg",
+  "file": "File:Plaque 38 rue Notre-Dame-de-Nazareth (Paris 3e).jpg",
+  "origin": "commons"
+ },
+ "rua_paris": {
+  "cap": "Rue Notre-Dame-de-Nazareth, Paris, onde Diesel nasceu",
+  "credit": "Foto: Benoît Prieur / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Rue_Notre-Dame-de-Nazareth_-_Rudolf_Diesel.jpg",
+  "file": "File:Rue Notre-Dame-de-Nazareth - Rudolf Diesel.jpg",
+  "origin": "commons"
+ },
+ "placa_natal": {
+  "cap": "Placa da casa natal de Diesel em Paris",
+  "credit": "Foto: Parisette / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Plaque_Diesel_(maison_natale).jpg",
+  "file": "File:Plaque Diesel (maison natale).jpg",
+  "origin": "commons"
+ },
+ "cerco_paris": {
+  "cap": "O Cerco de Paris, pintura de Meissonier",
+  "credit": "Pintura: Jean-Louis-Ernest Meissonier / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris.jpg",
+  "file": "File:Siege of Paris.jpg",
+  "origin": "commons"
+ },
+ "barricadas_1870": {
+  "cap": "Estudantes vão às barricadas, Illustrated London News",
+  "credit": "Ilustração: Fred Barnard, Illustrated London News / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Franco-Prussian_War_-_Students_Going_to_Man_the_Barricades_-_Illustrated_London_News_Oct_1_1870.jpg",
+  "file": "File:Franco-Prussian War - Students Going to Man the Barricades - Illustrated London News Oct 1 1870.jpg",
+  "origin": "commons"
+ },
+ "balao_1870": {
+  "cap": "Balão deixa Paris sitiada",
+  "credit": "Foto: autor anônimo / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris_1870_Balloon.jpg",
+  "file": "File:Siege of Paris 1870 Balloon.jpg",
+  "origin": "commons"
+ },
+ "linde": {
+  "cap": "Carl von Linde, professor e primeiro patrão de Diesel",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Carl_von_Linde_1868.jpg",
+  "file": "File:Carl von Linde 1868.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "linde_gelo": {
+  "cap": "Documento da Sociedade de Máquinas de Gelo Linde",
+  "credit": "Foto: Julie Ceccaldi / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Gesellschaft_Lindes_Eismaschinen_1880.jpg",
+  "file": "File:Gesellschaft Lindes Eismaschinen 1880.jpg",
+  "origin": "commons"
+ },
+ "patente_desenho": {
+  "cap": "Desenho de patente de Diesel",
+  "credit": "Desenho: Rudolf Diesel (patente) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel%27s_compound_internal_combustion_engine.png",
+  "file": "File:Rudolf Diesel's compound internal combustion engine.png",
+  "origin": "commons"
+ },
+ "patente_67207": {
+  "cap": "Patente alemã nº 67207 de Diesel",
+  "credit": "Documento: Reichspatentamt / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Lumbar_patent_dieselengine.jpg",
+  "file": "File:Lumbar patent dieselengine.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "patente_museu": {
+  "cap": "Patente de Diesel exposta em museu",
+  "credit": "Foto: Måns Hagberg / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Patent_Rudolf_Diesel.jpg",
+  "file": "File:Patent Rudolf Diesel.jpg",
+  "origin": "commons"
+ },
+ "primeiro_motor": {
+  "cap": "Primeiro motor diesel (museu MAN, Augsburg)",
+  "credit": "Foto: Vitold Muratov / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:First_Diesel_motor.jpg",
+  "file": "File:First Diesel motor.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "prototipo_1894": {
+  "cap": "Segundo protótipo do motor diesel, 1894",
+  "credit": "Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Second_prototype_of_the_Diesel_engine_(1894),_1.jpg",
+  "file": "File:Second prototype of the Diesel engine (1894), 1.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "prototipo_exp": {
+  "cap": "Motor diesel experimental no museu MAN",
+  "credit": "Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Experimental_Diesel_Engine.jpg",
+  "file": "File:Experimental Diesel Engine.jpg",
+  "origin": "commons"
+ },
+ "motor_1897": {
+  "cap": "Motor de 1897 no Deutsches Museum, Munique",
+  "credit": "Foto: Frank Schulenburg / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Station%C3%A4rer_Dieselmotor,_Prototyp_1897,_Deutsches_Museum-L1001401.jpg",
+  "file": "File:Stationärer Dieselmotor, Prototyp 1897, Deutsches Museum-L1001401.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "motor_1897b": {
+  "cap": "Motor 250/400 de 1897",
+  "credit": "Foto: Johannes Maximilian / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Motor_250-400_IMG_1353_2023-11-25_JM.jpg",
+  "file": "File:Motor 250-400 IMG 1353 2023-11-25 JM.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "motor_museu": {
+  "cap": "Motor diesel histórico no Deutsches Museum",
+  "credit": "Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Historical_Diesel_engine_in_Deutsches_Museum.jpg",
+  "file": "File:Historical Diesel engine in Deutsches Museum.jpg",
+  "origin": "commons"
+ },
+ "museu_man": {
+  "cap": "Museu MAN em Augsburg",
+  "credit": "Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:MAN-museum_1.jpg",
+  "file": "File:MAN-museum 1.jpg",
+  "origin": "commons"
+ },
+ "buz": {
+  "cap": "Heinrich von Buz, diretor da Maschinenfabrik Augsburg",
+  "credit": "Foto: MAN SE / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:HeinrichVonBuz.jpg",
+  "file": "File:HeinrichVonBuz.jpg",
+  "origin": "commons"
+ },
+ "krupp": {
+  "cap": "Friedrich Alfred Krupp, retrato de Ludwig Noster",
+  "credit": "Foto: Ludwig Noster / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Friedrich_Alfred_Krupp,_portrait_by_Ludwig_Noster,_1896.jpg",
+  "file": "File:Friedrich Alfred Krupp, portrait by Ludwig Noster, 1896.jpg",
+  "origin": "commons"
+ },
+ "motor_1898": {
+  "cap": "Motor diesel de 1898",
+  "credit": "Foto: SulzerAG / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Dieselmotor_1898.jpg",
+  "file": "File:Dieselmotor 1898.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "expo_1898": {
+  "cap": "Diesel na Exposição de Munique",
+  "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:2021_07_09_1898_Diesel_auf_der_M%C3%BCnchener_Ausstellung.png",
+  "file": "File:2021 07 09 1898 Diesel auf der Münchener Ausstellung.png",
+  "origin": "commons"
+ },
+ "busch": {
+  "cap": "Adolphus Busch, cervejeiro que comprou os direitos americanos",
+  "credit": "Foto: Library of Congress (LCCN 98510413) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Adolphus_Busch,_half-length_portrait,_seated,_facing_slightly_right_LCCN98510413.jpg",
+  "file": "File:Adolphus Busch, half-length portrait, seated, facing slightly right LCCN98510413.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "solidarismus": {
+  "cap": "Capa de Solidarismus, livro de Diesel",
+  "credit": "Capa: Rudolf Diesel, 1903 / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesels_Solidarismus_(1903),_Titelseite.jpg",
+  "file": "File:Rudolf Diesels Solidarismus (1903), Titelseite.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "expo_1900": {
+  "cap": "Exposição Universal de Paris",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower,_full-view_looking_toward_the_Trocadero,_Exposition_Universal,_1900,_Paris,_France.jpg",
+  "file": "File:Eiffel Tower, full-view looking toward the Trocadero, Exposition Universal, 1900, Paris, France.jpg",
+  "origin": "commons"
+ },
+ "amendoim": {
+  "cap": "Amendoim, ilustração botânica",
+  "credit": "Ilustração: Franz Eugen Köhler / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg",
+  "file": "File:Arachis hypogaea - Köhler–s Medizinal-Pflanzen-163.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "livro_1912": {
+  "cap": "Folheto de Diesel de 1912 sobre o motor na Europa",
+  "credit": "Capa: Rudolf Diesel, 1912 / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Diesel_-_The_Present_Status_of_The_Diesel_Engine_in_Europe,_1912_Front.jpg",
+  "file": "File:Diesel - The Present Status of The Diesel Engine in Europe, 1912 Front.jpg",
+  "origin": "commons"
+ },
+ "selandia": {
+  "cap": "Navio Selandia, primeiro grande navio oceânico a diesel",
+  "credit": "Foto: Bain News Service (Library of Congress) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Selandia_LCCN2014691629.jpg",
+  "file": "File:Selandia LCCN2014691629.jpg",
+  "origin": "commons"
+ },
+ "selandia_bangkok": {
+  "cap": "Selandia em Bangkok",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Selandia_Bangkok_1912_600dpi.jpg",
+  "file": "File:Selandia Bangkok 1912 600dpi.jpg",
+  "origin": "commons"
+ },
+ "selandia_filme": {
+  "cap": "Quadro do documentário dinamarquês Selandia",
+  "credit": "Foto: Nordisk Films Kompagni / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Selandia_(1912_film).jpg",
+  "file": "File:Selandia (1912 film).jpg",
+  "origin": "commons"
+ },
+ "edison_diesel": {
+  "cap": "Diesel com Thomas Edison em West Orange, EUA",
+  "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_Library_of_his_West_Orange_Laboratory_with_Dr._Rudolf_Diesel._(ff713d866fd545cb93a4245d35d6150a).jpg",
+  "file": "File:Thomas Edison in the Library of his West Orange Laboratory with Dr. Rudolf Diesel. (ff713d866fd545cb93a4245d35d6150a).jpg",
+  "origin": "commons"
+ },
+ "edison_grupo": {
+  "cap": "Edison com Rudolf e Martha Diesel",
+  "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_laboratory_Library_with_(from_left),_Dr._Rudolf_Diesel,_Mrs._Calvin_W._Rice,_J.W._Lieb_Jr.,_Mrs._Diesel._(5ed7c9c81b774de9ae1c8df8cf102814).jpg",
+  "file": "File:Thomas Edison in the laboratory Library with (from left), Dr. Rudolf Diesel, Mrs. Calvin W. Rice, J.W. Lieb Jr., Mrs. Diesel. (5ed7c9c81b774de9ae1c8df8cf102814).jpg",
+  "origin": "commons"
+ },
+ "dresden": {
+  "cap": "O vapor Dresden, da Great Eastern Railway, linha Harwich–Antuérpia",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Great_Eastern_Railway_Company%27s_S.S._Dresden_GER_Dresden-01_700.jpg",
+  "file": "File:Great Eastern Railway Company's S.S. Dresden GER Dresden-01 700.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "antuerpia": {
+  "cap": "Porto de Antuérpia (gravura, Rijksmuseum)",
+  "credit": "Gravura: Rijksmuseum / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Gezicht_op_de_haven_van_Antwerpen_met_schepen_op_de_voorgrond,_RP-P-1913-1972.jpg",
+  "file": "File:Gezicht op de haven van Antwerpen met schepen op de voorgrond, RP-P-1913-1972.jpg",
+  "origin": "commons",
+  "recorte": [
+   0.34,
+   0.26,
+   0.69,
+   0.74
+  ],
+  "enquadrar": "inteira"
+ },
+ "vlissingen": {
+  "cap": "Fim de tarde no cais de Vlissingen, Paul Signac",
+  "credit": "Pintura: Paul Signac (Cleveland Museum of Art) / Wikimedia Commons · CC0",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Paul_Signac_-_Evening,_The_Jetty_at_Vlissingen_-_1983.229_-_Cleveland_Museum_of_Art.tif",
+  "file": "File:Paul Signac - Evening, The Jetty at Vlissingen - 1983.229 - Cleveland Museum of Art.tif",
+  "origin": "commons"
+ },
+ "escalda": {
+  "cap": "Estuário do Escalda (Westerschelde), Holanda",
+  "credit": "Foto: LimoWreck / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hoofdplaat_-_Westerschelde_1.jpg",
+  "file": "File:Hoofdplaat - Westerschelde 1.jpg",
+  "origin": "commons"
+ },
+ "harwich_cais": {
+  "cap": "Parkeston Quay, porto de Harwich",
+  "credit": "Foto: Martin Addison / Wikimedia Commons · CC BY-SA 2.0",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Harwich_Parkeston_Quay_-_geograph.org.uk_-_1516663.jpg",
+  "file": "File:Harwich Parkeston Quay - geograph.org.uk - 1516663.jpg",
+  "origin": "commons"
+ },
+ "kaiser": {
+  "cap": "Kaiser Guilherme II",
+  "credit": "Foto: E. Bieber (livro digitalizado pelo Internet Archive) / Wikimedia Commons · Sem restrições conhecidas",
+  "license": "No restrictions (sem restrições de direitos conhecidas)",
+  "source": "https://commons.wikimedia.org/wiki/File:Kaiser_Wilhelm_II_by_E._Bieber,_1913.jpg",
+  "file": "File:Kaiser Wilhelm II by E. Bieber, 1913.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "churchill": {
+  "cap": "Winston Churchill deixa o Almirantado",
+  "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Winston_Churchill_verl_sst_das_Geb_ude_der_Admiralt_t_(1912).jpg",
+  "file": "File:Winston Churchill verl sst das Geb ude der Admiralt t (1912).jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "uboats_kiel": {
+  "cap": "Submarinos alemães em Kiel",
+  "credit": "Foto: Bain News Service / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:U-Boote_Kiel_1914.jpg",
+  "file": "File:U-Boote Kiel 1914.jpg",
+  "origin": "commons"
+ },
+ "memorial_augsburg": {
+  "cap": "Pedra do Memorial Rudolf Diesel, Augsburg (doado pela japonesa Yanmar)",
+  "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Gedenkstein.JPG",
+  "file": "File:Wittelsbacherpark Gedenkstein.JPG",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "memorial_bosque": {
+  "cap": "Bosque memorial Rudolf Diesel, Augsburg",
+  "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Hain.JPG",
+  "file": "File:Wittelsbacherpark Hain.JPG",
+  "origin": "commons"
+ },
+ "busto_munique": {
+  "cap": "Busto de Diesel no Ruhmeshalle, Munique",
+  "credit": "Foto: Rufus46 / Wikimedia Commons · CC BY-SA 3.0",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Ruhmeshalle_Muenchen_Rudolf_Diesel_Jngenieur-1.jpg",
+  "file": "File:Ruhmeshalle Muenchen Rudolf Diesel Jngenieur-1.jpg",
+  "origin": "commons",
+  "enquadrar": "inteira"
+ },
+ "caminhao_1931": {
+  "cap": "Caminhão Foden a diesel",
+  "credit": "Foto: Oxyman / Wikimedia Commons · CC BY 2.5",
+  "license": "CC BY 2.5",
+  "source": "https://commons.wikimedia.org/wiki/File:Foden_F1_Diesel_Lorry_1931.jpg",
+  "file": "File:Foden F1 Diesel Lorry 1931.jpg",
+  "origin": "commons"
+ },
+ "arq_paris_sena_1900": {
+  "cap": "Exposição de Paris vista do Sena, 1900 (filme de Edison)",
+  "credit": "Vídeo: Thomas A. Edison, Inc. / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Paris_Exhibition_viewed_from_the_Seine_1.ogv",
+  "file": "File:Paris Exhibition viewed from the Seine 1.ogv",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_trem_diesel_1934": {
+  "cap": "Teste do trem diesel-elétrico, Holanda, 1934",
+  "credit": "Vídeo: Polygoon / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Proeftocht_van_de_diesel_electrische_trein.webm",
+  "file": "File:Proeftocht van de diesel electrische trein.webm",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_motor_ceres": {
+  "cap": "Motor diesel Cérès antigo funcionando",
+  "credit": "Vídeo: Cjp24 / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Arnoux,_moteur_Diesel_Cérès.webm",
+  "file": "File:Arnoux, moteur Diesel Cérès.webm",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_trator_diesel": {
+  "cap": "Trator a diesel arando",
+  "credit": "Vídeo: Ozonesn / Wikimedia Commons · CC BY-SA 4.0",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Diesel_tractor_used_for_ploughing.webm",
+  "file": "File:Diesel tractor used for ploughing.webm",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_diesel_story_compressao": {
+  "cap": "Ar comprimido num tubo de vidro pega fogo sozinho; depois, o cilindro do motor diesel (filme The Diesel Story, Shell, 1952)",
+  "credit": "Vídeo: Shell Oil Company, 1952 / Wikimedia Commons · Domínio público",
+  "license": "Public domain (PD-US-not renewed)",
+  "source": "https://commons.wikimedia.org/wiki/File:The_Diesel_Story.ogv",
+  "file": "File:The Diesel Story.ogv",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_expo_paris_1900": {
+  "cap": "Exposição Universal de Paris, 1900: o Campo de Marte e o Palácio da Eletricidade",
+  "credit": "Vídeo: filmes de 1900 (compilação) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:1900_-_The_Paris_Exposition_Universelle.webm",
+  "file": "File:1900 - The Paris Exposition Universelle.webm",
+  "tipo": "video",
+  "origin": "commons"
+ },
+ "arq_edison_lab_1922": {
+  "cap": "Thomas Edison no laboratório de West Orange, 1922",
+  "credit": "Vídeo: A Day with Thomas Edison (1922) / Wikimedia Commons · Domínio público",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:A_Day_with_Thomas_Edison_(1922).webm",
+  "file": "File:A Day with Thomas Edison (1922).webm",
+  "tipo": "video",
+  "origin": "commons"
+ }
+}

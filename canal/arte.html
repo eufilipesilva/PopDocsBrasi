@@ -1,0 +1,55 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--fundo:#15110C;--texto:#F1E6D0;--destaque:#D2A85A;--papel:#E9DFC8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.10;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.65) 100%)}
+/* ---------- BANNER 2560x1440 ---------- */
+#banner{position:relative;width:2560px;height:1440px;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 50%,#2a2117 0%,var(--fundo) 60%)}
+#banner .lines{position:absolute;inset:0;opacity:.07;
+ background:repeating-linear-gradient(0deg,var(--papel) 0 1px,transparent 1px 48px)}
+#banner .safe{position:absolute;left:507px;top:508px;width:1546px;height:423px;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kick{font-family:'IBM Plex Mono';font-weight:500;letter-spacing:.35em;color:var(--destaque);font-size:30px}
+.brand{font-family:'Oswald';font-weight:700;color:var(--texto);font-size:168px;letter-spacing:.04em;line-height:1;margin:18px 0 14px}
+.brand b{color:var(--destaque);font-weight:700}
+.tag{font-family:'Source Serif 4';font-style:italic;color:var(--papel);font-size:42px;opacity:.9}
+.rule{width:620px;height:2px;background:var(--destaque);opacity:.7;margin:22px auto}
+.stamp{position:absolute;font-family:'IBM Plex Mono';font-weight:500;color:var(--destaque);
+ border:3px solid var(--destaque);padding:10px 22px;letter-spacing:.2em;font-size:28px;opacity:.55;transform:rotate(-6deg)}
+.folder{position:absolute;font-family:'IBM Plex Mono';color:var(--papel);opacity:.25;font-size:24px;letter-spacing:.25em}
+/* ---------- AVATAR 800x800 ---------- */
+#avatar{position:relative;width:800px;height:800px;overflow:hidden;margin-top:40px;
+ background:radial-gradient(circle at 50% 45%,#2c2318 0%,var(--fundo) 70%)}
+#avatar .ring{position:absolute;left:70px;top:70px;width:660px;height:660px;border-radius:50%;
+ border:6px solid var(--destaque);opacity:.85}
+#avatar .ring2{position:absolute;left:100px;top:100px;width:600px;height:600px;border-radius:50%;
+ border:2px solid var(--destaque);opacity:.45}
+#avatar .mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#avatar .pd{font-family:'Oswald';font-weight:700;font-size:300px;line-height:.9;color:var(--texto);letter-spacing:-.01em}
+#avatar .pd span{color:var(--destaque)}
+#avatar .sub{font-family:'IBM Plex Mono';font-weight:500;font-size:40px;letter-spacing:.45em;color:var(--destaque);margin-top:24px;margin-left:.45em}
+</style></head><body>
+<div id="banner">
+ <div class="lines"></div>
+ <div class="folder" style="left:120px;top:140px">ARQUIVO Nº 001 — 002 — 003</div>
+ <div class="folder" style="right:120px;bottom:140px">PESQUISA · FONTES · DOCUMENTOS</div>
+ <div class="stamp" style="left:2120px;top:420px">CONFIDENCIAL</div>
+ <div class="stamp" style="left:230px;top:960px;transform:rotate(4deg)">CASO ARQUIVADO</div>
+ <div class="safe">
+  <div class="kick">DOSSIÊS · DOCUMENTÁRIOS · HISTÓRIAS REAIS</div>
+  <div class="brand">POPDOCS<b>BRASIL</b></div>
+ </div>
+ <div class="vig"></div><div class="grain"></div>
+</div>
+<div id="avatar">
+ <div class="ring"></div><div class="ring2"></div>
+ <div class="mono"><div class="pd">P<span>D</span></div><div class="sub">BRASIL</div></div>
+ <div class="vig" style="opacity:.6"></div><div class="grain"></div>
+</div>
+</body></html>

@@ -1,0 +1,603 @@
+[
+ {
+  "t": "fact",
+  "kicker": "A LENDA",
+  "big": "ANTIDESEJO?",
+  "sub": "Diz a internet que os flocos de milho foram criados para conter o desejo sexual.",
+  "src": "Mental Floss, 2012 (origem da frase)",
+  "bg": "anuncio_1909b",
+  "n": "Existe uma lenda que circula na internet há anos. Ela diz que os flocos de milho foram inventados para acabar com o desejo sexual dos americanos."
+ },
+ {
+  "t": "fact",
+  "kicker": "CHECAGEM",
+  "big": "FALSO",
+  "sub": "Nenhum documento da época diz que os flocos foram inventados para isso.",
+  "src": "Snopes · Lead Stories, 2023",
+  "bg": "anuncio_1910",
+  "n": "Não é verdade. Mas a história real é ainda mais estranha."
+ },
+ {
+  "t": "photo",
+  "cap": "John Harvey Kellogg de terno branco",
+  "date": "c. 1910-1915",
+  "bg": "jhk_bain",
+  "n": "Ela começa com um médico de terno branco. Ele receitava enemas em série, banhos de luz elétrica e cadeiras que tremiam sessenta vezes por segundo. Ele condenava o açúcar."
+ },
+ {
+  "t": "fact",
+  "kicker": "BATTLE CREEK · MICHIGAN · EUA",
+  "big": "NOVA RAÇA",
+  "sub": "Ele foi um dos grandes promotores da eugenia nos Estados Unidos.",
+  "src": "Britannica · U. Michigan SPH",
+  "bg": "eugenia_comite",
+  "n": "E dizia que a humanidade precisava de uma nova raça."
+ },
+ {
+  "t": "name",
+  "name": "JOHN HARVEY KELLOGG",
+  "role": "Médico adventista · 1852-1943",
+  "src": "Britannica",
+  "bg": "jhk_1914",
+  "n": "O sobrenome dele está hoje numa caixa de cereal que quase todo brasileiro conhece. Só que, no tribunal, esse nome deixou de ser dele. Este é o dossiê de John Harvey Kellogg."
+ },
+ {
+  "t": "title",
+  "dur": 6,
+  "bg": "jhk_1910",
+  "n": ""
+ },
+ {
+  "t": "chapter",
+  "num": "01",
+  "name": "O menino que esperava o fim do mundo",
+  "bg": "censo_1870",
+  "n": "Capítulo um. O menino que esperava o fim do mundo."
+ },
+ {
+  "t": "timeline",
+  "kicker": "ORIGEM · JOHN HARVEY KELLOGG",
+  "ev": [
+   [
+    "1852",
+    "Nasce em Tyrone"
+   ],
+   [
+    "1864",
+    "Gráfica da igreja"
+   ],
+   [
+    "1875",
+    "Diploma de médico"
+   ],
+   [
+    "1876",
+    "Assume o instituto"
+   ]
+  ],
+  "cur": 0,
+  "src": "Britannica · TIME, 18/01/1926",
+  "bg": "censo_1870",
+  "n": "John Harvey Kellogg nasceu em vinte e seis de fevereiro de mil oitocentos e cinquenta e dois, numa fazenda em Tyrone, no estado americano de Michigan. A família era adventista do sétimo dia, uma igreja que esperava a volta de Cristo para breve. Segundo a revista Time, aos nove anos o menino não ia à escola: os pais achavam que o mundo ia acabar."
+ },
+ {
+  "t": "fact",
+  "kicker": "INFÂNCIA",
+  "big": "6 DE 16",
+  "sub": "irmãos e meios-irmãos mortos por doenças infecciosas em nove anos. John perdeu o pulmão esquerdo.",
+  "src": "Bentley Historical Library, U. Michigan",
+  "n": "A infância foi dura. Segundo a biblioteca histórica da Universidade de Michigan, seis dos dezesseis irmãos e meios-irmãos morreram de doenças infecciosas em nove anos. O próprio John teve tuberculose e perdeu o uso do pulmão esquerdo."
+ },
+ {
+  "t": "name",
+  "name": "ELLEN G. WHITE",
+  "role": "Profetisa adventista, em Battle Creek",
+  "src": "Smithsonian",
+  "bg": "ellen_white",
+  "n": "A família foi morar em Battle Creek, a cidade da profetisa da igreja, Ellen White. Ela pregava uma vida sem carne, sem álcool, sem café e sem tabaco. E pregava castidade."
+ },
+ {
+  "t": "fact",
+  "kicker": "1864 · A GRÁFICA DA IGREJA",
+  "big": "12 ANOS",
+  "sub": "Aprendiz na gráfica adventista. O casal White pagou seus estudos de medicina.",
+  "src": "Bentley Library · Smithsonian",
+  "bg": "goodhealth_1894",
+  "n": "Aos doze anos, John foi trabalhar na gráfica da igreja. O casal White apostou nele e pagou seus estudos de medicina."
+ },
+ {
+  "t": "fact",
+  "kicker": "1876 · BATTLE CREEK",
+  "big": "20 PACIENTES",
+  "sub": "Aos 24 anos, assume o instituto de saúde da igreja. Diploma de médico em Nova York, 1875.",
+  "src": "Gale · Britannica",
+  "bg": "san_oldmain",
+  "n": "Em mil oitocentos e setenta e cinco, ele se formou médico em Nova York. No ano seguinte, com vinte e quatro anos, assumiu um pequeno instituto de saúde da igreja em Battle Creek. Tinha vinte pacientes."
+ },
+ {
+  "t": "chapter",
+  "num": "02",
+  "name": "A universidade da saúde",
+  "bg": "san_aereo_1911",
+  "n": "Capítulo dois. A universidade da saúde."
+ },
+ {
+  "t": "photo",
+  "cap": "O Sanatório de Battle Creek, por volta de 1910",
+  "date": "c. 1910",
+  "bg": "san_1910",
+  "n": "Kellogg rebatizou o lugar. Virou o Sanatório de Battle Creek."
+ },
+ {
+  "t": "fact",
+  "kicker": "PACIENTES POR ANO",
+  "big": "300 → 1.200",
+  "sub": "em uma década. No auge, até 15 mil pacientes novos por ano, segundo Howard Markel.",
+  "src": "Science History Institute · Smithsonian",
+  "bg": "san_aereo_1911",
+  "n": "Em uma década, o número de pacientes por ano saltou de trezentos para quase mil e duzentos. No auge, segundo o historiador Howard Markel, da Universidade de Michigan, eram até quinze mil pacientes novos por ano."
+ },
+ {
+  "t": "fact",
+  "kicker": "QUEM PASSOU POR LÁ",
+  "big": "FORD · EDISON",
+  "sub": "Também Amelia Earhart, Rockefeller, Taft e Harding. E o ator do Tarzan, que abria o jantar com o grito do personagem.",
+  "src": "Science History Institute · PBS · Markel, NPR",
+  "bg": "san_palmgarden",
+  "n": "Era hospital, hotel de luxo e spa ao mesmo tempo. Passaram por lá Henry Ford, Thomas Edison, Amelia Earhart, John D. Rockefeller e os presidentes Taft e Harding. Segundo Markel, Johnny Weissmuller, o Tarzan do cinema, abria o jantar com o grito de Tarzan."
+ },
+ {
+  "t": "fact",
+  "kicker": "REGRA DA MESA",
+  "big": "40 VEZES",
+  "sub": "cada garfada, mastigada. O doutor puxava uma “canção da mastigação”.",
+  "src": "History.com",
+  "bg": "menu_jantar",
+  "n": "O cardápio era vegetariano. Cada garfada devia ser mastigada pelo menos quarenta vezes. E o doutor puxava uma canção da mastigação no refeitório."
+ },
+ {
+  "t": "photo",
+  "cap": "Gabinete de banho de luz incandescente modelo Kellogg (Museu de Ciência de Milão)",
+  "date": "1920-1930",
+  "bg": "banho_luz",
+  "n": "Os tratamentos eram outro mundo. Havia o banho de luz elétrica: um armário forrado de lâmpadas, com o paciente dentro."
+ },
+ {
+  "t": "fact",
+  "kicker": "OS TRATAMENTOS",
+  "big": "60 POR SEGUNDO",
+  "sub": "vibrações da cadeira. E corrente elétrica na pele e cavalos mecânicos, como o de Coolidge na Casa Branca.",
+  "src": "History.com",
+  "bg": "cavalo_mecanico",
+  "n": "Havia corrente elétrica na pele, uma cadeira que tremia até sessenta vezes por segundo e cavalos mecânicos. O presidente Calvin Coolidge tinha um na Casa Branca."
+ },
+ {
+  "t": "fact",
+  "kicker": "ENEMAS",
+  "big": "~14 L/MIN",
+  "sub": "capacidade atribuída a máquinas do sanatório. Kellogg via no intestino a origem da doença.",
+  "src": "Howard Markel, via History.com",
+  "bg": "san_sol",
+  "n": "E havia os enemas. Kellogg acreditava que a doença começava no intestino. Segundo Markel, algumas máquinas do sanatório bombeavam cerca de catorze litros de água por minuto."
+ },
+ {
+  "t": "photo",
+  "cap": "Cartão-postal com foto de Kellogg, sempre de branco",
+  "date": "c. 1915",
+  "bg": "jhk_postal",
+  "n": "Às vezes, o enema era de iogurte. O próprio doutor só andava de terno branco. Dizia que era para ver a sujeira na hora e trocar de roupa."
+ },
+ {
+  "t": "chapter",
+  "num": "03",
+  "name": "A lenda dos flocos",
+  "bg": "anuncio_1909",
+  "n": "Capítulo três. A lenda dos flocos."
+ },
+ {
+  "t": "status",
+  "rows": [
+   [
+    "Flocos criados contra o desejo sexual",
+    "SEM PROVA"
+   ],
+   [
+    "A frase “café da manhã antimasturbação”",
+    "SURGIU EM 2012"
+   ],
+   [
+    "Kellogg pregava dieta sem tempero contra a masturbação",
+    "VERDADE"
+   ]
+  ],
+  "src": "Snopes · Lead Stories, 2023 · Mental Floss, 2012",
+  "bg": "plainfacts",
+  "n": "Agora, a lenda. Na internet se repete que os flocos de milho foram criados para diminuir o desejo sexual dos pacientes. Os sites de checagem Snopes e Lead Stories rastrearam essa frase."
+ },
+ {
+  "t": "fact",
+  "kicker": "A ORIGEM DA FRASE",
+  "big": "2012",
+  "sub": "Artigo da Mental Floss. A frase não aparece em textos de Kellogg nem em anúncios da época.",
+  "src": "Snopes · Lead Stories, 2023",
+  "bg": "plainfacts",
+  "n": "Ela vem de um artigo de dois mil e doze. Não aparece em nenhum texto de Kellogg nem em anúncio da época. O que é verdade é que Kellogg escreveu muito contra a masturbação, que ele chamava de vício solitário."
+ },
+ {
+  "t": "fact",
+  "kicker": "PLAIN FACTS FOR OLD AND YOUNG",
+  "big": "SEM TEMPERO",
+  "sub": "Comida simples contra o “vício solitário”. A gula seria fatal para a castidade, escreveu Kellogg.",
+  "src": "Kellogg, Plain Facts · via Snopes",
+  "bg": "jhk_1881",
+  "n": "No livro Plain Facts, ele recomendava comida simples e sem tempero, e dizia que a gula era fatal para a castidade. Os flocos cabiam nessa dieta. Mas nenhum documento diz que foram inventados para isso."
+ },
+ {
+  "t": "fact",
+  "kicker": "A ORIGEM DOCUMENTADA",
+  "big": "A DENTADURA",
+  "sub": "Uma paciente quebrou a dentadura num pão torrado e duro do sanatório.",
+  "src": "Howard Markel, PBS · TIME, 1926",
+  "bg": "san_1910",
+  "n": "A origem documentada é outra. Muitos pacientes chegavam com problemas de digestão. Segundo Markel, uma paciente quebrou a dentadura num pão torrado e duro do sanatório."
+ },
+ {
+  "t": "fact",
+  "kicker": "1894 · A COZINHA DO SANATÓRIO",
+  "big": "QUASE 2 DIAS",
+  "sub": "Trigo cozido descansou, passou no rolo e foi ao forno. Saíram flocos.",
+  "src": "Michiganology (Arquivos de Michigan)",
+  "bg": "protose",
+  "n": "Kellogg passou a buscar grãos mais fáceis de mastigar. A versão mais contada, registrada pelos Arquivos de Michigan, diz que em mil oitocentos e noventa e quatro John e o irmão caçula, Will, deixaram trigo cozido parado por quase dois dias. Passaram no rolo, assaram, e saíram flocos."
+ },
+ {
+  "t": "cols",
+  "cols": [
+   [
+    "JOHN",
+    "A ideia veio num sonho"
+   ],
+   [
+    "WILL",
+    "Só passaram a massa bem fina no rolo"
+   ],
+   [
+    "ELLA E FUNCIONÁRIOS",
+    "Também reivindicaram a invenção"
+   ]
+  ],
+  "src": "Howard Markel, NPR · History.com",
+  "bg": "ella_45",
+  "n": "Cada um da família contou uma versão diferente. John chegou a dizer que a ideia veio num sonho."
+ },
+ {
+  "t": "fact",
+  "kicker": "PATENTE US 558.393",
+  "big": "14.04.1896",
+  "sub": "“Cereais em flocos”, em nome de John Harvey Kellogg: alimento para doentes e convalescentes.",
+  "src": "Google Patents · Snopes",
+  "bg": "assinatura_jhk",
+  "n": "O dado firme é este: em catorze de abril de mil oitocentos e noventa e seis, John Harvey Kellogg recebeu a patente número quinhentos e cinquenta e oito mil, trezentos e noventa e três. Título: cereais em flocos. O texto apresenta o produto como alimento para doentes e convalescentes."
+ },
+ {
+  "t": "chapter",
+  "num": "04",
+  "name": "O irmão que anotava",
+  "bg": "wk_retrato",
+  "n": "Capítulo quatro. O irmão que anotava."
+ },
+ {
+  "t": "name",
+  "name": "WILL KEITH KELLOGG",
+  "role": "Irmão caçula de John · 1860-1951",
+  "src": "Bentley Library · The Henry Ford",
+  "bg": "wk_retrato",
+  "n": "Will Keith Kellogg era oito anos mais novo. Começou a trabalhar aos seis, numa fábrica de vassouras da família."
+ },
+ {
+  "t": "fact",
+  "kicker": "1880 · ASSISTENTE DO IRMÃO",
+  "big": "120 HORAS",
+  "sub": "por semana, ganhando pouco, segundo o próprio Will.",
+  "src": "Bentley Historical Library",
+  "bg": "san_oldmain",
+  "n": "Em mil oitocentos e oitenta virou assistente do irmão famoso. Dizia trabalhar cento e vinte horas por semana, ganhando pouco."
+ },
+ {
+  "t": "fact",
+  "kicker": "SEGUNDO HOWARD MARKEL",
+  "big": "DITADOS",
+  "sub": "John ditava pedalando pelo sanatório; Will corria anotando. Às vezes, até no banheiro.",
+  "src": "Howard Markel, NPR Fresh Air, 2017",
+  "bg": "jhk_1897",
+  "n": "Segundo Markel, John ditava livros e palestras enquanto pedalava pelo terreno do sanatório, e Will tinha que correr anotando. Às vezes, até dentro do banheiro."
+ },
+ {
+  "t": "headline",
+  "outlet": "CORVALLIS GAZETTE · 21 DE FEVEREIRO DE 1902",
+  "head": "One Life Lost and Several Persons Injured. Property Loss $500,000",
+  "mark": "One Life Lost",
+  "url": "oregonnews.uoregon.edu",
+  "bg": "san_incendio",
+  "n": "Em dezoito de fevereiro de mil novecentos e dois, um incêndio destruiu o prédio principal em cerca de duas horas. Dos quatrocentos hóspedes, só um não escapou. O sanatório foi reconstruído, maior."
+ },
+ {
+  "t": "fact",
+  "kicker": "1902 · A VOLTA DA EUROPA",
+  "big": "AÇÚCAR",
+  "sub": "John descobre que Will adoçou os flocos de milho. Para ele, açúcar fazia mal.",
+  "src": "Gary Taubes, The Case Against Sugar",
+  "bg": "anuncio_1908b",
+  "n": "No mesmo ano, segundo o jornalista Gary Taubes, John voltou da Europa e descobriu que Will tinha posto açúcar nos flocos de milho. Ficou furioso. Para ele, açúcar fazia mal."
+ },
+ {
+  "t": "fact",
+  "kicker": "FEVEREIRO DE 1906",
+  "big": "WILL SAI",
+  "sub": "Funda a Battle Creek Toasted Corn Flake Company: milho, malte, açúcar, sal e a assinatura dele em cada caixa.",
+  "src": "Michiganology · The Henry Ford",
+  "bg": "wk_assinatura",
+  "n": "Em fevereiro de mil novecentos e seis, aos quarenta e seis anos, Will saiu e fundou a própria empresa, a Battle Creek Toasted Corn Flake Company. Usou milho, malte, açúcar e sal. E colocou a própria assinatura em cada caixa."
+ },
+ {
+  "t": "fact",
+  "kicker": "1909",
+  "big": "120 MIL",
+  "sub": "caixas de Corn Flakes despachadas por dia.",
+  "src": "The Henry Ford · Howard Markel",
+  "bg": "anuncio_1909b",
+  "n": "Ele apostou em propaganda como poucos. Em mil novecentos e nove, a fábrica já despachava cento e vinte mil caixas por dia."
+ },
+ {
+  "t": "name",
+  "name": "C. W. POST",
+  "role": "Ex-paciente do sanatório; uma das 30 empresas de cereal da cidade",
+  "src": "Michiganology · Science History Institute",
+  "bg": "post_retrato",
+  "n": "Battle Creek virou a cidade do cereal: pelo menos trinta empresas entraram no negócio. Uma delas era de C. W. Post, um ex-paciente do sanatório."
+ },
+ {
+  "t": "chapter",
+  "num": "05",
+  "name": "Kellogg contra Kellogg",
+  "bg": "anuncio_1922",
+  "n": "Capítulo cinco. Kellogg contra Kellogg."
+ },
+ {
+  "t": "timeline",
+  "kicker": "A BRIGA PELO NOME",
+  "ev": [
+   [
+    "1906",
+    "Will funda a empresa"
+   ],
+   [
+    "1907",
+    "John sai da igreja"
+   ],
+   [
+    "1910",
+    "Os dois vão à Justiça"
+   ],
+   [
+    "1920",
+    "Decisão final"
+   ]
+  ],
+  "cur": 2,
+  "src": "Bentley Library · CourtListener",
+  "bg": "anuncio_1919",
+  "n": "O problema era o sobrenome. John também vendia alimentos com o nome Kellogg. Em mil novecentos e dez, os dois irmãos foram à Justiça, cada um dizendo que o nome era seu."
+ },
+ {
+  "t": "fact",
+  "kicker": "1910 A 1920",
+  "big": "10 ANOS",
+  "sub": "de briga. Will passou a exigir uma testemunha nas conversas com o irmão.",
+  "src": "Bentley Library · Howard Markel, NPR",
+  "bg": "taft_1911",
+  "n": "A briga durou cerca de dez anos. Segundo Markel, Will passou a exigir uma testemunha sempre que falava com o irmão."
+ },
+ {
+  "t": "fact",
+  "kicker": "SUPREMA CORTE DE MICHIGAN",
+  "big": "21.12.1920",
+  "sub": "A ação de John é rejeitada. O nome Kellogg, como marca de alimentos, fica com a empresa de Will.",
+  "src": "Kellogg v. Kellogg Toasted Corn Flake Co., 212 Mich. 95",
+  "bg": "anuncio_1922",
+  "n": "Em vinte e um de dezembro de mil novecentos e vinte, a Suprema Corte de Michigan deu a palavra final. A ação de John foi rejeitada. O nome Kellogg, como marca de alimentos, ficou com a empresa de Will."
+ },
+ {
+  "t": "quote",
+  "q": "O nome foi comercializado não pelo doutor Kellogg, mas apesar dele.",
+  "who": "SUPREMA CORTE DE MICHIGAN",
+  "src": "Kellogg v. Kellogg Toasted Corn Flake Co., 1920 · tradução livre",
+  "bg": "jhk_1910",
+  "n": "Os juízes lembraram que ela já tinha gasto milhões de dólares em propaganda. E escreveram que o nome virou marca não por causa do doutor Kellogg, mas apesar dele. Depois disso, segundo Markel, John só podia pôr o próprio nome em letras miúdas no pé das caixas dos cereais que criava."
+ },
+ {
+  "t": "fact",
+  "kicker": "1907",
+  "big": "DESLIGADO",
+  "sub": "da Igreja Adventista do Sétimo Dia, a mesma que pagou seus estudos.",
+  "src": "Science History Institute · Gale",
+  "bg": "ellen_white",
+  "n": "E ele já tinha perdido outra batalha. Em mil novecentos e sete, foi desligado da Igreja Adventista, a mesma que pagou seus estudos."
+ },
+ {
+  "t": "chapter",
+  "num": "06",
+  "name": "A mancha no terno branco",
+  "bg": "jhk_1914b",
+  "n": "Capítulo seis. A mancha no terno branco."
+ },
+ {
+  "t": "fact",
+  "kicker": "O LADO ESQUECIDO",
+  "big": "EUGENIA",
+  "sub": "A ideia de “melhorar” a espécie humana controlando quem deveria ter filhos.",
+  "src": "Britannica · U. Michigan SPH",
+  "bg": "jhk_1914b",
+  "n": "Há um lado de Kellogg que costuma ficar fora das histórias sobre cereal. Ele foi um dos grandes promotores da eugenia nos Estados Unidos: a ideia de melhorar a espécie humana controlando quem deveria ter filhos."
+ },
+ {
+  "t": "fact",
+  "kicker": "08 A 12.01.1914 · NO SANATÓRIO",
+  "big": "+400",
+  "sub": "participantes da 1ª Conferência Nacional sobre a Melhoria da Raça.",
+  "src": "Atas da conferência, 1914 · U. Michigan SPH",
+  "bg": "eugenia_comite",
+  "n": "De oito a doze de janeiro de mil novecentos e catorze, o sanatório recebeu a Primeira Conferência Nacional sobre a Melhoria da Raça. Segundo a escola de saúde pública da Universidade de Michigan, mais de quatrocentos especialistas participaram."
+ },
+ {
+  "t": "quote",
+  "q": "Precisa-se de uma nova raça humana.",
+  "who": "JOHN HARVEY KELLOGG, TÍTULO DO SEU TEXTO",
+  "src": "Atas, 1914 · “Needed: A New Human Race” · tradução livre",
+  "bg": "eugenia_conferencias",
+  "n": "Kellogg apresentou um texto chamado: Precisa-se de uma nova raça humana."
+ },
+ {
+  "t": "timeline",
+  "kicker": "AS CONFERÊNCIAS DE EUGENIA",
+  "ev": [
+   [
+    "1914",
+    "Conferência em Battle Creek"
+   ],
+   [
+    "1915",
+    "Conferência em São Francisco"
+   ],
+   [
+    "1928",
+    "Conferência em Battle Creek"
+   ]
+  ],
+  "cur": 1,
+  "src": "Eugenics Archive (Cold Spring Harbor) · Britannica",
+  "bg": "san_1938",
+  "n": "Vieram outras conferências, em mil novecentos e quinze e em mil novecentos e vinte e oito. Segundo o arquivo sobre o movimento eugênico do laboratório Cold Spring Harbor, a fundação de Kellogg criou um registro eugênico de famílias. A enciclopédia Britannica resume: a organização promovia a eugenia e a segregação racial."
+ },
+ {
+  "t": "quote",
+  "q": "É a mancha de sangue no terno branco dele.",
+  "who": "HOWARD MARKEL, HISTORIADOR",
+  "src": "NPR Fresh Air, 2017 · tradução livre",
+  "bg": "jhk_bain",
+  "n": "Até a faculdade que ele fundou em Battle Creek tinha a melhoria da raça como missão principal. Markel chama isso de a mancha de sangue no terno branco de Kellogg."
+ },
+ {
+  "t": "name",
+  "name": "ELLA EATON KELLOGG",
+  "role": "Mulher de John · 1853-1920",
+  "src": "TIME, 18/01/1926",
+  "bg": "ella_1893",
+  "n": "E há o contraste. John e a mulher, Ella Eaton Kellogg, criaram dezenas de crianças."
+ },
+ {
+  "t": "fact",
+  "kicker": "O CONTRASTE",
+  "big": "42 CRIANÇAS",
+  "sub": "acolhidas pelo casal; 13 adotadas legalmente, segundo a TIME. Outras fontes falam em menos adoções formais.",
+  "src": "TIME, 18/01/1926 · Gale",
+  "n": "Segundo a revista Time, em mil novecentos e vinte e seis, o casal tinha acolhido quarenta e duas e adotado legalmente treze. Outras fontes falam em menos adoções formais."
+ },
+ {
+  "t": "chapter",
+  "num": "07",
+  "name": "A carta",
+  "bg": "san_torre",
+  "n": "Capítulo sete. A carta."
+ },
+ {
+  "t": "photo",
+  "cap": "O antigo sanatório como Hospital Geral Percy Jones, do Exército",
+  "date": "anos 1940",
+  "bg": "percy_jones",
+  "n": "Nos anos trinta, Kellogg abriu outro sanatório, na Flórida. Em mil novecentos e quarenta e dois, o prédio de Battle Creek virou um hospital do Exército americano."
+ },
+ {
+  "t": "quote",
+  "q": "Desejo sinceramente reparar qualquer erro ou injustiça que eu tenha cometido contra você.",
+  "who": "JOHN HARVEY KELLOGG, CARTA A WILL",
+  "src": "Carta de 1941, via Bentley Library · tradução livre",
+  "bg": "assinatura_jhk",
+  "n": "Em mil novecentos e quarenta e um, John escreveu uma carta ao irmão. Dizia: desejo sinceramente reparar qualquer erro ou injustiça que eu tenha cometido contra você. A carta nunca foi enviada."
+ },
+ {
+  "t": "photo",
+  "cap": "Túmulos de John Harvey e Ella Kellogg, Oak Hill, Battle Creek",
+  "date": "14.12.1943",
+  "bg": "tumulo_jhk",
+  "n": "John Harvey Kellogg morreu em catorze de dezembro de mil novecentos e quarenta e três, em Battle Creek, aos noventa e um anos. O menino que perdeu um pulmão viveu quase um século. A carta só chegou a Will em mil novecentos e quarenta e oito."
+ },
+ {
+  "t": "photo",
+  "cap": "Túmulo de Will Keith Kellogg, Oak Hill, Battle Creek",
+  "date": "1951",
+  "bg": "tumulo_wk",
+  "n": "Ele estava cego, por causa de um glaucoma. Uma enfermeira leu para ele. Will morreu três anos depois."
+ },
+ {
+  "t": "fact",
+  "kicker": "BRASIL",
+  "big": "1962",
+  "sub": "Chega o Sucrilhos. A Kellogg’s opera no país desde o início dos anos 1960.",
+  "src": "AdNews, 2021 · Revista RBA, 2017",
+  "bg": "anuncio_1942",
+  "n": "E o Brasil? A Kellogg's começou a operar aqui no início dos anos sessenta. Em mil novecentos e sessenta e dois chegou o cereal que virou sinônimo da marca no país: o Sucrilhos."
+ },
+ {
+  "t": "timeline",
+  "kicker": "DOS FLOCOS AO SUCRILHOS",
+  "ev": [
+   [
+    "1896",
+    "Patente dos flocos"
+   ],
+   [
+    "1943",
+    "Morre John"
+   ],
+   [
+    "1951",
+    "Morre Will"
+   ],
+   [
+    "1952",
+    "Frosted Flakes (EUA)"
+   ],
+   [
+    "1962",
+    "Sucrilhos no Brasil"
+   ]
+  ],
+  "cur": 3,
+  "src": "Google Patents · The Henry Ford · AdNews",
+  "n": "O Sucrilhos é a versão brasileira do Frosted Flakes, lançado nos Estados Unidos em mil novecentos e cinquenta e dois, com o Tigre Tony. Flocos de milho com cobertura de açúcar, criados depois da morte dos dois irmãos."
+ },
+ {
+  "t": "fact",
+  "kicker": "A IRONIA",
+  "big": "O SOBRENOME",
+  "sub": "O doutor que condenava o açúcar perdeu o nome, que acabou num cereal coberto de açúcar.",
+  "src": "Suprema Corte de Michigan, 1920 · The Henry Ford",
+  "bg": "wk_assinatura",
+  "n": "O doutor que condenava o açúcar perdeu o próprio sobrenome para o irmão. E o sobrenome acabou num cereal coberto justamente daquilo que ele combatia."
+ },
+ {
+  "t": "fact",
+  "kicker": "FICA A PERGUNTA",
+  "big": "VIDA SAUDÁVEL?",
+  "sub": "Quanto dela ainda carrega as ideias de um homem de terno branco?",
+  "src": "PopDocsBrasil, com base nas fontes do dossiê",
+  "bg": "federal_center",
+  "n": "Kellogg acertou em coisas que hoje parecem óbvias, como exercício, ar livre e distância do cigarro. E errou de forma grave em outras, como a eugenia. Fica a pergunta: quanto do que hoje chamamos de vida saudável ainda carrega as ideias de um homem de terno branco?"
+ },
+ {
+  "t": "end",
+  "credits": true,
+  "n": "Se você gosta de dossiês sobre os estrangeiros por trás das marcas do nosso dia a dia, se inscreva no canal. Até o próximo arquivo."
+ }
+]

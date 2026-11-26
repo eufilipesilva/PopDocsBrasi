@@ -1,0 +1,51 @@
+[
+ {
+  "from": 0,
+  "to": 1,
+  "kind": "dissolve",
+  "dur": 0.8,
+  "params": {}
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 1,
+  "to": 2
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 2,
+  "to": 3
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 3,
+  "to": 4
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 4,
+  "to": 5
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 5,
+  "to": 6
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 6,
+  "to": 7
+ },
+ {
+  "kind": "zoom",
+  "params": {},
+  "from": 7,
+  "to": 8
+ }
+]

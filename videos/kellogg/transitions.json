@@ -1,0 +1,398 @@
+[
+ {
+  "from": 0,
+  "to": 1,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 1,
+  "to": 2,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 2,
+  "to": 3,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 3,
+  "to": 4,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 4,
+  "to": 5,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 5,
+  "to": 6,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAP\u00cdTULO 01",
+   "sub": "POPDOCSBRASIL \u00b7 DOSSI\u00ca JOHN HARVEY KELLOGG"
+  }
+ },
+ {
+  "from": 6,
+  "to": 7,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 7,
+  "to": 8,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 8,
+  "to": 9,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 9,
+  "to": 10,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 10,
+  "to": 11,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 11,
+  "to": 12,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/kellogg",
+    "> abrir capitulo_02.dossie"
+   ],
+   "ok": "CAP\u00cdTULO 02 ENCONTRADO"
+  }
+ },
+ {
+  "from": 12,
+  "to": 13,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 13,
+  "to": 14,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 14,
+  "to": 15,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 15,
+  "to": 16,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 16,
+  "to": 17,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 17,
+  "to": 18,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 18,
+  "to": 19,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 19,
+  "to": 20,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 20,
+  "to": 21,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAP\u00cdTULO 03",
+   "sub": "POPDOCSBRASIL \u00b7 DOSSI\u00ca JOHN HARVEY KELLOGG"
+  }
+ },
+ {
+  "from": 21,
+  "to": 22,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 22,
+  "to": 23,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 23,
+  "to": 24,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 24,
+  "to": 25,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 25,
+  "to": 26,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 26,
+  "to": 27,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 27,
+  "to": 28,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 28,
+  "to": 29,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/kellogg",
+    "> abrir capitulo_04.dossie"
+   ],
+   "ok": "CAP\u00cdTULO 04 ENCONTRADO"
+  }
+ },
+ {
+  "from": 29,
+  "to": 30,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 30,
+  "to": 31,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 31,
+  "to": 32,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 32,
+  "to": 33,
+  "kind": "paper",
+  "params": {}
+ },
+ {
+  "from": 33,
+  "to": 34,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 34,
+  "to": 35,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 35,
+  "to": 36,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 36,
+  "to": 37,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 37,
+  "to": 38,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAP\u00cdTULO 05",
+   "sub": "POPDOCSBRASIL \u00b7 DOSSI\u00ca JOHN HARVEY KELLOGG"
+  }
+ },
+ {
+  "from": 38,
+  "to": 39,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 39,
+  "to": 40,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 40,
+  "to": 41,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 41,
+  "to": 42,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 42,
+  "to": 43,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 43,
+  "to": 44,
+  "kind": "terminal",
+  "params": {
+   "lines": [
+    "> acessar /arquivos/popdocs/kellogg",
+    "> abrir capitulo_06.dossie"
+   ],
+   "ok": "CAP\u00cdTULO 06 ENCONTRADO"
+  }
+ },
+ {
+  "from": 44,
+  "to": 45,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 45,
+  "to": 46,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 46,
+  "to": 47,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 47,
+  "to": 48,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 48,
+  "to": 49,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 49,
+  "to": 50,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 50,
+  "to": 51,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 51,
+  "to": 52,
+  "kind": "decrypt",
+  "params": {
+   "text": "CAP\u00cdTULO 07",
+   "sub": "POPDOCSBRASIL \u00b7 DOSSI\u00ca JOHN HARVEY KELLOGG"
+  }
+ },
+ {
+  "from": 52,
+  "to": 53,
+  "kind": "scan",
+  "params": {}
+ },
+ {
+  "from": 53,
+  "to": 54,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 54,
+  "to": 55,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 55,
+  "to": 56,
+  "kind": "flash",
+  "params": {}
+ },
+ {
+  "from": 56,
+  "to": 57,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 57,
+  "to": 58,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 58,
+  "to": 59,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 59,
+  "to": 60,
+  "kind": "zoom",
+  "params": {}
+ },
+ {
+  "from": 60,
+  "to": 61,
+  "kind": "dissolve",
+  "params": {}
+ }
+]

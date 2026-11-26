@@ -1,0 +1,532 @@
+{
+  "diesel_retrato": {
+    "file": "File:Rudolf Diesel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Rudolf_Diesel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Rudolf Diesel, retrato",
+    "date": "c. 1900-1913",
+    "uso": "Gancho (revelação do nome), cap. 4"
+  },
+  "diesel_retrato2": {
+    "file": "File:Rudolf Diesel2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel2.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Rudolf_Diesel2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Rudolf Diesel, retrato",
+    "date": "antes de 1913",
+    "uso": "Cap. 6 (fundo das hipóteses)"
+  },
+  "diesel_cortado": {
+    "file": "File:Rudolf Diesel (cropped).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel_(cropped).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Rudolf_Diesel_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Rudolf Diesel",
+    "date": "c. 1900-1913",
+    "uso": "Cena name (apresentação)"
+  },
+  "diesel_1883": {
+    "file": "File:Diesel 1883.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Diesel_1883.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Diesel_1883.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Diesel aos 25 anos, ano do casamento com Martha",
+    "date": "1883",
+    "uso": "Cap. 1 final / cap. 3 (casamento)"
+  },
+  "diesel_sfa1": {
+    "file": "File:Portret van Rudolf Diesel, uitvinder van de dieselmotor, SFA007001969.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_Rudolf_Diesel,_uitvinder_van_de_dieselmotor,_SFA007001969.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Portret_van_Rudolf_Diesel%2C_uitvinder_van_de_dieselmotor%2C_SFA007001969.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+    "date": "antes de 1913",
+    "uso": "Cap. 3 (no auge)"
+  },
+  "diesel_sfa2": {
+    "file": "File:Portret van dr, SFA007001970.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Portret_van_dr,_SFA007001970.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Portret_van_dr%2C_SFA007001970.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Retrato de Rudolf Diesel (Nationaal Archief, Holanda)",
+    "date": "antes de 1913",
+    "uso": "Cap. 5 (identificação)"
+  },
+  "diesel_colliers": {
+    "file": "File:Collier's Diesel Rudolf.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Collier%27s_Diesel_Rudolf.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Collier%27s_Diesel_Rudolf.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Diesel em gravura da enciclopédia Collier's",
+    "date": "publicado em 1921",
+    "uso": "Encerramento"
+  },
+  "diesel_harwich": {
+    "file": "File:Doctor R.Diesel (5774953779).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Doctor_R.Diesel_(5774953779).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Doctor_R.Diesel_%285774953779%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 2.0",
+    "credit": "Foto: Harwich & Dovercourt (Flickr) / Wikimedia Commons · CC BY-SA 2.0",
+    "cap": "Rudolf Diesel, em imagem do acervo comunitário Harwich & Dovercourt",
+    "date": "1913",
+    "uso": "Cap. 4 (chegada a Harwich)"
+  },
+  "assinatura": {
+    "file": "File:Unterschrift Rudolf Diesel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Unterschrift_Rudolf_Diesel.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Unterschrift_Rudolf_Diesel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Assinatura: Rudolf Diesel (digitalização de Mailtosap) / Wikimedia Commons · Domínio público",
+    "cap": "Assinatura de Rudolf Diesel",
+    "date": "s.d.",
+    "uso": "Cap. 2 (patente) / cena name"
+  },
+  "placa_paris": {
+    "file": "File:Plaque 38 rue Notre-Dame-de-Nazareth (Paris 3e).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaque_38_rue_Notre-Dame-de-Nazareth_(Paris_3e).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Plaque_38_rue_Notre-Dame-de-Nazareth_%28Paris_3e%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "credit": "Foto: Poissons1957 / Wikimedia Commons · CC BY-SA 4.0",
+    "cap": "Placa na casa onde Diesel nasceu, 38 rue Notre-Dame-de-Nazareth, Paris",
+    "date": "2022",
+    "uso": "Cap. 1 (nascimento)"
+  },
+  "rua_paris": {
+    "file": "File:Rue Notre-Dame-de-Nazareth - Rudolf Diesel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rue_Notre-Dame-de-Nazareth_-_Rudolf_Diesel.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Rue_Notre-Dame-de-Nazareth_-_Rudolf_Diesel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC0",
+    "credit": "Foto: Benoît Prieur / Wikimedia Commons · CC0",
+    "cap": "Rue Notre-Dame-de-Nazareth, Paris, onde Diesel nasceu",
+    "date": "2015",
+    "uso": "Cap. 1 (nascimento)"
+  },
+  "placa_natal": {
+    "file": "File:Plaque Diesel (maison natale).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaque_Diesel_(maison_natale).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Plaque_Diesel_%28maison_natale%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Parisette / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Placa da casa natal de Diesel em Paris",
+    "date": "2009",
+    "uso": "Cap. 1 (alternativa)"
+  },
+  "cerco_paris": {
+    "file": "File:Siege of Paris.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Siege_of_Paris.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Pintura: Jean-Louis-Ernest Meissonier / Wikimedia Commons · Domínio público",
+    "cap": "O Cerco de Paris, pintura de Meissonier",
+    "date": "1870",
+    "uso": "Cap. 1 (guerra de 1870)"
+  },
+  "barricadas_1870": {
+    "file": "File:Franco-Prussian War - Students Going to Man the Barricades - Illustrated London News Oct 1 1870.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Franco-Prussian_War_-_Students_Going_to_Man_the_Barricades_-_Illustrated_London_News_Oct_1_1870.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Franco-Prussian_War_-_Students_Going_to_Man_the_Barricades_-_Illustrated_London_News_Oct_1_1870.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Ilustração: Fred Barnard, Illustrated London News / Wikimedia Commons · Domínio público",
+    "cap": "Estudantes vão às barricadas, Illustrated London News",
+    "date": "01/10/1870",
+    "uso": "Cap. 1 (expulsão da família)"
+  },
+  "balao_1870": {
+    "file": "File:Siege of Paris 1870 Balloon.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Siege_of_Paris_1870_Balloon.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Siege_of_Paris_1870_Balloon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor anônimo / Wikimedia Commons · Domínio público",
+    "cap": "Balão deixa Paris sitiada",
+    "date": "1870",
+    "uso": "Cap. 1 (alternativa)"
+  },
+  "linde": {
+    "file": "File:Carl von Linde 1868.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Carl_von_Linde_1868.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Carl_von_Linde_1868.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Carl von Linde, professor e primeiro patrão de Diesel",
+    "date": "1868",
+    "uso": "Cap. 1 (aula de Linde) / cap. 2"
+  },
+  "linde_gelo": {
+    "file": "File:Gesellschaft Lindes Eismaschinen 1880.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gesellschaft_Lindes_Eismaschinen_1880.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Gesellschaft_Lindes_Eismaschinen_1880.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC0",
+    "credit": "Foto: Julie Ceccaldi / Wikimedia Commons · CC0",
+    "cap": "Documento da Sociedade de Máquinas de Gelo Linde",
+    "date": "1880",
+    "uso": "Cap. 2 (fábrica de gelo em Paris)"
+  },
+  "patente_desenho": {
+    "file": "File:Rudolf Diesel's compound internal combustion engine.png",
+    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesel%27s_compound_internal_combustion_engine.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Rudolf_Diesel%27s_compound_internal_combustion_engine.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Desenho: Rudolf Diesel (patente) / Wikimedia Commons · Domínio público",
+    "cap": "Desenho de patente de Diesel",
+    "date": "1892",
+    "uso": "Cap. 2 (a ideia)"
+  },
+  "patente_67207": {
+    "file": "File:Lumbar patent dieselengine.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lumbar_patent_dieselengine.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Lumbar_patent_dieselengine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Documento: Reichspatentamt / Wikimedia Commons · Domínio público",
+    "cap": "Patente alemã nº 67207 de Diesel",
+    "date": "23/02/1893",
+    "uso": "Cap. 2 (patente)"
+  },
+  "patente_museu": {
+    "file": "File:Patent Rudolf Diesel.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Patent_Rudolf_Diesel.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Patent_Rudolf_Diesel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "credit": "Foto: Måns Hagberg / Wikimedia Commons · CC BY-SA 4.0",
+    "cap": "Patente de Diesel exposta em museu",
+    "date": "foto de 2020",
+    "uso": "Cap. 2 (alternativa)"
+  },
+  "primeiro_motor": {
+    "file": "File:First Diesel motor.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:First_Diesel_motor.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/First_Diesel_motor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Vitold Muratov / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Primeiro motor diesel (museu MAN, Augsburg)",
+    "date": "foto de 2009",
+    "uso": "Cap. 2 (dez de agosto de 1893)"
+  },
+  "prototipo_1894": {
+    "file": "File:Second prototype of the Diesel engine (1894), 1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Second_prototype_of_the_Diesel_engine_(1894),_1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Second_prototype_of_the_Diesel_engine_%281894%29%2C_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "credit": "Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 4.0",
+    "cap": "Segundo protótipo do motor diesel, 1894",
+    "date": "foto de 2021",
+    "uso": "Cap. 2 (mais quatro anos)"
+  },
+  "prototipo_exp": {
+    "file": "File:Experimental Diesel Engine.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Experimental_Diesel_Engine.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Experimental_Diesel_Engine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Motor diesel experimental no museu MAN",
+    "date": "foto de 2017",
+    "uso": "Cap. 2 (alternativa)"
+  },
+  "motor_1897": {
+    "file": "File:Stationärer Dieselmotor, Prototyp 1897, Deutsches Museum-L1001401.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Station%C3%A4rer_Dieselmotor,_Prototyp_1897,_Deutsches_Museum-L1001401.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Station%C3%A4rer_Dieselmotor%2C_Prototyp_1897%2C_Deutsches_Museum-L1001401.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "credit": "Foto: Frank Schulenburg / Wikimedia Commons · CC BY-SA 4.0",
+    "cap": "Motor de 1897 no Deutsches Museum, Munique",
+    "date": "foto de 2023",
+    "uso": "Cap. 2 (teste de 1897)"
+  },
+  "motor_1897b": {
+    "file": "File:Motor 250-400 IMG 1353 2023-11-25 JM.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Motor_250-400_IMG_1353_2023-11-25_JM.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Motor_250-400_IMG_1353_2023-11-25_JM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 4.0",
+    "credit": "Foto: Johannes Maximilian / Wikimedia Commons · CC BY-SA 4.0",
+    "cap": "Motor 250/400 de 1897",
+    "date": "foto de 2023",
+    "uso": "Cap. 2 (fact 26%)"
+  },
+  "motor_museu": {
+    "file": "File:Historical Diesel engine in Deutsches Museum.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Historical_Diesel_engine_in_Deutsches_Museum.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Historical_Diesel_engine_in_Deutsches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Olivier Cleynen / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Motor diesel histórico no Deutsches Museum",
+    "date": "foto de 2011",
+    "uso": "Cap. 2 (alternativa)"
+  },
+  "museu_man": {
+    "file": "File:MAN-museum 1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:MAN-museum_1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/MAN-museum_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Tiia Monto / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Museu MAN em Augsburg",
+    "date": "foto de 2017",
+    "uso": "Cap. 2 (Maschinenfabrik Augsburg)"
+  },
+  "buz": {
+    "file": "File:HeinrichVonBuz.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:HeinrichVonBuz.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/98/HeinrichVonBuz.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: MAN SE / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Heinrich von Buz, diretor da Maschinenfabrik Augsburg",
+    "date": "s.d.",
+    "uso": "Cap. 2 (financiamento)"
+  },
+  "krupp": {
+    "file": "File:Friedrich Alfred Krupp, portrait by Ludwig Noster, 1896.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Friedrich_Alfred_Krupp,_portrait_by_Ludwig_Noster,_1896.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Friedrich_Alfred_Krupp%2C_portrait_by_Ludwig_Noster%2C_1896.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: Ludwig Noster / Wikimedia Commons · Domínio público",
+    "cap": "Friedrich Alfred Krupp, retrato de Ludwig Noster",
+    "date": "1896",
+    "uso": "Cap. 2 (Krupp)"
+  },
+  "motor_1898": {
+    "file": "File:Dieselmotor 1898.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Dieselmotor_1898.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Dieselmotor_1898.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: SulzerAG / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Motor diesel de 1898",
+    "date": "1898",
+    "uso": "Cap. 3 (primeiros motores comerciais)"
+  },
+  "expo_1898": {
+    "file": "File:2021 07 09 1898 Diesel auf der Münchener Ausstellung.png",
+    "source": "https://commons.wikimedia.org/wiki/File:2021_07_09_1898_Diesel_auf_der_M%C3%BCnchener_Ausstellung.png",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/2021_07_09_1898_Diesel_auf_der_M%C3%BCnchener_Ausstellung.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: fotógrafo desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Diesel na Exposição de Munique",
+    "date": "1898",
+    "uso": "Cap. 3 (sucesso)"
+  },
+  "busch": {
+    "file": "File:Adolphus Busch, half-length portrait, seated, facing slightly right LCCN98510413.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Adolphus_Busch,_half-length_portrait,_seated,_facing_slightly_right_LCCN98510413.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Adolphus_Busch%2C_half-length_portrait%2C_seated%2C_facing_slightly_right_LCCN98510413.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: Library of Congress (LCCN 98510413) / Wikimedia Commons · Domínio público",
+    "cap": "Adolphus Busch, cervejeiro que comprou os direitos americanos",
+    "date": "1904",
+    "uso": "Cap. 3 (Busch)"
+  },
+  "solidarismus": {
+    "file": "File:Rudolf Diesels Solidarismus (1903), Titelseite.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Rudolf_Diesels_Solidarismus_(1903),_Titelseite.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Rudolf_Diesels_Solidarismus_%281903%29%2C_Titelseite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Capa: Rudolf Diesel, 1903 / Wikimedia Commons · Domínio público",
+    "cap": "Capa de Solidarismus, livro de Diesel",
+    "date": "1903",
+    "uso": "Cap. 3 (Solidarismo)"
+  },
+  "expo_1900": {
+    "file": "File:Eiffel Tower, full-view looking toward the Trocadero, Exposition Universal, 1900, Paris, France.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Eiffel_Tower,_full-view_looking_toward_the_Trocadero,_Exposition_Universal,_1900,_Paris,_France.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Eiffel_Tower%2C_full-view_looking_toward_the_Trocadero%2C_Exposition_Universal%2C_1900%2C_Paris%2C_France.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Exposição Universal de Paris",
+    "date": "1900",
+    "uso": "Cap. 3 (óleo de amendoim)"
+  },
+  "amendoim": {
+    "file": "File:Arachis hypogaea - Köhler–s Medizinal-Pflanzen-163.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Arachis_hypogaea_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-163.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Ilustração: Franz Eugen Köhler / Wikimedia Commons · Domínio público",
+    "cap": "Amendoim, ilustração botânica",
+    "date": "1887",
+    "uso": "Cap. 3 (óleo de amendoim)"
+  },
+  "livro_1912": {
+    "file": "File:Diesel - The Present Status of The Diesel Engine in Europe, 1912 Front.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Diesel_-_The_Present_Status_of_The_Diesel_Engine_in_Europe,_1912_Front.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Diesel_-_The_Present_Status_of_The_Diesel_Engine_in_Europe%2C_1912_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Capa: Rudolf Diesel, 1912 / Wikimedia Commons · Domínio público",
+    "cap": "Folheto de Diesel de 1912 sobre o motor na Europa",
+    "date": "1912",
+    "uso": "Cap. 3 (palestras de 1912)"
+  },
+  "selandia": {
+    "file": "File:Selandia LCCN2014691629.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Selandia_LCCN2014691629.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Selandia_LCCN2014691629.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: Bain News Service (Library of Congress) / Wikimedia Commons · Domínio público",
+    "cap": "Navio Selandia, primeiro grande navio oceânico a diesel",
+    "date": "c. 1912",
+    "uso": "Cap. 3 (Selandia)"
+  },
+  "selandia_bangkok": {
+    "file": "File:Selandia Bangkok 1912 600dpi.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Selandia_Bangkok_1912_600dpi.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Selandia_Bangkok_1912_600dpi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Selandia em Bangkok",
+    "date": "1912",
+    "uso": "Cap. 3 (alternativa)"
+  },
+  "selandia_filme": {
+    "file": "File:Selandia (1912 film).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Selandia_(1912_film).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Selandia_%281912_film%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: Nordisk Films Kompagni / Wikimedia Commons · Domínio público",
+    "cap": "Quadro do documentário dinamarquês Selandia",
+    "date": "1912",
+    "uso": "Cap. 3 (alternativa)"
+  },
+  "edison_diesel": {
+    "file": "File:Thomas Edison in the Library of his West Orange Laboratory with Dr. Rudolf Diesel. (ff713d866fd545cb93a4245d35d6150a).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_Library_of_his_West_Orange_Laboratory_with_Dr._Rudolf_Diesel._(ff713d866fd545cb93a4245d35d6150a).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Thomas_Edison_in_the_Library_of_his_West_Orange_Laboratory_with_Dr._Rudolf_Diesel._%28ff713d866fd545cb93a4245d35d6150a%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+    "cap": "Diesel com Thomas Edison em West Orange, EUA",
+    "date": "1912",
+    "uso": "Cap. 3 (Edison)"
+  },
+  "edison_grupo": {
+    "file": "File:Thomas Edison in the laboratory Library with (from left), Dr. Rudolf Diesel, Mrs. Calvin W. Rice, J.W. Lieb Jr., Mrs. Diesel. (5ed7c9c81b774de9ae1c8df8cf102814).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Thomas_Edison_in_the_laboratory_Library_with_(from_left),_Dr._Rudolf_Diesel,_Mrs._Calvin_W._Rice,_J.W._Lieb_Jr.,_Mrs._Diesel._(5ed7c9c81b774de9ae1c8df8cf102814).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Thomas_Edison_in_the_laboratory_Library_with_%28from_left%29%2C_Dr._Rudolf_Diesel%2C_Mrs._Calvin_W._Rice%2C_J.W._Lieb_Jr.%2C_Mrs._Diesel._%285ed7c9c81b774de9ae1c8df8cf102814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido (Thomas Edison National Historical Park) / Wikimedia Commons · Domínio público",
+    "cap": "Edison com Rudolf e Martha Diesel",
+    "date": "1912",
+    "uso": "Cap. 3 (Martha) / cap. 4 (bolsa)"
+  },
+  "dresden": {
+    "file": "File:Great Eastern Railway Company's S.S. Dresden GER Dresden-01 700.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Great_Eastern_Railway_Company%27s_S.S._Dresden_GER_Dresden-01_700.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Great_Eastern_Railway_Company%27s_S.S._Dresden_GER_Dresden-01_700.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "O vapor Dresden, da Great Eastern Railway, linha Harwich–Antuérpia",
+    "date": "antes de 1915",
+    "uso": "Gancho, cap. 4, encerramento"
+  },
+  "antuerpia": {
+    "file": "File:Gezicht op de haven van Antwerpen met schepen op de voorgrond, RP-P-1913-1972.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gezicht_op_de_haven_van_Antwerpen_met_schepen_op_de_voorgrond,_RP-P-1913-1972.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Gezicht_op_de_haven_van_Antwerpen_met_schepen_op_de_voorgrond%2C_RP-P-1913-1972.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC0",
+    "credit": "Gravura: Rijksmuseum / Wikimedia Commons · CC0",
+    "cap": "Porto de Antuérpia (gravura, Rijksmuseum)",
+    "date": "1858",
+    "uso": "Cap. 4 (embarque)"
+  },
+  "vlissingen": {
+    "file": "File:Paul Signac - Evening, The Jetty at Vlissingen - 1983.229 - Cleveland Museum of Art.tif",
+    "source": "https://commons.wikimedia.org/wiki/File:Paul_Signac_-_Evening,_The_Jetty_at_Vlissingen_-_1983.229_-_Cleveland_Museum_of_Art.tif",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Paul_Signac_-_Evening%2C_The_Jetty_at_Vlissingen_-_1983.229_-_Cleveland_Museum_of_Art.tif?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC0",
+    "credit": "Pintura: Paul Signac (Cleveland Museum of Art) / Wikimedia Commons · CC0",
+    "cap": "Fim de tarde no cais de Vlissingen, Paul Signac",
+    "date": "1898",
+    "uso": "Cap. 5 (identificação em Vlissingen)"
+  },
+  "escalda": {
+    "file": "File:Hoofdplaat - Westerschelde 1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hoofdplaat_-_Westerschelde_1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/44/Hoofdplaat_-_Westerschelde_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: LimoWreck / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Estuário do Escalda (Westerschelde), Holanda",
+    "date": "foto de 2008",
+    "uso": "Cap. 5 (onde o corpo foi visto)"
+  },
+  "harwich_cais": {
+    "file": "File:Harwich Parkeston Quay - geograph.org.uk - 1516663.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Harwich_Parkeston_Quay_-_geograph.org.uk_-_1516663.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Harwich_Parkeston_Quay_-_geograph.org.uk_-_1516663.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 2.0",
+    "credit": "Foto: Martin Addison / Wikimedia Commons · CC BY-SA 2.0",
+    "cap": "Parkeston Quay, porto de Harwich",
+    "date": "1984",
+    "uso": "Cap. 4 (chegada) - foto moderna, usar como lugar"
+  },
+  "kaiser": {
+    "file": "File:Kaiser Wilhelm II by E. Bieber, 1913.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaiser_Wilhelm_II_by_E._Bieber,_1913.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kaiser_Wilhelm_II_by_E._Bieber%2C_1913.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "No restrictions (sem restrições de direitos conhecidas)",
+    "credit": "Foto: E. Bieber (livro digitalizado pelo Internet Archive) / Wikimedia Commons · Sem restrições conhecidas",
+    "cap": "Kaiser Guilherme II",
+    "date": "1913",
+    "uso": "Cap. 6 (hipótese do assassinato)"
+  },
+  "churchill": {
+    "file": "File:Winston Churchill verl sst das Geb ude der Admiralt t (1912).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Winston_Churchill_verl_sst_das_Geb_ude_der_Admiralt_t_(1912).jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Winston_Churchill_verl_sst_das_Geb_ude_der_Admiralt_t_%281912%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: autor desconhecido / Wikimedia Commons · Domínio público",
+    "cap": "Winston Churchill deixa o Almirantado",
+    "date": "1912",
+    "uso": "Cap. 6 (britânicos)"
+  },
+  "uboats_kiel": {
+    "file": "File:U-Boote Kiel 1914.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:U-Boote_Kiel_1914.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/U-Boote_Kiel_1914.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "Public domain",
+    "credit": "Foto: Bain News Service / Wikimedia Commons · Domínio público",
+    "cap": "Submarinos alemães em Kiel",
+    "date": "17/02/1914",
+    "uso": "Cap. 6 (submarinos) / encerramento"
+  },
+  "memorial_augsburg": {
+    "file": "File:Wittelsbacherpark Gedenkstein.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Gedenkstein.JPG",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Wittelsbacherpark_Gedenkstein.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Pedra do Memorial Rudolf Diesel, Augsburg (doado pela japonesa Yanmar)",
+    "date": "foto de 2005",
+    "uso": "Encerramento (sem túmulo)"
+  },
+  "memorial_bosque": {
+    "file": "File:Wittelsbacherpark Hain.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Wittelsbacherpark_Hain.JPG",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Wittelsbacherpark_Hain.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: usuário do Wikimedia Commons (ver página do arquivo) / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Bosque memorial Rudolf Diesel, Augsburg",
+    "date": "foto de 2005",
+    "uso": "Encerramento"
+  },
+  "busto_munique": {
+    "file": "File:Ruhmeshalle Muenchen Rudolf Diesel Jngenieur-1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ruhmeshalle_Muenchen_Rudolf_Diesel_Jngenieur-1.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ruhmeshalle_Muenchen_Rudolf_Diesel_Jngenieur-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY-SA 3.0",
+    "credit": "Foto: Rufus46 / Wikimedia Commons · CC BY-SA 3.0",
+    "cap": "Busto de Diesel no Ruhmeshalle, Munique",
+    "date": "foto de 2009",
+    "uso": "Encerramento"
+  },
+  "caminhao_1931": {
+    "file": "File:Foden F1 Diesel Lorry 1931.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Foden_F1_Diesel_Lorry_1931.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Foden_F1_Diesel_Lorry_1931.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "license": "CC BY 2.5",
+    "credit": "Foto: Oxyman / Wikimedia Commons · CC BY 2.5",
+    "cap": "Caminhão Foden a diesel",
+    "date": "1931",
+    "uso": "Encerramento (o motor nas estradas)"
+  }
+}
